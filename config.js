@@ -73,11 +73,11 @@ var respecConfig =
   //pubDomain: "visu", 	            // Visualisatie
   //pubDomain: "wp", 	              // White Paper
   //-- Repositorynaam op GitHub -------------------------------------------------------
-  github: "https://github.com/Geonovum/BMGI/dataspecificatie/",
+  github: "https://github.com/Geonovum/imev-werkomgeving/",
   //-- Repositorynaam/issues op GitHub ------------------------------------------------
-  issueBase: "https://github.com/Geonovum/BMGI/issues/",
+  issueBase: "https://github.com/Geonovum/imev-werkomgeving/issues/",
   //-- edDraftURI: de URI van de werkversie van het document
-  edDraftURI: "https://geonovum.github.io/BMGI/dataspecificatie",
+  edDraftURI: "https://geonovum.github.io/imev-werkomgeving/",
 
   //-- license: voor de geldende gebruiksvoorwaarden
   licence: "cc-by-nd",              //-- bronvermelding, geen afgeleide werken (default)
