@@ -45,12 +45,12 @@ var respecConfig =
    authors:
   [
      {
-     name:       "",
+     name:       "xx",
     company:    "",
       companyURL: ""
    },
     {
-     name:       "",
+     name:       "xx",
      company:    "",
     companyURL: ""
   },
