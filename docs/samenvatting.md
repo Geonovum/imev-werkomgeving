@@ -1,8 +1,8 @@
-Dit document bevat het informatiemodel ten behoeve van gegevensontsluiting voor het Register Externe Veiligheid (REV, het Informatiemodel Externe Veiligheid (IMEV). Het doel van deze beschrijving is om -aanvullend aan de metadata beschrijving van het dataproduct (conform MIM 1.1 en ISO 19115)- achtergrond informatie te verstrekken over een data product.  Waar de metadata de informatie op bestandsniveau beschrijft is het informatiemodel bedoeld om de gegevensstructuur en object definities te beschrijven. Op basis van het informatiemodel en de metadata van het dataproduct kan een eindgebruiker zich een goed beeld vormen van de data die door de dienst worden aangeboden en de data inhoudelijk interpreteren. Daarnaast geldt dat onderdelen van het informatiemodel nodig zijn ten behoeve van applicatiebouw.
+Dit document bevat het informatiemodel ten behoeve van gegevensontsluiting voor het Register Externe Veiligheid (REV), het Informatiemodel Externe Veiligheid (IMEV). Het doel van deze beschrijving is om - aanvullend aan de metadata beschrijving van het dataproduct (conform MIM 1.1 en ISO 19115) - achtergrondinformatie te verstrekken over een dataproduct.  Waar de metadata de informatie op bestandsniveau beschrijft is het informatiemodel bedoeld om de gegevensstructuur en objectdefinities te beschrijven. Op basis van het informatiemodel en de metadata van het dataproduct kan een eindgebruiker zich een goed beeld vormen van de data die door een dienst worden aangeboden en de data inhoudelijk interpreteren. Daarnaast geldt dat onderdelen van het informatiemodel nodig zijn ten behoeve van applicatiebouw.
 
-Dit document is tot stand gekomen in samenwerking met het ministerie van Infrastructuur en Waterstaat. De tekst uit de informele beschrijving is aangevuld met informatie uit de Globale Architectuur Schets ter realisatie en de Aanleverinstructies van het REV. Daarnaast bevat het formele beschrijving van het [logische informatiemodel](https://geonovum.github.io/MIM-Werkomgeving/#typen-informatiemodellen) IMEV.
+Dit document is tot stand gekomen in samenwerking met het Ministerie van Infrastructuur en Waterstaat. De tekst uit de informele beschrijving is aangevuld met informatie uit de Globale Architectuur Schets ter realisatie en de Aanleverinstructies van het REV. Daarnaast bevat het formele beschrijving van het [logische informatiemodel](https://geonovum.github.io/MIM-Werkomgeving/#typen-informatiemodellen) IMEV.
 
-Het beheer van het Informatiemodel Externe Veiligheid (IMEV) en daarmee dit document wordt gedaan door stichting [Geonovum](https://www.geonovum.nl).
+Het beheer van het Informatiemodel Externe Veiligheid (IMEV) en daarmee dit document wordt gedaan door Stichting [Geonovum](https://www.geonovum.nl).
 
 Leeswijzer
 ----------
@@ -16,16 +16,16 @@ Dit document is gestructureerd in 14 hoofdstukken.
 -   [Hoofdstuk 3](#toepassingsgebied): Beschrijft het toepassingsgebied van het
     IMEV.
 
--   [Hoofdstuk 4](#overzicht): Geeft een informeel overzicht van de context van
+-   [Hoofdstuk 4](#overzicht): Geeft het informeel overzicht van de context van
     het IMEV.
 
--   [Hoofdstuk 5](#gegevensdefinitie): Geeft een formele beschrijving van het
-    IMEV.
+-   [Hoofdstuk 5](#gegevensdefinitie): Geeft het formele beschrijving van het
+    IMEV middels UML-klassediagrammen.
 
--   [Hoofdstuk 6](#cat): Bevat een specificatie van de objecttypen van het
-    IMEV.
+-   [Hoofdstuk 6](#cat): Bevat de specificatie van de objecttypen van het
+    IMEV in een objectcatalogus.
 
--   [Hoofdstuk 7](#lis): Bevat een specificatie van de waardenlijsten van het
+-   [Hoofdstuk 7](#lis): Bevat de specificatie van de waardenlijsten van het
     IMEV.
 
 -   [Hoofdstuk 8](#referentiesystemen): Beschrijft de gebruikte
