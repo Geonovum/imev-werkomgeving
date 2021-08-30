@@ -32,9 +32,7 @@ Dit document is gestructureerd in 14 hoofdstukken.
     referentiesystemen in het informatiemodel.
 
 -   [Hoofdstuk 9](#visualisatie): Beschrijft de verschillende visualisaties van
-    dataproducten
-
-    gebaseerd op deze specificatie.
+    dataproducten gebaseerd op deze specificatie.
 
 -   [Hoofdstuk 10](#inwinning): Beschrijft de inwinningsregels voor de selectie
     van de ruimtelijke objecten die onderdeel uitmaken van het informatiemodel.
