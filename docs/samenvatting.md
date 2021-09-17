@@ -19,11 +19,9 @@ Dit document is gestructureerd in 14 hoofdstukken.
 -   [Hoofdstuk 4](#overzicht): Geeft het informeel overzicht van de context van
     het IMEV.
 
--   [Hoofdstuk 5](#gegevensdefinitie): Geeft het formele beschrijving van het
-    IMEV middels UML-klassediagrammen.
+-   [Hoofdstuk 5](#uitgangspunten-imev-model): Geeft de uitgangspunten die bij het modelleren zijn gebruikt.
 
--   [Hoofdstuk 6](#cat): Bevat de specificatie van de objecttypen van het
-    IMEV in een objectcatalogus.
+-   [Hoofdstuk 6](#cat): Bevat de specificatie van het IMEV door middel van UML klassediagrammen en definities van objecttypen in een objectcatalogus.
 
 -   [Hoofdstuk 7](#lis): Bevat de specificatie van de waardenlijsten van het
     IMEV.
@@ -45,4 +43,4 @@ Dit document is gestructureerd in 14 hoofdstukken.
 -   [Hoofdstuk 13](#bibliografie): Beschrijft relevante documenten die
     betrekking hebben op dit informatiemodel.
 
--   [Hoofdstuk 14](#bijlage): Bevat bijlagen bij dit informatiemodel.
+-   [Bijlage 1](#bijlage1): Bevat lijst met UML diagrammen in EA omgeving.
