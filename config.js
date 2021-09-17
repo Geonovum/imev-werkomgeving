@@ -36,7 +36,7 @@ var respecConfig =
   //-- vul in: per Editor: name:, company:, companyURL: -------------------------------
   editors: [
     {
-      name: "xxxxx",
+      name: "Paul Janssen",
       url: "https://www.geonovum.nl",
     }
   ],
