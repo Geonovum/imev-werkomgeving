@@ -1,7 +1,7 @@
 # imev-werkomgeving
 Informatiemodel Register Externe Veiligheid IMREV. Folder voor het ontwikkelen van IMEV gerelateerde onderdelen en documentatie.
 
-Versie voor interne review: <https://geonovum.github.io/imev-werkomgeving/review-intern/IMEV09x-review-intern.html>
+Versie voor interne review: <https://geonovum.github.io/imev-werkomgeving/IMEV09x-review-intern.html>
 
 Het werkdocument van het informatiemodel staat hier: <https://geonovum.github.io/imev-werkomgeving>
 
