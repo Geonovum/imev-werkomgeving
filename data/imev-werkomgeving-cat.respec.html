@@ -1,7 +1,7 @@
 
 <!DOCTYPE HTML><section id="cat" class="normative">
    <h2>Gegevensdefinitie</h2>
-   <!--MIMCM-IMEV-1.0-0-20210510-20211020-134841 imvertor 1.65.2-->
+   <!--MIMCM-IMEV-1.0-0-20210510-20211020-142823 imvertor 1.65.2-->
    <section id="EAID_90555E69_004F_4af9_B918_EED2BB1789DB">
       <h3>   Basismodel: kern - overzicht</h3>
       <div class="imageinfo overview"><img src="data/Images/EAID_90555E69_004F_4af9_B918_EED2BB1789DB.png" usemap="#imagemap-EAID_90555E69_004F_4af9_B918_EED2BB1789DB" alt="Diagram &#xA;                        &#xA;                           De kern van IMEV bestaat uit 5 objecttypen:&#xA;                        &#xA;                        &#xA;                        &#xA;                           LocatieEVActiviteit: Locatie waar de activiteit met externe veiligheidsrisico’s wordt verricht.&#xA;                        &#xA;                        &#xA;                           EVActiviteit:  Activiteit met externe veiligheidsrisico’s. &#xA;                        &#xA;                        &#xA;                           ReferentieEVContour:  Referentie voor de ligging van het EVContour.&#xA;                        &#xA;                        &#xA;                           EVContour:  Contour van externe veiligheidsrisico’s vanaf het punt of vlak van de ReferentieEVContour.&#xA;                        &#xA;                        &#xA;                           GebouwOfLocatie: Een gebouw of locatie die kan worden beïnvloed door de aanwezigheid van een EVcontour.&#xA;                        &#xA;                        Deze 5 objecttypen hebben een relatie tot elkaar die de basis vormt voor het IMEV informatiemodel.&#xA;                        &#xA;                        Het model kan op de volgende manier worden gelezen:  &#xA;                        Op een LocatieEVActiviteit wordt een EVActiviteit uitgevoerd. Elk type EVActiviteit heeft referentiegegevens opgenomen in een ReferentieEVContour waarop een EVContour van het plaatsgebonden risico kan worden bepaald. De ReferentieEVContour resulteert in een EVContour. De EVContour kan gebruikt worden om kwetsbare locaties en gebouwen te bepalen die binnen de EVContour vallen. De relaties zijn over het algemeen meervoudig. Bijvoorbeeld op 1 LocatieEVActiviteit kunnen 1 of meerdere EVActiviteiten worden uitgevoerd. 1 EVActiviteit heeft vervolgens 1 of meerdere ReferentieEVContouren enz.&#xA;                        &#xA;                        De rationale achter dit model is de volgende:  &#xA;                        Het begint met het Besluit kwaliteit leefomgeving (Bkl) en de daarin opgenomen activiteiten die gerelateerd zijn aan plaatsgebonden risico's. Zie Bkl, bijlage VII. Dit is een uitgebreide lijst en voorbeelden daarvan zijn: tanken van LPG,  opslaan van gevaarlijke stoffen, vervoer gevaarlijke stoffen, windturbines. Deze activiteiten vallen in het model onder het objecttype EVActiviteit. Elke type activiteit heeft specifieke eigenschappen en is als specialisatie van EVActiviteit opgenomen. In de uitwerking van het model is elke specialisatie van EVActiviteit als een apart diagram opgenomen.&#xA;                        &#xA;                        Een EVActiviteit wordt uitgevoerd op een locatie. Of andersom, op een locatie wordt een EVActiviteit uitgevoerd. Bijvoorbeeld een tankstation bevindt zich op een locatie, of een bedrijf voor opslag van gas bevindt zich op een locatie, of een locatie heeft een transportleiding voor aardgas. Deze objecten en hun eigenschappen vallen onder het objecttype LocatieActiviteit. Het is de locatie waar een activiteit met een gerelateerd extern risico wordt verricht of uitgevoerd. In het model is er de relatie tussen LocatieActiviteit en EVActiviteit. Dus een locatie is gerelateerd aan een type EVActiviteit. Via het kenmerk 'voertUit' wordt deze relatie benoemd. Een locatieEVActiviteit voert een EVActiviteit uit.&#xA;                        &#xA;                        OPMERKING: Het kan voorkomen dat er binnen een locatie meerdere EVActiviteiten worden uitgevoerd. Er zijn dan vanuit 1 locatie meerdere verwijzingen naar verschillende EVActiviteiten. Het kan ook zijn dat er binnen 1 locatie binnen 1 EVActiviteit meerdere specifieke voorkomens van die EVActiviteit nodig zijn. Bijvoorbeeld als er verschillende typen blusinstallaties zijn gespecificeerd. Ook in dat geval is er een koppeling met meerdere voorkomens van EVActiveit.&#xA;                        &#xA;                        Bij een locatie waar een activiteit wordt uitgevoerd hoort een plaatsgebonden risico. Het risico is immers gerelateerd aan de plaats waar men zich bevindt t.o.v. de EVActiviteit. Per EVActiviteit zijn er in het Bkl afstanden tot een LocatieEVActiviteit vastgesteld waarbinnen het risico aanwezig is. De afstand is bepaald t.o.v. de geidealiseerde locatie van de uitgevoerde activiteit en een aantal gekoppelde eigenschappen. In het model is dit het objecttype ReferentieEVContour. Per type activiteit zijn er specifieke referentiecontouren. Voorbeelden hiervan zijn opslag, aftappunt, buisleiding, spoorvervoer. Al deze typen hebben specifieke referentiegegegevens waarop de contour voor het plaatsgebonden risico bepaald kan worden.&#xA;                        &#xA;                        De contour van het gebied waarbinnen een plaatsgebondenrisico is vastgesteld wordt gerepersenteerd door het objecttype EVContour. Deze contour wordt berekend op basis van de informatie van een object ReferentieEVContour. De EVContouren zijn onderverdeeld in een aantal typen. Voorbeelden daarvan zijn trefgebied, aandachtsgebied en de algemene plaatsgebondenrisico-contour.&#xA;                        &#xA;                        Op basis van de locatie van vastgestelde EVContouren kunnen specifieke kwetsbare gebouwen of locaties geidentificeerd worden die zich binnen de EVContour bevinden. Denk aan scholen, ziekenhuizen of algemeen locaties met veel mensen. Het objecttype GebouwOfLocatie representeert deze groep objecten.&#xA;                     "><map name="imagemap-EAID_90555E69_004F_4af9_B918_EED2BB1789DB"><area shape="rect" alt="ReferentieEVContour" coords="854,26,1062,121" href="#graph_EAID_52CE468A_EFD4_456f_AE41_A37D10A734E2"><area shape="rect" alt="LocatieEVActiviteit" coords="14,26,221,121" href="#graph_EAID_F3484DF8_6A11_4275_B3F8_64B18DBC99F3"><area shape="rect" alt="GebouwOfLocatie" coords="1696,25,1931,120" href="#graph_EAID_F0CB9459_C43C_4708_A8C5_20AC024DD270"><area shape="rect" alt="EVActiviteit" coords="430,25,637,120" href="#graph_EAID_832B8803_BBCD_4b5e_A70A_A03C4CD53A87"><area shape="rect" alt="EVContour" coords="1277,26,1474,121" href="#graph_EAID_494964B8_DB08_4f6e_B3FA_1471E8E5D046"></map><p><b>Basismodel: kern - overzicht</b>
@@ -18289,7 +18289,7 @@
 </section>
 <section id="lis" class="normative">
    <h2>Inhoud van waardenlijsten</h2>
-   <!--MIMCM-IMEV-1.0-0-20210510-20211020-134841 imvertor 1.65.2--><a class="anchor" id="graph_EAID_2647A5E4_53DA_49a0_BCBA_E4E6337FF7BD"></a><a class="anchor" id="detail_class_IMEV_OilGasChemicalsProductTypeValue"></a><section id="detail_class_IMEV_OilGasChemicalsProductTypeValue">
+   <!--MIMCM-IMEV-1.0-0-20210510-20211020-142823 imvertor 1.65.2--><a class="anchor" id="graph_EAID_2647A5E4_53DA_49a0_BCBA_E4E6337FF7BD"></a><a class="anchor" id="detail_class_IMEV_OilGasChemicalsProductTypeValue"></a><section id="detail_class_IMEV_OilGasChemicalsProductTypeValue">
       <h3>Codelijst details  Oil­Gas­Chemicals­Product­Type­Value</h3>
       
       <table style="width: 100%;" class="list">
@@ -18510,107 +18510,145 @@
       </table>
       
       <table style="width: 100%;" class="list">
-         <colgroup style="width: 40%;"></colgroup>
+         <colgroup style="width: 10%;"></colgroup>
+         <colgroup style="width: 30%;"></colgroup>
          <colgroup style="width: 60%;"></colgroup>
          <tbody>
             <tr>
+               <th>Code</th>
                <th>Waarde</th>
                <th>Omschrijving</th>
             </tr>
             <tr>
-               <th>ABS</th>
+               <td>
+                  
+                  <alias>acrylonitrile butadiene styrene (ABS)</alias>
+                  </td>
+               <td>ABS</td>
                <td></td>
             </tr>
             <tr>
-               <th>asbestos</th>
+               <td>
+                  
+                  <alias>asbest</alias>
+                  </td>
+               <td>asbestos</td>
                <td></td>
             </tr>
             <tr>
-               <th>black­Iron</th>
+               <td>
+                  
+                  <alias>zwart gietijzer</alias>
+                  </td>
+               <td>black­Iron</td>
                <td></td>
             </tr>
             <tr>
-               <th>black­Steel</th>
+               <td>
+                  
+                  <alias>zwart staal</alias>
+                  </td>
+               <td>black­Steel</td>
                <td></td>
             </tr>
             <tr>
-               <th>cast­Iron</th>
+               <td></td>
+               <td>cast­Iron</td>
                <td></td>
             </tr>
             <tr>
-               <th>clay</th>
+               <td></td>
+               <td>clay</td>
                <td></td>
             </tr>
             <tr>
-               <th>composite­Concrete</th>
+               <td></td>
+               <td>composite­Concrete</td>
                <td></td>
             </tr>
             <tr>
-               <th>concrete</th>
+               <td></td>
+               <td>concrete</td>
                <td></td>
             </tr>
             <tr>
-               <th>CPVC</th>
+               <td></td>
+               <td>CPVC</td>
                <td></td>
             </tr>
             <tr>
-               <th>FRP</th>
+               <td></td>
+               <td>FRP</td>
                <td></td>
             </tr>
             <tr>
-               <th>galvanized­Steel</th>
+               <td></td>
+               <td>galvanized­Steel</td>
                <td></td>
             </tr>
             <tr>
-               <th>masonry</th>
+               <td></td>
+               <td>masonry</td>
                <td></td>
             </tr>
             <tr>
-               <th>other</th>
+               <td></td>
+               <td>other</td>
                <td></td>
             </tr>
             <tr>
-               <th>PB</th>
+               <td></td>
+               <td>PB</td>
                <td></td>
             </tr>
             <tr>
-               <th>PE</th>
+               <td></td>
+               <td>PE</td>
                <td></td>
             </tr>
             <tr>
-               <th>PEX</th>
+               <td></td>
+               <td>PEX</td>
                <td></td>
             </tr>
             <tr>
-               <th>PP</th>
+               <td></td>
+               <td>PP</td>
                <td></td>
             </tr>
             <tr>
-               <th>prestressed­Reinforced­Concrete</th>
+               <td></td>
+               <td>prestressed­Reinforced­Concrete</td>
                <td></td>
             </tr>
             <tr>
-               <th>PVC</th>
+               <td></td>
+               <td>PVC</td>
                <td></td>
             </tr>
             <tr>
-               <th>reinforced­Concrete</th>
+               <td></td>
+               <td>reinforced­Concrete</td>
                <td></td>
             </tr>
             <tr>
-               <th>RPMP</th>
+               <td></td>
+               <td>RPMP</td>
                <td></td>
             </tr>
             <tr>
-               <th>steel</th>
+               <td></td>
+               <td>steel</td>
                <td></td>
             </tr>
             <tr>
-               <th>terracota</th>
+               <td></td>
+               <td>terracota</td>
                <td></td>
             </tr>
             <tr>
-               <th>wood</th>
+               <td></td>
+               <td>wood</td>
                <td></td>
             </tr>
          </tbody>
