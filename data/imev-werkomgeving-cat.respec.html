@@ -1,69 +1,71 @@
 
 <!DOCTYPE HTML><section id="cat" class="normative">
    <h2>Gegevensdefinitie</h2>
-   <!--MIMCM-IMEV-1.0-0-20210510-20211021-152838 imvertor 1.65.2--><a class="anchor" id="global_package_IMEVBasis"></a><section id="global_package_IMEVBasis">
+   <!--MIMCM-IMEV-1.0-0-20210510-20211021-165459 imvertor 1.65.2--><a class="anchor" id="global_package_IMEVBasis"></a><section id="global_package_IMEVBasis">
       <h3>Domein   IMEV-basis</h3>
       <section id="EAID_90555E69_004F_4af9_B918_EED2BB1789DB">
          <h4>   Basismodel: kern - overzicht</h4>
-         <div class="imageinfo overview"><img src="data/Images/EAID_90555E69_004F_4af9_B918_EED2BB1789DB.png" usemap="#imagemap-EAID_90555E69_004F_4af9_B918_EED2BB1789DB" alt="Diagram &#xA;                        &#xA;                           De kern van IMEV bestaat uit 5 objecttypen:&#xA;                        &#xA;                        &#xA;                        &#xA;                           LocatieEVActiviteit: Locatie waar de activiteit met externe veiligheidsrisico’s wordt verricht.&#xA;                        &#xA;                        &#xA;                           EVActiviteit:  Activiteit met externe veiligheidsrisico’s. &#xA;                        &#xA;                        &#xA;                           ReferentieEVContour:  Referentie voor de ligging van het EVContour.&#xA;                        &#xA;                        &#xA;                           EVContour:  Contour van externe veiligheidsrisico’s vanaf het punt of vlak van de ReferentieEVContour.&#xA;                        &#xA;                        &#xA;                           GebouwOfLocatie: Een gebouw of locatie die kan worden beïnvloed door de aanwezigheid van een EVcontour.&#xA;                        &#xA;                        Deze 5 objecttypen hebben een relatie tot elkaar die de basis vormt voor het IMEV informatiemodel.&#xA;                        &#xA;                        Het model kan op de volgende manier worden gelezen:  &#xA;                        Op een LocatieEVActiviteit wordt een EVActiviteit uitgevoerd. Elk type EVActiviteit heeft referentiegegevens opgenomen in een ReferentieEVContour waarop een EVContour van het plaatsgebonden risico kan worden bepaald. De ReferentieEVContour resulteert in een EVContour. De EVContour kan gebruikt worden om kwetsbare locaties en gebouwen te bepalen die binnen de EVContour vallen. De relaties zijn over het algemeen meervoudig. Bijvoorbeeld op 1 LocatieEVActiviteit kunnen 1 of meerdere EVActiviteiten worden uitgevoerd. 1 EVActiviteit heeft vervolgens 1 of meerdere ReferentieEVContouren enz.&#xA;                        &#xA;                        De rationale achter dit model is de volgende:  &#xA;                        Het begint met het Besluit kwaliteit leefomgeving (Bkl) en de daarin opgenomen activiteiten die gerelateerd zijn aan plaatsgebonden risico's. Zie Bkl, bijlage VII. Dit is een uitgebreide lijst en voorbeelden daarvan zijn: tanken van LPG,  opslaan van gevaarlijke stoffen, vervoer gevaarlijke stoffen, windturbines. Deze activiteiten vallen in het model onder het objecttype EVActiviteit. Elke type activiteit heeft specifieke eigenschappen en is als specialisatie van EVActiviteit opgenomen. In de uitwerking van het model is elke specialisatie van EVActiviteit als een apart diagram opgenomen.&#xA;                        &#xA;                        Een EVActiviteit wordt uitgevoerd op een locatie. Of andersom, op een locatie wordt een EVActiviteit uitgevoerd. Bijvoorbeeld een tankstation bevindt zich op een locatie, of een bedrijf voor opslag van gas bevindt zich op een locatie, of een locatie heeft een transportleiding voor aardgas. Deze objecten en hun eigenschappen vallen onder het objecttype LocatieActiviteit. Het is de locatie waar een activiteit met een gerelateerd extern risico wordt verricht of uitgevoerd. In het model is er de relatie tussen LocatieActiviteit en EVActiviteit. Dus een locatie is gerelateerd aan een type EVActiviteit. Via het kenmerk 'voertUit' wordt deze relatie benoemd. Een locatieEVActiviteit voert een EVActiviteit uit.&#xA;                        &#xA;                        OPMERKING: Het kan voorkomen dat er binnen een locatie meerdere EVActiviteiten worden uitgevoerd. Er zijn dan vanuit 1 locatie meerdere verwijzingen naar verschillende EVActiviteiten. Het kan ook zijn dat er binnen 1 locatie binnen 1 EVActiviteit meerdere specifieke voorkomens van die EVActiviteit nodig zijn. Bijvoorbeeld als er verschillende typen blusinstallaties zijn gespecificeerd. Ook in dat geval is er een koppeling met meerdere voorkomens van EVActiveit.&#xA;                        &#xA;                        Bij een locatie waar een activiteit wordt uitgevoerd hoort een plaatsgebonden risico. Het risico is immers gerelateerd aan de plaats waar men zich bevindt t.o.v. de EVActiviteit. Per EVActiviteit zijn er in het Bkl afstanden tot een LocatieEVActiviteit vastgesteld waarbinnen het risico aanwezig is. De afstand is bepaald t.o.v. de geidealiseerde locatie van de uitgevoerde activiteit en een aantal gekoppelde eigenschappen. In het model is dit het objecttype ReferentieEVContour. Per type activiteit zijn er specifieke referentiecontouren. Voorbeelden hiervan zijn opslag, aftappunt, buisleiding, spoorvervoer. Al deze typen hebben specifieke referentiegegegevens waarop de contour voor het plaatsgebonden risico bepaald kan worden.&#xA;                        &#xA;                        De contour van het gebied waarbinnen een plaatsgebondenrisico is vastgesteld wordt gerepersenteerd door het objecttype EVContour. Deze contour wordt berekend op basis van de informatie van een object ReferentieEVContour. De EVContouren zijn onderverdeeld in een aantal typen. Voorbeelden daarvan zijn trefgebied, aandachtsgebied en de algemene plaatsgebondenrisico-contour.&#xA;                        &#xA;                        Op basis van de locatie van vastgestelde EVContouren kunnen specifieke kwetsbare gebouwen of locaties geidentificeerd worden die zich binnen de EVContour bevinden. Denk aan scholen, ziekenhuizen of algemeen locaties met veel mensen. Het objecttype GebouwOfLocatie representeert deze groep objecten.&#xA;                     "><map name="imagemap-EAID_90555E69_004F_4af9_B918_EED2BB1789DB"><area shape="rect" alt="ReferentieEVContour" coords="854,26,1062,121" href="#graph_EAID_52CE468A_EFD4_456f_AE41_A37D10A734E2"><area shape="rect" alt="LocatieEVActiviteit" coords="14,26,221,121" href="#graph_EAID_F3484DF8_6A11_4275_B3F8_64B18DBC99F3"><area shape="rect" alt="GebouwOfLocatie" coords="1696,25,1931,120" href="#graph_EAID_F0CB9459_C43C_4708_A8C5_20AC024DD270"><area shape="rect" alt="EVActiviteit" coords="430,25,637,120" href="#graph_EAID_832B8803_BBCD_4b5e_A70A_A03C4CD53A87"><area shape="rect" alt="EVContour" coords="1277,26,1474,121" href="#graph_EAID_494964B8_DB08_4f6e_B3FA_1471E8E5D046"></map><p><b>Basismodel: kern - overzicht</b>
+         <div class="imageinfo overview"><img src="data/Images/EAID_90555E69_004F_4af9_B918_EED2BB1789DB.png" usemap="#imagemap-EAID_90555E69_004F_4af9_B918_EED2BB1789DB" alt="Diagram &#xA;                        &#xA;                           De kern van IMEV bestaat uit 5 objecttypen:&#xA;                        &#xA;                        &nbsp;&#xA;                        &#xA;                        &#xA;                           &#xA;                              LocatieEVActiviteit: Locatie waar de activiteit met externe veiligheidsrisico’s wordt verricht.&#xA;                           &#xA;                              EVActiviteit:  Activiteit met externe veiligheidsrisico’s.&#xA;                           &#xA;                              ReferentieEVContour:  Referentie voor de ligging van het EVContour.&#xA;                           &#xA;                              EVContour:  Contour van externe veiligheidsrisico’s vanaf het punt of vlak van de ReferentieEVContour.&#xA;                           &#xA;                              GebouwOfLocatie: Een gebouw of locatie die kan worden beïnvloed door de aanwezigheid van een EVcontour.&#xA;                        &#xA;                        &#xA;                        &#xA;                        Deze 5 objecttypen hebben een relatie tot elkaar die de basis vormt voor alle onderdelen van het IMEV informatiemodel.&#xA;                        &#xA;                        Het model kan op de volgende manier worden gelezen:  &#xA;                        Op een LocatieEVActiviteit wordt een EVActiviteit uitgevoerd. Elk type EVActiviteit heeft specifieke referentiegegevens opgenomen in een ReferentieEVContour. Op basis van deze referentiegegevens kan de EVontour van het plaatsgebonden risico of het aandachtsgebied worden bepaald. De EVContour kan gebruikt worden om (toegelaten) kwetsbare locaties en gebouwen te bepalen die binnen de EVContour vallen.&#xA;                        De relaties tussen de objecttypen zijn over het algemeen meervoudig. Bijvoorbeeld op 1 LocatieEVActiviteit kunnen 1 of meerdere (1..*) EVActiviteiten worden uitgevoerd. 1 EVActiviteit heeft vervolgens 1 of meerdere ReferentieEVContouren enz.&#xA;                        &#xA;                        De rationale achter dit model is de volgende:  &#xA;                        De structuur van het model wordt bepaald door de in het Besluit kwaliteit leefomgeving (Bkl) opgenomen activiteiten met externe veiligheidsrisico’s. Zie bijvoorbeeld in het Bkl, bijlage VII. Dit is een uitgebreide lijst en voorbeelden daarvan zijn: tanken van LPG,  opslaan van gevaarlijke stoffen, vervoer gevaarlijke stoffen, windturbines. Deze activiteiten vallen in het model onder het objecttype EVActiviteit. Elke type activiteit heeft specifieke eigenschappen en is als specialisatie van EVActiviteit opgenomen. In de uitwerking van het model is elke specialisatie van EVActiviteit als een apart diagram opgenomen.&#xA;                        &#xA;                        Een EVActiviteit wordt uitgevoerd op een locatie. Of andersom, op een locatie wordt een EVActiviteit uitgevoerd. Bijvoorbeeld een tankstation bevindt zich op een locatie, of een bedrijf voor opslag van gas bevindt zich op een locatie, of een locatie heeft een transportleiding voor aardgas. Deze objecten en hun eigenschappen vallen onder het objecttype LocatieActiviteit. Het is de locatie waar een activiteit met een gerelateerd extern risico wordt verricht of uitgevoerd. In het model is er de relatie tussen LocatieActiviteit en EVActiviteit. Dus een locatie is gerelateerd aan een type EVActiviteit. Via het kenmerk 'voertUit' wordt deze relatie benoemd. Een locatieEVActiviteit voert een EVActiviteit uit.&#xA;                        &#xA;                        OPMERKING: Het kan voorkomen dat er binnen een locatie meerdere EVActiviteiten worden uitgevoerd. Er zijn dan vanuit 1 locatie meerdere verwijzingen naar verschillende EVActiviteiten. Het kan ook zijn dat er binnen 1 locatie binnen 1 EVActiviteit meerdere specifieke voorkomens van die EVActiviteit nodig zijn. Bijvoorbeeld als er verschillende typen blusinstallaties zijn gespecificeerd. Ook in dat geval is er een koppeling met meerdere voorkomens van EVActiviteit.&#xA;                        &#xA;                        Het Bkl benoemt de EVActiviteiten waarbij een extern risico van toepassing is. Bij elk van die activiteiten zijn er in het Bkl specifieke referentiegegevens benoemd die van toepassing zijn om een contour voor een extern veiligheidsrisico te bepalen. Deze referentiegegevens ingevuld voor een specifieke LocatieEVActiviteit zijn opgenomen in het objecttype ReferentieEVContour. Deze referentiegegevens omvatten onder andere de benoeming en locatie van de bij de activiteit behorende onderdelen die bepalend zijn voor de exacte locatie waarvandaan de externe veiligheidscontour kan worden bepaald. Voorbeelden van deze bepalende onderdelen zijn installatie, aftappunt, vulpunt, leiding, opstelplaats. Van deze onderdelen wordt de locatie opgenomen. Via het kenmerk ‘heeft’ wordt een ReferentieEVContour gekoppeld aan een EVactiviteit. Een EVactiviteit ‘heeft’ daarmee een ReferentieEVContour.&#xA;                        &#xA;                        De contour van het gebied waaraan een extern veiligheidsrisico is gerelateerd is wordt gerepresenteerd door het objecttype EVContour. De contour wordt berekend of vastgesteld op basis van de informatie van een object ReferentieEVContour en de gegevens van de bijbehorende EVactiviteit. De EVContouren zijn onderverdeeld in een aantal typen. Voorbeelden daarvan zijn aandachtsgebied en risicocontour (ofwel plaatsgebonden risico). Via het kenmerk ‘resulteertIn’ wordt een ReferentieEVContour gekoppeld aan een EVContour. Een ReferentieEVContour resulteert in een EVContour.&#xA;                        &#xA;                        Op basis van de locatie van EVContouren kunnen specifieke gebouwen of locaties geïdentificeerd worden met een bepaalde kwetsbaarheid die zich binnen de EVContour bevinden. Denk aan scholen, ziekenhuizen of algemeen locaties met veel mensen. Het objecttype GebouwOfLocatie representeert deze groep objecten. De relatie tussen een EVContour en de gebouwen of locaties met een kwetsbaarheidsindicatie wordt gelegd op basis van geometrie van de EVContour en de gebouwen of locaties.&#xA;                        &#xA;                        Het bovenstaande verhaal en informatiemodel kan in een zin op de volgende manier worden gelezen: Een LocatieEVActiviteit voert een EVActiviteit uit; een EVActiviteit heeft een ReferentieEVContour die resulteert in een EVContour; de EVContour beinvloedt gebouwen of locaties met een kwetsbaarheidsindicatie.&#xA;                        &#xA;                     "><map name="imagemap-EAID_90555E69_004F_4af9_B918_EED2BB1789DB"><area shape="rect" alt="ReferentieEVContour" coords="854,26,1062,121" href="#graph_EAID_52CE468A_EFD4_456f_AE41_A37D10A734E2"><area shape="rect" alt="LocatieEVActiviteit" coords="14,26,221,121" href="#graph_EAID_F3484DF8_6A11_4275_B3F8_64B18DBC99F3"><area shape="rect" alt="GebouwOfLocatie" coords="1696,25,1931,120" href="#graph_EAID_F0CB9459_C43C_4708_A8C5_20AC024DD270"><area shape="rect" alt="EVActiviteit" coords="430,25,637,120" href="#graph_EAID_832B8803_BBCD_4b5e_A70A_A03C4CD53A87"><area shape="rect" alt="EVContour" coords="1277,26,1474,121" href="#graph_EAID_494964B8_DB08_4f6e_B3FA_1471E8E5D046"></map><p><b>Basismodel: kern - overzicht</b>
                
                <p>
                   <b>De kern van IMEV bestaat uit 5 objecttypen:</b>
                   </p>
                
-               <p></p>
-               
-               <p>
-                  <b>Locatie­EVActiviteit:</b> Locatie waar de activiteit met externe veiligheidsrisico’s wordt verricht.</p>
+               <p>&nbsp;</p>
                
                <p></p>
                
-               <p>
-                  <b>EVActiviteit:</b>  Activiteit met externe veiligheidsrisico’s. </p>
+               <ul>
+                  
+                  <li>
+                     <b>Locatie­EVActiviteit:</b> Locatie waar de activiteit met externe veiligheidsrisico’s wordt verricht.</li>
+                  
+                  <li>
+                     <b>EVActiviteit:</b>  Activiteit met externe veiligheidsrisico’s.</li>
+                  
+                  <li>
+                     <b>Referentie­EVContour:</b>  Referentie voor de ligging van het EVContour.</li>
+                  
+                  <li>
+                     <b>EVContour:</b>  Contour van externe veiligheidsrisico’s vanaf het punt of vlak van de Referentie­EVContour.</li>
+                  
+                  <li>
+                     <b>Gebouw­Of­Locatie:</b> Een gebouw of locatie die kan worden beïnvloed door de aanwezigheid van een EVcontour.</li>
+                  </ul>
                
                <p></p>
                
-               <p>
-                  <b>Referentie­EVContour:</b>  Referentie voor de ligging van het EVContour.</p>
-               
                <p></p>
                
-               <p>
-                  <b>EVContour:</b>  Contour van externe veiligheidsrisico’s vanaf het punt of vlak van de Referentie­EVContour.</p>
-               
-               <p></p>
-               
-               <p>
-                  <b>Gebouw­Of­Locatie:</b> Een gebouw of locatie die kan worden beïnvloed door de aanwezigheid van een EVcontour.</p>
-               
-               <p></p>
-               
-               <p>Deze 5 objecttypen hebben een relatie tot elkaar die de basis vormt voor het IMEV
-                  informatiemodel.</p>
+               <p>Deze 5 objecttypen hebben een relatie tot elkaar die de basis vormt voor alle onderdelen
+                  van het IMEV informatiemodel.</p>
                
                <p></p>
                
                <p>Het model kan op de volgende manier worden gelezen:  </p>
                
                <p>Op een Locatie­EVActiviteit wordt een EVActiviteit uitgevoerd. Elk type EVActiviteit
-                  heeft referentiegegevens opgenomen in een Referentie­EVContour waarop een EVContour
-                  van het plaatsgebonden risico kan worden bepaald. De Referentie­EVContour resulteert
-                  in een EVContour. De EVContour kan gebruikt worden om kwetsbare locaties en gebouwen
-                  te bepalen die binnen de EVContour vallen. De relaties zijn over het algemeen meervoudig.
-                  Bijvoorbeeld op 1 Locatie­EVActiviteit kunnen 1 of meerdere EVActiviteiten worden
-                  uitgevoerd. 1 EVActiviteit heeft vervolgens 1 of meerdere Referentie­EVContouren enz.</p>
+                  heeft specifieke referentiegegevens opgenomen in een Referentie­EVContour. Op basis
+                  van deze referentiegegevens kan de EVontour van het plaatsgebonden risico of het aandachtsgebied
+                  worden bepaald. De EVContour kan gebruikt worden om (toegelaten) kwetsbare locaties
+                  en gebouwen te bepalen die binnen de EVContour vallen.</p>
+               
+               <p>De relaties tussen de objecttypen zijn over het algemeen meervoudig. Bijvoorbeeld
+                  op 1 Locatie­EVActiviteit kunnen 1 of meerdere (1..*) EVActiviteiten worden uitgevoerd.
+                  1 EVActiviteit heeft vervolgens 1 of meerdere Referentie­EVContouren enz.</p>
                
                <p></p>
                
                <p>De rationale achter dit model is de volgende:  </p>
                
-               <p>Het begint met het Besluit kwaliteit leefomgeving (Bkl) en de daarin opgenomen activiteiten
-                  die gerelateerd zijn aan plaatsgebonden risico's. Zie Bkl, bijlage VII. Dit is een
-                  uitgebreide lijst en voorbeelden daarvan zijn: tanken van LPG,  opslaan van gevaarlijke
-                  stoffen, vervoer gevaarlijke stoffen, windturbines. Deze activiteiten vallen in het
-                  model onder het objecttype EVActiviteit. Elke type activiteit heeft specifieke eigenschappen
-                  en is als specialisatie van EVActiviteit opgenomen. In de uitwerking van het model
-                  is elke specialisatie van EVActiviteit als een apart diagram opgenomen.</p>
+               <p>De structuur van het model wordt bepaald door de in het Besluit kwaliteit leefomgeving
+                  (Bkl) opgenomen activiteiten met externe veiligheidsrisico’s. Zie bijvoorbeeld in
+                  het Bkl, bijlage VII. Dit is een uitgebreide lijst en voorbeelden daarvan zijn: tanken
+                  van LPG,  opslaan van gevaarlijke stoffen, vervoer gevaarlijke stoffen, windturbines.
+                  Deze activiteiten vallen in het model onder het objecttype EVActiviteit. Elke type
+                  activiteit heeft specifieke eigenschappen en is als specialisatie van EVActiviteit
+                  opgenomen. In de uitwerking van het model is elke specialisatie van EVActiviteit als
+                  een apart diagram opgenomen.</p>
                
                <p></p>
                
@@ -84,34 +86,49 @@
                   EVActiviteiten. Het kan ook zijn dat er binnen 1 locatie binnen 1 EVActiviteit meerdere
                   specifieke voorkomens van die EVActiviteit nodig zijn. Bijvoorbeeld als er verschillende
                   typen blusinstallaties zijn gespecificeerd. Ook in dat geval is er een koppeling met
-                  meerdere voorkomens van EVActiveit.</p>
+                  meerdere voorkomens van EVActiviteit.</p>
                
                <p></p>
                
-               <p>Bij een locatie waar een activiteit wordt uitgevoerd hoort een plaatsgebonden risico.
-                  Het risico is immers gerelateerd aan de plaats waar men zich bevindt t.o.v. de EVActiviteit.
-                  Per EVActiviteit zijn er in het Bkl afstanden tot een Locatie­EVActiviteit vastgesteld
-                  waarbinnen het risico aanwezig is. De afstand is bepaald t.o.v. de geidealiseerde
-                  locatie van de uitgevoerde activiteit en een aantal gekoppelde eigenschappen. In het
-                  model is dit het objecttype Referentie­EVContour. Per type activiteit zijn er specifieke
-                  referentiecontouren. Voorbeelden hiervan zijn opslag, aftappunt, buisleiding, spoorvervoer.
-                  Al deze typen hebben specifieke referentiegegegevens waarop de contour voor het plaatsgebonden
-                  risico bepaald kan worden.</p>
+               <p>Het Bkl benoemt de EVActiviteiten waarbij een extern risico van toepassing is. Bij
+                  elk van die activiteiten zijn er in het Bkl specifieke referentiegegevens benoemd
+                  die van toepassing zijn om een contour voor een extern veiligheidsrisico te bepalen.
+                  Deze referentiegegevens ingevuld voor een specifieke Locatie­EVActiviteit zijn opgenomen
+                  in het objecttype Referentie­EVContour. Deze referentiegegevens omvatten onder andere
+                  de benoeming en locatie van de bij de activiteit behorende onderdelen die bepalend
+                  zijn voor de exacte locatie waarvandaan de externe veiligheidscontour kan worden bepaald.
+                  Voorbeelden van deze bepalende onderdelen zijn installatie, aftappunt, vulpunt, leiding,
+                  opstelplaats. Van deze onderdelen wordt de locatie opgenomen. Via het kenmerk ‘heeft’
+                  wordt een Referentie­EVContour gekoppeld aan een EVactiviteit. Een EVactiviteit ‘heeft’
+                  daarmee een Referentie­EVContour.</p>
                
                <p></p>
                
-               <p>De contour van het gebied waarbinnen een plaatsgebondenrisico is vastgesteld wordt
-                  gerepersenteerd door het objecttype EVContour. Deze contour wordt berekend op basis
-                  van de informatie van een object Referentie­EVContour. De EVContouren zijn onderverdeeld
-                  in een aantal typen. Voorbeelden daarvan zijn trefgebied, aandachtsgebied en de algemene
-                  plaatsgebondenrisico-contour.</p>
+               <p>De contour van het gebied waaraan een extern veiligheidsrisico is gerelateerd is wordt
+                  gerepresenteerd door het objecttype EVContour. De contour wordt berekend of vastgesteld
+                  op basis van de informatie van een object Referentie­EVContour en de gegevens van
+                  de bijbehorende EVactiviteit. De EVContouren zijn onderverdeeld in een aantal typen.
+                  Voorbeelden daarvan zijn aandachtsgebied en risicocontour (ofwel plaatsgebonden risico).
+                  Via het kenmerk ‘resulteert­In’ wordt een Referentie­EVContour gekoppeld aan een EVContour.
+                  Een Referentie­EVContour resulteert in een EVContour.</p>
                
                <p></p>
                
-               <p>Op basis van de locatie van vastgestelde EVContouren kunnen specifieke kwetsbare gebouwen
-                  of locaties geidentificeerd worden die zich binnen de EVContour bevinden. Denk aan
-                  scholen, ziekenhuizen of algemeen locaties met veel mensen. Het objecttype Gebouw­Of­Locatie
-                  representeert deze groep objecten.</p>
+               <p>Op basis van de locatie van EVContouren kunnen specifieke gebouwen of locaties geïdentificeerd
+                  worden met een bepaalde kwetsbaarheid die zich binnen de EVContour bevinden. Denk
+                  aan scholen, ziekenhuizen of algemeen locaties met veel mensen. Het objecttype Gebouw­Of­Locatie
+                  representeert deze groep objecten. De relatie tussen een EVContour en de gebouwen
+                  of locaties met een kwetsbaarheidsindicatie wordt gelegd op basis van geometrie van
+                  de EVContour en de gebouwen of locaties.</p>
+               
+               <p></p>
+               
+               <p>Het bovenstaande verhaal en informatiemodel kan in een zin op de volgende manier worden
+                  gelezen: Een Locatie­EVActiviteit voert een EVActiviteit uit; een EVActiviteit heeft
+                  een Referentie­EVContour die resulteert in een EVContour; de EVContour beinvloedt
+                  gebouwen of locaties met een kwetsbaarheidsindicatie.</p>
+               
+               <p></p>
                </p>
          </div>
       </section>
@@ -138,11 +155,56 @@
       </section>
       <section id="EAID_E73201ED_403D_4639_AE7B_84FAFA24072F">
          <h4>   VII-A.1 Behandelen, regelen en meten van aardgas - detail</h4>
-         <div class="imageinfo "><img src="data/Images/EAID_E73201ED_403D_4639_AE7B_84FAFA24072F.png" usemap="#imagemap-EAID_E73201ED_403D_4639_AE7B_84FAFA24072F" alt="Diagram &#xA;                        OPMERKING: Bij dit eerste UML diagram voor een specifiek activiteit is de toelichting uitgebreid ingevuld. De andere diagrammen volgen dezelfde logica en zijn daarom summier of niet toegelicht.&#xA;                        &#xA;                        Het objecttype LocatieActiviteit is de verbijzondering van in LocatieEVActiviteit en bevat de gegevens van de locatie waarop een activiteit wordt uitgevoerd met onder andere het adres, bedrijfsnaam, eigenaar, exploitantgegevens en de coördinaten van de locatie.&#xA;                        &#xA;                        Het objecttype BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht bevat de specifieke informatie voor het bepalen van de EVContour voor deze activiteit.&#xA;                        &#xA;                        SamengesteldeReferentie en Installatie zijn de referentiecontouren die bij deze activiteit horen. Op basis daarvan is de PRContour of plaatsgebondenrisico-contour bepaald.&#xA;                     "><map name="imagemap-EAID_E73201ED_403D_4639_AE7B_84FAFA24072F"><area shape="rect" alt="NEN3610ID" coords="1002,168,1202,307" href="#graph_EAID_F3ACE733_362C_4879_AC17_5DB8F04A22EE"><area shape="rect" alt="Documentatie" coords="1003,14,1171,135" href="#graph_EAID_36400497_F184_44ca_9236_B54B288ECB9C"><area shape="rect" alt="StofCategorie" coords="1254,207,1520,329" href="#graph_EAID_37C651D4_7F3C_486b_AFD0_F71190E6B642"><area shape="rect" alt="Stof" coords="1250,15,1516,172" href="#graph_EAID_83FA9169_2957_49bd_91C8_6E6A81D736A5"><area shape="rect" alt="LocatieActiviteit" coords="14,789,375,1220" href="#graph_EAID_F20C1B1F_C128_4c2d_9542_5BAC24062B61"><area shape="rect" alt="SamengesteldeReferentie" coords="947,789,1109,914" href="#graph_EAID_CBB1E634_0AF9_45f7_B1DE_B2DED4A65BD2"><area shape="rect" alt="Installatie" coords="1171,789,1444,914" href="#graph_EAID_E1D645BC_E119_4767_A5BE_652CC6498945"><area shape="rect" alt="BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht" coords="506,1036,948,1193" href="#graph_EAID_422F3433_CBCB_477f_8426_3CDB5773373B"><area shape="rect" alt="ExterneVeiligheidsObjectMaterieel" coords="831,336,1060,463" href="#graph_EAID_DE1DF14B_2875_4ff7_8282_16D22D405CEA"><area shape="rect" alt="OpstellingsUitvoeringAardgas" coords="173,15,368,172" href="#graph_EAID_70F0C06E_7E35_4aa7_91B8_A52CDFECAAE3"><area shape="rect" alt="PRContour" coords="1550,789,1905,963" href="#graph_EAID_B768FDC9_8444_4437_8A41_D976631757C3"><area shape="rect" alt="ReferentieEVContour" coords="1093,581,1374,678" href="#graph_EAID_52CE468A_EFD4_456f_AE41_A37D10A734E2"><area shape="rect" alt="LocatieEVActiviteit" coords="40,581,321,678" href="#graph_EAID_F3484DF8_6A11_4275_B3F8_64B18DBC99F3"><area shape="rect" alt="EVContour" coords="1573,581,1854,678" href="#graph_EAID_494964B8_DB08_4f6e_B3FA_1471E8E5D046"><area shape="rect" alt="EVActiviteit" coords="564,581,845,678" href="#graph_EAID_832B8803_BBCD_4b5e_A70A_A03C4CD53A87"><area shape="rect" alt="ExterneVeiligheidsObject" coords="681,14,963,252" href="#graph_EAID_F0E277F8_53FE_432c_A89A_44192BD00F40"><area shape="rect" alt="TypePlaatsgebondenRisico" coords="416,15,600,207" href="#graph_EAID_636226E1_8030_4867_B19F_BB2599140AA9"><area shape="rect" alt="BKLActiviteit" coords="558,785,858,936" href="#graph_EAID_A4A6BD97_D7E3_456d_9AF8_F44DA6CCBE8E"></map><p><b>VII-A.1 Behandelen, regelen en meten van aardgas - detail</b>
+         <div class="imageinfo "><img src="data/Images/EAID_E73201ED_403D_4639_AE7B_84FAFA24072F.png" usemap="#imagemap-EAID_E73201ED_403D_4639_AE7B_84FAFA24072F" alt="Diagram &#xA;                        OPMERKING: Bij dit eerste UML diagram voor een specifiek activiteit is de toelichting uitgebreid ingevuld. De andere diagrammen volgen dezelfde logica en zijn daarom summier toegelicht.&#xA;                        &#xA;                        Voor de beschrijving van de EVActiviteit is er een objecttype BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht met daarbij opgenomen de kenmerken:&#xA;                        &#xA;                        &#xA;                           OntwerpCapaciteit&#xA;                           werkdruk&#xA;                           opstellingsUitvoering&#xA;                        &#xA;                        &#xA;                        &#xA;                        Voor de ReferentieEVContour zijn van belang de locatie van:&#xA;                        &#xA;                        &#xA;                           Installatie&#xA;                           SamengesteldeReferentie&#xA;                        &#xA;                        &#xA;                        &#xA;                        Voor de EVContour zijn de volgende typen gedefinieerd:&#xA;                        &#xA;                        &#xA;                           PRContour&#xA;                        &#xA;                        &#xA;                        &#xA;                        Het objecttype LocatieActiviteit is de verbijzondering van in LocatieEVActiviteit en bevat de gegevens van de locatie waarop een activiteit wordt uitgevoerd met onder andere het adres, bedrijfsnaam, eigenaar, exploitantgegevens en de coördinaten van de locatie.&#xA;                        &#xA;                        Het objecttype BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht bevat de specifieke informatie voor het bepalen van de EVContour voor deze activiteit.&#xA;                        &#xA;                        SamengesteldeReferentie en Installatie zijn de referentiecontouren die bij deze activiteit horen. Op basis daarvan is de PRContour of plaatsgebondenrisico-contour bepaald.&#xA;                     "><map name="imagemap-EAID_E73201ED_403D_4639_AE7B_84FAFA24072F"><area shape="rect" alt="NEN3610ID" coords="1002,168,1202,307" href="#graph_EAID_F3ACE733_362C_4879_AC17_5DB8F04A22EE"><area shape="rect" alt="Documentatie" coords="1003,14,1171,135" href="#graph_EAID_36400497_F184_44ca_9236_B54B288ECB9C"><area shape="rect" alt="StofCategorie" coords="1254,207,1520,329" href="#graph_EAID_37C651D4_7F3C_486b_AFD0_F71190E6B642"><area shape="rect" alt="Stof" coords="1250,15,1516,172" href="#graph_EAID_83FA9169_2957_49bd_91C8_6E6A81D736A5"><area shape="rect" alt="LocatieActiviteit" coords="14,789,375,1220" href="#graph_EAID_F20C1B1F_C128_4c2d_9542_5BAC24062B61"><area shape="rect" alt="SamengesteldeReferentie" coords="947,789,1109,914" href="#graph_EAID_CBB1E634_0AF9_45f7_B1DE_B2DED4A65BD2"><area shape="rect" alt="Installatie" coords="1171,789,1444,914" href="#graph_EAID_E1D645BC_E119_4767_A5BE_652CC6498945"><area shape="rect" alt="BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht" coords="506,1036,948,1193" href="#graph_EAID_422F3433_CBCB_477f_8426_3CDB5773373B"><area shape="rect" alt="ExterneVeiligheidsObjectMaterieel" coords="831,336,1060,463" href="#graph_EAID_DE1DF14B_2875_4ff7_8282_16D22D405CEA"><area shape="rect" alt="OpstellingsUitvoeringAardgas" coords="173,15,368,172" href="#graph_EAID_70F0C06E_7E35_4aa7_91B8_A52CDFECAAE3"><area shape="rect" alt="PRContour" coords="1550,789,1905,963" href="#graph_EAID_B768FDC9_8444_4437_8A41_D976631757C3"><area shape="rect" alt="ReferentieEVContour" coords="1093,581,1374,678" href="#graph_EAID_52CE468A_EFD4_456f_AE41_A37D10A734E2"><area shape="rect" alt="LocatieEVActiviteit" coords="40,581,321,678" href="#graph_EAID_F3484DF8_6A11_4275_B3F8_64B18DBC99F3"><area shape="rect" alt="EVContour" coords="1573,581,1854,678" href="#graph_EAID_494964B8_DB08_4f6e_B3FA_1471E8E5D046"><area shape="rect" alt="EVActiviteit" coords="564,581,845,678" href="#graph_EAID_832B8803_BBCD_4b5e_A70A_A03C4CD53A87"><area shape="rect" alt="ExterneVeiligheidsObject" coords="681,14,963,252" href="#graph_EAID_F0E277F8_53FE_432c_A89A_44192BD00F40"><area shape="rect" alt="TypePlaatsgebondenRisico" coords="416,15,600,207" href="#graph_EAID_636226E1_8030_4867_B19F_BB2599140AA9"><area shape="rect" alt="BKLActiviteit" coords="558,785,858,936" href="#graph_EAID_A4A6BD97_D7E3_456d_9AF8_F44DA6CCBE8E"></map><p><b>VII-A.1 Behandelen, regelen en meten van aardgas - detail</b>
                
                <p>OPMERKING: Bij dit eerste UML diagram voor een specifiek activiteit is de toelichting
                   uitgebreid ingevuld. De andere diagrammen volgen dezelfde logica en zijn daarom summier
-                  of niet toegelicht.</p>
+                  toegelicht.</p>
+               
+               <p></p>
+               
+               <p>Voor de beschrijving van de EVActiviteit is er een objecttype <b>Behandelen­Regelen­Meten­Aardgas_Vaste­Afstand­Geen­Vergunningplicht</b> met daarbij opgenomen de kenmerken:</p>
+               
+               <p></p>
+               
+               <ul>
+                  
+                  <li>Ontwerp­Capaciteit</li>
+                  
+                  <li>werkdruk</li>
+                  
+                  <li>opstellings­Uitvoering</li>
+                  </ul>
+               
+               <p></p>
+               
+               <p></p>
+               
+               <p>Voor de Referentie­EVContour zijn van belang de locatie van:</p>
+               
+               <p></p>
+               
+               <ul>
+                  
+                  <li>Installatie</li>
+                  
+                  <li>Samengestelde­Referentie</li>
+                  </ul>
+               
+               <p></p>
+               
+               <p></p>
+               
+               <p>Voor de EVContour zijn de volgende typen gedefinieerd:</p>
+               
+               <p></p>
+               
+               <ul>
+                  
+                  <li>PRContour</li>
+                  </ul>
+               
+               <p></p>
                
                <p></p>
                
@@ -630,7 +692,7 @@
       </section>
       <section id="EAID_C2BAD304_C68C_4992_8F0E_893C36DC191F">
          <h4>   VII-B.1 Koelinstallatie met ammoniak - detail</h4>
-         <div class="imageinfo "><img src="data/Images/EAID_C2BAD304_C68C_4992_8F0E_893C36DC191F.png" usemap="#imagemap-EAID_C2BAD304_C68C_4992_8F0E_893C36DC191F" alt="Diagram &#xA;                        Voor de beschrijving van de EVActiviteit is er een objecttype AmmoniakKoelInstallatie_VAsteAfstandVergunningplicht met daarbij opgenomen de kenmerken werktemperatuur en hoeveelheidsKlasseAmmoniak.&#xA;                        &#xA;                        Voor de ReferentieEVContour zijn van belang de locatie van:&#xA;                        &#xA;                        &#xA;                           Leiding&#xA;                           Machinekamer&#xA;                           SamengesteldeReferentie&#xA;                        &#xA;                        &#xA;                        &#xA;                        Voor de EVContour zijn de volgende typen gedefinieerd:&#xA;                        &#xA;                        &#xA;                           PRContour&#xA;                        &#xA;                        &#xA;                     "><map name="imagemap-EAID_C2BAD304_C68C_4992_8F0E_893C36DC191F"><area shape="rect" alt="StofCategorie" coords="1561,186,1811,307" href="#graph_EAID_37C651D4_7F3C_486b_AFD0_F71190E6B642"><area shape="rect" alt="Stof" coords="1562,15,1812,172" href="#graph_EAID_83FA9169_2957_49bd_91C8_6E6A81D736A5"><area shape="rect" alt="Documentatie" coords="1337,15,1496,136" href="#graph_EAID_36400497_F184_44ca_9236_B54B288ECB9C"><area shape="rect" alt="NEN3610ID" coords="1336,151,1526,291" href="#graph_EAID_F3ACE733_362C_4879_AC17_5DB8F04A22EE"><area shape="rect" alt="LocatieActiviteit" coords="14,828,351,1236" href="#graph_EAID_F20C1B1F_C128_4c2d_9542_5BAC24062B61"><area shape="rect" alt="HoeveelheidsKlasseAmmoniak" coords="304,15,483,190" href="#graph_EAID_6E09F637_26AB_4661_B67B_32449D495C20"><area shape="rect" alt="Leiding" coords="1553,811,1744,972" href="#graph_EAID_08FD87D1_8301_4fdc_A440_ED68C42FC343"><area shape="rect" alt="Machinekamer" coords="1792,797,2157,976" href="#graph_EAID_7B3ADE7D_4EA4_4d13_814E_7C12A399FEAD"><area shape="rect" alt="SamengesteldeReferentie" coords="1356,819,1519,944" href="#graph_EAID_CBB1E634_0AF9_45f7_B1DE_B2DED4A65BD2"><area shape="rect" alt="AmmoniakKoelinstallatie_VasteAfstandVergunningplicht" coords="580,1033,1082,1154" href="#graph_EAID_D10C0F0C_1266_40bd_A884_522934385EFE"><area shape="rect" alt="ExterneVeiligheidsObjectMaterieel" coords="1111,345,1315,472" href="#graph_EAID_DE1DF14B_2875_4ff7_8282_16D22D405CEA"><area shape="rect" alt="OpstellingsUitvoeringAmmoniak" coords="532,15,734,166" href="#graph_EAID_D700D9D6_0AAE_4bd7_8A03_69EBEC023F2C"><area shape="rect" alt="PRContour" coords="2314,849,2645,1023" href="#graph_EAID_B768FDC9_8444_4437_8A41_D976631757C3"><area shape="rect" alt="ReferentieEVContour" coords="1558,614,1839,711" href="#graph_EAID_52CE468A_EFD4_456f_AE41_A37D10A734E2"><area shape="rect" alt="LocatieEVActiviteit" coords="37,614,318,711" href="#graph_EAID_F3484DF8_6A11_4275_B3F8_64B18DBC99F3"><area shape="rect" alt="EVContour" coords="2339,614,2620,711" href="#graph_EAID_494964B8_DB08_4f6e_B3FA_1471E8E5D046"><area shape="rect" alt="EVActiviteit" coords="721,614,1002,711" href="#graph_EAID_832B8803_BBCD_4b5e_A70A_A03C4CD53A87"><area shape="rect" alt="ExterneVeiligheidsObject" coords="1022,15,1305,254" href="#graph_EAID_F0E277F8_53FE_432c_A89A_44192BD00F40"><area shape="rect" alt="TypePlaatsgebondenRisico" coords="793,15,977,207" href="#graph_EAID_636226E1_8030_4867_B19F_BB2599140AA9"><area shape="rect" alt="BKLActiviteit" coords="651,782,1013,939" href="#graph_EAID_A4A6BD97_D7E3_456d_9AF8_F44DA6CCBE8E"></map><p><b>VII-B.1 Koelinstallatie met ammoniak - detail</b>
+         <div class="imageinfo "><img src="data/Images/EAID_C2BAD304_C68C_4992_8F0E_893C36DC191F.png" usemap="#imagemap-EAID_C2BAD304_C68C_4992_8F0E_893C36DC191F" alt="Diagram &#xA;                        Voor de beschrijving van de EVActiviteit is er een objecttype AmmoniakKoelInstallatie_VAsteAfstandVergunningplicht met daarbij opgenomen de kenmerken werktemperatuur en hoeveelheidsKlasseAmmoniak.&#xA;                        &#xA;                        Voor de ReferentieEVContour zijn van belang de locatie van:&#xA;                        &#xA;                        &#xA;                           Leiding&#xA;                           Machinekamer&#xA;                           SamengesteldeReferentie&#xA;                        &#xA;                        &#xA;                        &#xA;                        Voor de EVContour zijn de volgende typen gedefinieerd:&#xA;                        &#xA;                        &#xA;                           PRContour&#xA;                        &#xA;                        &#xA;                     "><map name="imagemap-EAID_C2BAD304_C68C_4992_8F0E_893C36DC191F"><area shape="rect" alt="StofCategorie" coords="1561,186,1811,307" href="#graph_EAID_37C651D4_7F3C_486b_AFD0_F71190E6B642"><area shape="rect" alt="Stof" coords="1562,15,1812,172" href="#graph_EAID_83FA9169_2957_49bd_91C8_6E6A81D736A5"><area shape="rect" alt="Documentatie" coords="1337,15,1496,136" href="#graph_EAID_36400497_F184_44ca_9236_B54B288ECB9C"><area shape="rect" alt="NEN3610ID" coords="1336,151,1526,291" href="#graph_EAID_F3ACE733_362C_4879_AC17_5DB8F04A22EE"><area shape="rect" alt="LocatieActiviteit" coords="14,828,351,1236" href="#graph_EAID_F20C1B1F_C128_4c2d_9542_5BAC24062B61"><area shape="rect" alt="HoeveelheidsKlasseAmmoniak" coords="304,15,483,190" href="#graph_EAID_6E09F637_26AB_4661_B67B_32449D495C20"><area shape="rect" alt="Leiding" coords="1553,811,1744,972" href="#graph_EAID_08FD87D1_8301_4fdc_A440_ED68C42FC343"><area shape="rect" alt="Machinekamer" coords="1792,797,2157,976" href="#graph_EAID_7B3ADE7D_4EA4_4d13_814E_7C12A399FEAD"><area shape="rect" alt="SamengesteldeReferentie" coords="1356,819,1519,944" href="#graph_EAID_CBB1E634_0AF9_45f7_B1DE_B2DED4A65BD2"><area shape="rect" alt="AmmoniakKoelinstallatie_VasteAfstandVergunningplicht" coords="580,1032,1082,1153" href="#graph_EAID_D10C0F0C_1266_40bd_A884_522934385EFE"><area shape="rect" alt="ExterneVeiligheidsObjectMaterieel" coords="1111,345,1315,472" href="#graph_EAID_DE1DF14B_2875_4ff7_8282_16D22D405CEA"><area shape="rect" alt="OpstellingsUitvoeringAmmoniak" coords="532,15,734,166" href="#graph_EAID_D700D9D6_0AAE_4bd7_8A03_69EBEC023F2C"><area shape="rect" alt="PRContour" coords="2314,849,2645,1023" href="#graph_EAID_B768FDC9_8444_4437_8A41_D976631757C3"><area shape="rect" alt="ReferentieEVContour" coords="1558,614,1839,711" href="#graph_EAID_52CE468A_EFD4_456f_AE41_A37D10A734E2"><area shape="rect" alt="LocatieEVActiviteit" coords="37,614,318,711" href="#graph_EAID_F3484DF8_6A11_4275_B3F8_64B18DBC99F3"><area shape="rect" alt="EVContour" coords="2339,614,2620,711" href="#graph_EAID_494964B8_DB08_4f6e_B3FA_1471E8E5D046"><area shape="rect" alt="EVActiviteit" coords="721,614,1002,711" href="#graph_EAID_832B8803_BBCD_4b5e_A70A_A03C4CD53A87"><area shape="rect" alt="ExterneVeiligheidsObject" coords="1022,15,1305,254" href="#graph_EAID_F0E277F8_53FE_432c_A89A_44192BD00F40"><area shape="rect" alt="TypePlaatsgebondenRisico" coords="793,15,977,207" href="#graph_EAID_636226E1_8030_4867_B19F_BB2599140AA9"><area shape="rect" alt="BKLActiviteit" coords="651,782,1013,939" href="#graph_EAID_A4A6BD97_D7E3_456d_9AF8_F44DA6CCBE8E"></map><p><b>VII-B.1 Koelinstallatie met ammoniak - detail</b>
                
                <p>Voor de beschrijving van de EVActiviteit is er een objecttype <b>Ammoniak­Koel­Installatie_VAste­Afstand­Vergunningplicht</b> met daarbij opgenomen de kenmerken werktemperatuur en hoeveelheids­Klasse­Ammoniak.</p>
                
@@ -15367,7 +15429,10 @@
                      <td>
                         <a class="link" href="#detail_attribute_BKLActiviteiten_AmmoniakKoelinstallatie_TeBerekenenAfstand_werktemperatuur">werktemperatuur</a>
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Bereik werktemperatuur installatie met pompbeveiliging in °C.</p>
+                        </td>
                      <td>
                         <a class="external-link" href="https://geonovum.github.io/MIM-Werkomgeving/#primitive-datatypes">Integer</a>
                         </td>
@@ -16909,6 +16974,13 @@
                            <td>werktemperatuur</td>
                         </tr>
                         <tr>
+                           <th>Definitie</th>
+                           <td>
+                              
+                              <p>Bereik werktemperatuur installatie met pompbeveiliging in °C.</p>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Mogelijk geen waarde</th>
                            <td>Nee</td>
                         </tr>
@@ -17342,7 +17414,7 @@
 </section>
 <section id="lis" class="normative">
    <h2>Inhoud van waardenlijsten</h2>
-   <!--MIMCM-IMEV-1.0-0-20210510-20211021-152838 imvertor 1.65.2-->
+   <!--MIMCM-IMEV-1.0-0-20210510-20211021-165459 imvertor 1.65.2-->
    <section id="">
       <h3>Referentielijst inhoud   </h3>
    </section>
