@@ -43,4 +43,3 @@ Dit document is gestructureerd in 14 hoofdstukken.
 -   [Hoofdstuk 13](#bibliografie): Beschrijft relevante documenten die
     betrekking hebben op dit informatiemodel.
 
--   [Bijlage 1](#bijlage1): Bevat lijst met UML diagrammen in EA omgeving.
