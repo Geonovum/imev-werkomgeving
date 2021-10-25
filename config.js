@@ -45,12 +45,12 @@ var respecConfig =
    authors:
   [
      {
-     name:       "xx",
-    company:    "",
-      companyURL: ""
+     name:       "Joeri van Es",
+    company:    "Geonovum",
+      companyURL: "https://www.geonovum.nl"
    },
     {
-     name:       "xx",
+     name:       "F Z",
      company:    "",
     companyURL: ""
   },
@@ -72,6 +72,7 @@ var respecConfig =
   //pubDomain: "serv", 	            // Services
   //pubDomain: "visu", 	            // Visualisatie
   //pubDomain: "wp", 	              // White Paper
+  //pubDomain: "imev", 	              // IM Externe Veiligheid
   //-- Repositorynaam op GitHub -------------------------------------------------------
   github: "https://github.com/Geonovum/imev-werkomgeving/",
   //-- Repositorynaam/issues op GitHub ------------------------------------------------
