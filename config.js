@@ -49,10 +49,15 @@ var respecConfig =
     company:    "Geonovum",
       companyURL: "https://www.geonovum.nl"
    },
+       {
+     name:       "Paul Janssen",
+     company:    "Geonovum",
+    companyURL: "https://www.geonovum.nl"
+  },
     {
      name:       "F Z",
-     company:    "",
-    companyURL: ""
+     company:    "Antea Group",
+    companyURL: "https://anteagroup.nl/"
   },
 
   ],
