@@ -1,7 +1,7 @@
 
 <!DOCTYPE HTML><section id="cat" class="normative">
    <h2>Gegevensdefinitie</h2>
-   <!--MIMCM-IMEV-1.0-0-20210510-20211025-120814 imvertor 1.65.2--><a class="anchor" id="global_package_IMEVBasis"></a><section id="global_package_IMEVBasis">
+   <!--MIMCM-IMEV-1.0-0-20210510-20211025-122405 imvertor 1.65.2--><a class="anchor" id="global_package_IMEVBasis"></a><section id="global_package_IMEVBasis">
       <h3>Domein   IMEV-basis</h3>
       <section id="EAID_90555E69_004F_4af9_B918_EED2BB1789DB">
          <h4>   Basismodel: kern - overzicht</h4>
@@ -3151,7 +3151,11 @@
                         
                         [ 1 ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de locatie waar de activiteit met externe veiligheidsrisico’s wordt
+                           verricht.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -3165,7 +3169,10 @@
                         
                         [ 1 .. * ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de referentiegegevens voor de ligging van een EV contour.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -3179,7 +3186,10 @@
                         EVActiviteit
                         [ 1 .. * ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de EVActiviteit die op de locatie wordt verricht.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -3193,7 +3203,10 @@
                         EVActiviteit
                         [ 1 ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de activiteit met externe veiligheidsrisco's.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -3256,7 +3269,10 @@
                         
                         [ 1 .. * ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de referentiegegevens waar de EV contour op is bepaald.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -3270,7 +3286,13 @@
                         
                         [ 0 .. * ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>De ruimtelijke relatie die gelegd wordt tussen de plaatsgebonden risicocontour of
+                           het aandachtsgebied en gebouwen of locaties die daardoor beïnvloed worden.</p>
+                        
+                        <p>Dit is een ruimtelijke relatie die niet administraties wordt vastgelegd.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -3284,7 +3306,10 @@
                         EVContour
                         [ 1 .. * ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de countour van externe veiligheidsrisico's.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -3711,7 +3736,13 @@
                         Gebouw­Of­Locatie
                         [ 0 .. * ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>De ruimtelijke relatie die gelegd wordt tussen de plaatsgebonden risicocontour of
+                           het aandachtsgebied en gebouwen of locaties die daardoor beïnvloed worden.</p>
+                        
+                        <p>Dit is een ruimtelijke relatie die niet administraties wordt vastgelegd.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -4729,7 +4760,10 @@
                         
                         [ 1 .. * ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de EVActiviteit die op de locatie wordt verricht.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -4743,7 +4777,11 @@
                         Locatie­EVActiviteit
                         [ 1 ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de locatie waar de activiteit met externe veiligheidsrisico’s wordt
+                           verricht.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -5406,7 +5444,10 @@
                         
                         [ 1 .. * ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de countour van externe veiligheidsrisico's.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -5420,7 +5461,10 @@
                         
                         [ 1 ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de activiteit met externe veiligheidsrisco's.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -5434,7 +5478,10 @@
                         Referentie­EVContour
                         [ 1 .. * ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de referentiegegevens voor de ligging van een EV contour.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -5448,7 +5495,10 @@
                         Referentie­EVContour
                         [ 1 .. * ]
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Verwijzing naar de referentiegegevens waar de EV contour op is bepaald.</p>
+                        </td>
                   </tr>
                   <tr>
                      <td>
@@ -8529,6 +8579,14 @@
                            <td>locatie­EVActiviteit</td>
                         </tr>
                         <tr>
+                           <th>Definitie</th>
+                           <td>
+                              
+                              <p>Verwijzing naar de locatie waar de activiteit met externe veiligheidsrisico’s wordt
+                                 verricht.</p>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Kardinaliteit</th>
                            <td>1</td>
                         </tr>
@@ -8552,6 +8610,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>heeft</td>
+                        </tr>
+                        <tr>
+                           <th>Definitie</th>
+                           <td>
+                              
+                              <p>Verwijzing naar de referentiegegevens voor de ligging van een EV contour.</p>
+                              </td>
                         </tr>
                         <tr>
                            <th>Kardinaliteit</th>
@@ -8582,6 +8647,13 @@
                            <td>hoort­Bij</td>
                         </tr>
                         <tr>
+                           <th>Definitie</th>
+                           <td>
+                              
+                              <p>Verwijzing naar de referentiegegevens waar de EV contour op is bepaald.</p>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Kardinaliteit</th>
                            <td>1 .. *</td>
                         </tr>
@@ -8605,6 +8677,16 @@
                         <tr>
                            <th>Naam</th>
                            <td>beinvloedt</td>
+                        </tr>
+                        <tr>
+                           <th>Definitie</th>
+                           <td>
+                              
+                              <p>De ruimtelijke relatie die gelegd wordt tussen de plaatsgebonden risicocontour of
+                                 het aandachtsgebied en gebouwen of locaties die daardoor beïnvloed worden.</p>
+                              
+                              <p>Dit is een ruimtelijke relatie die niet administraties wordt vastgelegd.</p>
+                              </td>
                         </tr>
                         <tr>
                            <th>Kardinaliteit</th>
@@ -10212,6 +10294,13 @@
                            <td>voert­Uit</td>
                         </tr>
                         <tr>
+                           <th>Definitie</th>
+                           <td>
+                              
+                              <p>Verwijzing naar de EVActiviteit die op de locatie wordt verricht.</p>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Kardinaliteit</th>
                            <td>1 .. *</td>
                         </tr>
@@ -10876,6 +10965,13 @@
                            <td>resulteert­In</td>
                         </tr>
                         <tr>
+                           <th>Definitie</th>
+                           <td>
+                              
+                              <p>Verwijzing naar de countour van externe veiligheidsrisico's.</p>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Kardinaliteit</th>
                            <td>1 .. *</td>
                         </tr>
@@ -10899,6 +10995,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>heeft</td>
+                        </tr>
+                        <tr>
+                           <th>Definitie</th>
+                           <td>
+                              
+                              <p>Verwijzing naar de activiteit met externe veiligheidsrisco's.</p>
+                              </td>
                         </tr>
                         <tr>
                            <th>Kardinaliteit</th>
@@ -17935,7 +18038,7 @@
 </section>
 <section id="lis" class="normative">
    <h2>Inhoud van waardenlijsten</h2>
-   <!--MIMCM-IMEV-1.0-0-20210510-20211025-120814 imvertor 1.65.2-->
+   <!--MIMCM-IMEV-1.0-0-20210510-20211025-122405 imvertor 1.65.2-->
    <section id="">
       <h3>Referentielijst inhoud   </h3>
    </section>
