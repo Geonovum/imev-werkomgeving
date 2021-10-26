@@ -14,9 +14,9 @@
 var respecConfig =
 {
   //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
-  specStatus: "GN-WV",              // Werk Versie
+  //specStatus: "GN-WV",              // Werk Versie
   //specStatus: "GN-CV",              // Consultatie Versie
- // specStatus: "GN-VV",              // Vaststellings Versie
+ specStatus: "GN-VV",              // Vaststellings Versie
   //specStatus: "GN-DEF",             // Definitieve Versie
   //-- specType is verplicht! (activeer 1 van de volgende) ----------------------------
   //specType: "NO",                   // Norm
@@ -71,13 +71,13 @@ var respecConfig =
   //pubDomain: "kl", 	              // Kabels en Leidingen
   //pubDomain: "liv", 	            // Landelijke Informatievoorziening Vastgoedgebruik
   //pubDomain: "md", 	              // Metadata
-  pubDomain: "nen3610", 	        // Basismodel NEN3610
+  //pubDomain: "nen3610", 	        // Basismodel NEN3610
   //pubDomain: "oov", 	            // Openbare Orde en Veiligheid
   //pubDomain: "ro", 	              // Ruimtelijke Ordening
   //pubDomain: "serv", 	            // Services
   //pubDomain: "visu", 	            // Visualisatie
   //pubDomain: "wp", 	              // White Paper
-  //pubDomain: "imev", 	              // IM Externe Veiligheid
+  pubDomain: "imev", 	              // IM Externe Veiligheid
   //-- Repositorynaam op GitHub -------------------------------------------------------
   github: "https://github.com/Geonovum/imev-werkomgeving/",
   //-- Repositorynaam/issues op GitHub ------------------------------------------------
