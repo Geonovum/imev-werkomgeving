@@ -68,7 +68,7 @@ input.task-list-item-checkbox {
   
   <link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico">
  <link rel="stylesheet" type="text/css" href="./docs/media/style.css">
-  <title>Informatiemodel Externe Veiligheid (IMEV) versie 1.0rc-in ontwikkeling</title>
+  <title>Informatiemodel Externe Veiligheid (IMEV) versie 1.0</title>
   
   
 <style id="respec-mainstyle">/*****************************************************************
@@ -311,8 +311,8 @@ h6>a.self-link::before {
     display: none;
   }
 }
-</style><link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/GN-WV.css"><link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico"><script id="initialUserConfig" type="application/json">{
-  "specStatus": "GN-WV",
+</style><link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/GN-VV.css"><link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico"><script id="initialUserConfig" type="application/json">{
+  "specStatus": "GN-VV",
   "specType": "IM",
   "editors": [
     {
@@ -330,22 +330,17 @@ h6>a.self-link::before {
       "name": "Paul Janssen",
       "company": "Geonovum",
       "companyURL": "https://www.geonovum.nl"
-    },
-    {
-      "name": "F Z",
-      "company": "Antea Group",
-      "companyURL": "https://anteagroup.nl/"
     }
   ],
-  "shortName": "ds-template",
-  "pubDomain": "nen3610",
+  "shortName": "imev",
+  "pubDomain": "imev",
   "github": "https://github.com/Geonovum/imev-werkomgeving/",
   "issueBase": "https://github.com/Geonovum/imev-werkomgeving/issues/",
   "edDraftURI": "https://geonovum.github.io/imev-werkomgeving/",
   "licence": "cc-by-nd",
   "maxTocLevel": 4,
   "publishISODate": "2021-10-26T00:00:00.000Z",
-  "generatedSubtitle": "Werkversie 26 oktober 2021"
+  "generatedSubtitle": "Versie ter vaststelling 26 oktober 2021"
 }</script><meta name="description" content="Dit document bevat het informatiemodel ten behoeve van gegevenslevering en gegevensontsluiting voor het Register Externe Veiligheidsrisico's (REV), het Informatiemodel Externe Veiligheid (IMEV). Het informatiemodel IMEV beschrijft de gegevensstructuur en objectdefinities van gegevens in het REV. De bronphouders die data aanleveren aan het REV gebruiken het IMEV voor het inrichten van hun gegevenshuishouding en aanlevern van data aan het REV. Op basis van het informatiemodel kan een eindgebruiker zich een goed beeld vormen van de data die door het REV worden aangeboden en de data inhoudelijk interpreteren. Daarnaast geldt dat onderdelen van het informatiemodel nodig zijn ten behoeve van applicatiebouw voor inrichten van datakopplingen met het REV."><script type="application/ld+json">{
   "@context": [
     "http://schema.org",
@@ -367,11 +362,11 @@ h6>a.self-link::before {
       }
     }
   ],
-  "id": "https://geonovum.github.io/imev-werkomgeving/",
+  "id": "https://docs.geostandaarden.nl/imev/vv-im-imev-20211026/",
   "type": [
     "TechArticle"
   ],
-  "name": "Informatiemodel Externe Veiligheid (IMEV) versie 1.0rc-in ontwikkeling",
+  "name": "Informatiemodel Externe Veiligheid (IMEV) versie 1.0",
   "inLanguage": "nl",
   "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
   "datePublished": "2021-10-26",
@@ -405,14 +400,6 @@ h6>a.self-link::before {
         "name": "Geonovum",
         "url": "https://www.geonovum.nl"
       }
-    },
-    {
-      "type": "Person",
-      "name": "F Z",
-      "worksFor": {
-        "name": "Antea Group",
-        "url": "https://anteagroup.nl/"
-      }
     }
   ],
   "citation": []
@@ -420,18 +407,18 @@ h6>a.self-link::before {
 
 <body class="h-entry"><div class="head">
   <a href="https://www.geonovum.nl/" class="logo"><img id="Geonovum" alt="Geonovum" width="132" height="67" src="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg"></a>
-  <h1 class="title p-name" id="title">Informatiemodel Externe Veiligheid (IMEV) versie 1.0rc-in ontwikkeling</h1>
+  <h1 class="title p-name" id="title">Informatiemodel Externe Veiligheid (IMEV) versie 1.0</h1>
   
   <h2>Geonovum Informatiemodel<br>
-  Werkversie <time class="dt-published" datetime="2021-10-26">26 oktober 2021</time></h2>
+  Versie ter vaststelling <time class="dt-published" datetime="2021-10-26">26 oktober 2021</time></h2>
   <dl>
-    <dt>Deze versie:</dt><dd><a class="u-url" href="https://geonovum.github.io/imev-werkomgeving/">https://geonovum.github.io/imev-werkomgeving/</a></dd><dt>Laatst gepubliceerde versie:</dt><dd>geen</dd>
+    <dt>Deze versie:</dt><dd><a class="u-url" href="https://docs.geostandaarden.nl/imev/vv-im-imev-20211026/">https://docs.geostandaarden.nl/imev/vv-im-imev-20211026/</a></dd><dt>Laatst gepubliceerde versie:</dt><dd>geen</dd>
     
     
     <dt>Laatste werkversie:</dt><dd><a href="https://geonovum.github.io/imev-werkomgeving/">https://geonovum.github.io/imev-werkomgeving/</a></dd>
     <dt>Redacteur:</dt>
     <dd class="p-author h-card vcard"><a class="u-url url p-name fn" href="https://www.geonovum.nl">Paul Janssen</a></dd>
-    <dt>Auteurs:</dt><dd class="p-author h-card vcard"><span class="p-name fn">Joeri van Es</span>, <a class="p-org org h-org h-card" href="https://www.geonovum.nl">Geonovum</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Paul Janssen</span>, <a class="p-org org h-org h-card" href="https://www.geonovum.nl">Geonovum</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">F Z</span>, <a class="p-org org h-org h-card" href="https://anteagroup.nl/">Antea Group</a></dd>
+    <dt>Auteurs:</dt><dd class="p-author h-card vcard"><span class="p-name fn">Joeri van Es</span>, <a class="p-org org h-org h-card" href="https://www.geonovum.nl">Geonovum</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Paul Janssen</span>, <a class="p-org org h-org h-card" href="https://www.geonovum.nl">Geonovum</a></dd>
     <dt>Doe mee:</dt><dd>
       <a href="https://github.com/Geonovum/imev-werkomgeving/">GitHub Geonovum/imev-werkomgeving</a>
     </dd><dd>
@@ -500,9 +487,9 @@ betrekking hebben op dit informatiemodel.</p>
   </p><p>
 
 
-  Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door de werkgroep goedgekeurde consultatieversie.
 
 
+  Dit is een definitief concept van de nieuwe versie van het informatiemodel. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.
 
 
 
@@ -524,7 +511,8 @@ betrekking hebben op dit informatiemodel.</p>
             pyrotechnische artikelen voor theatergebruik van categorie T1 of T2 - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_BC5A9BA5_C29F_44ab_B14D_0B1B2738B06A"><span class="secno">6.1.40 </span>   IX-A Civiele explosieaandachtsgebieden voor opslag van stoffen van ADR-klasse 1.1
             - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_AC4B3C34_11DE_48d7_8E6F_2E3EDB7E9F06"><span class="secno">6.1.41 </span>   IX-B Civiele explosieaandachtsgebieden voor opslag van stoffen van ADR-klasse 1.3
             - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_4FB73596_23E0_45b6_9335_BC2E9330ED8A"><span class="secno">6.1.42 </span>   IX-C Civiele explosieaandachtsgebieden voor opslag van stoffen van ADR-klasse 1.4
-            - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_BE597D0A_CCC1_4c2c_BB8A_FEE83006C9FA"><span class="secno">6.1.43 </span>   A5.32 (militaire explosieaandachtsgebieden) a. - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_84EC78D4_0CBA_474a_99D8_03D7CAD8149E"><span class="secno">6.1.44 </span>   IX-D Vastgestelde civiele explosieaandachtsgebieden - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_65BC94D9_7204_40e6_98D0_DF30BDB9EC95"><span class="secno">6.1.45 </span>   X (A5.32 b) Opslag Ontplofbaar Militair Vaste Afstand - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_C5982E36_E395_4ed8_B45A_3EBDE5637159"><span class="secno">6.1.46 </span>   A11.6 (gegevensverzameling gebouwen en locaties) - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_5CD4419F_EF30_4cf2_94EA_E99E1EBCE2C0"><span class="secno">6.1.47 </span>   A11.7 (gegevensverzameling wegen, anders dan het basisnet) - detail</a></li><li class="tocline"><a class="tocxref" href="#objecttypen"><span class="secno">6.1.48 </span>Objecttypen   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Aandachtsgebied"><span class="secno">6.1.48.1 </span>   Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_AftappuntOpslagtank"><span class="secno">6.1.48.2 </span>   Aftappunt­Opslagtank</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_AnderInsluitsysteemReferentie"><span class="secno">6.1.48.3 </span>   Ander­Insluitsysteem­Referentie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_BrandAandachtsgebied"><span class="secno">6.1.48.4 </span>   Brand­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Bewaarplaats"><span class="secno">6.1.48.5 </span>   Bewaarplaats</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Bewerkingsruimte"><span class="secno">6.1.48.6 </span>   Bewerkingsruimte</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_WegenNietBasisnet"><span class="secno">6.1.48.7 </span>   Wegen­Niet­Basisnet</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_BufferBewaarplaats"><span class="secno">6.1.48.8 </span>   Buffer­Bewaarplaats</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_BuisleidingReferentie"><span class="secno">6.1.48.9 </span>   Buisleiding­Referentie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_BuisleidingStelsel"><span class="secno">6.1.48.10 </span>   Buisleiding­Stelsel</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_CivielExplosieAandachtsgebied"><span class="secno">6.1.48.11 </span>   Civiel­Explosie­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_EVActiviteit"><span class="secno">6.1.48.12 </span>   EVActiviteit</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_EVContour"><span class="secno">6.1.48.13 </span>   EVContour</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_ExplosieAandachtsgebied"><span class="secno">6.1.48.14 </span>   Explosie­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_ExplosieAandachtsgebiedVuurwerk"><span class="secno">6.1.48.15 </span>   Explosie­Aandachtsgebied­Vuurwerk</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_ExterneVeiligheidsObject"><span class="secno">6.1.48.16 </span>   Externe­Veiligheids­Object</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_ExterneVeiligheidsObjectMaterieel"><span class="secno">6.1.48.17 </span>   Externe­Veiligheids­Object­Materieel</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_GebouwOfLocatie"><span class="secno">6.1.48.18 </span>   Gebouw­Of­Locatie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_GifwolkAandachtsgebied"><span class="secno">6.1.48.19 </span>   Gifwolk­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Installatie"><span class="secno">6.1.48.20 </span>   Installatie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_KwetsbaarGebouw"><span class="secno">6.1.48.21 </span>   Kwetsbaar­Gebouw</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_KwetsbareLocatie"><span class="secno">6.1.48.22 </span>   Kwetsbare­Locatie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Leiding"><span class="secno">6.1.48.23 </span>   Leiding</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_LocatieActiviteit"><span class="secno">6.1.48.24 </span>   Locatie­Activiteit</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_LocatieBasisnet"><span class="secno">6.1.48.25 </span>   Locatie­Basisnet</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_LocatieEVActiviteit"><span class="secno">6.1.48.26 </span>   Locatie­EVActiviteit</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Machinekamer"><span class="secno">6.1.48.27 </span>   Machinekamer</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_MilitairExplosieAandachtsgebied"><span class="secno">6.1.48.28 </span>   Militair­Explosie­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_OpslagReferentie"><span class="secno">6.1.48.29 </span>   Opslag­Referentie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_OpstelplaatsVoertuig"><span class="secno">6.1.48.30 </span>   Opstelplaats­Voertuig</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_PRContour"><span class="secno">6.1.48.31 </span>   PRContour</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_ReferentieEVContour"><span class="secno">6.1.48.32 </span>   Referentie­EVContour</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_SamengesteldeReferentie"><span class="secno">6.1.48.33 </span>   Samengestelde­Referentie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_SevesoReferentie"><span class="secno">6.1.48.34 </span>   Seveso­Referentie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_SpoorVervoer"><span class="secno">6.1.48.35 </span>   Spoor­Vervoer</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Tankzuil"><span class="secno">6.1.48.36 </span>   Tankzuil</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Vulpunt"><span class="secno">6.1.48.37 </span>   Vulpunt</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_WaterVervoer"><span class="secno">6.1.48.38 </span>   Water­Vervoer</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_WegAs"><span class="secno">6.1.48.39 </span>   Weg­As</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Wegen"><span class="secno">6.1.48.40 </span>   Wegen</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_WegVervoer"><span class="secno">6.1.48.41 </span>   Weg­Vervoer</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Windturbine"><span class="secno">6.1.48.42 </span>   Windturbine</a></li></ol></li><li class="tocline"><a class="tocxref" href="#keuzen"><span class="secno">6.1.49 </span>Keuzen   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_LijnOfMultiLijn"><span class="secno">6.1.49.1 </span>   Lijn­Of­Multi­Lijn</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_PuntOfLijn"><span class="secno">6.1.49.2 </span>   Punt­Of­Lijn</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_PuntOfMultiPunt"><span class="secno">6.1.49.3 </span>   Punt­Of­Multi­Punt</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_PuntOfVlak"><span class="secno">6.1.49.4 </span>   Punt­Of­Vlak</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_VlakOfMultiVlak"><span class="secno">6.1.49.5 </span>   Vlak­Of­Multi­Vlak</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_StofOfStofcategorie"><span class="secno">6.1.49.6 </span>   Stof­Of­Stofcategorie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#gestructureerde-datatypen"><span class="secno">6.1.50 </span>Gestructureerde datatypen   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Documentatie"><span class="secno">6.1.50.1 </span>Gestructureerd datatype   Documentatie</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Stof"><span class="secno">6.1.50.2 </span>Gestructureerd datatype   Stof</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_StofCategorie"><span class="secno">6.1.50.3 </span>Gestructureerd datatype   Stof­Categorie</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_NEN3610ID"><span class="secno">6.1.50.4 </span>Gestructureerd datatype   NEN3610ID</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuut-en-relatiesoort-details"><span class="secno">6.1.51 </span>Attribuut- en relatiesoort details  </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttype-details"><span class="secno">6.1.51.1 </span>Objecttype details  </a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#keuze"><span class="secno">6.1.51.2 </span>Keuze  </a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#gestructureerde-datatypen-0"><span class="secno">6.1.51.3 </span>Gestructureerde datatypen  </a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#global_package_BKLActiviteiten"><span class="secno">6.2 </span>Domein   BKLActiviteiten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-0"><span class="secno">6.2.1 </span>Objecttypen   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagMeststof"><span class="secno">6.2.1.1 </span>   Opslag­Meststof</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Emplacement"><span class="secno">6.2.1.2 </span>   Emplacement</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagVuurwerkF1F2F3T1T2"><span class="secno">6.2.1.3 </span>   Opslag­Vuurwerk­F1F2F3T1T2</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarMilitair_TeBerekenenAfstand"><span class="secno">6.2.1.4 </span>   Opslag­Ontplofbaar­Militair_Te­Berekenen­Afstand</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Windturbine_TeBerekenenAfstandGeenVergunningplicht"><span class="secno">6.2.1.5 </span>   Windturbine_Te­Berekenen­Afstand­Geen­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagVerpakt_VasteAfstandVergunningplicht"><span class="secno">6.2.1.6 </span>   Opslag­Verpakt_Vaste­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagtankGas_TeBerekenenAfstandVergunningplicht"><span class="secno">6.2.1.7 </span>   Opslagtank­Gas_Te­Berekenen­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagBrandstofBunkerstation"><span class="secno">6.2.1.8 </span>   Opslag­Brandstof­Bunkerstation</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarADR14Civiel"><span class="secno">6.2.1.9 </span>   Opslag­Ontplofbaar­ADR1.4Civiel</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht"><span class="secno">6.2.1.10 </span>   Behandelen­Regelen­Meten­Aardgas_Te­Berekenen­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagBrandbareVloeistofGeenDieselBovengronds"><span class="secno">6.2.1.11 </span>   Opslag­Brandbare­Vloeistof­Geen­Diesel­Bovengronds</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht"><span class="secno">6.2.1.12 </span>   Behandelen­Regelen­Meten­Aardgas_Vaste­Afstand­Geen­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenKleinschaligVaartuig"><span class="secno">6.2.1.13 </span>   Tanken­Kleinschalig­Vaartuig</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenLNGVoertuigWerktuig"><span class="secno">6.2.1.14 </span>   Tanken­LNGVoertuig­Werktuig</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenCNG"><span class="secno">6.2.1.15 </span>   Tanken­CNG</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagBrandbareVloeistofGeenDieselOndergronds"><span class="secno">6.2.1.16 </span>   Opslag­Brandbare­Vloeistof­Geen­Diesel­Ondergronds</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_AnderInsluitsysteem"><span class="secno">6.2.1.17 </span>   Ander­Insluitsysteem</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_MijnbouwwerkVerplaatsbaar"><span class="secno">6.2.1.18 </span>   Mijnbouwwerk­Verplaatsbaar</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarADR11Civiel"><span class="secno">6.2.1.19 </span>   Opslag­Ontplofbaar­ADR1.1Civiel</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_SevesoInrichting"><span class="secno">6.2.1.20 </span>   Seveso­Inrichting</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Windturbine_TeBerekenenAfstandVergunningplicht"><span class="secno">6.2.1.21 </span>   Windturbine_Te­Berekenen­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Mestvergisting"><span class="secno">6.2.1.22 </span>   Mestvergisting</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOxiderendVerstikkendGas"><span class="secno">6.2.1.23 </span>   Opslag­Oxiderend­Verstikkend­Gas</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarComplexen"><span class="secno">6.2.1.24 </span>   Opslag­Ontplofbaar­Complexen</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagtankPropaanPropeen_VasteAfstandVergunningplicht"><span class="secno">6.2.1.25 </span>   Opslagtank­Propaan­Propeen_Vaste­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht"><span class="secno">6.2.1.26 </span>   Opslagtank­Propaan­Propeen_Vaste­Afstand­Geen­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagtankVloeistof"><span class="secno">6.2.1.27 </span>   Opslagtank­Vloeistof</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagVerpakt_VasteAfstandGeenVergunningplicht"><span class="secno">6.2.1.28 </span>   Opslag­Verpakt_Vaste­Afstand­Geen­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpstellenVoertuigen"><span class="secno">6.2.1.29 </span>   Opstellen­Voertuigen</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagVuurwerkF4"><span class="secno">6.2.1.30 </span>   Opslag­Vuurwerk­F4</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenLPG"><span class="secno">6.2.1.31 </span>   Tanken­LPG</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarADR13Civiel"><span class="secno">6.2.1.32 </span>   Opslag­Ontplofbaar­ADR1.3Civiel</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_BKLActiviteit"><span class="secno">6.2.1.33 </span>   BKLActiviteit</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenWaterstofVoertuigWerktuig"><span class="secno">6.2.1.34 </span>   Tanken­Waterstof­Voertuig­Werktuig</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Basisnet"><span class="secno">6.2.1.35 </span>   Basisnet</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_MijnbouwwerkExploiteren"><span class="secno">6.2.1.36 </span>   Mijnbouwwerk­Exploiteren</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarMilitair_VasteAfstand"><span class="secno">6.2.1.37 </span>   Opslag­Ontplofbaar­Militair_Vaste­Afstand</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Buisleiding"><span class="secno">6.2.1.38 </span>   Buisleiding</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_AmmoniakKoelinstallatie_VasteAfstandVergunningplicht"><span class="secno">6.2.1.39 </span>   Ammoniak­Koelinstallatie_Vaste­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenGrootschaligVaartuig"><span class="secno">6.2.1.40 </span>   Tanken­Grootschalig­Vaartuig</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagVerpakt_TeBerekenenAfstandVergunningplicht"><span class="secno">6.2.1.41 </span>   Opslag­Verpakt_Te­Berekenen­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_AmmoniakKoelinstallatie_TeBerekenenAfstand"><span class="secno">6.2.1.42 </span>   Ammoniak­Koelinstallatie_Te­Berekenen­Afstand</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_BadGiftig"><span class="secno">6.2.1.43 </span>   Bad­Giftig</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagSevesoHoeveelheidBuitenSevesoInrichting"><span class="secno">6.2.1.44 </span>   Opslag­Seveso­Hoeveelheid­Buiten­Seveso­Inrichting</a></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuut-en-relatiesoort-details-0"><span class="secno">6.2.2 </span>Attribuut- en relatiesoort details  </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttype-details-0"><span class="secno">6.2.2.1 </span>Objecttype details  </a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#global_package_Waardelijsten"><span class="secno">6.3 </span>Domein   Waardelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeraties"><span class="secno">6.3.1 </span>Enumeraties   </a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#lis"><span class="secno">7. </span>Inhoud van waardenlijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#referentielijst-inhoud"><span class="secno">7.1 </span>Referentielijst inhoud   </a></li><li class="tocline"><a class="tocxref" href="#codelijst-inhoud"><span class="secno">7.2 </span>Codelijst inhoud   </a></li><li class="tocline"><a class="tocxref" href="#enumeratie-inhoud"><span class="secno">7.3 </span>Enumeratie inhoud   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_BuisleidingCategorieStof"><span class="secno">7.3.1 </span>Enumeratie details  Buisleiding­Categorie­Stof</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieAandachtsgebied"><span class="secno">7.3.2 </span>Enumeratie details  Categorie­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieGiftigeStof"><span class="secno">7.3.3 </span>Enumeratie details  Categorie­Giftige­Stof</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieKwetsbaarheidGebouw"><span class="secno">7.3.4 </span>Enumeratie details  Categorie­Kwetsbaarheid­Gebouw</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieKwetsbaarheidLocatie"><span class="secno">7.3.5 </span>Enumeratie details  Categorie­Kwetsbaarheid­Locatie</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieStikstofgehalte"><span class="secno">7.3.6 </span>Enumeratie details  Categorie­Stikstofgehalte</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieVuurwerk"><span class="secno">7.3.7 </span>Enumeratie details  Categorie­Vuurwerk</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_DoorzetCategorie"><span class="secno">7.3.8 </span>Enumeratie details  Doorzet­Categorie</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_Gebruiksdoeleinden"><span class="secno">7.3.9 </span>Enumeratie details  Gebruiksdoeleinden</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_HoeveelheidsKlasseAmmoniak"><span class="secno">7.3.10 </span>Enumeratie details  Hoeveelheids­Klasse­Ammoniak</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_NauwkeurigheidBovenkantbuis"><span class="secno">7.3.11 </span>Enumeratie details  Nauwkeurigheid­Bovenkantbuis</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_OilGasChemicalsProductTypeValue"><span class="secno">7.3.12 </span>Enumeratie details  Oil­Gas­Chemicals­Product­Type­Value</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_OpslagADRklasse3"><span class="secno">7.3.13 </span>Enumeratie details  Opslag­ADRklasse3</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_OpstellingsUitvoeringAardgas"><span class="secno">7.3.14 </span>Enumeratie details  Opstellings­Uitvoering­Aardgas</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_OpstellingsUitvoeringAmmoniak"><span class="secno">7.3.15 </span>Enumeratie details  Opstellings­Uitvoering­Ammoniak</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_PipeMaterialTypeValue"><span class="secno">7.3.16 </span>Enumeratie details  Pipe­Material­Type­Value</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_RepresentatieLijn"><span class="secno">7.3.17 </span>Enumeratie details  Representatie­Lijn</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_SoortBlusinstallatie"><span class="secno">7.3.18 </span>Enumeratie details  Soort­Blusinstallatie</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_TypeBrand"><span class="secno">7.3.19 </span>Enumeratie details  Type­Brand</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_TypeOpslagReferentie"><span class="secno">7.3.20 </span>Enumeratie details  Type­Opslag­Referentie</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_TypePlaatsgebondenRisico"><span class="secno">7.3.21 </span>Enumeratie details  Type­Plaatsgebonden­Risico</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_TypeExplosieAandachtsgebied"><span class="secno">7.3.22 </span>Enumeratie details  Type­Explosie­Aandachtsgebied</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#referentiesystemen"><span class="secno">8. </span>Referentiesystemen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ruimtelijke-referentiesysteem"><span class="secno">8.1 </span>Ruimtelijke referentiesysteem</a></li><li class="tocline"><a class="tocxref" href="#tijd-referentiesysteem"><span class="secno">8.2 </span>Tijd referentiesysteem</a></li></ol></li><li class="tocline"><a class="tocxref" href="#visualisatie"><span class="secno">9. </span>Visualisatie</a></li><li class="tocline"><a class="tocxref" href="#inwinning"><span class="secno">10. </span>Inwinning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inwinningsregels"><span class="secno">10.1 </span>Inwinningsregels</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#nauwkeurigheid-van-coordinaten"><span class="secno">10.1.1 </span>Nauwkeurigheid van coördinaten</a></li><li class="tocline"><a class="tocxref" href="#waarden-van-tekstvelden"><span class="secno">10.1.2 </span>Waarden van tekstvelden</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#metadata-dataset"><span class="secno">11. </span>Metadata-dataset</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#metadata"><span class="secno">11.1 </span>Metadata</a></li></ol></li><li class="tocline"><a class="tocxref" href="#levering"><span class="secno">12. </span>Levering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leveringsmedium"><span class="secno">12.1 </span>Leveringsmedium</a></li><li class="tocline"><a class="tocxref" href="#bestandsformaat-encodings"><span class="secno">12.2 </span>Bestandsformaat (encodings)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bibliografie"><span class="secno">13. </span>Bibliografie</a></li></ol></nav>
+            - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_BE597D0A_CCC1_4c2c_BB8A_FEE83006C9FA"><span class="secno">6.1.43 </span>   A5.32 (militaire explosieaandachtsgebieden) a. - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_84EC78D4_0CBA_474a_99D8_03D7CAD8149E"><span class="secno">6.1.44 </span>   IX-D Vastgestelde civiele explosieaandachtsgebieden - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_65BC94D9_7204_40e6_98D0_DF30BDB9EC95"><span class="secno">6.1.45 </span>   X (A5.32 b) Opslag Ontplofbaar Militair Vaste Afstand - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_D5C259EE_482E_4e7b_A0F3_2ADBE659D9C6"><span class="secno">6.1.46 </span>   A11.5.2 (gegevensverzameling basisnet, buisleidingen met gevaarlijke stoffen, militaire
+            objecten en nucleaire installaties) - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_C5982E36_E395_4ed8_B45A_3EBDE5637159"><span class="secno">6.1.47 </span>   A11.6 (gegevensverzameling gebouwen en locaties) - detail</a></li><li class="tocline"><a class="tocxref" href="#EAID_5CD4419F_EF30_4cf2_94EA_E99E1EBCE2C0"><span class="secno">6.1.48 </span>   A11.7 (gegevensverzameling wegen, anders dan het basisnet) - detail</a></li><li class="tocline"><a class="tocxref" href="#objecttypen"><span class="secno">6.1.49 </span>Objecttypen   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Aandachtsgebied"><span class="secno">6.1.49.1 </span>   Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_AftappuntOpslagtank"><span class="secno">6.1.49.2 </span>   Aftappunt­Opslagtank</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_AnderInsluitsysteemReferentie"><span class="secno">6.1.49.3 </span>   Ander­Insluitsysteem­Referentie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_BrandAandachtsgebied"><span class="secno">6.1.49.4 </span>   Brand­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Bewaarplaats"><span class="secno">6.1.49.5 </span>   Bewaarplaats</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Bewerkingsruimte"><span class="secno">6.1.49.6 </span>   Bewerkingsruimte</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_WegenNietBasisnet"><span class="secno">6.1.49.7 </span>   Wegen­Niet­Basisnet</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_BufferBewaarplaats"><span class="secno">6.1.49.8 </span>   Buffer­Bewaarplaats</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_BuisleidingReferentie"><span class="secno">6.1.49.9 </span>   Buisleiding­Referentie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_BuisleidingStelsel"><span class="secno">6.1.49.10 </span>   Buisleiding­Stelsel</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_CivielExplosieAandachtsgebied"><span class="secno">6.1.49.11 </span>   Civiel­Explosie­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_EVActiviteit"><span class="secno">6.1.49.12 </span>   EVActiviteit</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_EVContour"><span class="secno">6.1.49.13 </span>   EVContour</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_ExplosieAandachtsgebied"><span class="secno">6.1.49.14 </span>   Explosie­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_ExplosieAandachtsgebiedVuurwerk"><span class="secno">6.1.49.15 </span>   Explosie­Aandachtsgebied­Vuurwerk</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_ExterneVeiligheidsObject"><span class="secno">6.1.49.16 </span>   Externe­Veiligheids­Object</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_ExterneVeiligheidsObjectMaterieel"><span class="secno">6.1.49.17 </span>   Externe­Veiligheids­Object­Materieel</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_GebouwOfLocatie"><span class="secno">6.1.49.18 </span>   Gebouw­Of­Locatie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_GifwolkAandachtsgebied"><span class="secno">6.1.49.19 </span>   Gifwolk­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Installatie"><span class="secno">6.1.49.20 </span>   Installatie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_KwetsbaarGebouw"><span class="secno">6.1.49.21 </span>   Kwetsbaar­Gebouw</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_KwetsbareLocatie"><span class="secno">6.1.49.22 </span>   Kwetsbare­Locatie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Leiding"><span class="secno">6.1.49.23 </span>   Leiding</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_LocatieActiviteit"><span class="secno">6.1.49.24 </span>   Locatie­Activiteit</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_LocatieBasisnet"><span class="secno">6.1.49.25 </span>   Locatie­Basisnet</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_LocatieEVActiviteit"><span class="secno">6.1.49.26 </span>   Locatie­EVActiviteit</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Machinekamer"><span class="secno">6.1.49.27 </span>   Machinekamer</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_MilitairExplosieAandachtsgebied"><span class="secno">6.1.49.28 </span>   Militair­Explosie­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_OpslagReferentie"><span class="secno">6.1.49.29 </span>   Opslag­Referentie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_OpstelplaatsVoertuig"><span class="secno">6.1.49.30 </span>   Opstelplaats­Voertuig</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_PRContour"><span class="secno">6.1.49.31 </span>   PRContour</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_ReferentieEVContour"><span class="secno">6.1.49.32 </span>   Referentie­EVContour</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_SamengesteldeReferentie"><span class="secno">6.1.49.33 </span>   Samengestelde­Referentie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_SevesoReferentie"><span class="secno">6.1.49.34 </span>   Seveso­Referentie</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_SpoorVervoer"><span class="secno">6.1.49.35 </span>   Spoor­Vervoer</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Tankzuil"><span class="secno">6.1.49.36 </span>   Tankzuil</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Vulpunt"><span class="secno">6.1.49.37 </span>   Vulpunt</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_WaterVervoer"><span class="secno">6.1.49.38 </span>   Water­Vervoer</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_WegAs"><span class="secno">6.1.49.39 </span>   Weg­As</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Wegen"><span class="secno">6.1.49.40 </span>   Wegen</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_WegVervoer"><span class="secno">6.1.49.41 </span>   Weg­Vervoer</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Windturbine"><span class="secno">6.1.49.42 </span>   Windturbine</a></li></ol></li><li class="tocline"><a class="tocxref" href="#keuzen"><span class="secno">6.1.50 </span>Keuzen   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_LijnOfMultiLijn"><span class="secno">6.1.50.1 </span>   Lijn­Of­Multi­Lijn</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_PuntOfLijn"><span class="secno">6.1.50.2 </span>   Punt­Of­Lijn</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_PuntOfMultiPunt"><span class="secno">6.1.50.3 </span>   Punt­Of­Multi­Punt</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_PuntOfVlak"><span class="secno">6.1.50.4 </span>   Punt­Of­Vlak</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_VlakOfMultiVlak"><span class="secno">6.1.50.5 </span>   Vlak­Of­Multi­Vlak</a></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_StofOfStofcategorie"><span class="secno">6.1.50.6 </span>   Stof­Of­Stofcategorie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#gestructureerde-datatypen"><span class="secno">6.1.51 </span>Gestructureerde datatypen   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Documentatie"><span class="secno">6.1.51.1 </span>Gestructureerd datatype   Documentatie</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_Stof"><span class="secno">6.1.51.2 </span>Gestructureerd datatype   Stof</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_StofCategorie"><span class="secno">6.1.51.3 </span>Gestructureerd datatype   Stof­Categorie</a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#global_class_IMEVBasis_NEN3610ID"><span class="secno">6.1.51.4 </span>Gestructureerd datatype   NEN3610ID</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuut-en-relatiesoort-details"><span class="secno">6.1.52 </span>Attribuut- en relatiesoort details  </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttype-details"><span class="secno">6.1.52.1 </span>Objecttype details  </a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#keuze"><span class="secno">6.1.52.2 </span>Keuze  </a><ol class="toc"></ol></li><li class="tocline"><a class="tocxref" href="#gestructureerde-datatypen-0"><span class="secno">6.1.52.3 </span>Gestructureerde datatypen  </a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#global_package_BKLActiviteiten"><span class="secno">6.2 </span>Domein   BKLActiviteiten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-0"><span class="secno">6.2.1 </span>Objecttypen   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagMeststof"><span class="secno">6.2.1.1 </span>   Opslag­Meststof</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Emplacement"><span class="secno">6.2.1.2 </span>   Emplacement</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagVuurwerkF1F2F3T1T2"><span class="secno">6.2.1.3 </span>   Opslag­Vuurwerk­F1F2F3T1T2</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarMilitair_TeBerekenenAfstand"><span class="secno">6.2.1.4 </span>   Opslag­Ontplofbaar­Militair_Te­Berekenen­Afstand</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Windturbine_TeBerekenenAfstandGeenVergunningplicht"><span class="secno">6.2.1.5 </span>   Windturbine_Te­Berekenen­Afstand­Geen­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagVerpakt_VasteAfstandVergunningplicht"><span class="secno">6.2.1.6 </span>   Opslag­Verpakt_Vaste­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagtankGas_TeBerekenenAfstandVergunningplicht"><span class="secno">6.2.1.7 </span>   Opslagtank­Gas_Te­Berekenen­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagBrandstofBunkerstation"><span class="secno">6.2.1.8 </span>   Opslag­Brandstof­Bunkerstation</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarADR14Civiel"><span class="secno">6.2.1.9 </span>   Opslag­Ontplofbaar­ADR1.4Civiel</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht"><span class="secno">6.2.1.10 </span>   Behandelen­Regelen­Meten­Aardgas_Te­Berekenen­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagBrandbareVloeistofGeenDieselBovengronds"><span class="secno">6.2.1.11 </span>   Opslag­Brandbare­Vloeistof­Geen­Diesel­Bovengronds</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht"><span class="secno">6.2.1.12 </span>   Behandelen­Regelen­Meten­Aardgas_Vaste­Afstand­Geen­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenKleinschaligVaartuig"><span class="secno">6.2.1.13 </span>   Tanken­Kleinschalig­Vaartuig</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenLNGVoertuigWerktuig"><span class="secno">6.2.1.14 </span>   Tanken­LNGVoertuig­Werktuig</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenCNG"><span class="secno">6.2.1.15 </span>   Tanken­CNG</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagBrandbareVloeistofGeenDieselOndergronds"><span class="secno">6.2.1.16 </span>   Opslag­Brandbare­Vloeistof­Geen­Diesel­Ondergronds</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_AnderInsluitsysteem"><span class="secno">6.2.1.17 </span>   Ander­Insluitsysteem</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_MijnbouwwerkVerplaatsbaar"><span class="secno">6.2.1.18 </span>   Mijnbouwwerk­Verplaatsbaar</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarADR11Civiel"><span class="secno">6.2.1.19 </span>   Opslag­Ontplofbaar­ADR1.1Civiel</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_SevesoInrichting"><span class="secno">6.2.1.20 </span>   Seveso­Inrichting</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Windturbine_TeBerekenenAfstandVergunningplicht"><span class="secno">6.2.1.21 </span>   Windturbine_Te­Berekenen­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Mestvergisting"><span class="secno">6.2.1.22 </span>   Mestvergisting</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOxiderendVerstikkendGas"><span class="secno">6.2.1.23 </span>   Opslag­Oxiderend­Verstikkend­Gas</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarComplexen"><span class="secno">6.2.1.24 </span>   Opslag­Ontplofbaar­Complexen</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagtankPropaanPropeen_VasteAfstandVergunningplicht"><span class="secno">6.2.1.25 </span>   Opslagtank­Propaan­Propeen_Vaste­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht"><span class="secno">6.2.1.26 </span>   Opslagtank­Propaan­Propeen_Vaste­Afstand­Geen­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagtankVloeistof"><span class="secno">6.2.1.27 </span>   Opslagtank­Vloeistof</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagVerpakt_VasteAfstandGeenVergunningplicht"><span class="secno">6.2.1.28 </span>   Opslag­Verpakt_Vaste­Afstand­Geen­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpstellenVoertuigen"><span class="secno">6.2.1.29 </span>   Opstellen­Voertuigen</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagVuurwerkF4"><span class="secno">6.2.1.30 </span>   Opslag­Vuurwerk­F4</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenLPG"><span class="secno">6.2.1.31 </span>   Tanken­LPG</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarADR13Civiel"><span class="secno">6.2.1.32 </span>   Opslag­Ontplofbaar­ADR1.3Civiel</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_BKLActiviteit"><span class="secno">6.2.1.33 </span>   BKLActiviteit</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenWaterstofVoertuigWerktuig"><span class="secno">6.2.1.34 </span>   Tanken­Waterstof­Voertuig­Werktuig</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Basisnet"><span class="secno">6.2.1.35 </span>   Basisnet</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_MijnbouwwerkExploiteren"><span class="secno">6.2.1.36 </span>   Mijnbouwwerk­Exploiteren</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagOntplofbaarMilitair_VasteAfstand"><span class="secno">6.2.1.37 </span>   Opslag­Ontplofbaar­Militair_Vaste­Afstand</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_Buisleiding"><span class="secno">6.2.1.38 </span>   Buisleiding</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_AmmoniakKoelinstallatie_VasteAfstandVergunningplicht"><span class="secno">6.2.1.39 </span>   Ammoniak­Koelinstallatie_Vaste­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_TankenGrootschaligVaartuig"><span class="secno">6.2.1.40 </span>   Tanken­Grootschalig­Vaartuig</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagVerpakt_TeBerekenenAfstandVergunningplicht"><span class="secno">6.2.1.41 </span>   Opslag­Verpakt_Te­Berekenen­Afstand­Vergunningplicht</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_AmmoniakKoelinstallatie_TeBerekenenAfstand"><span class="secno">6.2.1.42 </span>   Ammoniak­Koelinstallatie_Te­Berekenen­Afstand</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_BadGiftig"><span class="secno">6.2.1.43 </span>   Bad­Giftig</a></li><li class="tocline"><a class="tocxref" href="#global_class_BKLActiviteiten_OpslagSevesoHoeveelheidBuitenSevesoInrichting"><span class="secno">6.2.1.44 </span>   Opslag­Seveso­Hoeveelheid­Buiten­Seveso­Inrichting</a></li></ol></li><li class="tocline"><a class="tocxref" href="#attribuut-en-relatiesoort-details-0"><span class="secno">6.2.2 </span>Attribuut- en relatiesoort details  </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttype-details-0"><span class="secno">6.2.2.1 </span>Objecttype details  </a><ol class="toc"></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#global_package_Waardelijsten"><span class="secno">6.3 </span>Domein   Waardelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#enumeraties"><span class="secno">6.3.1 </span>Enumeraties   </a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#lis"><span class="secno">7. </span>Inhoud van waardenlijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#referentielijst-inhoud"><span class="secno">7.1 </span>Referentielijst inhoud   </a></li><li class="tocline"><a class="tocxref" href="#codelijst-inhoud"><span class="secno">7.2 </span>Codelijst inhoud   </a></li><li class="tocline"><a class="tocxref" href="#enumeratie-inhoud"><span class="secno">7.3 </span>Enumeratie inhoud   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_BuisleidingCategorieStof"><span class="secno">7.3.1 </span>Enumeratie details  Buisleiding­Categorie­Stof</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieAandachtsgebied"><span class="secno">7.3.2 </span>Enumeratie details  Categorie­Aandachtsgebied</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieGiftigeStof"><span class="secno">7.3.3 </span>Enumeratie details  Categorie­Giftige­Stof</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieKwetsbaarheidGebouw"><span class="secno">7.3.4 </span>Enumeratie details  Categorie­Kwetsbaarheid­Gebouw</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieKwetsbaarheidLocatie"><span class="secno">7.3.5 </span>Enumeratie details  Categorie­Kwetsbaarheid­Locatie</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieStikstofgehalte"><span class="secno">7.3.6 </span>Enumeratie details  Categorie­Stikstofgehalte</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_CategorieVuurwerk"><span class="secno">7.3.7 </span>Enumeratie details  Categorie­Vuurwerk</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_DoorzetCategorie"><span class="secno">7.3.8 </span>Enumeratie details  Doorzet­Categorie</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_Gebruiksdoeleinden"><span class="secno">7.3.9 </span>Enumeratie details  Gebruiksdoeleinden</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_HoeveelheidsKlasseAmmoniak"><span class="secno">7.3.10 </span>Enumeratie details  Hoeveelheids­Klasse­Ammoniak</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_NauwkeurigheidBovenkantbuis"><span class="secno">7.3.11 </span>Enumeratie details  Nauwkeurigheid­Bovenkantbuis</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_OilGasChemicalsProductTypeValue"><span class="secno">7.3.12 </span>Enumeratie details  Oil­Gas­Chemicals­Product­Type­Value</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_OpslagADRklasse3"><span class="secno">7.3.13 </span>Enumeratie details  Opslag­ADRklasse3</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_OpstellingsUitvoeringAardgas"><span class="secno">7.3.14 </span>Enumeratie details  Opstellings­Uitvoering­Aardgas</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_OpstellingsUitvoeringAmmoniak"><span class="secno">7.3.15 </span>Enumeratie details  Opstellings­Uitvoering­Ammoniak</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_PipeMaterialTypeValue"><span class="secno">7.3.16 </span>Enumeratie details  Pipe­Material­Type­Value</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_RepresentatieLijn"><span class="secno">7.3.17 </span>Enumeratie details  Representatie­Lijn</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_SoortBlusinstallatie"><span class="secno">7.3.18 </span>Enumeratie details  Soort­Blusinstallatie</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_TypeBrand"><span class="secno">7.3.19 </span>Enumeratie details  Type­Brand</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_TypeOpslagReferentie"><span class="secno">7.3.20 </span>Enumeratie details  Type­Opslag­Referentie</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_TypePlaatsgebondenRisico"><span class="secno">7.3.21 </span>Enumeratie details  Type­Plaatsgebonden­Risico</a></li><li class="tocline"><a class="tocxref" href="#detail_class_Waardelijsten_TypeExplosieAandachtsgebied"><span class="secno">7.3.22 </span>Enumeratie details  Type­Explosie­Aandachtsgebied</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#referentiesystemen"><span class="secno">8. </span>Referentiesystemen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ruimtelijke-referentiesysteem"><span class="secno">8.1 </span>Ruimtelijke referentiesysteem</a></li><li class="tocline"><a class="tocxref" href="#tijd-referentiesysteem"><span class="secno">8.2 </span>Tijd referentiesysteem</a></li></ol></li><li class="tocline"><a class="tocxref" href="#visualisatie"><span class="secno">9. </span>Visualisatie</a></li><li class="tocline"><a class="tocxref" href="#inwinning"><span class="secno">10. </span>Inwinning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inwinningsregels"><span class="secno">10.1 </span>Inwinningsregels</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#nauwkeurigheid-van-coordinaten"><span class="secno">10.1.1 </span>Nauwkeurigheid van coördinaten</a></li><li class="tocline"><a class="tocxref" href="#waarden-van-tekstvelden"><span class="secno">10.1.2 </span>Waarden van tekstvelden</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#metadata-dataset"><span class="secno">11. </span>Metadata-dataset</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#metadata"><span class="secno">11.1 </span>Metadata</a></li></ol></li><li class="tocline"><a class="tocxref" href="#levering"><span class="secno">12. </span>Levering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#leveringsmedium"><span class="secno">12.1 </span>Leveringsmedium</a></li><li class="tocline"><a class="tocxref" href="#bestandsformaat-encodings"><span class="secno">12.2 </span>Bestandsformaat (encodings)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bibliografie"><span class="secno">13. </span>Bibliografie</a></li></ol></nav>
 
 
 
@@ -1038,12 +1026,12 @@ kan deze melden. De meldingen worden doorgeleid naar de bronhouder.</p></section
 <td>Exploitant</td>
 <td>Een gegeven over de exploitant.</td>
 </tr>
-</tbody></table></section><section id="uml-diagrammen"><h3 id="x5-2-uml-diagrammen"><span class="secno">5.2 </span>UML diagrammen</h3><p>In de UML diagrammen van het logische model zijn de termen hoofdletter-gevoelig en bevatten geen spaties. Deze schrijfwijze wordt ook in de beschrijving van het model gebruikt als er aan termen wordt gerefereerd. De termen en hun definities zijn opgenomen in de <a href="#objecttypen">objectcatalogus</a> <!-- je zou dit verwachten:(#global_class_IMEV_Objectcatalogus)--> van dit document. Voor de definities van de term wordt dan ook naar deze objectcatalogus geregefereerd.</p><p>In de diagrammen zijn de objecttypen aan te klikken en wordt er gelinkt naar de beschrijving opgenomen in de objectcatalogus.</p><p>Voor het inzoomen in de UML diagrammen kan het best het diagram in een apart tabblad van de browser worden geopenend. Afhankelijk van het type browser is dit meestal via een rechtermuisklik en 'open in nieuw tabblad'.</p><p>In het volgende hoofdstuk zijn de UML diagrammen van het IMEV opgenomen. De eerste twee diagrammen zijn algemeen en bevatten de gegegens die voor alle externe veiligheidsrisico's van toepassing zijn. De paragrafen daarna behandelen elk een specifieke activiteit uit het Bkl die gerelateerd is aan gegevens met betrekking tot externe veiligheidsrisico's. De naamgeving van die paragrafen en diagrammen verwijst naar de Bkl activiteit.</p></section></section>
+</tbody></table></section><section id="uml-diagrammen"><h3 id="x5-2-uml-diagrammen"><span class="secno">5.2 </span>UML diagrammen</h3><p>In de UML diagrammen van het logische model zijn de termen hoofdletter-gevoelig en bevatten geen spaties. Deze schrijfwijze wordt ook in de beschrijving van het model gebruikt als er aan termen wordt gerefereerd. De termen en hun definities zijn opgenomen in de <a href="#objecttypen">objectcatalogus</a> <!-- je zou dit verwachten:(#global_class_IMEV_Objectcatalogus)--> van dit document. Voor de definities van de term wordt dan ook naar deze objectcatalogus geregefereerd.</p><p>In de diagrammen zijn de objecttypen aan te klikken en wordt er gelinkt naar de beschrijving opgenomen in de objectcatalogus.</p><p>Voor het inzoomen in de UML diagrammen kan het best het diagram in een apart tabblad van de browser worden geopenend. Afhankelijk van het type browser is dit meestal via een rechtermuisklik en 'open in nieuw tabblad'.</p><p>In het volgende hoofdstuk zijn de UML diagrammen van het IMEV opgenomen. De eerste twee diagrammen zijn algemeen en bevatten de gegegens die voor alle externe veiligheidsrisico's van toepassing zijn. De paragrafen daarna behandelen elk een specifieke activiteit uit het Bkl die gerelateerd is aan gegevens met betrekking tot externe veiligheidsrisico's. De naamgeving van die paragrafen en diagrammen verwijst naar de Bkl activiteit en het artikel of bijlage waarin die gedefinieerd is.</p></section></section>
   <!-- import door imvertor gegenereerde deel--> 
   
 <section id="cat" class="normative">
    <!--OddPage--><h2 id="x6-gegevensdefinitie"><span class="secno">6. </span>Gegevensdefinitie</h2>
-   <!--MIMCM-IMEV-1.0-0-20210510-20211026-101059 imvertor 1.65.2--><a class="anchor" id="global_package_IMEVBasis"></a><section id="global_package_IMEVBasis">
+   <!--MIMCM-IMEV-1.0-0-20210510-20211026-114729 imvertor 1.65.2--><a class="anchor" id="global_package_IMEVBasis"></a><section id="global_package_IMEVBasis">
       <h3 id="x6-1-domein-imev-basis"><span class="secno">6.1 </span>Domein   IMEV-basis</h3>
       <section id="EAID_90555E69_004F_4af9_B918_EED2BB1789DB">
          <h4 id="x6-1-1-basismodel-kern-overzicht"><span class="secno">6.1.1 </span>   Basismodel: kern - overzicht</h4>
@@ -3803,8 +3791,68 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                <p></p>
          </div>
       </section>
+      <section id="EAID_D5C259EE_482E_4e7b_A0F3_2ADBE659D9C6">
+         <h4 id="x6-1-46-a11-5-2-gegevensverzameling-basisnet-buisleidingen-met-gevaarlijke-stoffen-militaire-objecten-en-nucleaire-installaties-detail"><span class="secno">6.1.46 </span>   A11.5.2 (gegevensverzameling basisnet, buisleidingen met gevaarlijke stoffen, militaire
+            objecten en nucleaire installaties) - detail</h4>
+         <div class="imageinfo "><img src="data/Images/EAID_D5C259EE_482E_4e7b_A0F3_2ADBE659D9C6.png" usemap="#imagemap-EAID_D5C259EE_482E_4e7b_A0F3_2ADBE659D9C6" alt="Diagram 
+                        2. De Autoriteit Nucleaire Veiligheid en Stralingsbescherming verzamelt de volgende gegevens als het gaat om een inrichting waarvoor een vergunning is verleend op grond van artikel 15, onder b, van de Kernenergiewet: ......
+                        
+                        Voor de beschrijving van de EVActiviteit is er een objecttype KernenergieInrichting.
+                        
+                        Voor de ReferentieEVContour zijn van belang de locatie van:
+                        
+                        
+                           SamengesteldeReferentie
+                        
+                        
+                        
+                        Voor de EVContour zijn de volgende typen gedefinieerd:
+                        
+                        
+                           PRContour
+                        
+                        
+                     "><map name="imagemap-EAID_D5C259EE_482E_4e7b_A0F3_2ADBE659D9C6"><area shape="rect" alt="StofOfStofcategorie" coords="1605,327,1794,449" href="#graph_EAID_D6F9C787_BAA9_49a9_94B8_1C19A7305E84"><area shape="rect" alt="VlakOfMultiVlak" coords="1865,14,2056,128" href="#graph_EAID_86FCE29B_D25F_45b5_BA92_7CE173BF2EE2"><area shape="rect" alt="StofCategorie" coords="1603,190,1853,311" href="#graph_EAID_37C651D4_7F3C_486b_AFD0_F71190E6B642"><area shape="rect" alt="Stof" coords="1602,12,1852,169" href="#graph_EAID_83FA9169_2957_49bd_91C8_6E6A81D736A5"><area shape="rect" alt="Documentatie" coords="1378,12,1537,134" href="#graph_EAID_36400497_F184_44ca_9236_B54B288ECB9C"><area shape="rect" alt="NEN3610ID" coords="1378,156,1568,295" href="#graph_EAID_F3ACE733_362C_4879_AC17_5DB8F04A22EE"><area shape="rect" alt="TypePlaatsgebondenRisico" coords="783,12,940,205" href="#graph_EAID_636226E1_8030_4867_B19F_BB2599140AA9"><area shape="rect" alt="PRContour" coords="1567,824,1897,999" href="#graph_EAID_B768FDC9_8444_4437_8A41_D976631757C3"><area shape="rect" alt="LocatieActiviteit" coords="14,821,351,1229" href="#graph_EAID_F20C1B1F_C128_4c2d_9542_5BAC24062B61"><area shape="rect" alt="SamengesteldeReferentie" coords="1120,834,1294,959" href="#graph_EAID_CBB1E634_0AF9_45f7_B1DE_B2DED4A65BD2"><area shape="rect" alt="ExterneVeiligheidsObjectMaterieel" coords="1105,337,1310,464" href="#graph_EAID_DE1DF14B_2875_4ff7_8282_16D22D405CEA"><area shape="rect" alt="ReferentieEVContour" coords="1098,600,1380,697" href="#graph_EAID_52CE468A_EFD4_456f_AE41_A37D10A734E2"><area shape="rect" alt="LocatieEVActiviteit" coords="35,600,317,697" href="#graph_EAID_F3484DF8_6A11_4275_B3F8_64B18DBC99F3"><area shape="rect" alt="EVContour" coords="1577,600,1859,697" href="#graph_EAID_494964B8_DB08_4f6e_B3FA_1471E8E5D046"><area shape="rect" alt="EVActiviteit" coords="519,600,800,697" href="#graph_EAID_832B8803_BBCD_4b5e_A70A_A03C4CD53A87"><area shape="rect" alt="ExterneVeiligheidsObject" coords="1070,12,1351,251" href="#graph_EAID_F0E277F8_53FE_432c_A89A_44192BD00F40"><area shape="rect" alt="BKLActiviteit" coords="458,806,828,957" href="#graph_EAID_A4A6BD97_D7E3_456d_9AF8_F44DA6CCBE8E"></map><p><b>A11.5.2 (gegevensverzameling basisnet, buisleidingen met gevaarlijke stoffen, militaire
+                  objecten en nucleaire installaties) - detail</b>
+               
+               </p><p>2. De Autoriteit Nucleaire Veiligheid en Stralingsbescherming verzamelt de volgende
+                  gegevens als het gaat om een inrichting waarvoor een vergunning is verleend op grond
+                  van artikel 15, onder b, van de Kernenergiewet: ......</p>
+               
+               <p></p>
+               
+               <p>Voor de beschrijving van de EVActiviteit is er een objecttype <b>Kernenergie­Inrichting</b>.</p>
+               
+               <p></p>
+               
+               <p>Voor de Referentie­EVContour zijn van belang de locatie van:</p>
+               
+               <p></p>
+               
+               <ul>
+                  
+                  <li>Samengestelde­Referentie</li>
+                  </ul>
+               
+               <p></p>
+               
+               <p></p>
+               
+               <p>Voor de EVContour zijn de volgende typen gedefinieerd:</p>
+               
+               <p></p>
+               
+               <ul>
+                  
+                  <li>PRContour</li>
+                  </ul>
+               
+               <p></p>
+               <p></p>
+         </div>
+      </section>
       <section id="EAID_C5982E36_E395_4ed8_B45A_3EBDE5637159">
-         <h4 id="x6-1-46-a11-6-gegevensverzameling-gebouwen-en-locaties-detail"><span class="secno">6.1.46 </span>   A11.6 (gegevensverzameling gebouwen en locaties) - detail</h4>
+         <h4 id="x6-1-47-a11-6-gegevensverzameling-gebouwen-en-locaties-detail"><span class="secno">6.1.47 </span>   A11.6 (gegevensverzameling gebouwen en locaties) - detail</h4>
          <div class="imageinfo "><img src="data/Images/EAID_C5982E36_E395_4ed8_B45A_3EBDE5637159.png" usemap="#imagemap-EAID_C5982E36_E395_4ed8_B45A_3EBDE5637159" alt="Diagram 
                         Gegevens van gebouwen en locaties van de categorie beperkt kwetsbaar, kwetsbaar en zeer kwetsbaar.
 
@@ -3817,7 +3865,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
          </div>
       </section>
       <section id="EAID_5CD4419F_EF30_4cf2_94EA_E99E1EBCE2C0">
-         <h4 id="x6-1-47-a11-7-gegevensverzameling-wegen-anders-dan-het-basisnet-detail"><span class="secno">6.1.47 </span>   A11.7 (gegevensverzameling wegen, anders dan het basisnet) - detail</h4>
+         <h4 id="x6-1-48-a11-7-gegevensverzameling-wegen-anders-dan-het-basisnet-detail"><span class="secno">6.1.48 </span>   A11.7 (gegevensverzameling wegen, anders dan het basisnet) - detail</h4>
          <div class="imageinfo "><img src="data/Images/EAID_5CD4419F_EF30_4cf2_94EA_E99E1EBCE2C0.png" usemap="#imagemap-EAID_5CD4419F_EF30_4cf2_94EA_E99E1EBCE2C0" alt="Diagram 
                         Voor de beschrijving van de EVActiviteit is er een objecttype WegeNietBasisnet met daarbij opgenomen het kenmerk doorzetPerJaar.
                         
@@ -3867,9 +3915,9 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
          </div>
       </section>
       <section id="objecttypen">
-         <h4 id="x6-1-48-objecttypen"><span class="secno">6.1.48 </span>Objecttypen   </h4>
+         <h4 id="x6-1-49-objecttypen"><span class="secno">6.1.49 </span>Objecttypen   </h4>
          <a class="anchor" id="graph_EAID_20810AB1_6083_4053_8BD2_38F7000761E2"></a><a class="anchor" id="global_class_IMEVBasis_Aandachtsgebied"></a><section id="global_class_IMEVBasis_Aandachtsgebied">
-            <h5 id="x6-1-48-1-aandachtsgebied"><span class="secno">6.1.48.1 </span>   Aandachtsgebied</h5>
+            <h5 id="x6-1-49-1-aandachtsgebied"><span class="secno">6.1.49.1 </span>   Aandachtsgebied</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -4002,7 +4050,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_0A6E0544_59C5_48ef_9495_34C115F27C87"></a><a class="anchor" id="global_class_IMEVBasis_AftappuntOpslagtank"></a><section id="global_class_IMEVBasis_AftappuntOpslagtank">
-            <h5 id="x6-1-48-2-aftappunt-opslagtank"><span class="secno">6.1.48.2 </span>   Aftappunt­Opslagtank</h5>
+            <h5 id="x6-1-49-2-aftappunt-opslagtank"><span class="secno">6.1.49.2 </span>   Aftappunt­Opslagtank</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -4092,7 +4140,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_FAA895CE_3630_4116_9F46_64A4797429A8"></a><a class="anchor" id="global_class_IMEVBasis_AnderInsluitsysteemReferentie"></a><section id="global_class_IMEVBasis_AnderInsluitsysteemReferentie">
-            <h5 id="x6-1-48-3-ander-insluitsysteem-referentie"><span class="secno">6.1.48.3 </span>   Ander­Insluitsysteem­Referentie</h5>
+            <h5 id="x6-1-49-3-ander-insluitsysteem-referentie"><span class="secno">6.1.49.3 </span>   Ander­Insluitsysteem­Referentie</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -4197,7 +4245,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_C0542929_08D5_42d5_A4ED_7E52910BD8AF"></a><a class="anchor" id="global_class_IMEVBasis_BrandAandachtsgebied"></a><section id="global_class_IMEVBasis_BrandAandachtsgebied">
-            <h5 id="x6-1-48-4-brand-aandachtsgebied"><span class="secno">6.1.48.4 </span>   Brand­Aandachtsgebied</h5>
+            <h5 id="x6-1-49-4-brand-aandachtsgebied"><span class="secno">6.1.49.4 </span>   Brand­Aandachtsgebied</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -4279,7 +4327,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_A79B251C_54F1_4164_ACC2_A5A2C6F4EE96"></a><a class="anchor" id="global_class_IMEVBasis_Bewaarplaats"></a><section id="global_class_IMEVBasis_Bewaarplaats">
-            <h5 id="x6-1-48-5-bewaarplaats"><span class="secno">6.1.48.5 </span>   Bewaarplaats</h5>
+            <h5 id="x6-1-49-5-bewaarplaats"><span class="secno">6.1.49.5 </span>   Bewaarplaats</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -4384,7 +4432,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_0316BDD5_B44C_4ae4_964C_ABDB4A888F66"></a><a class="anchor" id="global_class_IMEVBasis_Bewerkingsruimte"></a><section id="global_class_IMEVBasis_Bewerkingsruimte">
-            <h5 id="x6-1-48-6-bewerkingsruimte"><span class="secno">6.1.48.6 </span>   Bewerkingsruimte</h5>
+            <h5 id="x6-1-49-6-bewerkingsruimte"><span class="secno">6.1.49.6 </span>   Bewerkingsruimte</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -4475,7 +4523,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_F47DE64F_3644_4861_837F_50FF1C9914E9"></a><a class="anchor" id="global_class_IMEVBasis_WegenNietBasisnet"></a><section id="global_class_IMEVBasis_WegenNietBasisnet">
-            <h5 id="x6-1-48-7-wegen-niet-basisnet"><span class="secno">6.1.48.7 </span>   Wegen­Niet­Basisnet</h5>
+            <h5 id="x6-1-49-7-wegen-niet-basisnet"><span class="secno">6.1.49.7 </span>   Wegen­Niet­Basisnet</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -4524,7 +4572,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_1000536A_F7D2_4310_8929_7E7B179E516A"></a><a class="anchor" id="global_class_IMEVBasis_BufferBewaarplaats"></a><section id="global_class_IMEVBasis_BufferBewaarplaats">
-            <h5 id="x6-1-48-8-buffer-bewaarplaats"><span class="secno">6.1.48.8 </span>   Buffer­Bewaarplaats</h5>
+            <h5 id="x6-1-49-8-buffer-bewaarplaats"><span class="secno">6.1.49.8 </span>   Buffer­Bewaarplaats</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -4615,7 +4663,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_CAA571C3_DAE9_4c54_919F_F708BB5FFE62"></a><a class="anchor" id="global_class_IMEVBasis_BuisleidingReferentie"></a><section id="global_class_IMEVBasis_BuisleidingReferentie">
-            <h5 id="x6-1-48-9-buisleiding-referentie"><span class="secno">6.1.48.9 </span>   Buisleiding­Referentie</h5>
+            <h5 id="x6-1-49-9-buisleiding-referentie"><span class="secno">6.1.49.9 </span>   Buisleiding­Referentie</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -4806,7 +4854,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_4C23781A_A565_4357_BFDE_F191EA1308BC"></a><a class="anchor" id="global_class_IMEVBasis_BuisleidingStelsel"></a><section id="global_class_IMEVBasis_BuisleidingStelsel">
-            <h5 id="x6-1-48-10-buisleiding-stelsel"><span class="secno">6.1.48.10 </span>   Buisleiding­Stelsel</h5>
+            <h5 id="x6-1-49-10-buisleiding-stelsel"><span class="secno">6.1.49.10 </span>   Buisleiding­Stelsel</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -4951,7 +4999,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_33B4B63A_F027_41d8_9F11_EBC8717F09BE"></a><a class="anchor" id="global_class_IMEVBasis_CivielExplosieAandachtsgebied"></a><section id="global_class_IMEVBasis_CivielExplosieAandachtsgebied">
-            <h5 id="x6-1-48-11-civiel-explosie-aandachtsgebied"><span class="secno">6.1.48.11 </span>   Civiel­Explosie­Aandachtsgebied</h5>
+            <h5 id="x6-1-49-11-civiel-explosie-aandachtsgebied"><span class="secno">6.1.49.11 </span>   Civiel­Explosie­Aandachtsgebied</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -5031,7 +5079,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_832B8803_BBCD_4b5e_A70A_A03C4CD53A87"></a><a class="anchor" id="global_class_IMEVBasis_EVActiviteit"></a><section id="global_class_IMEVBasis_EVActiviteit">
-            <h5 id="x6-1-48-12-evactiviteit"><span class="secno">6.1.48.12 </span>   EVActiviteit</h5>
+            <h5 id="x6-1-49-12-evactiviteit"><span class="secno">6.1.49.12 </span>   EVActiviteit</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -5149,7 +5197,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_494964B8_DB08_4f6e_B3FA_1471E8E5D046"></a><a class="anchor" id="global_class_IMEVBasis_EVContour"></a><section id="global_class_IMEVBasis_EVContour">
-            <h5 id="x6-1-48-13-evcontour"><span class="secno">6.1.48.13 </span>   EVContour</h5>
+            <h5 id="x6-1-49-13-evcontour"><span class="secno">6.1.49.13 </span>   EVContour</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -5263,7 +5311,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_47AA1E50_5E29_49f7_B547_8C5BB024168C"></a><a class="anchor" id="global_class_IMEVBasis_ExplosieAandachtsgebied"></a><section id="global_class_IMEVBasis_ExplosieAandachtsgebied">
-            <h5 id="x6-1-48-14-explosie-aandachtsgebied"><span class="secno">6.1.48.14 </span>   Explosie­Aandachtsgebied</h5>
+            <h5 id="x6-1-49-14-explosie-aandachtsgebied"><span class="secno">6.1.49.14 </span>   Explosie­Aandachtsgebied</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -5348,7 +5396,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_CF41DB61_0756_479a_9ACD_B56BDD6FF2B8"></a><a class="anchor" id="global_class_IMEVBasis_ExplosieAandachtsgebiedVuurwerk"></a><section id="global_class_IMEVBasis_ExplosieAandachtsgebiedVuurwerk">
-            <h5 id="x6-1-48-15-explosie-aandachtsgebied-vuurwerk"><span class="secno">6.1.48.15 </span>   Explosie­Aandachtsgebied­Vuurwerk</h5>
+            <h5 id="x6-1-49-15-explosie-aandachtsgebied-vuurwerk"><span class="secno">6.1.49.15 </span>   Explosie­Aandachtsgebied­Vuurwerk</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -5398,7 +5446,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_F0E277F8_53FE_432c_A89A_44192BD00F40"></a><a class="anchor" id="global_class_IMEVBasis_ExterneVeiligheidsObject"></a><section id="global_class_IMEVBasis_ExterneVeiligheidsObject">
-            <h5 id="x6-1-48-16-externe-veiligheids-object"><span class="secno">6.1.48.16 </span>   Externe­Veiligheids­Object</h5>
+            <h5 id="x6-1-49-16-externe-veiligheids-object"><span class="secno">6.1.49.16 </span>   Externe­Veiligheids­Object</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -5520,7 +5568,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_DE1DF14B_2875_4ff7_8282_16D22D405CEA"></a><a class="anchor" id="global_class_IMEVBasis_ExterneVeiligheidsObjectMaterieel"></a><section id="global_class_IMEVBasis_ExterneVeiligheidsObjectMaterieel">
-            <h5 id="x6-1-48-17-externe-veiligheids-object-materieel"><span class="secno">6.1.48.17 </span>   Externe­Veiligheids­Object­Materieel</h5>
+            <h5 id="x6-1-49-17-externe-veiligheids-object-materieel"><span class="secno">6.1.49.17 </span>   Externe­Veiligheids­Object­Materieel</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -5616,7 +5664,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_F0CB9459_C43C_4708_A8C5_20AC024DD270"></a><a class="anchor" id="global_class_IMEVBasis_GebouwOfLocatie"></a><section id="global_class_IMEVBasis_GebouwOfLocatie">
-            <h5 id="x6-1-48-18-gebouw-of-locatie"><span class="secno">6.1.48.18 </span>   Gebouw­Of­Locatie</h5>
+            <h5 id="x6-1-49-18-gebouw-of-locatie"><span class="secno">6.1.49.18 </span>   Gebouw­Of­Locatie</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -5696,7 +5744,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_544E0B2C_85F6_41f8_8277_9C185289F1D1"></a><a class="anchor" id="global_class_IMEVBasis_GifwolkAandachtsgebied"></a><section id="global_class_IMEVBasis_GifwolkAandachtsgebied">
-            <h5 id="x6-1-48-19-gifwolk-aandachtsgebied"><span class="secno">6.1.48.19 </span>   Gifwolk­Aandachtsgebied</h5>
+            <h5 id="x6-1-49-19-gifwolk-aandachtsgebied"><span class="secno">6.1.49.19 </span>   Gifwolk­Aandachtsgebied</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -5748,7 +5796,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_E1D645BC_E119_4767_A5BE_652CC6498945"></a><a class="anchor" id="global_class_IMEVBasis_Installatie"></a><section id="global_class_IMEVBasis_Installatie">
-            <h5 id="x6-1-48-20-installatie"><span class="secno">6.1.48.20 </span>   Installatie</h5>
+            <h5 id="x6-1-49-20-installatie"><span class="secno">6.1.49.20 </span>   Installatie</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -5842,7 +5890,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_6795AE24_73BB_408f_A1BB_F7B67BCCC569"></a><a class="anchor" id="global_class_IMEVBasis_KwetsbaarGebouw"></a><section id="global_class_IMEVBasis_KwetsbaarGebouw">
-            <h5 id="x6-1-48-21-kwetsbaar-gebouw"><span class="secno">6.1.48.21 </span>   Kwetsbaar­Gebouw</h5>
+            <h5 id="x6-1-49-21-kwetsbaar-gebouw"><span class="secno">6.1.49.21 </span>   Kwetsbaar­Gebouw</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -6025,7 +6073,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_3AA5CB41_980B_4e02_8D55_ABEF543433F5"></a><a class="anchor" id="global_class_IMEVBasis_KwetsbareLocatie"></a><section id="global_class_IMEVBasis_KwetsbareLocatie">
-            <h5 id="x6-1-48-22-kwetsbare-locatie"><span class="secno">6.1.48.22 </span>   Kwetsbare­Locatie</h5>
+            <h5 id="x6-1-49-22-kwetsbare-locatie"><span class="secno">6.1.49.22 </span>   Kwetsbare­Locatie</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -6155,7 +6203,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_08FD87D1_8301_4fdc_A440_ED68C42FC343"></a><a class="anchor" id="global_class_IMEVBasis_Leiding"></a><section id="global_class_IMEVBasis_Leiding">
-            <h5 id="x6-1-48-23-leiding"><span class="secno">6.1.48.23 </span>   Leiding</h5>
+            <h5 id="x6-1-49-23-leiding"><span class="secno">6.1.49.23 </span>   Leiding</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -6271,7 +6319,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_F20C1B1F_C128_4c2d_9542_5BAC24062B61"></a><a class="anchor" id="global_class_IMEVBasis_LocatieActiviteit"></a><section id="global_class_IMEVBasis_LocatieActiviteit">
-            <h5 id="x6-1-48-24-locatie-activiteit"><span class="secno">6.1.48.24 </span>   Locatie­Activiteit</h5>
+            <h5 id="x6-1-49-24-locatie-activiteit"><span class="secno">6.1.49.24 </span>   Locatie­Activiteit</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -6518,7 +6566,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_5785156C_6B1E_44e7_8070_374BE5D40926"></a><a class="anchor" id="global_class_IMEVBasis_LocatieBasisnet"></a><section id="global_class_IMEVBasis_LocatieBasisnet">
-            <h5 id="x6-1-48-25-locatie-basisnet"><span class="secno">6.1.48.25 </span>   Locatie­Basisnet</h5>
+            <h5 id="x6-1-49-25-locatie-basisnet"><span class="secno">6.1.49.25 </span>   Locatie­Basisnet</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -6634,7 +6682,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_F3484DF8_6A11_4275_B3F8_64B18DBC99F3"></a><a class="anchor" id="global_class_IMEVBasis_LocatieEVActiviteit"></a><section id="global_class_IMEVBasis_LocatieEVActiviteit">
-            <h5 id="x6-1-48-26-locatie-evactiviteit"><span class="secno">6.1.48.26 </span>   Locatie­EVActiviteit</h5>
+            <h5 id="x6-1-49-26-locatie-evactiviteit"><span class="secno">6.1.49.26 </span>   Locatie­EVActiviteit</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -6735,7 +6783,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_7B3ADE7D_4EA4_4d13_814E_7C12A399FEAD"></a><a class="anchor" id="global_class_IMEVBasis_Machinekamer"></a><section id="global_class_IMEVBasis_Machinekamer">
-            <h5 id="x6-1-48-27-machinekamer"><span class="secno">6.1.48.27 </span>   Machinekamer</h5>
+            <h5 id="x6-1-49-27-machinekamer"><span class="secno">6.1.49.27 </span>   Machinekamer</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -6864,7 +6912,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_9F0141BE_176D_4b1e_A15B_C950AA33C7FE"></a><a class="anchor" id="global_class_IMEVBasis_MilitairExplosieAandachtsgebied"></a><section id="global_class_IMEVBasis_MilitairExplosieAandachtsgebied">
-            <h5 id="x6-1-48-28-militair-explosie-aandachtsgebied"><span class="secno">6.1.48.28 </span>   Militair­Explosie­Aandachtsgebied</h5>
+            <h5 id="x6-1-49-28-militair-explosie-aandachtsgebied"><span class="secno">6.1.49.28 </span>   Militair­Explosie­Aandachtsgebied</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -6948,7 +6996,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_A0CE7A0A_9D5E_436b_8CE3_420444058145"></a><a class="anchor" id="global_class_IMEVBasis_OpslagReferentie"></a><section id="global_class_IMEVBasis_OpslagReferentie">
-            <h5 id="x6-1-48-29-opslag-referentie"><span class="secno">6.1.48.29 </span>   Opslag­Referentie</h5>
+            <h5 id="x6-1-49-29-opslag-referentie"><span class="secno">6.1.49.29 </span>   Opslag­Referentie</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -7090,7 +7138,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_274E1D8A_350A_4d15_995C_58A99328B763"></a><a class="anchor" id="global_class_IMEVBasis_OpstelplaatsVoertuig"></a><section id="global_class_IMEVBasis_OpstelplaatsVoertuig">
-            <h5 id="x6-1-48-30-opstelplaats-voertuig"><span class="secno">6.1.48.30 </span>   Opstelplaats­Voertuig</h5>
+            <h5 id="x6-1-49-30-opstelplaats-voertuig"><span class="secno">6.1.49.30 </span>   Opstelplaats­Voertuig</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -7184,7 +7232,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_B768FDC9_8444_4437_8A41_D976631757C3"></a><a class="anchor" id="global_class_IMEVBasis_PRContour"></a><section id="global_class_IMEVBasis_PRContour">
-            <h5 id="x6-1-48-31-prcontour"><span class="secno">6.1.48.31 </span>   PRContour</h5>
+            <h5 id="x6-1-49-31-prcontour"><span class="secno">6.1.49.31 </span>   PRContour</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -7319,7 +7367,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_52CE468A_EFD4_456f_AE41_A37D10A734E2"></a><a class="anchor" id="global_class_IMEVBasis_ReferentieEVContour"></a><section id="global_class_IMEVBasis_ReferentieEVContour">
-            <h5 id="x6-1-48-32-referentie-evcontour"><span class="secno">6.1.48.32 </span>   Referentie­EVContour</h5>
+            <h5 id="x6-1-49-32-referentie-evcontour"><span class="secno">6.1.49.32 </span>   Referentie­EVContour</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -7452,7 +7500,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_CBB1E634_0AF9_45f7_B1DE_B2DED4A65BD2"></a><a class="anchor" id="global_class_IMEVBasis_SamengesteldeReferentie"></a><section id="global_class_IMEVBasis_SamengesteldeReferentie">
-            <h5 id="x6-1-48-33-samengestelde-referentie"><span class="secno">6.1.48.33 </span>   Samengestelde­Referentie</h5>
+            <h5 id="x6-1-49-33-samengestelde-referentie"><span class="secno">6.1.49.33 </span>   Samengestelde­Referentie</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -7550,7 +7598,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_DA331E8B_730B_46e2_82A0_46363E368A0B"></a><a class="anchor" id="global_class_IMEVBasis_SevesoReferentie"></a><section id="global_class_IMEVBasis_SevesoReferentie">
-            <h5 id="x6-1-48-34-seveso-referentie"><span class="secno">6.1.48.34 </span>   Seveso­Referentie</h5>
+            <h5 id="x6-1-49-34-seveso-referentie"><span class="secno">6.1.49.34 </span>   Seveso­Referentie</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -7654,7 +7702,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_A813D3B7_48A4_45d1_AC12_D7AD33A9B2AC"></a><a class="anchor" id="global_class_IMEVBasis_SpoorVervoer"></a><section id="global_class_IMEVBasis_SpoorVervoer">
-            <h5 id="x6-1-48-35-spoor-vervoer"><span class="secno">6.1.48.35 </span>   Spoor­Vervoer</h5>
+            <h5 id="x6-1-49-35-spoor-vervoer"><span class="secno">6.1.49.35 </span>   Spoor­Vervoer</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -7787,7 +7835,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_6B0C04B3_2C57_4ec8_83BB_430FB9B63635"></a><a class="anchor" id="global_class_IMEVBasis_Tankzuil"></a><section id="global_class_IMEVBasis_Tankzuil">
-            <h5 id="x6-1-48-36-tankzuil"><span class="secno">6.1.48.36 </span>   Tankzuil</h5>
+            <h5 id="x6-1-49-36-tankzuil"><span class="secno">6.1.49.36 </span>   Tankzuil</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -7878,7 +7926,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_5C946936_DFA1_4ad7_A7AA_DB73C06AC54E"></a><a class="anchor" id="global_class_IMEVBasis_Vulpunt"></a><section id="global_class_IMEVBasis_Vulpunt">
-            <h5 id="x6-1-48-37-vulpunt"><span class="secno">6.1.48.37 </span>   Vulpunt</h5>
+            <h5 id="x6-1-49-37-vulpunt"><span class="secno">6.1.49.37 </span>   Vulpunt</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -7968,7 +8016,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_F0337DDA_C2B2_4ec0_A72E_3846592BC45A"></a><a class="anchor" id="global_class_IMEVBasis_WaterVervoer"></a><section id="global_class_IMEVBasis_WaterVervoer">
-            <h5 id="x6-1-48-38-water-vervoer"><span class="secno">6.1.48.38 </span>   Water­Vervoer</h5>
+            <h5 id="x6-1-49-38-water-vervoer"><span class="secno">6.1.49.38 </span>   Water­Vervoer</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -8102,7 +8150,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_CE1257D1_0CFF_41a6_BF79_75189B98BE07"></a><a class="anchor" id="global_class_IMEVBasis_WegAs"></a><section id="global_class_IMEVBasis_WegAs">
-            <h5 id="x6-1-48-39-weg-as"><span class="secno">6.1.48.39 </span>   Weg­As</h5>
+            <h5 id="x6-1-49-39-weg-as"><span class="secno">6.1.49.39 </span>   Weg­As</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -8206,7 +8254,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_D3DF73A1_A709_44cc_9BA8_3C7C580806DD"></a><a class="anchor" id="global_class_IMEVBasis_Wegen"></a><section id="global_class_IMEVBasis_Wegen">
-            <h5 id="x6-1-48-40-wegen"><span class="secno">6.1.48.40 </span>   Wegen</h5>
+            <h5 id="x6-1-49-40-wegen"><span class="secno">6.1.49.40 </span>   Wegen</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -8309,7 +8357,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_C6F77326_9555_4777_8FA9_C133AEA24F19"></a><a class="anchor" id="global_class_IMEVBasis_WegVervoer"></a><section id="global_class_IMEVBasis_WegVervoer">
-            <h5 id="x6-1-48-41-weg-vervoer"><span class="secno">6.1.48.41 </span>   Weg­Vervoer</h5>
+            <h5 id="x6-1-49-41-weg-vervoer"><span class="secno">6.1.49.41 </span>   Weg­Vervoer</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -8443,7 +8491,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_309BEBBA_5152_4caf_B5EC_3154BC492B87"></a><a class="anchor" id="global_class_IMEVBasis_Windturbine"></a><section id="global_class_IMEVBasis_Windturbine">
-            <h5 id="x6-1-48-42-windturbine"><span class="secno">6.1.48.42 </span>   Windturbine</h5>
+            <h5 id="x6-1-49-42-windturbine"><span class="secno">6.1.49.42 </span>   Windturbine</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -8733,9 +8781,9 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             </section>
          </section>
       <section id="keuzen">
-         <h4 id="x6-1-49-keuzen"><span class="secno">6.1.49 </span>Keuzen   </h4>
+         <h4 id="x6-1-50-keuzen"><span class="secno">6.1.50 </span>Keuzen   </h4>
          <a class="anchor" id="graph_EAID_078AC0D4_A439_42ad_9EB2_12CEEB37168C"></a><a class="anchor" id="global_class_IMEVBasis_LijnOfMultiLijn"></a><section id="global_class_IMEVBasis_LijnOfMultiLijn">
-            <h5 id="x6-1-49-1-lijn-of-multi-lijn"><span class="secno">6.1.49.1 </span>   Lijn­Of­Multi­Lijn</h5>
+            <h5 id="x6-1-50-1-lijn-of-multi-lijn"><span class="secno">6.1.50.1 </span>   Lijn­Of­Multi­Lijn</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -8794,7 +8842,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_40490449_E327_42fc_A08D_5572B5109C5A"></a><a class="anchor" id="global_class_IMEVBasis_PuntOfLijn"></a><section id="global_class_IMEVBasis_PuntOfLijn">
-            <h5 id="x6-1-49-2-punt-of-lijn"><span class="secno">6.1.49.2 </span>   Punt­Of­Lijn</h5>
+            <h5 id="x6-1-50-2-punt-of-lijn"><span class="secno">6.1.50.2 </span>   Punt­Of­Lijn</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -8863,7 +8911,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_44AD1A24_4365_4c34_BCC9_E386103FC109"></a><a class="anchor" id="global_class_IMEVBasis_PuntOfMultiPunt"></a><section id="global_class_IMEVBasis_PuntOfMultiPunt">
-            <h5 id="x6-1-49-3-punt-of-multi-punt"><span class="secno">6.1.49.3 </span>   Punt­Of­Multi­Punt</h5>
+            <h5 id="x6-1-50-3-punt-of-multi-punt"><span class="secno">6.1.50.3 </span>   Punt­Of­Multi­Punt</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -8915,7 +8963,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_62AFE6CA_8062_41ca_A9CB_94FA3B12C8BA"></a><a class="anchor" id="global_class_IMEVBasis_PuntOfVlak"></a><section id="global_class_IMEVBasis_PuntOfVlak">
-            <h5 id="x6-1-49-4-punt-of-vlak"><span class="secno">6.1.49.4 </span>   Punt­Of­Vlak</h5>
+            <h5 id="x6-1-50-4-punt-of-vlak"><span class="secno">6.1.50.4 </span>   Punt­Of­Vlak</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -8974,7 +9022,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_86FCE29B_D25F_45b5_BA92_7CE173BF2EE2"></a><a class="anchor" id="global_class_IMEVBasis_VlakOfMultiVlak"></a><section id="global_class_IMEVBasis_VlakOfMultiVlak">
-            <h5 id="x6-1-49-5-vlak-of-multi-vlak"><span class="secno">6.1.49.5 </span>   Vlak­Of­Multi­Vlak</h5>
+            <h5 id="x6-1-50-5-vlak-of-multi-vlak"><span class="secno">6.1.50.5 </span>   Vlak­Of­Multi­Vlak</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -9033,7 +9081,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             </section>
          <a class="anchor" id="graph_EAID_D6F9C787_BAA9_49a9_94B8_1C19A7305E84"></a><a class="anchor" id="global_class_IMEVBasis_StofOfStofcategorie"></a><section id="global_class_IMEVBasis_StofOfStofcategorie">
-            <h5 id="x6-1-49-6-stof-of-stofcategorie"><span class="secno">6.1.49.6 </span>   Stof­Of­Stofcategorie</h5>
+            <h5 id="x6-1-50-6-stof-of-stofcategorie"><span class="secno">6.1.50.6 </span>   Stof­Of­Stofcategorie</h5>
             
             <table style="width: 100%;">
                <colgroup style="width: 30%;"></colgroup>
@@ -9093,16 +9141,16 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             </section>
          </section>
       <section id="gestructureerde-datatypen">
-         <h4 id="x6-1-50-gestructureerde-datatypen"><span class="secno">6.1.50 </span>Gestructureerde datatypen   </h4>
+         <h4 id="x6-1-51-gestructureerde-datatypen"><span class="secno">6.1.51 </span>Gestructureerde datatypen   </h4>
          <a class="anchor" id="graph_EAID_36400497_F184_44ca_9236_B54B288ECB9C"></a><a class="anchor" id="global_class_IMEVBasis_Documentatie"></a><section id="global_class_IMEVBasis_Documentatie">
-            <h5 id="x6-1-50-1-gestructureerd-datatype-documentatie"><span class="secno">6.1.50.1 </span>Gestructureerd datatype   Documentatie</h5>
+            <h5 id="x6-1-51-1-gestructureerd-datatype-documentatie"><span class="secno">6.1.51.1 </span>Gestructureerd datatype   Documentatie</h5>
             
             <table style="width: 100%;">
                <tbody></tbody>
             </table>
             
             <section id="overzicht-data-elementen">
-               <h6 id="x6-1-50-1-1-overzicht-data-elementen"><span class="secno">6.1.50.1.1 </span>Overzicht data elementen   </h6>
+               <h6 id="x6-1-51-1-1-overzicht-data-elementen"><span class="secno">6.1.51.1.1 </span>Overzicht data elementen   </h6>
                
                <table style="width: 100%;">
                   <colgroup style="width: 30%;"></colgroup>
@@ -9147,14 +9195,14 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                </section>
             </section>
          <a class="anchor" id="graph_EAID_83FA9169_2957_49bd_91C8_6E6A81D736A5"></a><a class="anchor" id="global_class_IMEVBasis_Stof"></a><section id="global_class_IMEVBasis_Stof">
-            <h5 id="x6-1-50-2-gestructureerd-datatype-stof"><span class="secno">6.1.50.2 </span>Gestructureerd datatype   Stof</h5>
+            <h5 id="x6-1-51-2-gestructureerd-datatype-stof"><span class="secno">6.1.51.2 </span>Gestructureerd datatype   Stof</h5>
             
             <table style="width: 100%;">
                <tbody></tbody>
             </table>
             
             <section id="overzicht-data-elementen-0">
-               <h6 id="x6-1-50-2-1-overzicht-data-elementen"><span class="secno">6.1.50.2.1 </span>Overzicht data elementen   </h6>
+               <h6 id="x6-1-51-2-1-overzicht-data-elementen"><span class="secno">6.1.51.2.1 </span>Overzicht data elementen   </h6>
                
                <table style="width: 100%;">
                   <colgroup style="width: 30%;"></colgroup>
@@ -9225,14 +9273,14 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                </section>
             </section>
          <a class="anchor" id="graph_EAID_37C651D4_7F3C_486b_AFD0_F71190E6B642"></a><a class="anchor" id="global_class_IMEVBasis_StofCategorie"></a><section id="global_class_IMEVBasis_StofCategorie">
-            <h5 id="x6-1-50-3-gestructureerd-datatype-stof-categorie"><span class="secno">6.1.50.3 </span>Gestructureerd datatype   Stof­Categorie</h5>
+            <h5 id="x6-1-51-3-gestructureerd-datatype-stof-categorie"><span class="secno">6.1.51.3 </span>Gestructureerd datatype   Stof­Categorie</h5>
             
             <table style="width: 100%;">
                <tbody></tbody>
             </table>
             
             <section id="overzicht-data-elementen-1">
-               <h6 id="x6-1-50-3-1-overzicht-data-elementen"><span class="secno">6.1.50.3.1 </span>Overzicht data elementen   </h6>
+               <h6 id="x6-1-51-3-1-overzicht-data-elementen"><span class="secno">6.1.51.3.1 </span>Overzicht data elementen   </h6>
                
                <table style="width: 100%;">
                   <colgroup style="width: 30%;"></colgroup>
@@ -9277,14 +9325,14 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                </section>
             </section>
          <a class="anchor" id="graph_EAID_F3ACE733_362C_4879_AC17_5DB8F04A22EE"></a><a class="anchor" id="global_class_IMEVBasis_NEN3610ID"></a><section id="global_class_IMEVBasis_NEN3610ID">
-            <h5 id="x6-1-50-4-gestructureerd-datatype-nen3610id"><span class="secno">6.1.50.4 </span>Gestructureerd datatype   NEN3610ID</h5>
+            <h5 id="x6-1-51-4-gestructureerd-datatype-nen3610id"><span class="secno">6.1.51.4 </span>Gestructureerd datatype   NEN3610ID</h5>
             
             <table style="width: 100%;">
                <tbody></tbody>
             </table>
             
             <section id="overzicht-data-elementen-2">
-               <h6 id="x6-1-50-4-1-overzicht-data-elementen"><span class="secno">6.1.50.4.1 </span>Overzicht data elementen   </h6>
+               <h6 id="x6-1-51-4-1-overzicht-data-elementen"><span class="secno">6.1.51.4.1 </span>Overzicht data elementen   </h6>
                
                <table style="width: 100%;">
                   <colgroup style="width: 30%;"></colgroup>
@@ -9343,12 +9391,12 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             </section>
          </section>
       <section id="attribuut-en-relatiesoort-details">
-         <h4 id="x6-1-51-attribuut-en-relatiesoort-details"><span class="secno">6.1.51 </span>Attribuut- en relatiesoort details  </h4>
+         <h4 id="x6-1-52-attribuut-en-relatiesoort-details"><span class="secno">6.1.52 </span>Attribuut- en relatiesoort details  </h4>
          
          <section id="objecttype-details">
-            <h5 id="x6-1-51-1-objecttype-details"><span class="secno">6.1.51.1 </span>Objecttype details  </h5>
+            <h5 id="x6-1-52-1-objecttype-details"><span class="secno">6.1.52.1 </span>Objecttype details  </h5>
             <a class="anchor" id="detail_class_IMEVBasis_Aandachtsgebied"></a><section id="detail_class_IMEVBasis_Aandachtsgebied">
-               <h6 id="x6-1-51-1-1-aandachtsgebied"><span class="secno">6.1.51.1.1 </span>   Aandachtsgebied</h6>
+               <h6 id="x6-1-52-1-1-aandachtsgebied"><span class="secno">6.1.52.1.1 </span>   Aandachtsgebied</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Aandachtsgebied_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Aandachtsgebied_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_Aandachtsgebied">Aandachtsgebied</a> geometrie</h7>
                   
@@ -9541,7 +9589,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_AftappuntOpslagtank"></a><section id="detail_class_IMEVBasis_AftappuntOpslagtank">
-               <h6 id="x6-1-51-1-2-aftappunt-opslagtank"><span class="secno">6.1.51.1.2 </span>   Aftappunt­Opslagtank</h6>
+               <h6 id="x6-1-52-1-2-aftappunt-opslagtank"><span class="secno">6.1.52.1.2 </span>   Aftappunt­Opslagtank</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_AftappuntOpslagtank_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_AftappuntOpslagtank_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_AftappuntOpslagtank">Aftappunt­Opslagtank</a> geometrie</h7>
                   
@@ -9583,7 +9631,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_AnderInsluitsysteemReferentie"></a><section id="detail_class_IMEVBasis_AnderInsluitsysteemReferentie">
-               <h6 id="x6-1-51-1-3-ander-insluitsysteem-referentie"><span class="secno">6.1.51.1.3 </span>   Ander­Insluitsysteem­Referentie</h6>
+               <h6 id="x6-1-52-1-3-ander-insluitsysteem-referentie"><span class="secno">6.1.52.1.3 </span>   Ander­Insluitsysteem­Referentie</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_AnderInsluitsysteemReferentie_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_AnderInsluitsysteemReferentie_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_AnderInsluitsysteemReferentie">Ander­Insluitsysteem­Referentie</a> geometrie</h7>
                   
@@ -9658,7 +9706,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_BrandAandachtsgebied"></a><section id="detail_class_IMEVBasis_BrandAandachtsgebied">
-               <h6 id="x6-1-51-1-4-brand-aandachtsgebied"><span class="secno">6.1.51.1.4 </span>   Brand­Aandachtsgebied</h6>
+               <h6 id="x6-1-52-1-4-brand-aandachtsgebied"><span class="secno">6.1.52.1.4 </span>   Brand­Aandachtsgebied</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_BrandAandachtsgebied_typeBrand"></a><div class="deepheader" id="detail_attribute_IMEVBasis_BrandAandachtsgebied_typeBrand">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_BrandAandachtsgebied">Brand­Aandachtsgebied</a> type­Brand</h7>
                   
@@ -9700,7 +9748,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_Bewaarplaats"></a><section id="detail_class_IMEVBasis_Bewaarplaats">
-               <h6 id="x6-1-51-1-5-bewaarplaats"><span class="secno">6.1.51.1.5 </span>   Bewaarplaats</h6>
+               <h6 id="x6-1-52-1-5-bewaarplaats"><span class="secno">6.1.52.1.5 </span>   Bewaarplaats</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Bewaarplaats_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Bewaarplaats_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_Bewaarplaats">Bewaarplaats</a> geometrie</h7>
                   
@@ -9778,7 +9826,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_Bewerkingsruimte"></a><section id="detail_class_IMEVBasis_Bewerkingsruimte">
-               <h6 id="x6-1-51-1-6-bewerkingsruimte"><span class="secno">6.1.51.1.6 </span>   Bewerkingsruimte</h6>
+               <h6 id="x6-1-52-1-6-bewerkingsruimte"><span class="secno">6.1.52.1.6 </span>   Bewerkingsruimte</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Bewerkingsruimte_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Bewerkingsruimte_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_Bewerkingsruimte">Bewerkingsruimte</a> geometrie</h7>
                   
@@ -9822,7 +9870,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                </section>
             
             <a class="anchor" id="detail_class_IMEVBasis_BufferBewaarplaats"></a><section id="detail_class_IMEVBasis_BufferBewaarplaats">
-               <h6 id="x6-1-51-1-7-buffer-bewaarplaats"><span class="secno">6.1.51.1.7 </span>   Buffer­Bewaarplaats</h6>
+               <h6 id="x6-1-52-1-7-buffer-bewaarplaats"><span class="secno">6.1.52.1.7 </span>   Buffer­Bewaarplaats</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_BufferBewaarplaats_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_BufferBewaarplaats_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_BufferBewaarplaats">Buffer­Bewaarplaats</a> geometrie</h7>
                   
@@ -9865,7 +9913,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_BuisleidingReferentie"></a><section id="detail_class_IMEVBasis_BuisleidingReferentie">
-               <h6 id="x6-1-51-1-8-buisleiding-referentie"><span class="secno">6.1.51.1.8 </span>   Buisleiding­Referentie</h6>
+               <h6 id="x6-1-52-1-8-buisleiding-referentie"><span class="secno">6.1.52.1.8 </span>   Buisleiding­Referentie</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_BuisleidingReferentie_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_BuisleidingReferentie_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_BuisleidingReferentie">Buisleiding­Referentie</a> geometrie</h7>
                   
@@ -10254,7 +10302,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_BuisleidingStelsel"></a><section id="detail_class_IMEVBasis_BuisleidingStelsel">
-               <h6 id="x6-1-51-1-9-buisleiding-stelsel"><span class="secno">6.1.51.1.9 </span>   Buisleiding­Stelsel</h6>
+               <h6 id="x6-1-52-1-9-buisleiding-stelsel"><span class="secno">6.1.52.1.9 </span>   Buisleiding­Stelsel</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_BuisleidingStelsel_eigenaar"></a><div class="deepheader" id="detail_attribute_IMEVBasis_BuisleidingStelsel_eigenaar">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_BuisleidingStelsel">Buisleiding­Stelsel</a> eigenaar</h7>
                   
@@ -10467,7 +10515,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_CivielExplosieAandachtsgebied"></a><section id="detail_class_IMEVBasis_CivielExplosieAandachtsgebied">
-               <h6 id="x6-1-51-1-10-civiel-explosie-aandachtsgebied"><span class="secno">6.1.51.1.10 </span>   Civiel­Explosie­Aandachtsgebied</h6>
+               <h6 id="x6-1-52-1-10-civiel-explosie-aandachtsgebied"><span class="secno">6.1.52.1.10 </span>   Civiel­Explosie­Aandachtsgebied</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_CivielExplosieAandachtsgebied_typeCivExpAandachtsgebied"></a><div class="deepheader" id="detail_attribute_IMEVBasis_CivielExplosieAandachtsgebied_typeCivExpAandachtsgebied">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_CivielExplosieAandachtsgebied">Civiel­Explosie­Aandachtsgebied</a> type­Civ­Exp­Aandachtsgebied</h7>
                   
@@ -10505,7 +10553,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_EVActiviteit"></a><section id="detail_class_IMEVBasis_EVActiviteit">
-               <h6 id="x6-1-51-1-11-evactiviteit"><span class="secno">6.1.51.1.11 </span>   EVActiviteit</h6>
+               <h6 id="x6-1-52-1-11-evactiviteit"><span class="secno">6.1.52.1.11 </span>   EVActiviteit</h6>
                <a class="anchor" id="detail_association_IMEVBasis_EVActiviteit_locatieEVActiviteit"></a><div class="deepheader" id="detail_association_IMEVBasis_EVActiviteit_locatieEVActiviteit">
                   <h7>Relatiesoort details  <a href="#global_class_IMEVBasis_EVActiviteit">EVActiviteit</a> locatie­EVActiviteit</h7>
                   
@@ -10573,7 +10621,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_EVContour"></a><section id="detail_class_IMEVBasis_EVContour">
-               <h6 id="x6-1-51-1-12-evcontour"><span class="secno">6.1.51.1.12 </span>   EVContour</h6>
+               <h6 id="x6-1-52-1-12-evcontour"><span class="secno">6.1.52.1.12 </span>   EVContour</h6>
                <a class="anchor" id="detail_association_IMEVBasis_EVContour_hoortBij"></a><div class="deepheader" id="detail_association_IMEVBasis_EVContour_hoortBij">
                   <h7>Relatiesoort details  <a href="#global_class_IMEVBasis_EVContour">EVContour</a> hoort­Bij</h7>
                   
@@ -10643,7 +10691,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_ExplosieAandachtsgebied"></a><section id="detail_class_IMEVBasis_ExplosieAandachtsgebied">
-               <h6 id="x6-1-51-1-13-explosie-aandachtsgebied"><span class="secno">6.1.51.1.13 </span>   Explosie­Aandachtsgebied</h6>
+               <h6 id="x6-1-52-1-13-explosie-aandachtsgebied"><span class="secno">6.1.52.1.13 </span>   Explosie­Aandachtsgebied</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_ExplosieAandachtsgebied_bleve"></a><div class="deepheader" id="detail_attribute_IMEVBasis_ExplosieAandachtsgebied_bleve">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_ExplosieAandachtsgebied">Explosie­Aandachtsgebied</a> bleve</h7>
                   
@@ -10681,7 +10729,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                </section>
             
             <a class="anchor" id="detail_class_IMEVBasis_ExterneVeiligheidsObject"></a><section id="detail_class_IMEVBasis_ExterneVeiligheidsObject">
-               <h6 id="x6-1-51-1-14-externe-veiligheids-object"><span class="secno">6.1.51.1.14 </span>   Externe­Veiligheids­Object</h6>
+               <h6 id="x6-1-52-1-14-externe-veiligheids-object"><span class="secno">6.1.52.1.14 </span>   Externe­Veiligheids­Object</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_ExterneVeiligheidsObject_bronhoudercode"></a><div class="deepheader" id="detail_attribute_IMEVBasis_ExterneVeiligheidsObject_bronhoudercode">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_ExterneVeiligheidsObject">Externe­Veiligheids­Object</a> bronhoudercode</h7>
                   
@@ -10905,7 +10953,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_ExterneVeiligheidsObjectMaterieel"></a><section id="detail_class_IMEVBasis_ExterneVeiligheidsObjectMaterieel">
-               <h6 id="x6-1-51-1-15-externe-veiligheids-object-materieel"><span class="secno">6.1.51.1.15 </span>   Externe­Veiligheids­Object­Materieel</h6>
+               <h6 id="x6-1-52-1-15-externe-veiligheids-object-materieel"><span class="secno">6.1.52.1.15 </span>   Externe­Veiligheids­Object­Materieel</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_ExterneVeiligheidsObjectMaterieel_beginGeldigheid"></a><div class="deepheader" id="detail_attribute_IMEVBasis_ExterneVeiligheidsObjectMaterieel_beginGeldigheid">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_ExterneVeiligheidsObjectMaterieel">Externe­Veiligheids­Object­Materieel</a> begin­Geldigheid</h7>
                   
@@ -10991,7 +11039,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             
             
             <a class="anchor" id="detail_class_IMEVBasis_Installatie"></a><section id="detail_class_IMEVBasis_Installatie">
-               <h6 id="x6-1-51-1-16-installatie"><span class="secno">6.1.51.1.16 </span>   Installatie</h6>
+               <h6 id="x6-1-52-1-16-installatie"><span class="secno">6.1.52.1.16 </span>   Installatie</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Installatie_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Installatie_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_Installatie">Installatie</a> geometrie</h7>
                   
@@ -11029,7 +11077,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_KwetsbaarGebouw"></a><section id="detail_class_IMEVBasis_KwetsbaarGebouw">
-               <h6 id="x6-1-51-1-17-kwetsbaar-gebouw"><span class="secno">6.1.51.1.17 </span>   Kwetsbaar­Gebouw</h6>
+               <h6 id="x6-1-52-1-17-kwetsbaar-gebouw"><span class="secno">6.1.52.1.17 </span>   Kwetsbaar­Gebouw</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_KwetsbaarGebouw_categorieKwetsbaarheid"></a><div class="deepheader" id="detail_attribute_IMEVBasis_KwetsbaarGebouw_categorieKwetsbaarheid">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_KwetsbaarGebouw">Kwetsbaar­Gebouw</a> categorie­Kwetsbaarheid</h7>
                   
@@ -11333,7 +11381,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_KwetsbareLocatie"></a><section id="detail_class_IMEVBasis_KwetsbareLocatie">
-               <h6 id="x6-1-51-1-18-kwetsbare-locatie"><span class="secno">6.1.51.1.18 </span>   Kwetsbare­Locatie</h6>
+               <h6 id="x6-1-52-1-18-kwetsbare-locatie"><span class="secno">6.1.52.1.18 </span>   Kwetsbare­Locatie</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_KwetsbareLocatie_categorieKwetsbaarheid"></a><div class="deepheader" id="detail_attribute_IMEVBasis_KwetsbareLocatie_categorieKwetsbaarheid">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_KwetsbareLocatie">Kwetsbare­Locatie</a> categorie­Kwetsbaarheid</h7>
                   
@@ -11514,7 +11562,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_Leiding"></a><section id="detail_class_IMEVBasis_Leiding">
-               <h6 id="x6-1-51-1-19-leiding"><span class="secno">6.1.51.1.19 </span>   Leiding</h6>
+               <h6 id="x6-1-52-1-19-leiding"><span class="secno">6.1.52.1.19 </span>   Leiding</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Leiding_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Leiding_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_Leiding">Leiding</a> geometrie</h7>
                   
@@ -11632,7 +11680,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_LocatieActiviteit"></a><section id="detail_class_IMEVBasis_LocatieActiviteit">
-               <h6 id="x6-1-51-1-20-locatie-activiteit"><span class="secno">6.1.51.1.20 </span>   Locatie­Activiteit</h6>
+               <h6 id="x6-1-52-1-20-locatie-activiteit"><span class="secno">6.1.52.1.20 </span>   Locatie­Activiteit</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_LocatieActiviteit_bedrijfsnaam"></a><div class="deepheader" id="detail_attribute_IMEVBasis_LocatieActiviteit_bedrijfsnaam">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_LocatieActiviteit">Locatie­Activiteit</a> bedrijfsnaam</h7>
                   
@@ -12104,7 +12152,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_LocatieBasisnet"></a><section id="detail_class_IMEVBasis_LocatieBasisnet">
-               <h6 id="x6-1-51-1-21-locatie-basisnet"><span class="secno">6.1.51.1.21 </span>   Locatie­Basisnet</h6>
+               <h6 id="x6-1-52-1-21-locatie-basisnet"><span class="secno">6.1.52.1.21 </span>   Locatie­Basisnet</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_LocatieBasisnet_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_LocatieBasisnet_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_LocatieBasisnet">Locatie­Basisnet</a> geometrie</h7>
                   
@@ -12220,7 +12268,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_LocatieEVActiviteit"></a><section id="detail_class_IMEVBasis_LocatieEVActiviteit">
-               <h6 id="x6-1-51-1-22-locatie-evactiviteit"><span class="secno">6.1.51.1.22 </span>   Locatie­EVActiviteit</h6>
+               <h6 id="x6-1-52-1-22-locatie-evactiviteit"><span class="secno">6.1.52.1.22 </span>   Locatie­EVActiviteit</h6>
                <a class="anchor" id="detail_association_IMEVBasis_LocatieEVActiviteit_voertUit"></a><div class="deepheader" id="detail_association_IMEVBasis_LocatieEVActiviteit_voertUit">
                   <h7>Relatiesoort details  <a href="#global_class_IMEVBasis_LocatieEVActiviteit">Locatie­EVActiviteit</a> voert­Uit</h7>
                   
@@ -12255,7 +12303,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_Machinekamer"></a><section id="detail_class_IMEVBasis_Machinekamer">
-               <h6 id="x6-1-51-1-23-machinekamer"><span class="secno">6.1.51.1.23 </span>   Machinekamer</h6>
+               <h6 id="x6-1-52-1-23-machinekamer"><span class="secno">6.1.52.1.23 </span>   Machinekamer</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Machinekamer_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Machinekamer_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_Machinekamer">Machinekamer</a> geometrie</h7>
                   
@@ -12407,7 +12455,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_MilitairExplosieAandachtsgebied"></a><section id="detail_class_IMEVBasis_MilitairExplosieAandachtsgebied">
-               <h6 id="x6-1-51-1-24-militair-explosie-aandachtsgebied"><span class="secno">6.1.51.1.24 </span>   Militair­Explosie­Aandachtsgebied</h6>
+               <h6 id="x6-1-52-1-24-militair-explosie-aandachtsgebied"><span class="secno">6.1.52.1.24 </span>   Militair­Explosie­Aandachtsgebied</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_MilitairExplosieAandachtsgebied_typeMilitairExpAandachtsgebied"></a><div class="deepheader" id="detail_attribute_IMEVBasis_MilitairExplosieAandachtsgebied_typeMilitairExpAandachtsgebied">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_MilitairExplosieAandachtsgebied">Militair­Explosie­Aandachtsgebied</a> type­Militair­Exp­Aandachtsgebied</h7>
                   
@@ -12450,7 +12498,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_OpslagReferentie"></a><section id="detail_class_IMEVBasis_OpslagReferentie">
-               <h6 id="x6-1-51-1-25-opslag-referentie"><span class="secno">6.1.51.1.25 </span>   Opslag­Referentie</h6>
+               <h6 id="x6-1-52-1-25-opslag-referentie"><span class="secno">6.1.52.1.25 </span>   Opslag­Referentie</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_OpslagReferentie_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_OpslagReferentie_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_OpslagReferentie">Opslag­Referentie</a> geometrie</h7>
                   
@@ -12637,7 +12685,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_OpstelplaatsVoertuig"></a><section id="detail_class_IMEVBasis_OpstelplaatsVoertuig">
-               <h6 id="x6-1-51-1-26-opstelplaats-voertuig"><span class="secno">6.1.51.1.26 </span>   Opstelplaats­Voertuig</h6>
+               <h6 id="x6-1-52-1-26-opstelplaats-voertuig"><span class="secno">6.1.52.1.26 </span>   Opstelplaats­Voertuig</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_OpstelplaatsVoertuig_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_OpstelplaatsVoertuig_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_OpstelplaatsVoertuig">Opstelplaats­Voertuig</a> geometrie</h7>
                   
@@ -12684,7 +12732,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_PRContour"></a><section id="detail_class_IMEVBasis_PRContour">
-               <h6 id="x6-1-51-1-27-prcontour"><span class="secno">6.1.51.1.27 </span>   PRContour</h6>
+               <h6 id="x6-1-52-1-27-prcontour"><span class="secno">6.1.52.1.27 </span>   PRContour</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_PRContour_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_PRContour_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_PRContour">PRContour</a> geometrie</h7>
                   
@@ -12891,7 +12939,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_ReferentieEVContour"></a><section id="detail_class_IMEVBasis_ReferentieEVContour">
-               <h6 id="x6-1-51-1-28-referentie-evcontour"><span class="secno">6.1.51.1.28 </span>   Referentie­EVContour</h6>
+               <h6 id="x6-1-52-1-28-referentie-evcontour"><span class="secno">6.1.52.1.28 </span>   Referentie­EVContour</h6>
                <a class="anchor" id="detail_association_IMEVBasis_ReferentieEVContour_resulteertIn"></a><div class="deepheader" id="detail_association_IMEVBasis_ReferentieEVContour_resulteertIn">
                   <h7>Relatiesoort details  <a href="#global_class_IMEVBasis_ReferentieEVContour">Referentie­EVContour</a> resulteert­In</h7>
                   
@@ -12958,7 +13006,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_SamengesteldeReferentie"></a><section id="detail_class_IMEVBasis_SamengesteldeReferentie">
-               <h6 id="x6-1-51-1-29-samengestelde-referentie"><span class="secno">6.1.51.1.29 </span>   Samengestelde­Referentie</h6>
+               <h6 id="x6-1-52-1-29-samengestelde-referentie"><span class="secno">6.1.52.1.29 </span>   Samengestelde­Referentie</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_SamengesteldeReferentie_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_SamengesteldeReferentie_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_SamengesteldeReferentie">Samengestelde­Referentie</a> geometrie</h7>
                   
@@ -13000,7 +13048,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_SevesoReferentie"></a><section id="detail_class_IMEVBasis_SevesoReferentie">
-               <h6 id="x6-1-51-1-30-seveso-referentie"><span class="secno">6.1.51.1.30 </span>   Seveso­Referentie</h6>
+               <h6 id="x6-1-52-1-30-seveso-referentie"><span class="secno">6.1.52.1.30 </span>   Seveso­Referentie</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_SevesoReferentie_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_SevesoReferentie_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_SevesoReferentie">Seveso­Referentie</a> geometrie</h7>
                   
@@ -13078,7 +13126,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_SpoorVervoer"></a><section id="detail_class_IMEVBasis_SpoorVervoer">
-               <h6 id="x6-1-51-1-31-spoor-vervoer"><span class="secno">6.1.51.1.31 </span>   Spoor­Vervoer</h6>
+               <h6 id="x6-1-52-1-31-spoor-vervoer"><span class="secno">6.1.52.1.31 </span>   Spoor­Vervoer</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_SpoorVervoer_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_SpoorVervoer_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_SpoorVervoer">Spoor­Vervoer</a> geometrie</h7>
                   
@@ -13229,7 +13277,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_Tankzuil"></a><section id="detail_class_IMEVBasis_Tankzuil">
-               <h6 id="x6-1-51-1-32-tankzuil"><span class="secno">6.1.51.1.32 </span>   Tankzuil</h6>
+               <h6 id="x6-1-52-1-32-tankzuil"><span class="secno">6.1.52.1.32 </span>   Tankzuil</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Tankzuil_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Tankzuil_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_Tankzuil">Tankzuil</a> geometrie</h7>
                   
@@ -13271,7 +13319,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_Vulpunt"></a><section id="detail_class_IMEVBasis_Vulpunt">
-               <h6 id="x6-1-51-1-33-vulpunt"><span class="secno">6.1.51.1.33 </span>   Vulpunt</h6>
+               <h6 id="x6-1-52-1-33-vulpunt"><span class="secno">6.1.52.1.33 </span>   Vulpunt</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Vulpunt_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Vulpunt_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_Vulpunt">Vulpunt</a> geometrie</h7>
                   
@@ -13313,7 +13361,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_WaterVervoer"></a><section id="detail_class_IMEVBasis_WaterVervoer">
-               <h6 id="x6-1-51-1-34-water-vervoer"><span class="secno">6.1.51.1.34 </span>   Water­Vervoer</h6>
+               <h6 id="x6-1-52-1-34-water-vervoer"><span class="secno">6.1.52.1.34 </span>   Water­Vervoer</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_WaterVervoer_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_WaterVervoer_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_WaterVervoer">Water­Vervoer</a> geometrie</h7>
                   
@@ -13464,7 +13512,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_WegAs"></a><section id="detail_class_IMEVBasis_WegAs">
-               <h6 id="x6-1-51-1-35-weg-as"><span class="secno">6.1.51.1.35 </span>   Weg­As</h6>
+               <h6 id="x6-1-52-1-35-weg-as"><span class="secno">6.1.52.1.35 </span>   Weg­As</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_WegAs_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_WegAs_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_WegAs">Weg­As</a> geometrie</h7>
                   
@@ -13538,7 +13586,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_Wegen"></a><section id="detail_class_IMEVBasis_Wegen">
-               <h6 id="x6-1-51-1-36-wegen"><span class="secno">6.1.51.1.36 </span>   Wegen</h6>
+               <h6 id="x6-1-52-1-36-wegen"><span class="secno">6.1.52.1.36 </span>   Wegen</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Wegen_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Wegen_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_Wegen">Wegen</a> geometrie</h7>
                   
@@ -13615,7 +13663,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_WegVervoer"></a><section id="detail_class_IMEVBasis_WegVervoer">
-               <h6 id="x6-1-51-1-37-weg-vervoer"><span class="secno">6.1.51.1.37 </span>   Weg­Vervoer</h6>
+               <h6 id="x6-1-52-1-37-weg-vervoer"><span class="secno">6.1.52.1.37 </span>   Weg­Vervoer</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_WegVervoer_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_WegVervoer_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_WegVervoer">Weg­Vervoer</a> geometrie</h7>
                   
@@ -13766,7 +13814,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_Windturbine"></a><section id="detail_class_IMEVBasis_Windturbine">
-               <h6 id="x6-1-51-1-38-windturbine"><span class="secno">6.1.51.1.38 </span>   Windturbine</h6>
+               <h6 id="x6-1-52-1-38-windturbine"><span class="secno">6.1.52.1.38 </span>   Windturbine</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Windturbine_geometrie"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Windturbine_geometrie">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_Windturbine">Windturbine</a> geometrie</h7>
                   
@@ -14391,9 +14439,9 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
          
          
          <section id="keuze">
-            <h5 id="x6-1-51-2-keuze"><span class="secno">6.1.51.2 </span>Keuze  </h5>
+            <h5 id="x6-1-52-2-keuze"><span class="secno">6.1.52.2 </span>Keuze  </h5>
             <a class="anchor" id="detail_class_IMEVBasis_LijnOfMultiLijn"></a><section id="detail_class_IMEVBasis_LijnOfMultiLijn">
-               <h6 id="x6-1-51-2-1-keuze-lijn-of-multi-lijn"><span class="secno">6.1.51.2.1 </span>Keuze   Lijn­Of­Multi­Lijn</h6>
+               <h6 id="x6-1-52-2-1-keuze-lijn-of-multi-lijn"><span class="secno">6.1.52.2.1 </span>Keuze   Lijn­Of­Multi­Lijn</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_LijnOfMultiLijn_lijn"></a><div class="deepheader" id="detail_attribute_IMEVBasis_LijnOfMultiLijn_lijn">
                   <h7>Keuze element  <a href="#global_class_IMEVBasis_LijnOfMultiLijn">Lijn­Of­Multi­Lijn</a> lijn</h7>
                   
@@ -14444,7 +14492,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_PuntOfLijn"></a><section id="detail_class_IMEVBasis_PuntOfLijn">
-               <h6 id="x6-1-51-2-2-keuze-punt-of-lijn"><span class="secno">6.1.51.2.2 </span>Keuze   Punt­Of­Lijn</h6>
+               <h6 id="x6-1-52-2-2-keuze-punt-of-lijn"><span class="secno">6.1.52.2.2 </span>Keuze   Punt­Of­Lijn</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_PuntOfLijn_punt"></a><div class="deepheader" id="detail_attribute_IMEVBasis_PuntOfLijn_punt">
                   <h7>Keuze element  <a href="#global_class_IMEVBasis_PuntOfLijn">Punt­Of­Lijn</a> punt</h7>
                   
@@ -14519,7 +14567,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_PuntOfMultiPunt"></a><section id="detail_class_IMEVBasis_PuntOfMultiPunt">
-               <h6 id="x6-1-51-2-3-keuze-punt-of-multi-punt"><span class="secno">6.1.51.2.3 </span>Keuze   Punt­Of­Multi­Punt</h6>
+               <h6 id="x6-1-52-2-3-keuze-punt-of-multi-punt"><span class="secno">6.1.52.2.3 </span>Keuze   Punt­Of­Multi­Punt</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_PuntOfMultiPunt_punt"></a><div class="deepheader" id="detail_attribute_IMEVBasis_PuntOfMultiPunt_punt">
                   <h7>Data element  <a href="#global_class_IMEVBasis_PuntOfMultiPunt">Punt­Of­Multi­Punt</a> punt</h7>
                   
@@ -14580,7 +14628,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_PuntOfVlak"></a><section id="detail_class_IMEVBasis_PuntOfVlak">
-               <h6 id="x6-1-51-2-4-keuze-punt-of-vlak"><span class="secno">6.1.51.2.4 </span>Keuze   Punt­Of­Vlak</h6>
+               <h6 id="x6-1-52-2-4-keuze-punt-of-vlak"><span class="secno">6.1.52.2.4 </span>Keuze   Punt­Of­Vlak</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_PuntOfVlak_punt"></a><div class="deepheader" id="detail_attribute_IMEVBasis_PuntOfVlak_punt">
                   <h7>Keuze element  <a href="#global_class_IMEVBasis_PuntOfVlak">Punt­Of­Vlak</a> punt</h7>
                   
@@ -14631,7 +14679,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_VlakOfMultiVlak"></a><section id="detail_class_IMEVBasis_VlakOfMultiVlak">
-               <h6 id="x6-1-51-2-5-keuze-vlak-of-multi-vlak"><span class="secno">6.1.51.2.5 </span>Keuze   Vlak­Of­Multi­Vlak</h6>
+               <h6 id="x6-1-52-2-5-keuze-vlak-of-multi-vlak"><span class="secno">6.1.52.2.5 </span>Keuze   Vlak­Of­Multi­Vlak</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_VlakOfMultiVlak_vlak"></a><div class="deepheader" id="detail_attribute_IMEVBasis_VlakOfMultiVlak_vlak">
                   <h7>Keuze element  <a href="#global_class_IMEVBasis_VlakOfMultiVlak">Vlak­Of­Multi­Vlak</a> vlak</h7>
                   
@@ -14682,7 +14730,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_StofOfStofcategorie"></a><section id="detail_class_IMEVBasis_StofOfStofcategorie">
-               <h6 id="x6-1-51-2-6-keuze-stof-of-stofcategorie"><span class="secno">6.1.51.2.6 </span>Keuze   Stof­Of­Stofcategorie</h6>
+               <h6 id="x6-1-52-2-6-keuze-stof-of-stofcategorie"><span class="secno">6.1.52.2.6 </span>Keuze   Stof­Of­Stofcategorie</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_StofOfStofcategorie_stof"></a><div class="deepheader" id="detail_attribute_IMEVBasis_StofOfStofcategorie_stof">
                   <h7>Attribuutsoort details  <a href="#global_class_IMEVBasis_StofOfStofcategorie">Stof­Of­Stofcategorie</a> stof</h7>
                   
@@ -14743,9 +14791,9 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
             </section>
          
          <section id="gestructureerde-datatypen-0">
-            <h5 id="x6-1-51-3-gestructureerde-datatypen"><span class="secno">6.1.51.3 </span>Gestructureerde datatypen  </h5>
+            <h5 id="x6-1-52-3-gestructureerde-datatypen"><span class="secno">6.1.52.3 </span>Gestructureerde datatypen  </h5>
             <a class="anchor" id="detail_class_IMEVBasis_Documentatie"></a><section id="detail_class_IMEVBasis_Documentatie">
-               <h6 id="x6-1-51-3-1-gestructureerd-datatype-documentatie"><span class="secno">6.1.51.3.1 </span>Gestructureerd datatype   Documentatie</h6>
+               <h6 id="x6-1-52-3-1-gestructureerd-datatype-documentatie"><span class="secno">6.1.52.3.1 </span>Gestructureerd datatype   Documentatie</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Documentatie_naam"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Documentatie_naam">
                   <h7>Data element  <a href="#global_class_IMEVBasis_Documentatie">Documentatie</a> naam</h7>
                   
@@ -14810,7 +14858,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_Stof"></a><section id="detail_class_IMEVBasis_Stof">
-               <h6 id="x6-1-51-3-2-gestructureerd-datatype-stof"><span class="secno">6.1.51.3.2 </span>Gestructureerd datatype   Stof</h6>
+               <h6 id="x6-1-52-3-2-gestructureerd-datatype-stof"><span class="secno">6.1.52.3.2 </span>Gestructureerd datatype   Stof</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_Stof_naam"></a><div class="deepheader" id="detail_attribute_IMEVBasis_Stof_naam">
                   <h7>Data element  <a href="#global_class_IMEVBasis_Stof">Stof</a> naam</h7>
                   
@@ -14937,7 +14985,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_StofCategorie"></a><section id="detail_class_IMEVBasis_StofCategorie">
-               <h6 id="x6-1-51-3-3-gestructureerd-datatype-stof-categorie"><span class="secno">6.1.51.3.3 </span>Gestructureerd datatype   Stof­Categorie</h6>
+               <h6 id="x6-1-52-3-3-gestructureerd-datatype-stof-categorie"><span class="secno">6.1.52.3.3 </span>Gestructureerd datatype   Stof­Categorie</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_StofCategorie_categorieNaam"></a><div class="deepheader" id="detail_attribute_IMEVBasis_StofCategorie_categorieNaam">
                   <h7>Data element  <a href="#global_class_IMEVBasis_StofCategorie">Stof­Categorie</a> categorie­Naam</h7>
                   
@@ -15002,7 +15050,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
                   </div>
                </section>
             <a class="anchor" id="detail_class_IMEVBasis_NEN3610ID"></a><section id="detail_class_IMEVBasis_NEN3610ID">
-               <h6 id="x6-1-51-3-4-gestructureerd-datatype-nen3610id"><span class="secno">6.1.51.3.4 </span>Gestructureerd datatype   NEN3610ID</h6>
+               <h6 id="x6-1-52-3-4-gestructureerd-datatype-nen3610id"><span class="secno">6.1.52.3.4 </span>Gestructureerd datatype   NEN3610ID</h6>
                <a class="anchor" id="detail_attribute_IMEVBasis_NEN3610ID_namespace"></a><div class="deepheader" id="detail_attribute_IMEVBasis_NEN3610ID_namespace">
                   <h7>Data element  <a href="#global_class_IMEVBasis_NEN3610ID">NEN3610ID</a> namespace</h7>
                   
@@ -19992,7 +20040,7 @@ Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. 
 </section>
 <section id="lis" class="normative">
    <!--OddPage--><h2 id="x7-inhoud-van-waardenlijsten"><span class="secno">7. </span>Inhoud van waardenlijsten</h2>
-   <!--MIMCM-IMEV-1.0-0-20210510-20211026-101059 imvertor 1.65.2-->
+   <!--MIMCM-IMEV-1.0-0-20210510-20211026-114729 imvertor 1.65.2-->
    <section id="referentielijst-inhoud">
       <h3 id="x7-1-referentielijst-inhoud"><span class="secno">7.1 </span>Referentielijst inhoud   </h3>
    </section>
