@@ -54,6 +54,11 @@ var respecConfig =
      company:    "Geonovum",
     companyURL: "https://www.geonovum.nl"
   },
+         {
+     name:       "Frank Zwiers",
+     company:    "Antea Group",
+    companyURL: "https://anteagroup.nl"
+  },
 
   ],
   //-- shortName is verplicht! (komt in de URL: kies logische naam) --------------------
