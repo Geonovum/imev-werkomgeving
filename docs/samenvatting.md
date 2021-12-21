@@ -43,3 +43,4 @@ Dit document is gestructureerd in 14 hoofdstukken.
 -   [Hoofdstuk 13](#bibliografie): Beschrijft relevante documenten die
     betrekking hebben op dit informatiemodel.
 
+-   [Bijlage 1](#bijlage1-release-notes): Bevat de release notes bij deze versie van IMEV.
