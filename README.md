@@ -4,6 +4,9 @@ imev-werkomgeving
 Informatiemodel Register Externe Veiligheid IMREV. Folder voor het ontwikkelen
 van IMEV gerelateerde onderdelen en documentatie.
 
+Laatste officieel gepubliceerde versie:
+<https://docs.geostandaarden.nl/imev/imev/>
+
 Officieel gepubliceerde versie 1.0:
 <https://docs.geostandaarden.nl/imev/vv-im-imev-20211026/>
 
