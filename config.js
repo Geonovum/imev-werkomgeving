@@ -14,10 +14,10 @@
 var respecConfig =
 {
   //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
- // specStatus: "GN-WV",              // Werk Versie
+  specStatus: "GN-WV",              // Werk Versie
   //specStatus: "GN-CV",              // Consultatie Versie
  // specStatus: "GN-VV",              // Vaststellings Versie
-  specStatus: "GN-DEF",             // Definitieve Versie
+  //specStatus: "GN-DEF",             // Definitieve Versie
   //-- specType is verplicht! (activeer 1 van de volgende) ----------------------------
   //specType: "NO",                   // Norm
   //specType: "ST",                     // Standaard
@@ -103,10 +103,10 @@ var respecConfig =
   //     company:    "Object Management Group",
   //  },
   //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beiden aan/uit!
- previousPublishDate: "2021-10-26",    	    // Format is "YYY-MM-DD"
-  //previousMaturity: "GN-DEF",                 // kies 1 van deze 3 regels
+ previousPublishDate: "2022-01-31",    	    // Format is "YYY-MM-DD"
+  previousMaturity: "GN-DEF",                 // kies 1 van deze 3 regels
   //previousMaturity: "CV",                   // kies 1 van deze 3 regels
-previousMaturity: "GN-VV",  	                // kies 1 van deze 3 regels
+//previousMaturity: "GN-VV",  	                // kies 1 van deze 3 regels
 
   //-- Optionele parameters:
   //emailComments: "mim@geonovum.nl",         // reactie mailadres, alleen bij CV!
