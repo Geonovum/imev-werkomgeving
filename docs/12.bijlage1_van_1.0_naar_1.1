@@ -1,0 +1,35 @@
+Bijlage1: Release notes
+========
+
+Deze release notes beschrijven wijzigingen die bij de update van IMEV 1.0 naar versie 1.1 horen.
+
+
+De volgende wijzigingen zijn door gevoerd:
+
+# Aanpassing enumeraties
+
+Registratie issue op github: https://github.com/Geonovum/imev-werkomgeving/issues/6
+
+Aanpassingen:
+- alle enumeraties uitgebreid met de waarde: 'gegevenInTransitie'. Definitie: De waarde is nu niet bekend. Mag alleen voor de overgang van RRGS naar REV worden gebruikt.  
+- CategorieGiftigeStof: waarde 'anders' wordt waarde 'overig'
+
+# Materiele historie voor alle IMEV objecten
+
+Registratie issue op github: https://github.com/Geonovum/imev-werkomgeving/issues/25
+
+Aanpassingen:
+- Objecttype ExterneVeiligheidsObjectMaterieel verwijderd.
+- Attributen beginGeldigheid en eindGeldigheid toegevoegd aan ExterneVeiligheidsobject
+
+# Basisnet en buisleidngen kunnen een PRContour krijgen die dezelfde geometrie heeft als ReferentieEvContour
+
+Registratie issue op github: https://github.com/Geonovum/imev-werkomgeving/issues/22
+
+Aanpassingen:
+- Objecttype PRContour, attribuut geometrie: was VlakMultiVlak, wordt PuntLijnVlakMulti
+
+# Keuze element PuntOfLijn bug fix
+
+Aanpassingen:
+- attribuut multilijn: was multiLijn, wordt multilijn
