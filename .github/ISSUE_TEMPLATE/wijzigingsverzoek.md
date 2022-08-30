@@ -19,5 +19,8 @@ Geef hier een indicatie van de impact van de wijziging:
 - Verandert de semantiek van de standaard?
 - Heeft het impact op het xml-schema?
 
+## Prioriteit
+laag, midden, hoog
+
 ## Toelichting
 Ruimte voor extra toelichting. Bijvoorbeeld alternatieven die je overwogen hebt.
