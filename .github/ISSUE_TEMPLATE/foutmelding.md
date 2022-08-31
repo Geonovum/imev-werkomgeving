@@ -2,7 +2,7 @@
 name: Foutmelding
 about: Template voor het melden van een fout in de standaard
 title: ''
-labels: bug
+labels: bug, enhancement
 assignees: ''
 
 ---

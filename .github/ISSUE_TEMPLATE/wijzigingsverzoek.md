@@ -17,7 +17,7 @@ Beschrijf hier wat er gewijzigd moet worden aan de standaard
 Geef hier een indicatie van de impact van de wijziging:
 - Wie gaat er wat van merken?
 - Verandert de semantiek van de standaard?
-- Heeft het impact op het xml-schema?
+- Heeft het impact op het json-schema?
 
 ## Prioriteit
 laag, midden, hoog
