@@ -44,6 +44,11 @@ var respecConfig =
   //-- vul in: per Author: name:, company:, companyURL: -------------------------------
    authors:
   [
+       {
+     name:       "Pieter Bresters",
+    company:    "Geonovum",
+      companyURL: "https://www.geonovum.nl"
+   },
      {
      name:       "Joeri van Es",
     company:    "Geonovum",
