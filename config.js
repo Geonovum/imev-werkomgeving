@@ -108,7 +108,7 @@ var respecConfig =
   //     company:    "Object Management Group",
   //  },
   //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beiden aan/uit!
- previousPublishDate: "2022-01-31",    	    // Format is "YYY-MM-DD"
+ previousPublishDate: "2022-04-28",    	    // Format is "YYY-MM-DD"
   previousMaturity: "GN-DEF",                 // kies 1 van deze 3 regels
   //previousMaturity: "CV",                   // kies 1 van deze 3 regels
 //previousMaturity: "GN-VV",  	                // kies 1 van deze 3 regels
