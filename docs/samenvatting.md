@@ -44,3 +44,5 @@ Dit document is gestructureerd in 14 hoofdstukken.
     betrekking hebben op dit informatiemodel.
 
 -   [Bijlage 1](#bijlage-1-release-notes): Bevat de release notes bij deze versie van IMEV.
+
+-   [Bijlage 2](#bijlage-2-servicebestanden): Bevat referenties naar een aantal servicebestanden.
