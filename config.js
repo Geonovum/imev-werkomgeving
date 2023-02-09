@@ -84,7 +84,7 @@ var respecConfig =
   //pubDomain: "wp", 	              // White Paper
   pubDomain: "imev", 	              // IM Externe Veiligheid
   //-- Repositorynaam op GitHub -------------------------------------------------------
-  github: "https://github.com/Geonovum/imev-werkomgeving/",
+  //-- github: "https://github.com/Geonovum/imev-werkomgeving/",
   //-- Repositorynaam/issues op GitHub ------------------------------------------------
   //-- issueBase: "https://github.com/Geonovum/imev-werkomgeving/issues/",
   //-- issueBase: "mailto:imev@geonovum.nl",
