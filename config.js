@@ -87,7 +87,8 @@ var respecConfig =
   github: "https://github.com/Geonovum/imev-werkomgeving/",
   //-- Repositorynaam/issues op GitHub ------------------------------------------------
   //-- issueBase: "https://github.com/Geonovum/imev-werkomgeving/issues/",
-  issueBase: "mailto:imev@geonovum.nl",
+  //-- issueBase: "mailto:imev@geonovum.nl",
+  issueBase: "https://www.geonovum.nl/geo-standaarden/informatiemodel-externe-veiligheid#Meldingen"
   //-- edDraftURI: de URI van de werkversie van het document
   edDraftURI: "https://geonovum.github.io/imev-werkomgeving/",
 
