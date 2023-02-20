@@ -15,9 +15,11 @@ Beschrijf hier wat er gewijzigd moet worden aan de standaard
 
 ## Impactanalyse
 Geef hier een indicatie van de impact van de wijziging:
-- Wie gaat er wat van merken?
-- Veranderen definities van objecten in de standaard zodanig dat de wijziging impact heeft op de uit te wisselen gegevens?
-- Heeft het impact op het json-schema?
+- Wie gaat er wat van merken? **Dataleveranciers van buisleidingen, Softwareleveranciers**
+- Veranderen definities van objecten in de standaard zodanig dat de wijziging impact heeft op de uit te wisselen gegevens? **Ja/Nee**
+- Heeft het impact op het json-schema? **Ja/Nee**
+- Is het backwardscompatibel? **Ja/Nee**
+- X-, Y- of Z-wijziging Y: **X, Y of Z**
 
 ## Prioriteit
 laag, midden, hoog
