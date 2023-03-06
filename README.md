@@ -18,3 +18,5 @@ Het werkdocument van het informatiemodel staat hier:
 
 Issues voor het beheer en doorontwikkeling staan hier:
 https://github.com/Geonovum/imev-werkomgeving/issues
+Geonovum wil zelf het beheer houden op de issues, dus als je een nieuw issue wil indienen, verzoeken we dat te doen via de helpdesk (imev@geonovum.nl).
+Dan zet Geonovum het op Github. Daarna is iedereen vrij om er op te reageren.
