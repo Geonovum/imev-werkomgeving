@@ -23,7 +23,7 @@ Dit document is gestructureerd in 14 hoofdstukken.
 
 -   [Hoofdstuk 6](#cat): Bevat de specificatie van het IMEV door middel van UML klassediagrammen en definities van objecttypen in een objectcatalogus.
 
--   [Hoofdstuk 7](#lis): Bevat de specificatie van de waardenlijsten van het
+-   [Hoofdstuk 7](#lis): Bevat de specificatie van de waardelijsten van het
     IMEV.
 
 -   [Hoofdstuk 8](#referentiesystemen): Beschrijft de gebruikte
