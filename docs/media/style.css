@@ -14,7 +14,7 @@
 /*-- Definitie van Image ------------------------------------------------------------*/
 img
 {
-  max-width: 100%;
+  max-width: none;
   height: auto;
   width: auto;
 }
