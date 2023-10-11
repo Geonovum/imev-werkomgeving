@@ -66,7 +66,7 @@ let respecConfig = {
         company: "Geonovum",
         companyURL: "https://www.geonovum.nl",
       }
-	  {
+      {
         name: "Pieter Bresters",
         company: "Geonovum",
         companyURL: "https://www.geonovum.nl",
@@ -82,10 +82,10 @@ let respecConfig = {
         companyURL: "https://www.geonovum.nl",
       }
       {
-		name:       "Frank Zwiers",
-		company:    "Antea Group",
-		companyURL: "https://anteagroup.nl",
-	  }	  
+        name:       "Frank Zwiers",
+        company:    "Antea Group",
+        companyURL: "https://anteagroup.nl",
+      }	  
     ],
   //neem hier de URL van de github repository op waar het respec document in staat
   github: "https://github.com/Geonovum/imev-werkomgeving/",
