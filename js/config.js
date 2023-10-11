@@ -98,5 +98,5 @@ let respecConfig = {
   //        label: "pdf",
   //        uri: "template.pdf",
   //    },
-  ],
+  //],
 };
