@@ -1,6 +1,3 @@
-Samenvatting
-============
-
 Dit document bevat het informatiemodel ten behoeve van gegevenslevering en gegevensontsluiting voor het Register Externe Veiligheidsrisico's (REV), het Informatiemodel Externe Veiligheid (IMEV).
 Het informatiemodel beschrijft de gegevensstructuur en objectdefinities van gegevens in het REV.  
 
