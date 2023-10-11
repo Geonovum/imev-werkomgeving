@@ -88,10 +88,10 @@ let respecConfig = {
 	  }	  
     ],
   //neem hier de URL van de github repository op waar het respec document in staat
-  github: "https://github.com/Geonovum/NL-ReSpec-GN-template",
+  github: "https://github.com/Geonovum/imev-werkomgeving/",
   //-- issueBase: "https://github.com/Geonovum/imev-werkomgeving/issues/",
   //-- issueBase: "mailto:imev@geonovum.nl",
-  issueBase: "https://www.geonovum.nl/geo-standaarden/informatiemodel-externe-veiligheid#Meldingen",
+  //-- issueBase: "https://www.geonovum.nl/geo-standaarden/informatiemodel-externe-veiligheid#Meldingen",
   // Create PDF and link to file in header (optional):
   //alternateFormats: [
   //    {
