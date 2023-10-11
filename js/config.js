@@ -84,7 +84,7 @@ let respecConfig = {
       {
 		name:       "Frank Zwiers",
 		company:    "Antea Group",
-		companyURL: "https://anteagroup.nl"
+		companyURL: "https://anteagroup.nl",
 	  }	  
     ],
   //neem hier de URL van de github repository op waar het respec document in staat
