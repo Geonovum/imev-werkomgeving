@@ -306,6 +306,7 @@ h6>a.self-link::before {
 </style><link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/GN-VV.css"><link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico"><script id="initialUserConfig" type="application/json">{
   "specStatus": "GN-VV",
   "specType": "IM",
+  "publishDate": "2023-09-13",
   "editors": [
     {
       "name": "Paul Janssen",
@@ -347,8 +348,8 @@ h6>a.self-link::before {
   "previousPublishDate": "2022-12-21",
   "previousMaturity": "GN-DEF",
   "maxTocLevel": 4,
-  "publishISODate": "2023-10-11T00:00:00.000Z",
-  "generatedSubtitle": "Versie ter vaststelling 11 oktober 2023"
+  "publishISODate": "2023-09-13T00:00:00.000Z",
+  "generatedSubtitle": "Versie ter vaststelling 13 september 2023"
 }</script><meta name="description" content="Dit document bevat het informatiemodel ten behoeve van gegevenslevering en gegevensontsluiting voor het Register Externe Veiligheidsrisico's (REV), het Informatiemodel Externe Veiligheid (IMEV).
 Het informatiemodel beschrijft de gegevensstructuur en objectdefinities van gegevens in het REV."><script type="application/ld+json">{
   "@context": [
@@ -371,14 +372,14 @@ Het informatiemodel beschrijft de gegevensstructuur en objectdefinities van gege
       }
     }
   ],
-  "id": "https://docs.geostandaarden.nl/imev/vv-im-imev-20231011/",
+  "id": "https://docs.geostandaarden.nl/imev/vv-im-imev-20230913/",
   "type": [
     "TechArticle"
   ],
   "name": "Informatiemodel Externe Veiligheid (IMEV) versie 2.0",
   "inLanguage": "nl",
   "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
-  "datePublished": "2023-10-11",
+  "datePublished": "2023-09-13",
   "copyrightHolder": {
     "name": "Geonovum",
     "url": "https://www.geonovum.nl/"
@@ -442,9 +443,9 @@ Het informatiemodel beschrijft de gegevensstructuur en objectdefinities van gege
   <h1 class="title p-name" id="title">Informatiemodel Externe Veiligheid (IMEV) versie 2.0</h1>
   
   <h2>Geonovum Informatiemodel<br>
-  Versie ter vaststelling <time class="dt-published" datetime="2023-10-11">11 oktober 2023</time></h2>
+  Versie ter vaststelling <time class="dt-published" datetime="2023-09-13">13 september 2023</time></h2>
   <dl>
-    <dt>Deze versie:</dt><dd><a class="u-url" href="https://docs.geostandaarden.nl/imev/vv-im-imev-20231011/">https://docs.geostandaarden.nl/imev/vv-im-imev-20231011/</a></dd><dt>Laatst gepubliceerde versie:</dt><dd><a href="https://docs.geostandaarden.nl/imev/imev/">https://docs.geostandaarden.nl/imev/imev/</a></dd>
+    <dt>Deze versie:</dt><dd><a class="u-url" href="https://docs.geostandaarden.nl/imev/vv-im-imev-20230913/">https://docs.geostandaarden.nl/imev/vv-im-imev-20230913/</a></dd><dt>Laatst gepubliceerde versie:</dt><dd><a href="https://docs.geostandaarden.nl/imev/imev/">https://docs.geostandaarden.nl/imev/imev/</a></dd>
     
     <dt>Vorige versie:</dt><dd><a href="https://docs.geostandaarden.nl/imev/def-im-imev-20221221/">https://docs.geostandaarden.nl/imev/def-im-imev-20221221/</a></dd>
     <dt>Laatste werkversie:</dt><dd><a href="https://geonovum.github.io/imev-werkomgeving/">https://geonovum.github.io/imev-werkomgeving/</a></dd>
@@ -543,12 +544,12 @@ Daarnaast geldt dat onderdelen van het informatiemodel nodig zijn ten behoeve va
         <!-- voor een nieuw hoofdstuk kopieer je een regel, en voegt die toe ---------------------->  
 
   <section data-format="markdown" aria-busy="false" id="voorwoord"><!--OddPage--><h2 id="x1-voorwoord"><span class="secno">1. </span>Voorwoord</h2><p>In de Omgevingswet worden de voor de fysieke leefomgeving relevante wetten samengevoegd. Met deze Omgevingswet en de daarbij behorende AMVB’s en regelingen wordt voor externe veiligheid geregeld dat er een Register Externe Veiligheid (REV) moet zijn waarin informatie betreffende risicovolle activiteiten en risicogevoelige objecten wordt bijgehouden.
-In de wet is duidelijk beschreven wie, welke data dient te verzamelen en op welke wijze dat dient te geschieden.  </p><p>Om al deze informatie op een juiste wijze in het REV te kunnen verwerken is een informatiemodel nodig. Dit is het informatiemodel Externe Veiligheid (IMEV) bevat afspraken over de digitale structuur waarin overheden gegevens vastleggen over de opslag, het transport en het gebruik van gevaarlijke stoffen.<br>Het beheer en de doorontwikkeling van het IMEV wordt door Geonovum gedaan in opdracht van het ministerie van I&amp;W. Het REV (voorziening) wordt door het Ministerie van I&amp;W ontwikkeld.</p></section>
+In de wet is duidelijk beschreven wie, welke data dient te verzamelen en op welke wijze dat dient te geschieden.  </p><p>Om al deze informatie op een juiste wijze in het REV te kunnen verwerken is een informatiemodel nodig. Dit is het informatiemodel Externe Veiligheid (IMEV). Het bevat afspraken over de digitale structuur waarin overheden gegevens vastleggen over de opslag, het transport en het gebruik van gevaarlijke stoffen.<br>Het beheer en de doorontwikkeling van het IMEV wordt door Geonovum gedaan in opdracht van het Ministerie van I&amp;W. Het REV (voorziening) wordt door het Ministerie van I&amp;W ontwikkeld.</p></section>
   <section data-format="markdown" aria-busy="false" id="inleiding"><!--OddPage--><h2 id="x2-inleiding"><span class="secno">2. </span>Inleiding</h2><section id="aanleiding"><h3 id="x2-1-aanleiding"><span class="secno">2.1 </span>Aanleiding</h3><p>Bij bijvoorbeeld het realiseren of uitbreiden/wijzigen van een LPG tankstation moet rekening gehouden worden met kwetsbare gebouwen en locaties.
 Deze milieubelastende en risicogebonden activiteit mag bijvoorbeeld niet binnen een bepaalde afstand van een school plaatsvinden.
 Andersom mag een school ook weer niet gerealiseerd worden vlak bij een locatie waar risicogebonden activiteiten plaatsvinden zoals een LPG tankstation.
-De informatie over waar deze kwetsbare gebouwen zich bevinden en welke risicogebonden activiteiten plaatsvinden wordt al heel lang geregistreerd door regionale verschillende bronhouders.
-Deze informatie is belangrijk bij het maken van afwegingen in planologische processen maar ook voor hulpverleningsdiensten zoals brandweer, politie.  </p></section><section id="informatiemodel"><h3 id="x2-2-informatiemodel"><span class="secno">2.2 </span>Informatiemodel</h3><p>De informatie aanbieden om deze afwegingen te kunnen maken is bij wet verplicht. Een informatiemodel is een soort bouwtekening voor informatie over een bepaald domein.
+De informatie over waar deze kwetsbare gebouwen zich bevinden en welke risicogebonden activiteiten plaatsvinden wordt al heel lang geregistreerd door verschillende regionale bronhouders.
+Deze informatie is belangrijk bij het maken van afwegingen in planologische processen maar ook voor hulpverleningsdiensten zoals brandweer en politie.  </p></section><section id="informatiemodel"><h3 id="x2-2-informatiemodel"><span class="secno">2.2 </span>Informatiemodel</h3><p>De informatie aanbieden om deze afwegingen te kunnen maken is bij wet verplicht. Een informatiemodel is een soort bouwtekening voor informatie over een bepaald domein.
 In het geval van IMEV komt hier de juridische werkelijkheid van de wet samen met de fysieke werkelijkheid. Het IMEV beschrijft de fysieke werkelijkheid in termen die voor uitvoering van de wet geschikt zijn.
 In een registratie conform het IMEV, het REV, worden de gegevens geregistreerd en vormen een bevraagbaar informatiesysteem. In het IMEV staan in detail de regels en afspraken waar de informatie aan moet voldoen. </p><p>De gegevens die moeten worden aangeleverd, opgeslagen en verstrekt aan het Register Externe Veiligheidsrisico's (REV), moeten worden gestandaardiseerd.
 In het Besluit kwaliteit leefomgeving (Bkl) worden de aan te leveren gegevens benoemd en beschreven.
@@ -566,7 +567,7 @@ Het doel is om volledig te zijn maar met zo min mogelijk van deze objecttypen. O
 Bij elk objecttype horen ook attributen met bijbehorende naamgeving, definitie en specificatie van toegestane waarden.
 Tussen objecttypen bestaan relaties. Ook deze worden benoemd en gespecificeerd. Een attribuut of een relatie zou gezien kunnen worden als een soort invoerveld van een tabel.
 Op basis van de definitie en toelichting zou een menselijke gebruiker kunnen bepalen of een veld juist is ingevuld. Een informatiesysteem zou hetzelfde invoerveld kunnen valideren op basis van de modelspecificaties. </p><p>Het IMEV is als logisch model gespecificeerd en bevat daarmee de logische beschrijving van het informatiedomein. Het logische model ondersteunt een model gedreven aanpak (Model Driven Approach of Architecture).
-Het IMEV kan zo met de juiste transformatieregels automatisch omgezet worden tot een technisch applicatieschema dat interpreteerbaar is door machines. </p></section><section id="leeswijzer"><h3 id="x2-3-leeswijzer"><span class="secno">2.3 </span>Leeswijzer</h3><p>Dit document is gestructureerd in 14 hoofdstukken.</p><ul>
+Het IMEV kan zo met de juiste transformatieregels automatisch omgezet worden tot een technisch applicatieschema dat interpreteerbaar is door machines. </p></section><section id="leeswijzer"><h3 id="x2-3-leeswijzer"><span class="secno">2.3 </span>Leeswijzer</h3><p>Dit document is gestructureerd in 13 hoofdstukken en 2 bijlagen.</p><ul>
 <li><p><a href="#voorwoord">Hoofdstuk 1</a>: Bevat het voorwoord.</p>
 </li>
 <li><p><a href="#inleiding">Hoofdstuk 2</a>: Bevat de inleiding.</p>
@@ -640,7 +641,7 @@ ontwerpvariabele staan centraal. Dit is in de geest van de Omgevingswet.</p><sec
 </tr>
 <tr>
 <td><strong>INSPIRE</strong></td>
-<td>In het <a href="https://wetten.overheid.nl/BWBR0026601/2009-12-04">besluit INSPIRE</a> , Bijlage I, worden de gegevens in het REV mogelijk aangemerkt als INSPIRE dataset. Dat zou betekenen dat de uitgangspunten die gelden voor INSPIRE moeten worden toegepast bij de realisatie van het REV. Bij het verschijnen van deze IMEV versie was nog niet bekend welke invloed dit heeft op het informatiemodel.</td>
+<td>In het <a href="https://wetten.overheid.nl/BWBR0026601/2009-12-04">besluit INSPIRE</a> , Bijlage I, worden de gegevens in het REV mogelijk aangemerkt als INSPIRE dataset. Dat zou betekenen dat de uitgangspunten die gelden voor INSPIRE moeten worden toegepast bij de realisatie van het REV.</td>
 </tr>
 <tr>
 <td><a href="https://forumstandaardisatie.nl/open-standaarden"><strong>Forum Standaardisatie: Open standaarden</strong></a></td>
@@ -1066,7 +1067,7 @@ kan deze melden. De meldingen worden doorgeleid naar de bronhouder.</p></section
   
 <section id="cat" class="normative">
    <!--OddPage--><h2 id="x6-gegevensdefinitie"><span class="secno">6. </span>Gegevensdefinitie</h2>
-   <!--MIMLM-IMEV-conceptueel-1.3-0-20221221-20231011-102926 imvertor Nightly-build.11-->
+   <!--MIMLM-IMEV-conceptueel-1.3-0-20221221-20231012-131656 imvertor Nightly-build.11-->
    <section id="global_package_IMEVbasis">
       <h3 id="x6-1-domein-imev-basis"><span class="secno">6.1 </span>Domein   IMEV-basis</h3>
       <section id="EAID_90555E69_004F_4af9_B918_EED2BB1789DB">
@@ -1112,8 +1113,8 @@ kan deze melden. De meldingen worden doorgeleid naar de bronhouder.</p></section
                         
                         Het bovenstaande verhaal en informatiemodel kan in een zin op de volgende manier worden gelezen: Een LocatieEVActiviteit voert een EVActiviteit uit; een EVActiviteit heeft een ReferentieEVContour die resulteert in een EVContour; de EVContour beinvloedt gebouwen of locaties met een kwetsbaarheidsindicatie.
                         
-                     " height="205" width="1952"><figcaption>Figuur <span class="figno">3</span> <span class="fig-title">Basismodel: kern</span></figcaption>
-            </figure><map name="imagemap-EAID_90555E69_004F_4af9_B918_EED2BB1789DB"><area shape="rect" alt="ReferentieEVContour" coords="856,52,1063,148" href="#global_class_IMEVbasis_ReferentieEVContour"><area shape="rect" alt="LocatieEVActiviteit" coords="14,51,221,146" href="#global_class_IMEVbasis_LocatieEVActiviteit"><area shape="rect" alt="GebouwOfLocatie" coords="1699,51,1934,146" href="#global_class_IMEVbasis_GebouwOfLocatie"><area shape="rect" alt="EVActiviteit" coords="431,51,638,146" href="#global_class_IMEVbasis_EVActiviteit"><area shape="rect" alt="EVContour" coords="1279,52,1476,148" href="#global_class_IMEVbasis_EVContour"></map><p>
+                     " height="203" width="1952"><figcaption>Figuur <span class="figno">3</span> <span class="fig-title">Basismodel: kern</span></figcaption>
+            </figure><map name="imagemap-EAID_90555E69_004F_4af9_B918_EED2BB1789DB"><area shape="rect" alt="ReferentieEVContour" coords="856,49,1063,145" href="#global_class_IMEVbasis_ReferentieEVContour"><area shape="rect" alt="LocatieEVActiviteit" coords="14,48,221,144" href="#global_class_IMEVbasis_LocatieEVActiviteit"><area shape="rect" alt="GebouwOfLocatie" coords="1699,48,1934,144" href="#global_class_IMEVbasis_GebouwOfLocatie"><area shape="rect" alt="EVActiviteit" coords="431,48,638,144" href="#global_class_IMEVbasis_EVActiviteit"><area shape="rect" alt="EVContour" coords="1279,49,1476,145" href="#global_class_IMEVbasis_EVContour"></map><p>
                
                </p><p>
                   <b>De kern van IMEV bestaat uit 5 objecttypen:</b>
@@ -1254,7 +1255,7 @@ kan deze melden. De meldingen worden doorgeleid naar de bronhouder.</p></section
                            Adressen met BAGid.
                         
                         In het IMEV model zijn op verschillende plaatsen adressen opgenomen. Deze worden in de uitwisseling niet uitgeschreven maar zijn opgenomen door te verwijzen naar het BAGid van het BAG-object Nummeraanduiding.
-                     " height="614" width="1921"><figcaption>Figuur <span class="figno">4</span> <span class="fig-title">Basismodel: kern plus top</span></figcaption>
+                     " height="617" width="1921"><figcaption>Figuur <span class="figno">4</span> <span class="fig-title">Basismodel: kern plus top</span></figcaption>
             </figure><map name="imagemap-EAID_7F7C357E_4167_4885_A36F_6D5CFA42B52F"><area shape="rect" alt="" coords="1106,7,1264,146" href="#global_class_Waardelijsten_VoidReasonValue"><area shape="rect" alt="Documentatie" coords="869,7,1028,128" href="#global_class_IMEVbasis_Documentatie"><area shape="rect" alt="NEN3610ID" coords="869,164,1059,303" href="#global_class_IMEVbasis_NEN3610ID"><area shape="rect" alt="ExterneVeiligheidsObject" coords="541,7,824,299" href="#global_class_IMEVbasis_ExterneVeiligheidsObject"><area shape="rect" alt="ReferentieEVContour" coords="856,443,1084,569" href="#global_class_IMEVbasis_ReferentieEVContour"><area shape="rect" alt="LocatieEVActiviteit" coords="14,443,221,538" href="#global_class_IMEVbasis_LocatieEVActiviteit"><area shape="rect" alt="GebouwOfLocatie" coords="1696,443,1904,538" href="#global_class_IMEVbasis_GebouwOfLocatie"><area shape="rect" alt="EVActiviteit" coords="431,443,638,538" href="#global_class_IMEVbasis_EVActiviteit"><area shape="rect" alt="EVContour" coords="1276,443,1484,538" href="#global_class_IMEVbasis_EVContour"></map><p>
                
                </p><p>Het topmodel van IMEV bestaat uit de superklasse Externe­Veiligheidsobject samen met
@@ -1337,7 +1338,7 @@ kan deze melden. De meldingen worden doorgeleid naar de bronhouder.</p></section
                         
                         Merk op dat bij een aantal attributen een stereotype «voidable» is opgenomen. Bij deze attributen hoeft onder specifieke condities geen waarde te worden ingevuld. Er moet dan wel aangegeven worden waarom er niets is ingevuld. De enumeratie VoidReasonValue omvat de lijst van mogelijke redenen.
                      " height="1174" width="2022"><figcaption>Figuur <span class="figno">5</span> <span class="fig-title">VII-A.1 Behandelen, regelen en meten van aardgas</span></figcaption>
-            </figure><map name="imagemap-EAID_E73201ED_403D_4639_AE7B_84FAFA24072F"><area shape="rect" alt="AfstandOfGeometriePRContour" coords="1792,164,2004,287" href="#global_class_IMEVbasis_AfstandOfGeometriePRContour"><area shape="rect" alt="" coords="164,14,306,171" href="#global_class_Waardelijsten_BevoegdGezag"><area shape="rect" alt="" coords="14,14,156,153" href="#global_class_Waardelijsten_VoidReasonValue"><area shape="rect" alt="StofOfStofcategorie" coords="1584,18,1774,139" href="#global_class_IMEVbasis_StofOfStofcategorie"><area shape="rect" alt="PuntOfVlak" coords="1592,163,1727,283" href="#global_class_IMEVbasis_PuntOfVlak"><area shape="rect" alt="VlakOfMultiVlak" coords="1790,20,1982,135" href="#global_class_IMEVbasis_VlakOfMultiVlak"><area shape="rect" alt="NEN3610ID" coords="1050,168,1250,307" href="#global_class_IMEVbasis_NEN3610ID"><area shape="rect" alt="Documentatie" coords="1051,14,1219,135" href="#global_class_IMEVbasis_Documentatie"><area shape="rect" alt="StofCategorie" coords="1302,208,1569,329" href="#global_class_IMEVbasis_StofCategorie"><area shape="rect" alt="Stof" coords="1298,15,1565,172" href="#global_class_IMEVbasis_Stof"><area shape="rect" alt="LocatieActiviteit" coords="55,655,417,1158" href="#global_class_IMEVbasis_LocatieActiviteit"><area shape="rect" alt="SamengesteldeReferentie" coords="936,685,1164,828" href="#global_class_IMEVbasis_SamengesteldeReferentie"><area shape="rect" alt="Installatie" coords="1207,685,1480,810" href="#global_class_IMEVbasis_Installatie"><area shape="rect" alt="BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht" coords="523,951,966,1108" href="#global_class_BKLActiviteiten_BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht"><area shape="rect" alt="" coords="318,14,514,171" href="#global_class_Waardelijsten_OpstellingsUitvoeringAardgas"><area shape="rect" alt="PRContour" coords="1588,655,1943,862" href="#global_class_IMEVbasis_PRContour"><area shape="rect" alt="ReferentieEVContour" coords="1130,451,1412,584" href="#global_class_IMEVbasis_ReferentieEVContour"><area shape="rect" alt="LocatieEVActiviteit" coords="75,451,357,548" href="#global_class_IMEVbasis_LocatieEVActiviteit"><area shape="rect" alt="EVContour" coords="1611,451,1893,548" href="#global_class_IMEVbasis_EVContour"><area shape="rect" alt="EVActiviteit" coords="600,451,881,548" href="#global_class_IMEVbasis_EVActiviteit"><area shape="rect" alt="ExterneVeiligheidsObject" coords="728,14,1011,306" href="#global_class_IMEVbasis_ExterneVeiligheidsObject"><area shape="rect" alt="" coords="530,14,715,242" href="#global_class_Waardelijsten_TypePlaatsgebondenRisico"><area shape="rect" alt="BKLActiviteit" coords="594,655,895,871" href="#global_class_BKLActiviteiten_BKLActiviteit"></map><p>
+            </figure><map name="imagemap-EAID_E73201ED_403D_4639_AE7B_84FAFA24072F"><area shape="rect" alt="AfstandOfGeometriePRContour" coords="1792,164,2004,287" href="#global_class_IMEVbasis_AfstandOfGeometriePRContour"><area shape="rect" alt="" coords="164,14,306,171" href="#global_class_Waardelijsten_BevoegdGezag"><area shape="rect" alt="" coords="14,14,156,153" href="#global_class_Waardelijsten_VoidReasonValue"><area shape="rect" alt="StofOfStofcategorie" coords="1584,18,1774,139" href="#global_class_IMEVbasis_StofOfStofcategorie"><area shape="rect" alt="PuntOfVlak" coords="1592,163,1727,283" href="#global_class_IMEVbasis_PuntOfVlak"><area shape="rect" alt="VlakOfMultiVlak" coords="1790,20,1982,135" href="#global_class_IMEVbasis_VlakOfMultiVlak"><area shape="rect" alt="NEN3610ID" coords="1050,168,1250,307" href="#global_class_IMEVbasis_NEN3610ID"><area shape="rect" alt="Documentatie" coords="1051,14,1219,135" href="#global_class_IMEVbasis_Documentatie"><area shape="rect" alt="StofCategorie" coords="1302,208,1569,329" href="#global_class_IMEVbasis_StofCategorie"><area shape="rect" alt="Stof" coords="1298,15,1565,172" href="#global_class_IMEVbasis_Stof"><area shape="rect" alt="LocatieActiviteit" coords="55,655,417,1158" href="#global_class_IMEVbasis_LocatieActiviteit"><area shape="rect" alt="SamengesteldeReferentie" coords="939,685,1167,864" href="#global_class_IMEVbasis_SamengesteldeReferentie"><area shape="rect" alt="Installatie" coords="1207,685,1480,810" href="#global_class_IMEVbasis_Installatie"><area shape="rect" alt="BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht" coords="523,951,966,1108" href="#global_class_BKLActiviteiten_BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht"><area shape="rect" alt="" coords="318,14,514,171" href="#global_class_Waardelijsten_OpstellingsUitvoeringAardgas"><area shape="rect" alt="PRContour" coords="1588,655,1943,862" href="#global_class_IMEVbasis_PRContour"><area shape="rect" alt="ReferentieEVContour" coords="1130,451,1412,584" href="#global_class_IMEVbasis_ReferentieEVContour"><area shape="rect" alt="LocatieEVActiviteit" coords="75,451,357,548" href="#global_class_IMEVbasis_LocatieEVActiviteit"><area shape="rect" alt="EVContour" coords="1611,451,1893,548" href="#global_class_IMEVbasis_EVContour"><area shape="rect" alt="EVActiviteit" coords="600,451,881,548" href="#global_class_IMEVbasis_EVActiviteit"><area shape="rect" alt="ExterneVeiligheidsObject" coords="728,14,1011,377" href="#global_class_IMEVbasis_ExterneVeiligheidsObject"><area shape="rect" alt="" coords="530,14,715,242" href="#global_class_Waardelijsten_TypePlaatsgebondenRisico"><area shape="rect" alt="BKLActiviteit" coords="594,655,895,871" href="#global_class_BKLActiviteiten_BKLActiviteit"></map><p>
                
                </p><p>OPMERKING: Bij dit eerste UML diagram voor een specifieke activiteit is de toelichting
                   uitgebreid ingevuld. De andere diagrammen volgen dezelfde logica en zijn daarom summier
@@ -25186,7 +25187,7 @@ kan deze melden. De meldingen worden doorgeleid naar de bronhouder.</p></section
 </section>
 <section id="lis" class="normative">
    <!--OddPage--><h2 id="x7-inhoud-van-waardenlijsten"><span class="secno">7. </span>Inhoud van waardenlijsten</h2>
-   <!--MIMLM-IMEV-conceptueel-1.3-0-20221221-20231011-102926 imvertor Nightly-build.11-->
+   <!--MIMLM-IMEV-conceptueel-1.3-0-20221221-20231012-131656 imvertor Nightly-build.11-->
    <section id="enumeratie-inhoud">
       <h3 id="x7-1-enumeratie-inhoud"><span class="secno">7.1 </span>Enumeratie inhoud   </h3>
       <section id="detail_class_Waardelijsten_BuisleidingCategorieStof">
