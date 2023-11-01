@@ -31,7 +31,7 @@ var respecConfig =
   //format: "markdown",                 // altijd "markdown"
   //-- publishDate is verplicht -------------------------------------------------------
   //-- NB: in de werkversie uitzetten, want dan pakt Respec de pushdate ---------------
-  //-- publishDate: "2023-09-13",  	      // Format is "YYY-MM-DD"
+  //--publishDate: "2023-10-31",  	      // Format is "YYY-MM-DD"
   //-- de namen van de Editor(s) ------------------------------------------------------
   //-- vul in: per Editor: name:, company:, companyURL: -------------------------------
   editors: [
@@ -74,7 +74,7 @@ var respecConfig =
   //-- shortName is verplicht! (komt in de URL: kies logische naam) --------------------
   shortName: "imev", 	              // Wordt gebruikt in de document URL
   //-- pubDomain is verplicht! (komt in de URL: Activeer 1 van de volgende) ------------
- // pubDomain: "mim", 	              // Metamodel Informatie Modellering
+  //pubDomain: "mim", 	              // Metamodel Informatie Modellering
   //pubDomain: "bor", 	            // Beheer Openbare Ruimte
   //pubDomain: "bro", 	            // Basisregistratie Ondergrond
   //pubDomain: "imgeo", 	          // IMGeo / BGT
@@ -115,7 +115,7 @@ var respecConfig =
   //     company:    "Object Management Group",
   //  },
   //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beiden aan/uit!
-  previousPublishDate: "2022-12-21",    	  // Format is "YYYY-MM-DD"
+  previousPublishDate: "2023-10-31",    	  // Format is "YYYY-MM-DD"
   previousMaturity: "GN-DEF",                 // kies 1 van deze 3 regels
   //previousMaturity: "CV",                   // kies 1 van deze 3 regels
   //previousMaturity: "GN-VV",  	          // kies 1 van deze 3 regels
