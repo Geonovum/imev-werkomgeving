@@ -1,0 +1,2263 @@
+$comment: "IMEV-conceptueel-test-json-schema - version 1.3 / 20221221 by Imvertor\
+  \ 3.0.0 variant geojson"
+$schema: "https://json-schema.org/draft/2019-09/schema"
+$reqs:
+- "/req/geojson"
+- "/req/by-reference-link-object"
+- "/req/codelists-literal"
+- "/req/entitytype"
+$defs:
+  Aandachtsgebied:
+    $anchor: "Aandachtsgebied"
+    description: "Aandachtsgebied in het kader van externe veiligheid."
+    allOf:
+    - $ref: "#/$defs/EVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            aardRisico:
+              description: "Aard van het risico."
+              type: "string"
+            afstandOfGeometrie:
+              description: "Het vlak van het aandachtsgebied OF de afstand van het\
+                \ aandachtsgebied ten opzichte van de referentiegeometrie moet bekend\
+                \ zijn."
+              $ref: "#/$defs/AfstandOfGeometrieAandachtsgebied"
+            categorieAandachtsgebied:
+              description: "Beschrijft of het aandachtgebied is vastgesteld of berekend."
+              $ref: "#/$defs/CategorieAandachtsgebied"
+            maatgevendeStof:
+              description: "De naam van de stof of de naam van de categorie stoffen\
+                \ die bepalend is voor het aandachtsgebied dat wordt ingevoerd."
+              $ref: "#/$defs/StofOfStofcategorie"
+          required:
+          - "afstandOfGeometrie"
+          - "maatgevendeStof"
+      required:
+      - "properties"
+  AfstandOfGeometrieAandachtsgebied:
+    $anchor: "AfstandOfGeometrieAandachtsgebied"
+    description: "Keuze tussen een afstand- of een geometrieattribuut voor een aandachtsgebied."
+    oneOf:
+    - afstand:
+        description: "Afstand in meters van een aandachtsgebied conform artikelen\
+          \ en bijlagen in Bkl."
+        type: "number"
+    - geometrie:
+        description: "De tweedimensionale geometrische representatie van de begrenzing\
+          \ van een Aandachtsgebied."
+        $ref: "#/$defs/VlakOfMultiVlak"
+  AfstandOfGeometrieOverigeContour:
+    $anchor: "AfstandOfGeometrieOverigeContour"
+    oneOf:
+    - afstand:
+        description: "Afstand van het plaatsgebonden risico ten opzichte van de referentiegeometrie\
+          \ van de locatie, waar de activiteit plaatsvindt."
+        type: "number"
+    - geometrie:
+        description: "De geometrische representatie van het plaatsgebonden risico."
+        $ref: "#/$defs/PuntLijnVlakMulti"
+  AfstandOfGeometriePRContour:
+    $anchor: "AfstandOfGeometriePRContour"
+    description: "Keuze tussen een afstand- of een geometrieattribuut voor een PR\
+      \ contour."
+    oneOf:
+    - afstand:
+        description: "Afstand van het plaatsgebonden risico ten opzichte van de referentiegeometrie\
+          \ van de locatie, waar de activiteit plaatsvindt."
+        type: "number"
+    - geometrie:
+        description: "De geometrische representatie van het plaatsgebonden risico."
+        $ref: "#/$defs/PuntLijnVlakMulti"
+  AftappuntOpslagtank:
+    $anchor: "AftappuntOpslagtank"
+    description: "Referentiepunt van het aftappunt van de opslagtank."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        geometry:
+          $ref: "https://geojson.org/schema/Point.json"
+      required:
+      - "geometry"
+  AnderInsluitsysteemReferentie:
+    $anchor: "AnderInsluitsysteemReferentie"
+    description: "Specifiek insluitsysteem te gebruiken als referentie voor de BKL\
+      \ activiteit AndereInsluitsystemen."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van (het\
+                \ zwaartepunt van) het referentiepunt van de seveso inrichting"
+              $ref: "#/$defs/PuntOfVlak"
+          required:
+          - "geometrie"
+      required:
+      - "properties"
+  BevoorradingCategorieOfExactAantal:
+    $anchor: "BevoorradingCategorieOfExactAantal"
+    description: "Keuze tussen een exact aantal of een categorie voor het aantal bevoorradingen"
+    oneOf:
+    - categorie:
+        description: "Het aantal bevoorradingen uitgedrukt in een categorie."
+        $ref: "#/$defs/CategorieAantalBevoorradingen"
+    - exactAantal:
+        description: "Het aantal bevoorradingen uitgedrukt in een getal."
+        type: "integer"
+  Bewaarplaats:
+    $anchor: "Bewaarplaats"
+    description: "Besloten ruimte waarin vuurwerk of pyrotechnische artikelen voor\
+      \ theatergebruik in een transportverpakking als bedoeld in de ADR worden bewaard."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        geometry:
+          $ref: "https://geojson.org/schema/Point.json"
+        properties:
+          type: "object"
+          properties:
+            oppervlakteDeuropening:
+              description: "Oppervlakte van de deuropening in m2."
+              type: "number"
+      required:
+      - "geometry"
+      - "properties"
+  Bewerkingsruimte:
+    $anchor: "Bewerkingsruimte"
+    description: "Bewerkingsruimte van vuurwerk categorie F4."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        geometry:
+          $ref: "https://geojson.org/schema/Point.json"
+      required:
+      - "geometry"
+  BrandAandachtsgebied:
+    $anchor: "BrandAandachtsgebied"
+    description: "Een brandaandachtsgebied is de locatie begrensd door de afstand,\
+      \ waar als gevolg van een ongewoon voorval dat leidt tot een plasbrand of een\
+      \ fakkelbrand, de warmtestraling ten hoogste 10 kW/m2 is."
+    allOf:
+    - $ref: "#/$defs/Aandachtsgebied"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            typeBrand:
+              description: "Aanduiding type brand, zoals plasbrand of fakkelbrand."
+              $ref: "#/$defs/TypeBrand"
+      required:
+      - "properties"
+  BufferBewaarplaats:
+    $anchor: "BufferBewaarplaats"
+    description: "Buffer bewaarplaats voor vuurwerk."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        geometry:
+          $ref: "https://geojson.org/schema/Point.json"
+      required:
+      - "geometry"
+  BuisleidingReferentie:
+    $anchor: "BuisleidingReferentie"
+    description: "Een buisleiding als referentieobject voor het bepalen van de referentiecontour."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            bovenkantbuis:
+              description: "De ligging van de bovenkant van de buisleiding ten opzichte\
+                \ van het maaiveld in centimeters."
+              type: "number"
+            buisleidingCategorieStof:
+              description: "De categorie van de gevaarlijke stof die maatgevend is\
+                \ voor de risico’s voor de omgeving."
+              type: "array"
+              items:
+                $ref: "#/$defs/BuisleidingCategorieStof"
+              uniqueItems: true
+            buisleidingIdentificatie:
+              description: "Extra identificatie van de het object zoals gebruikt in\
+                \ de registratie van de bronhouder."
+              type: "string"
+            buisleidingMateriaal:
+              description: "De materiaalsoort van de buisleiding."
+              $ref: "#/$defs/PipeMaterialTypeValue"
+            buisleidingProduct:
+              description: "Het product dat in de buisleiding vervoerd wordt."
+              $ref: "#/$defs/OilGasChemicalsProductTypeValue"
+            diameter:
+              description: "De uitwendige diameter van de buisleiding in millimeters."
+              type: "number"
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van een\
+                \ locatie waar activiteit wordt uitgevoerd."
+              $ref: "#/$defs/LijnOfMultiLijn"
+            maximaleWerkdruk:
+              description: "De maximale werkdruk in kilopascal."
+              type: "number"
+            nauwkeurigheidBovenkantbuis:
+              description: "De mogelijke afwijking van de eigenschap Bovenkantbuis."
+              $ref: "#/$defs/NauwkeurigheidBovenkantbuis"
+            status:
+              description: "Dit veld geeft de status aan van de buisleiding via de\
+                \ enumeratie StatusBuisleiding."
+              $ref: "#/$defs/StatusBuisleiding"
+            wanddikte:
+              description: "De wanddikte van de buis in millimeters."
+              type: "number"
+          required:
+          - "geometrie"
+      required:
+      - "properties"
+  BuisleidingStelsel:
+    $anchor: "BuisleidingStelsel"
+    description: "Een stelsel van meerdere Buisleidingen."
+    allOf:
+    - $ref: "#/$defs/LocatieEVActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            eigenaar:
+              description: "De volledige naam van de eigenaar van de buisleiding."
+              type: "string"
+            idNummeraanduidingBAG:
+              description: "Het adres van de locatie waar de activiteit wordt uitgeoefend.\
+                \ Het wordt aangegeven door middel van een verwijzing naar het BAG-id\
+                \ van het BAG-Object Nummeraanduiding."
+              $ref: "#/$defs/IdentificatieBAG"
+            idNummeraanduidingBAGExploitant:
+              description: "Het bezoekadres van de vestiging van de exploitant aangegeven\
+                \ middels verwijzing naar het BAG-id van het BAG-Object Nummeraanduiding.g."
+              $ref: "#/$defs/IdentificatieBAG"
+            kvkNummerExploitant:
+              description: "Het identificerende gegeven, het KVK-nummer, van de exploitant."
+              type: "array"
+              items:
+                type: "string"
+              pattern: "[0-9]{8}"
+            locatieomschrijving:
+              description: "Omschrijving van de locatie als alternatief als er geen\
+                \ adres is of toevoeging aan het adres."
+              type: "string"
+            naamExploitant:
+              description: "De handelsnaam van de vestiging waaronder wordt gehandeld."
+              type: "string"
+            vestigingsnummerExploitant:
+              description: "Het identificerende gegeven voor de vestiging."
+              type: "string"
+              pattern: "[0-9]{12}"
+          required:
+          - "eigenaar"
+          - "kvkNummerExploitant"
+      required:
+      - "properties"
+  CivielExplosieAandachtsgebied:
+    $anchor: "CivielExplosieAandachtsgebied"
+    description: "Civiel Explosie Aandachtsgebied in het kader van externe veiligheid."
+    allOf:
+    - $ref: "#/$defs/Aandachtsgebied"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            typeCivExpAandachtsgebied:
+              description: "Type Civiel Explosie Aandachtsgebied."
+              $ref: "#/$defs/TypeExplosieAandachtsgebied"
+          required:
+          - "typeCivExpAandachtsgebied"
+      required:
+      - "properties"
+  Documentatie:
+    $anchor: "Documentatie"
+    description: "Documentatie datatype"
+    type: "object"
+    properties:
+      link:
+        description: "Link naar het externe document"
+        type: "string"
+      naam:
+        description: "De naam van het document"
+        type: "string"
+    required:
+    - "link"
+    - "naam"
+  EVActiviteit:
+    $anchor: "EVActiviteit"
+    description: "Activiteit met externe veiligheidsrisico’s."
+    allOf:
+    - $ref: "#/$defs/ExterneVeiligheidsObject"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            locatieEVActiviteit:
+              description: "Verwijzing naar de locatie waar de activiteit met externe\
+                \ veiligheidsrisico’s wordt verricht."
+              type: "object"
+              properties:
+                locatieEVActiviteit:
+                  $ref: "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"
+              required:
+              - "locatieEVActiviteit"
+            heeft:
+              description: "Verwijzing naar de referentiegegevens voor de ligging\
+                \ van een EV contour."
+              type: "array"
+              items:
+                $ref: "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"
+              uniqueItems: true
+          required:
+          - "locatieEVActiviteit"
+          - "heeft"
+      required:
+      - "properties"
+  EVContour:
+    $anchor: "EVContour"
+    description: "Contour van externe veiligheidsrisico’s vanaf het punt, vlak of\
+      \ lijn van de ReferentieEVContour."
+    allOf:
+    - $ref: "#/$defs/ExterneVeiligheidsObject"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            hoortBij:
+              description: "Verwijzing naar de referentiegegevens waar de EV contour\
+                \ op is bepaald."
+              type: "array"
+              items:
+                $ref: "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"
+              uniqueItems: true
+          required:
+          - "hoortBij"
+      required:
+      - "properties"
+  ExplosieAandachtsgebied:
+    $anchor: "ExplosieAandachtsgebied"
+    description: "Een explosieaandachtsgebied is de locatie begrensd door de afstand,\
+      \ waar als gevolg van een ongewoon voorval dat leidt tot: a. een kokende vloeistof-gasexpansie-explosie\
+      \ (Boiling Liquid Expanding Vapor Explosion, BLEVE), de warmtestraling ten hoogste\
+      \ 35 kW/m2 is; of b. een explosie, anders dan onder a, de overdruk ten hoogste\
+      \ 10 kPa is."
+    allOf:
+    - $ref: "#/$defs/Aandachtsgebied"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            bleve:
+              description: "Is het aandachtsgebied voor een kokende vloeistof-gasexpansie-explosie\
+                \ (Boiling Liquid Expanding Vapor Explosion, BLEVE) Ja/Nee."
+              type: "boolean"
+      required:
+      - "properties"
+  ExplosieAandachtsgebiedVuurwerk:
+    $anchor: "ExplosieAandachtsgebiedVuurwerk"
+    description: "Explosieaandachtsgebied vuurwerk voor opslag van categorie F1, F2,\
+      \ F3, F4 of pyrotechnische artikelen voor theatergebruik van categorie T1 of\
+      \ T2 Ruimte."
+    allOf:
+    - $ref: "#/$defs/Aandachtsgebied"
+    - type: "object"
+      properties: {}
+  ExterneVeiligheidsObject:
+    $anchor: "ExterneVeiligheidsObject"
+    description: "De gemeenschappelijke eigenschappen van object voor externe veiligheid."
+    allOf:
+    - $ref: "https://geojson.org/schema/Feature.json"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            entityType:
+              type: "string"
+            beginGeldigheid:
+              description: "Start van de periode gedurende welke deze instantie van\
+                \ het object geldig is in de werkelijkheid."
+              type: "string"
+              format: "date-time"
+              pattern: "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\\
+                +|-)\\d{2}:\\d{2}))?$"
+            bronhouder:
+              description: "Bronhouder is de voor het object verantwoordelijke instantie\
+                \ op het gebied van vergunningverlening en handhaving."
+              type: "string"
+            bronhoudercode:
+              description: "Identificatiecode van de bronhouder, de voor het object\
+                \ verantwoordelijke instantie op het gebied van vergunningverlening\
+                \ en handhaving."
+              type: "string"
+            bronobjectID:
+              description: "Identificatiecode voor objecten zoals gebruikt in het\
+                \ interne systeem van de bronhouder."
+              type: "string"
+            documentInfo:
+              $ref: "#/$defs/Documentatie"
+            eindGeldigheid:
+              description: "Eind van de periode waarop deze instantie van het object\
+                \ geldig is in de werkelijkheid. Wanneer deze waarde niet is ingevuld\
+                \ is de instantie nog geldig."
+              type: "string"
+              format: "date-time"
+              pattern: "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\\
+                +|-)\\d{2}:\\d{2}))?$"
+            eindRegistratie:
+              description: "Eind van de periode waarop deze instantie van het object\
+                \ geldig is in de registratie van de bronhouder. Wanneer deze waarde\
+                \ niet is ingevuld is de instantie nog geldig."
+              type: "string"
+              format: "date-time"
+              pattern: "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\\
+                +|-)\\d{2}:\\d{2}))?$"
+            identificatie:
+              description: "Unieke identificatie van het object binnen het domein\
+                \ van NEN 3610."
+              $ref: "#/$defs/NEN3610ID"
+            tijdstipRegistratie:
+              description: "Tijdstip waarop deze instantie van het object is opgenomen\
+                \ in de registratie door de bronhouder."
+              type: "string"
+              format: "date-time"
+              pattern: "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\\
+                +|-)\\d{2}:\\d{2}))?$"
+          required:
+          - "entityType"
+          - "beginGeldigheid"
+          - "bronhoudercode"
+          - "identificatie"
+          - "tijdstipRegistratie"
+      required:
+      - "properties"
+  GebouwOfLocatie:
+    $anchor: "GebouwOfLocatie"
+    description: "Een gebouw of locatie die kan worden beïnvloed door de aanwezigheid\
+      \ van een EVcontour."
+    allOf:
+    - $ref: "#/$defs/ExterneVeiligheidsObject"
+    - type: "object"
+      properties: {}
+  GifwolkAandachtsgebied:
+    $anchor: "GifwolkAandachtsgebied"
+    description: "Een gifwolkaandachtsgebied is de locatie begrensd door de afstand,\
+      \ waar als gevolg van een ongewoon voorval dat leidt tot een gifwolk, personen\
+      \ in een gebouw overlijden door blootstelling aan ten hoogste de bij ministerië\
+      le regeling vastgestelde concentratie van een gevaarlijke stof gedurende een\
+      \ daarbij aangegeven periode."
+    allOf:
+    - $ref: "#/$defs/Aandachtsgebied"
+    - type: "object"
+      properties: {}
+  IdentificatieBAG:
+    $anchor: "IdentificatieBAG"
+    description: "Identificerend numer volgens sytematiek van de BAG die unieke aanduiding\
+      \ vormt voor het object."
+    type: "string"
+    pattern: "[0-9]{16}"
+  Installatie:
+    $anchor: "Installatie"
+    description: "Installatie voor het behandelen van gevaarlijke stoffen."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            geometrie:
+              description: "De tweedimensionale geometrische representatie een aflevertoestel"
+              $ref: "#/$defs/PuntOfVlak"
+          required:
+          - "geometrie"
+      required:
+      - "properties"
+  KwetsbaarGebouw:
+    $anchor: "KwetsbaarGebouw"
+    description: "Een gebouw met een gebruiksfunctie zoals aangegeven in BKL."
+    allOf:
+    - $ref: "#/$defs/GebouwOfLocatie"
+    - type: "object"
+      properties:
+        geometry:
+          $ref: "https://geojson.org/schema/Polygon.json"
+        properties:
+          type: "object"
+          properties:
+            /gebruiksdoelenVerblijfsobjectBAG:
+              description: "Het vergunde gebruiksdoel(en) zoals geregistreerd bij\
+                \ het verblijfsobject in de BAG."
+              type: "array"
+              items:
+                $ref: "#/$defs/Gebruiksdoeleinden"
+              uniqueItems: true
+            /oppervlakteVerblijfsobjectBAG:
+              description: "De oppervlakte van het verblijfsobject in het kwetsbare\
+                \ gebouw zoals geregistreerd in de BAG bij het verblijfsobject."
+              type: "number"
+            categorieKwetsbaarheid:
+              description: "Categorie van de kwetsbaarheid van het gebouw."
+              $ref: "#/$defs/CategorieKwetsbaarheidGebouw"
+            gebruiksdoeleindenDetail:
+              description: "Gebruiksdoeleinden in meer detail dan dat wat in de BAG\
+                \ is opgenomen."
+              type: "array"
+              items:
+                type: "string"
+            idAdresseerbaarobjectBAG:
+              description: "De unieke aanduiding van een adresseerbaar object middels\
+                \ een BAG-identificatie horende bij een adresseerbaar object."
+              $ref: "#/$defs/IdentificatieBAG"
+            idPandBAG:
+              description: "De identificatie van het pand zoals geregistreerd in de\
+                \ BAG."
+              $ref: "#/$defs/IdentificatieBAG"
+            kadastraleAanduiding:
+              description: "Een uniek kenmerk dat het Kadaster aan een onroerende\
+                \ zaak heeft gegeven."
+              type: "array"
+              items:
+                type: "string"
+            populatie:
+              description: "De verwachte aanwezige populatie."
+              type: "number"
+          required:
+          - "categorieKwetsbaarheid"
+      required:
+      - "geometry"
+      - "properties"
+  KwetsbareLocatie:
+    $anchor: "KwetsbareLocatie"
+    description: "Een locatie (met een gebruiksfunctie) zoals aangegeven in BKL"
+    allOf:
+    - $ref: "#/$defs/GebouwOfLocatie"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            categorieKwetsbaarheid:
+              description: "De categorie kwetsbaarheid van de locatie."
+              $ref: "#/$defs/CategorieKwetsbaarheidLocatie"
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van een\
+                \ kwetsbare locatie."
+              $ref: "#/$defs/VlakOfMultiVlak"
+            kadastraleAanduiding:
+              description: "Een uniek kenmerk dat het Kadaster aan een onroerende\
+                \ zaak heeft gegeven."
+              type: "array"
+              items:
+                type: "string"
+            populatie:
+              description: "Het maximaal verwachte aantal aanwezige personen."
+              type: "number"
+          required:
+          - "categorieKwetsbaarheid"
+          - "geometrie"
+      required:
+      - "properties"
+  Leiding:
+    $anchor: "Leiding"
+    description: "Leiding waardoor gevaarlijke stoffen worden vervoerd."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            bovengronds:
+              description: "Is de leiding bovengronds Ja/Nee."
+              type: "boolean"
+            diameter:
+              description: "De binnendiameter van de leiding in mm."
+              type: "number"
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van de\
+                \ leiding."
+              $ref: "#/$defs/PuntOfLijn"
+          required:
+          - "geometrie"
+      required:
+      - "properties"
+  LijnOfMultiLijn:
+    $anchor: "LijnOfMultiLijn"
+    description: "Keuze tussen een lijn of een multilijn geometrie."
+    oneOf:
+    - $ref: "https://geojson.org/schema/LineString.json"
+    - $ref: "https://geojson.org/schema/MultiLineString.json"
+  LocatieActiviteit:
+    $anchor: "LocatieActiviteit"
+    description: "Locatie van een bedrijf waar de activiteit met externe veiligheidsrisico’\
+      s wordt verricht."
+    allOf:
+    - $ref: "#/$defs/LocatieEVActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            bedrijfsnaam:
+              description: "De naam van het bedrijf."
+              type: "string"
+            eigenaar:
+              description: "De volledige naam van de eigenaar van de locatie"
+              type: "string"
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van de\
+                \ locatie met de activiteit (het bedrijf)."
+              $ref: "#/$defs/VlakOfMultiVlak"
+            idNummeraanduidingBAG:
+              description: "Het adres van de locatie waar de activiteit wordt uitgeoefend.\
+                \ Het wordt aangegeven door middel van een verwijzing naar het BAG-id\
+                \ van het BAG-Object Nummeraanduiding."
+              $ref: "#/$defs/IdentificatieBAG"
+            idNummeraanduidingBAGExploitant:
+              description: "Het bezoekadres van de vestiging van de exploitant aangegeven\
+                \ middels verwijzing naar het BAG-id van het BAG-Object Nummeraanduiding."
+              $ref: "#/$defs/IdentificatieBAG"
+            kvkNummerAanvrager:
+              description: "Het identificerende gegeven, het KVK-nummer, van de aanvrager."
+              type: "string"
+              nullable: true
+              pattern: "[0-9]{8}"
+            kvkNummerExploitant:
+              description: "Het identificerende gegeven, het KVK-nummer, van de exploitant."
+              type: "array"
+              items:
+                type: "string"
+                nullable: true
+              pattern: "[0-9]{8}"
+            locatieomschrijving:
+              description: "Omschrijving van de locatie als alternatief als er geen\
+                \ adres is of toevoeging aan het adres."
+              type: "string"
+            naamExploitant:
+              description: "De handelsnaam van de vestiging waaronder wordt gehandeld."
+              type: "string"
+              nullable: true
+            omschrijving:
+              description: "Omschrijving van de locatie."
+              type: "string"
+            vestigingsnummerAanvrager:
+              description: "Het identificerende gegeven voor de vestiging van de aanvrager."
+              type: "string"
+              pattern: "[0-9]{12}"
+            vestigingsnummerExploitant:
+              description: "Het identificerende gegeven voor de vestiging van de exploitant."
+              type: "string"
+              pattern: "[0-9]{12}"
+          required:
+          - "bedrijfsnaam"
+          - "geometrie"
+          - "idNummeraanduidingBAGExploitant"
+          - "kvkNummerAanvrager"
+          - "kvkNummerExploitant"
+          - "naamExploitant"
+      required:
+      - "properties"
+  LocatieBasisnet:
+    $anchor: "LocatieBasisnet"
+    description: "Geheel van locaties voor het vervoer van gevaarlijke stoffen over\
+      \ het basisnet"
+    allOf:
+    - $ref: "#/$defs/LocatieEVActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van het\
+                \ basisnet"
+              $ref: "#/$defs/LijnOfMultiLijn"
+            route:
+              description: "Traject waarover het vervoer van gevaarlijke stoffen plaatsvindt"
+              type: "string"
+            type:
+              description: "Vervoerstype voor deze locatie van het basisnet"
+              type: "string"
+          required:
+          - "geometrie"
+          - "route"
+          - "type"
+      required:
+      - "properties"
+  LocatieEVActiviteit:
+    $anchor: "LocatieEVActiviteit"
+    description: "Locatie waar de activiteit met externe veiligheidsrisico’s wordt\
+      \ verricht."
+    allOf:
+    - $ref: "#/$defs/ExterneVeiligheidsObject"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            voertUit:
+              description: "Verwijzing naar de EVActiviteit die op de locatie wordt\
+                \ verricht."
+              type: "array"
+              items:
+                $ref: "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"
+              uniqueItems: true
+          required:
+          - "voertUit"
+      required:
+      - "properties"
+  Machinekamer:
+    $anchor: "Machinekamer"
+    description: "Machinekamer van een Koelinstallatie met ammoniak."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            aantalKoelinstallaties:
+              description: "Het aantal koelinstallaties in de machinekamer."
+              type: "integer"
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van de\
+                \ machinekamer."
+              $ref: "#/$defs/PuntOfVlak"
+            opstellingsUitvoering:
+              description: "Opstellingsuitvoering 1, 2 of 3."
+              $ref: "#/$defs/OpstellingsUitvoeringAmmoniak"
+            pompbeveiliging:
+              description: "Is de installatie uitgerust met een pompbeveiliging Ja/Nee."
+              type: "boolean"
+          required:
+          - "geometrie"
+      required:
+      - "properties"
+  MilitairExplosieAandachtsgebied:
+    $anchor: "MilitairExplosieAandachtsgebied"
+    description: "Aandachtsgebied in het kader van externe veiligheid."
+    allOf:
+    - $ref: "#/$defs/Aandachtsgebied"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            typeMilitairExpAandachtsgebied:
+              description: "Aanduiding catagorieën civiel of militair Aandachtsgebied."
+              $ref: "#/$defs/TypeExplosieAandachtsgebied"
+          required:
+          - "typeMilitairExpAandachtsgebied"
+      required:
+      - "properties"
+  NEN3610ID:
+    $anchor: "NEN3610ID"
+    description: "identificatiegegevens voor de universeel unieke identificatie van\
+      \ een object"
+    type: "object"
+    properties:
+      lokaalID:
+        description: "unieke identificatiecode binnen een registratie"
+        type: "string"
+      namespace:
+        description: "unieke verwijzing naar een registratie van objecten"
+        type: "string"
+      versie:
+        description: "versie-aanduiding van een object"
+        type: "string"
+    required:
+    - "lokaalID"
+    - "namespace"
+  OpslagReferentie:
+    $anchor: "OpslagReferentie"
+    description: "Referentie voor EVcontouren van Opslag Locaties."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            bovengronds:
+              description: "Is de opslag bovengronds Ja/Nee."
+              type: "boolean"
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van de\
+                \ opslag locatie."
+              $ref: "#/$defs/PuntOfVlak"
+            inhoud:
+              description: "Inhoud (volume) van de opslag in m3."
+              type: "number"
+            oppervlakte:
+              description: "Oppervlakte van de opslagplaats in m2."
+              type: "number"
+            typeOpslagReferentie:
+              description: "Het soort referentielocatie voor de EV contour."
+              $ref: "#/$defs/TypeOpslagReferentie"
+          required:
+          - "geometrie"
+          - "typeOpslagReferentie"
+      required:
+      - "properties"
+  OpstelplaatsVoertuig:
+    $anchor: "OpstelplaatsVoertuig"
+    description: "Opstelplaats voor voertuigen met gevaarlijke stoffen"
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            geometrie:
+              description: "De tweedimensionale geometrische representatie een aflevertoestel"
+              $ref: "#/$defs/PuntOfVlak"
+          required:
+          - "geometrie"
+      required:
+      - "properties"
+  OverigeContour:
+    $anchor: "OverigeContour"
+    description: "Ruimtelijke representatie van een contour die een veiligheidsafstand\
+      \ weergeeft."
+    allOf:
+    - $ref: "#/$defs/EVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            aardRisico:
+              description: "Aard van het risico."
+              type: "string"
+            afstandOfGeometrie:
+              description: "Het vlak van het plaatsgebonden risico OF de afstand van\
+                \ het plaatsgebonden risico ten opzichte van de referentiegeometrie\
+                \ moet bekend zijn."
+              $ref: "#/$defs/AfstandOfGeometrieOverigeContour"
+            maatgevendeStof:
+              description: "De naam van de voor het plaatsgebonden risico maatgevende\
+                \ stof of de naam van de voor het risico maatgevende categorie van\
+                \ stoffen."
+              $ref: "#/$defs/StofOfStofcategorie"
+            typeOverigeContour:
+              description: "Beschrijft het type overige contour."
+              $ref: "#/$defs/TypeOverigeContour"
+          required:
+          - "afstandOfGeometrie"
+          - "maatgevendeStof"
+          - "typeOverigeContour"
+      required:
+      - "properties"
+  PRContour:
+    $anchor: "PRContour"
+    description: "Ruimtelijke representatie van het Plaatsgebonden risico."
+    allOf:
+    - $ref: "#/$defs/EVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            aardRisico:
+              description: "Aard van het risico."
+              type: "string"
+            afstandOfGeometrie:
+              description: "Het vlak van het plaatsgebonden risico OF de afstand van\
+                \ het plaatsgebonden risico ten opzichte van de referentiegeometrie\
+                \ moet bekend zijn."
+              $ref: "#/$defs/AfstandOfGeometriePRContour"
+            maatgevendeStof:
+              description: "De naam van de voor het plaatsgebonden risico maatgevende\
+                \ stof of de naam van de voor het risico maatgevende categorie van\
+                \ stoffen."
+              $ref: "#/$defs/StofOfStofcategorie"
+            typePlaatsgebondenRisico:
+              description: "Beschrijft het type van het plaatsgebonden risico: vastgesteld,\
+                \ 10-5, 10-6, 10-7, 10-8."
+              $ref: "#/$defs/TypePlaatsgebondenRisico"
+          required:
+          - "afstandOfGeometrie"
+          - "maatgevendeStof"
+          - "typePlaatsgebondenRisico"
+      required:
+      - "properties"
+  PuntLijnVlakMulti:
+    $anchor: "PuntLijnVlakMulti"
+    description: "Keuze tussen een punt, lijn of vlak geometrie en de multi-variant\
+      \ daarvan."
+    oneOf:
+    - $ref: "https://geojson.org/schema/LineString.json"
+    - $ref: "https://geojson.org/schema/MultiLineString.json"
+    - $ref: "https://geojson.org/schema/MultiPoint.json"
+    - $ref: "https://geojson.org/schema/MultiPolygon.json"
+    - $ref: "https://geojson.org/schema/Point.json"
+    - $ref: "https://geojson.org/schema/Polygon.json"
+  PuntOfLijn:
+    $anchor: "PuntOfLijn"
+    description: "Keuze tussen een punt of een lijn geometrie."
+    oneOf:
+    - $ref: "https://geojson.org/schema/LineString.json"
+    - $ref: "https://geojson.org/schema/MultiLineString.json"
+    - $ref: "https://geojson.org/schema/Point.json"
+  PuntOfMultiPunt:
+    $anchor: "PuntOfMultiPunt"
+    oneOf:
+    - $ref: "https://geojson.org/schema/MultiPoint.json"
+    - $ref: "https://geojson.org/schema/Point.json"
+  PuntOfVlak:
+    $anchor: "PuntOfVlak"
+    description: "Keuze tussen een punt of een vlak geometrie."
+    oneOf:
+    - $ref: "https://geojson.org/schema/Point.json"
+    - $ref: "https://geojson.org/schema/Polygon.json"
+  ReactietijdNoodstopBooleanOfExact:
+    $anchor: "ReactietijdNoodstopBooleanOfExact"
+    description: "Keuze tussen een exact aantal of een boolean voor het aantal seconden.\
+      \ Als het 5 of minder seconden is dan is de waarde van de boolean 'true'."
+    oneOf:
+    - exactAantalSeconden:
+        description: "Het aantal soconden voor de reactietijd uitgedrukt in een getal."
+        type: "integer"
+    - vijfofminder:
+        description: "Bij vijf of minder is de waarde 'True'"
+        type: "boolean"
+  ReferentieEVContour:
+    $anchor: "ReferentieEVContour"
+    description: "Referentie voor de ligging van het EVContour."
+    allOf:
+    - $ref: "#/$defs/ExterneVeiligheidsObject"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            omschrijving:
+              description: "Beschrijving in woorden van de betreffende referentie\
+                \ ev-contour."
+              type: "string"
+            resulteertIn:
+              description: "Verwijzing naar de countour van externe veiligheidsrisico's."
+              type: "array"
+              items:
+                $ref: "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"
+              uniqueItems: true
+            heeft:
+              description: "Verwijzing naar de activiteit met externe veiligheidsrisco's."
+              type: "object"
+              properties:
+                heeft:
+                  $ref: "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"
+              required:
+              - "heeft"
+          required:
+          - "resulteertIn"
+          - "heeft"
+      required:
+      - "properties"
+  SamengesteldeReferentie:
+    $anchor: "SamengesteldeReferentie"
+    description: "Referentie die gebruikt kan worden als een EVContour betrekking\
+      \ heeft op meerdere referenties."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van de\
+                \ referentiepunten die samengesteld zijn tot één punt of vlak."
+              $ref: "#/$defs/PuntOfVlak"
+          required:
+          - "geometrie"
+      required:
+      - "properties"
+  SevesoReferentie:
+    $anchor: "SevesoReferentie"
+    description: "referentie voor de ligging van het EV-contour van een Seveso-inrichting"
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van (het\
+                \ zwaartepunt van) het referentiepunt van de seveso inrichting"
+              $ref: "#/$defs/PuntOfVlak"
+          required:
+          - "geometrie"
+      required:
+      - "properties"
+  SpoorVervoer:
+    $anchor: "SpoorVervoer"
+    description: "Spoor traject dat deel is van het basisnet waarover gevaarlijke\
+      \ stoffen worden vervoerd."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van de\
+                \ spoorlijn"
+              $ref: "#/$defs/LijnOfMultiLijn"
+            referentiesoort:
+              description: "Aanduiding type representatielijn, zoals referentielijnWeg,\
+                \ buitensteSpoor of oeverlijn."
+              $ref: "#/$defs/RepresentatieLijn"
+            trajectcode:
+              description: "Unieke code van het traject"
+              type: "string"
+          required:
+          - "geometrie"
+          - "referentiesoort"
+          - "trajectcode"
+      required:
+      - "properties"
+  Stof:
+    $anchor: "Stof"
+    description: "Stof"
+    type: "object"
+    properties:
+      CASnummer:
+        description: "CAS nummer van de stof"
+        type: "string"
+        pattern: "[0-9]{2,7}[\\-]{1}[0-9]{2}[\\-]{1}[0-9]{1}"
+      chemischeNaam:
+        description: "Chemische naam van de stof"
+        type: "string"
+      naam:
+        description: "Gangbare naam van de stof"
+        type: "string"
+      UNnummer:
+        description: "UN nummer van de stof"
+        type: "string"
+        pattern: "[0-9]{4}"
+    required:
+    - "naam"
+  StofCategorie:
+    $anchor: "StofCategorie"
+    description: "Stof Categorie"
+    type: "object"
+    properties:
+      categorieNaam:
+        description: "Gangbare naam van de categorie van de stof"
+        type: "string"
+      chemischeNaam:
+        description: "Chemische naam van de categorie van de stof"
+        type: "string"
+    required:
+    - "categorieNaam"
+  StofOfStofcategorie:
+    $anchor: "StofOfStofcategorie"
+    description: "Keuze tussen het kenmerk stof of stofcategorie."
+    oneOf:
+    - stof:
+        $ref: "#/$defs/Stof"
+    - stofCategorie:
+        $ref: "#/$defs/StofCategorie"
+  Tankzuil:
+    $anchor: "Tankzuil"
+    description: "Een tankzuil is een toestel met vulpistool of vulpistolen bestemd\
+      \ voor het tanken van vloeibare brandstoffen en/of gasvormige brandstoffen."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        geometry:
+          $ref: "https://geojson.org/schema/Point.json"
+      required:
+      - "geometry"
+  VlakOfMultiVlak:
+    $anchor: "VlakOfMultiVlak"
+    description: "Keuze tussen een vlak of een multivlak geometrie."
+    oneOf:
+    - $ref: "https://geojson.org/schema/MultiPolygon.json"
+    - $ref: "https://geojson.org/schema/Polygon.json"
+  VoordrukBooleanOfExact:
+    $anchor: "VoordrukBooleanOfExact"
+    description: "Keuze tussen een exact getal of een boolean voor de hoeveelheid\
+      \ kPa. Als het 420 kPa of minder druk is dan is de waarde van de boolean 'true'."
+    oneOf:
+    - exacteHoeveelheid_kpa:
+        description: "Het aantal soconden voor de reactietijd uitgedrukt in een getal."
+        type: "number"
+    - minderDanOfGelijkAan_420kPa:
+        description: "Bij 420 of minder kPa is de waarde 'True'"
+        type: "boolean"
+  Vulpunt:
+    $anchor: "Vulpunt"
+    description: "Referentiepunt van het vulpunt."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        geometry:
+          $ref: "https://geojson.org/schema/Point.json"
+      required:
+      - "geometry"
+  WaterVervoer:
+    $anchor: "WaterVervoer"
+    description: "Deel van het basisnet waarover gevaarlijke stoffen over het water\
+      \ worden vervoerd"
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van het\
+                \ water(vak)"
+              $ref: "#/$defs/LijnOfMultiLijn"
+            referentiesoort:
+              description: "Aanduiding type representatielijn, zoals referentielijnWeg,\
+                \ buitensteSpoor of oeverlijn."
+              $ref: "#/$defs/RepresentatieLijn"
+            watervakcode:
+              description: "Unieke code van het watervak"
+              type: "string"
+          required:
+          - "geometrie"
+          - "referentiesoort"
+          - "watervakcode"
+      required:
+      - "properties"
+  WegAs:
+    $anchor: "WegAs"
+    description: "Wegvak dat deel is van het basisnet waarover gevaarlijke stoffen\
+      \ worden vervoerd"
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van de\
+                \ weg"
+              $ref: "#/$defs/LijnOfMultiLijn"
+          required:
+          - "geometrie"
+      required:
+      - "properties"
+  WegVervoer:
+    $anchor: "WegVervoer"
+    description: "Wegvak dat deel is van het basisnet waarover gevaarlijke stoffen\
+      \ worden vervoerd"
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van de\
+                \ weg"
+              $ref: "#/$defs/LijnOfMultiLijn"
+            referentiesoort:
+              description: "Aanduiding type representatielijn, zoals referentielijnWeg,\
+                \ buitensteSpoor of oeverlijn."
+              $ref: "#/$defs/RepresentatieLijn"
+            wegvakcode:
+              description: "Unieke code van het wegvak"
+              type: "string"
+          required:
+          - "geometrie"
+          - "referentiesoort"
+          - "wegvakcode"
+      required:
+      - "properties"
+  Wegen:
+    $anchor: "Wegen"
+    description: "Geheel van locaties voor het vervoer van gevaarlijke stoffen over\
+      \ de weg."
+    allOf:
+    - $ref: "#/$defs/LocatieEVActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            geometrie:
+              description: "De tweedimensionale geometrische representatie van de\
+                \ weg."
+              $ref: "#/$defs/LijnOfMultiLijn"
+            route:
+              description: "Traject waarover het vervoer van gevaarlijke stoffen plaatsvindt."
+              type: "string"
+          required:
+          - "geometrie"
+          - "route"
+      required:
+      - "properties"
+  Windturbine:
+    $anchor: "Windturbine"
+    description: "Referentie voor een windturbine."
+    allOf:
+    - $ref: "#/$defs/ReferentieEVContour"
+    - type: "object"
+      properties:
+        geometry:
+          $ref: "https://geojson.org/schema/Point.json"
+        properties:
+          type: "object"
+          properties:
+            ashoogte:
+              description: "De hoogte van de mast van de windturbine in meters."
+              type: "number"
+            breedteGondel:
+              description: "Breedte van de gondel in meters."
+              type: "number"
+            hoogteGondel:
+              description: "Hoogte van de gondel in meters."
+              type: "number"
+            lengteGondel:
+              description: "Lengte in meters van de gondel."
+              type: "number"
+            massaGondel:
+              description: "Massa van de gondel in kilogram."
+              type: "number"
+            materiaalMast:
+              description: "Materiaal van de mast van de turbine."
+              type: "string"
+            maxWerpafstandNominaal:
+              description: "Maximale werpafstand bij nominaal toerental in meters."
+              type: "number"
+            maxWerpafstandOvertoeren:
+              description: "Maximale werpafstand bij overtoeren in meters."
+              type: "number"
+            merk:
+              description: "Merk van de windturbine."
+              type: "string"
+            nominaalToerental:
+              description: "Nominaal toerental in Herz (Hz)."
+              type: "number"
+            pandIdentificatie:
+              description: "De unieke aanduiding van een pand middels de BAGid."
+              $ref: "#/$defs/IdentificatieBAG"
+            rotordiameter:
+              description: "De diameter van de rotor in centimeters."
+              type: "number"
+            type:
+              description: "Type van de windturbine."
+              type: "string"
+            vermogen:
+              description: "Het vermogen van de windturbine in kilowatt."
+              type: "number"
+            zwaartepunt:
+              description: "Zwaartepunt van het rotorblad t.o.v. het rotorcentrum\
+                \ (de as) in meters."
+              type: "number"
+          required:
+          - "pandIdentificatie"
+      required:
+      - "geometry"
+      - "properties"
+  ActiviteitRestcategorie:
+    $anchor: "ActiviteitRestcategorie"
+    description: "Activiteit die niet bij een bestaande BKLActiviteit past."
+    allOf:
+    - $ref: "#/$defs/EVActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            balActiviteit:
+              description: "Milieubelastende activiteit zoals benoemd in het Bal."
+              type: "array"
+              items:
+                type: "string"
+            basisVergunningNummer:
+              description: "Unieke identificatie van de omgevingsvergunning of melding."
+              type: "string"
+              nullable: true
+            bevoegdGezag:
+              $ref: "#/$defs/BevoegdGezag"
+            datumLaatsteWijziging:
+              description: "Datum van de laatste wijziging van de vergunning of melding\
+                \ als bedoeld in het Besluit Activiteiten Leefomgeving."
+              type: "string"
+              nullable: true
+              format: "date"
+              pattern: "^\\d{4}-\\d{2}-\\d{2}$"
+            datumVergunningOfMelding:
+              description: "Laatste datum vergunning of melding als bedoeld in het\
+                \ Besluit Activiteiten Leefomgeving."
+              type: "string"
+              nullable: true
+              format: "date"
+              pattern: "^\\d{4}-\\d{2}-\\d{2}$"
+            omschrijving:
+              description: "Beschrijving in woorden van de betreffende referentie\
+                \ ev-contour."
+              type: "string"
+            vergunningsPlicht:
+              description: "Wel of niet vergunningplichtig"
+              type: "boolean"
+          required:
+          - "basisVergunningNummer"
+          - "datumLaatsteWijziging"
+          - "datumVergunningOfMelding"
+          - "vergunningsPlicht"
+      required:
+      - "properties"
+  AmmoniakKoelinstallatie_TeBerekenenAfstand:
+    $anchor: "AmmoniakKoelinstallatie_TeBerekenenAfstand"
+    description: "Koelinstallatie met ammoniak met een te berekenen afstand."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            hoeveelheidsKlasseAmmoniak:
+              description: "Bereik hoeveelheid ammoniak in kg."
+              $ref: "#/$defs/HoeveelheidsKlasseAmmoniak"
+            werktemperatuur:
+              description: "Bereik werktemperatuur installatie met pompbeveiliging\
+                \ in °C."
+              type: "number"
+      required:
+      - "properties"
+  AmmoniakKoelinstallatie_VasteAfstandVergunningplicht:
+    $anchor: "AmmoniakKoelinstallatie_VasteAfstandVergunningplicht"
+    description: "Koelinstallatie met ammoniak met vaste afstand."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            hoeveelheidsKlasseAmmoniak:
+              description: "Bereik hoeveelheid ammoniak in kg."
+              $ref: "#/$defs/HoeveelheidsKlasseAmmoniak"
+            werktemperatuur:
+              description: "Bereik werktemperatuur installatie met pompbeveiliging\
+                \ in °C."
+              type: "number"
+      required:
+      - "properties"
+  AnderInsluitsysteem:
+    $anchor: "AnderInsluitsysteem"
+    description: "Andere insluitsystemen."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  BKLActiviteit:
+    $anchor: "BKLActiviteit"
+    description: "Een activiteit, zoals benoemd in artikel 11.1 tot en met 11.7 van\
+      \ het Bkl, die op een locatie wordt uitgevoerd."
+    allOf:
+    - $ref: "#/$defs/EVActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            balActiviteit:
+              type: "array"
+              items:
+                type: "string"
+            basisVergunningNummer:
+              description: "Unieke identificatie van de omgevingsvergunning of melding."
+              type: "string"
+              nullable: true
+            bevoegdGezag:
+              $ref: "#/$defs/BevoegdGezag"
+            datumLaatsteWijziging:
+              description: "Datum van de laatste wijziging van de vergunning of melding\
+                \ als bedoeld in het Besluit Activiteiten Leefomgeving."
+              type: "string"
+              nullable: true
+              format: "date"
+              pattern: "^\\d{4}-\\d{2}-\\d{2}$"
+            datumVergunningOfMelding:
+              description: "Laatste datum vergunning of melding als bedoeld in het\
+                \ Besluit Activiteiten Leefomgeving."
+              type: "string"
+              nullable: true
+              format: "date"
+              pattern: "^\\d{4}-\\d{2}-\\d{2}$"
+            vergunningsPlicht:
+              description: "Wel of niet vergunningplichtig"
+              type: "boolean"
+          required:
+          - "basisVergunningNummer"
+          - "datumLaatsteWijziging"
+          - "datumVergunningOfMelding"
+          - "vergunningsPlicht"
+      required:
+      - "properties"
+  BadGiftig:
+    $anchor: "BadGiftig"
+    description: "Metaalproductenindustrie: bad met giftige gevaarlijke stoffen."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  Basisnet:
+    $anchor: "Basisnet"
+    description: "Bij regeling van Onze Minister aangewezen wegen, hoofdspoorwegen\
+      \ en binnenwateren die van belang worden geacht voor het vervoer van gevaarlijke\
+      \ stoffen"
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht:
+    $anchor: "BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht"
+    description: "Vergunningplichtig behandelen, regelen en meten van aardgas."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht:
+    $anchor: "BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht"
+    description: "Behandelen, regelen en meten van aardgas."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            ontwerpCapaciteit:
+              description: "Ontwerpcapaciteit van de installatie in Nm3/u."
+              type: "number"
+            opstellingsUitvoering:
+              description: "Indicatie van de uitvoering van de installatie."
+              $ref: "#/$defs/OpstellingsUitvoeringAardgas"
+            werkdruk:
+              description: "Werkdruk aan inlaatzijde van de installatie in kPa."
+              type: "number"
+      required:
+      - "properties"
+  Buisleiding:
+    $anchor: "Buisleiding"
+    description: "Buisleiding met gevaarlijke stoffen"
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  Emplacement:
+    $anchor: "Emplacement"
+    description: "Spoorwegemplacement voor onder meer het uitvoeren van handelingen\
+      \ voor het samenstellen of splitsen van goederentreinen"
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  KernenergieInrichting:
+    $anchor: "KernenergieInrichting"
+    description: "Kernenergieinrichting als bedoeld in art.10.5 lid 2 Bkl"
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  Mestvergisting:
+    $anchor: "Mestvergisting"
+    description: "Mestvergistingsinstallatie."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  MijnbouwwerkExploiteren:
+    $anchor: "MijnbouwwerkExploiteren"
+    description: "Mijnbouwwerk (algemeen)."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  MijnbouwwerkVerplaatsbaar:
+    $anchor: "MijnbouwwerkVerplaatsbaar"
+    description: "VII E 11_2 Mijnbouwwerk (verplaatsbaar)"
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagBrandbareVloeistofGeenDieselBovengronds:
+    $anchor: "OpslagBrandbareVloeistofGeenDieselBovengronds"
+    description: "Opslaan van brandbare vloeistoffen anders dan diesel in bovengrondse\
+      \ opslagtanks."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagBrandbareVloeistofGeenDieselOndergronds:
+    $anchor: "OpslagBrandbareVloeistofGeenDieselOndergronds"
+    description: "Opslaan van brandbare vloeistoffen anders dan diesel in ondergrondse\
+      \ opslagtanks."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagBrandstofBunkerstation:
+    $anchor: "OpslagBrandstofBunkerstation"
+    description: "Opslaan van brandstoffen in bunkerstations."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagMeststof:
+    $anchor: "OpslagMeststof"
+    description: "Opslaan van vaste minerale anorganische meststoffen."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagOntplofbaarADR1.1Civiel:
+    $anchor: "OpslagOntplofbaarADR1.1Civiel"
+    description: "Civiele explosieaandachtsgebieden voor opslag van stoffen van ADR-klasse\
+      \ 1.1."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            nettoExplosieveMassa:
+              description: "Netto explosieve massa (NEM) in kg."
+              type: "number"
+      required:
+      - "properties"
+  OpslagOntplofbaarADR1.3Civiel:
+    $anchor: "OpslagOntplofbaarADR1.3Civiel"
+    description: "Opslag van stoffen van ADR-klasse 1.3."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            nettoExplosieveMassa:
+              description: "Netto explosieve massa (NEM) in kg."
+              type: "number"
+      required:
+      - "properties"
+  OpslagOntplofbaarADR1.4Civiel:
+    $anchor: "OpslagOntplofbaarADR1.4Civiel"
+    description: "Opslaan van stoffen van ADR-klasse 1.4."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagOntplofbaarComplexen:
+    $anchor: "OpslagOntplofbaarComplexen"
+    description: "Een complex met opslag van civiele explosieven met vastgestelde\
+      \ explosieaandachtsgebieden."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagOntplofbaarMilitair_TeBerekenenAfstand:
+    $anchor: "OpslagOntplofbaarMilitair_TeBerekenenAfstand"
+    description: "Opslaan en bewerken van ontplofbare stoffen en voorwerpen op militaire\
+      \ objecten met een te berekenen afstand."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagOntplofbaarMilitair_VasteAfstand:
+    $anchor: "OpslagOntplofbaarMilitair_VasteAfstand"
+    description: "Opslaan en bewerken van ontplofbare stoffen en voorwerpen op militaire\
+      \ objecten met vaste afstand."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagOxiderendVerstikkendGas:
+    $anchor: "OpslagOxiderendVerstikkendGas"
+    description: "Opslaan van oxiderende en verstikkende gassen in opslagtanks."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagSevesoHoeveelheidBuitenSevesoInrichting:
+    $anchor: "OpslagSevesoHoeveelheidBuitenSevesoInrichting"
+    description: "Opslag- en transportbedrijf, groothandel en containeroverslag: Seveso-hoeveelheid."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            categorieGiftigeStof:
+              description: "Categorie van de giftige stof op basis van eigenschappen\
+                \ in tabel E.9 van Bkl bijlage VII onder E onder 9."
+              $ref: "#/$defs/CategorieGiftigeStof"
+            dampspanning:
+              description: "Dampspanning bij 20 °C in mbar."
+              type: "number"
+            kookTemperatuur:
+              description: "Kooktemperatuur of begin van het kooktraject van een mengsel\
+                \ in K."
+              type: "number"
+            kritischeTemperatuur:
+              description: "Kritische temperatuur in K."
+              type: "number"
+            mediaanLetaleConcentratie:
+              description: "LC50 ofwel mediaan letale concentratie in ppm, concentratie\
+                \ van een stof waarbij 50% van de testorganismen overlijdt na 1 uur."
+              type: "number"
+      required:
+      - "properties"
+  OpslagVerpakt_TeBerekenenAfstandVergunningplicht:
+    $anchor: "OpslagVerpakt_TeBerekenenAfstandVergunningplicht"
+    description: "Opslaan van gevaarlijke stoffen in verpakking."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            beschermingsniveau:
+              description: "Beschermingsniveau volgens PGS 15."
+              $ref: "#/$defs/BeschermingsniveauhoofdgroepTabelB3"
+      required:
+      - "properties"
+  OpslagVerpakt_VasteAfstandGeenVergunningplicht:
+    $anchor: "OpslagVerpakt_VasteAfstandGeenVergunningplicht"
+    description: "Opslaan van gevaarlijke stoffen in verpakking."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagVerpakt_VasteAfstandVergunningplicht:
+    $anchor: "OpslagVerpakt_VasteAfstandVergunningplicht"
+    description: "Opslaan van meer dan 10.000 kg aan gevaarlijke stoffen in verpakking."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            beschermingsniveauConformTabelB3:
+              description: "Beschermingsniveau conform tabel B.3 bijlage VII, uit\
+                \ BKL."
+              $ref: "#/$defs/BeschermingsniveauTabelB3"
+          required:
+          - "beschermingsniveauConformTabelB3"
+      required:
+      - "properties"
+  OpslagVuurwerkF1F2F3T1T2:
+    $anchor: "OpslagVuurwerkF1F2F3T1T2"
+    description: "Opslaan van van vuurwerk van categorie F1, F2, F3, of pyrotechnische\
+      \ artikelen voor theatergebruik van categorie T1 of T2."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            categorieVuurwerk:
+              description: "Categorie van het opgeslagen vuurwerk."
+              type: "array"
+              items:
+                $ref: "#/$defs/CategorieVuurwerk"
+              uniqueItems: true
+            hoeveelheidVuurwerk:
+              description: "Hoeveelheid vuurwerk (als Netto Explosieve Massa in kg)."
+              type: "number"
+      required:
+      - "properties"
+  OpslagVuurwerkF4:
+    $anchor: "OpslagVuurwerkF4"
+    description: "Opslaan van categorie F4 vuurwerk."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            hoeveelheidVuurwerk:
+              description: "Hoeveelheid vuurwerk (als Netto Explosieve Massa in kg)."
+              type: "number"
+      required:
+      - "properties"
+  OpslagtankGas_TeBerekenenAfstandVergunningplicht:
+    $anchor: "OpslagtankGas_TeBerekenenAfstandVergunningplicht"
+    description: "Opslagtank voor gassen."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht:
+    $anchor: "OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht"
+    description: "Opslaan van propaan of propeen in opslagtanks zonder vergunningplicht."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            aantalBevoorradingen:
+              description: "Aantal bevoorradingen per jaar."
+              $ref: "#/$defs/BevoorradingCategorieOfExactAantal"
+      required:
+      - "properties"
+  OpslagtankPropaanPropeen_VasteAfstandVergunningplicht:
+    $anchor: "OpslagtankPropaanPropeen_VasteAfstandVergunningplicht"
+    description: "Opslagtank voor gassen propaan en propeen met vergunningplicht."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            doorzetPerJaar:
+              description: "Jaarlijkse doorzet in m3."
+              type: "number"
+      required:
+      - "properties"
+  OpslagtankVloeistof:
+    $anchor: "OpslagtankVloeistof"
+    description: "Opslagtank voor vloeistoffen en tankcontainer of verpakking die\
+      \ wordt gebruikt als opslagtank voor vloeistoffen."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  OpstellenVoertuigen:
+    $anchor: "OpstellenVoertuigen"
+    description: "Opstellen van voertuigen, opleggers of aanhangers met gevaarlijke\
+      \ stoffen."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  SevesoInrichting:
+    $anchor: "SevesoInrichting"
+    description: "Seveso-inrichting als bedoeld in bijlage I bij het Besluit activiteiten\
+      \ leefomgeving;"
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  TankenCNG:
+    $anchor: "TankenCNG"
+    description: "Tanken van CNG."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            aantalAutobussen:
+              description: "Aantal autobussen per etmaal."
+              type: "integer"
+            aantalPersonenauto:
+              description: "Aantal personenauto’s per etmaal."
+              type: "integer"
+      required:
+      - "properties"
+  TankenGrootschaligVaartuig:
+    $anchor: "TankenGrootschaligVaartuig"
+    description: "Grootschalig tanken van brandstoffen aan vaartuigen of drijvende\
+      \ werktuigen met brandstoffen."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  TankenKleinschaligVaartuig:
+    $anchor: "TankenKleinschaligVaartuig"
+    description: "Kleinschalig tanken van brandstoffen aan vaartuigen of drijvende\
+      \ werktuigen met brandstoffen."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  TankenLNGVoertuigWerktuig:
+    $anchor: "TankenLNGVoertuigWerktuig"
+    description: "LNG: opslag- en transportbedrijf, groothandel en containeroverslag\
+      \ en tankstation."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            bovenvulling:
+              description: "Bovenvulling Ja/Nee."
+              type: "boolean"
+            reactietijdNoodstop:
+              description: "Reactietijd noodstopvoorziening"
+              $ref: "#/$defs/ReactietijdNoodstopBooleanOfExact"
+            verladingPomp:
+              description: "Verlading pomp Ja/Nee."
+              type: "boolean"
+            voordruk:
+              description: "Voordruk in kPa < 420 kPa Ja/Nee."
+              $ref: "#/$defs/VoordrukBooleanOfExact"
+      required:
+      - "properties"
+  TankenLPG:
+    $anchor: "TankenLPG"
+    description: "Tanken van LPG."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            doorzetPerJaar:
+              description: "Jaarlijkse doorzet LPG in m3."
+              type: "number"
+      required:
+      - "properties"
+  TankenWaterstofVoertuigWerktuig:
+    $anchor: "TankenWaterstofVoertuigWerktuig"
+    description: "Waterstof: opslag- en transportbedrijf, groothandel en containeroverslag\
+      \ en tankstation."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties: {}
+  WegenNietBasisnet:
+    $anchor: "WegenNietBasisnet"
+    description: "Wegen, anders dan basisnet"
+    allOf:
+    - $ref: "#/$defs/EVActiviteit"
+    - type: "object"
+      properties: {}
+  Windturbine_TeBerekenenAfstandGeenVergunningplicht:
+    $anchor: "Windturbine_TeBerekenenAfstandGeenVergunningplicht"
+    description: "Windturbine, zoals bedoeld in bijlage VII D 1 van het Besluit Kwaliteit\
+      \ Leefomgeving."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            aantalWindturbines:
+              description: "Het aantal windturbines dat tot de locatie behoort"
+              type: "integer"
+          required:
+          - "aantalWindturbines"
+      required:
+      - "properties"
+  Windturbine_TeBerekenenAfstandVergunningplicht:
+    $anchor: "Windturbine_TeBerekenenAfstandVergunningplicht"
+    description: "Windturbine, zoals bedoeld in bijlage VII E 1 van het Besluit Kwaliteit\
+      \ Leefomgeving."
+    allOf:
+    - $ref: "#/$defs/BKLActiviteit"
+    - type: "object"
+      properties:
+        properties:
+          type: "object"
+          properties:
+            aantalWindturbines:
+              description: "Het aantal windturbines dat tot de locatie behoort"
+              type: "integer"
+          required:
+          - "aantalWindturbines"
+      required:
+      - "properties"
+  BeschermingsniveauTabelB3:
+    $anchor: "BeschermingsniveauTabelB3"
+    description: "Beschermingsniveau volgens PGS 15, blussysteem en stikstofgehalte.\
+      \ Classificatie in tabel B.3 uit BKL."
+    type: "string"
+    enum:
+    - "Beschermingsniveau 1:Automatische blusgasinstallatie"
+    - "Beschermingsniveau 1:Automatische hi-ex inside-air installatie"
+    - "Beschermingsniveau 1:(Semi-)automatische monitorinstallatie"
+    - "Beschermingsniveau 1:Bedrijfsbrandweer met handbediende deluge-installatie"
+    - "Beschermingsniveau 1:Handbediende deluge-installatie met watervoorziening door\
+      \ bedrijfsbrandweer"
+    - "Beschermingsniveau 1:Handbediende deluge-installatie met watervoorziening door\
+      \ lokale brandweer"
+    - "Beschermingsniveau 1:Automatische deluge installatie"
+    - "Beschermingsniveau 1:Automatische hi-ex outside-air installatie, stikstofgehalte\
+      \ < 5%"
+    - "Beschermingsniveau 1:Automatische hi-ex outside-air installatie, stikstofgehalte\
+      \ 5 =< 10%"
+    - "Beschermingsniveau 1:Automatische hi-ex outside-air installatie, stikstofgehalte\
+      \ > 10%"
+    - "Beschermingsniveau 1:Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte\
+      \ < 5%"
+    - "Beschermingsniveau 1:Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte\
+      \ 5 =< 10%"
+    - "Beschermingsniveau 1:Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte\
+      \ > 10%"
+    - "Beschermingsniveau 2a, stikstofgehalte < 5 %:ADR-klasse 3 in kunststof"
+    - "Beschermingsniveau 2a, stikstofgehalte < 5 %:ADR-klasse 3 niet in kunststof"
+    - "Beschermingsniveau 2a, stikstofgehalte < 5 %:Geen ADR-klasse 3"
+    - "Beschermingsniveau 2a, stikstofgehalte 5 =< 10%:ADR-klasse 3 in kunststof"
+    - "Beschermingsniveau 2a, stikstofgehalte 5 =< 10%:ADR-klasse 3 niet in kunststof"
+    - "Beschermingsniveau 2a, stikstofgehalte 5 =< 10%:Geen ADR-klasse 3"
+    - "Beschermingsniveau 2a, stikstofgehalte > 10 %:ADR-klasse 3 in kunststof"
+    - "Beschermingsniveau 2a, stikstofgehalte > 10 %:ADR-klasse 3 niet in kunststof"
+    - "Beschermingsniveau 2a, stikstofgehalte > 10 %:Geen ADR-klasse 3"
+    - "Beschermingsniveau 3:Stikstofgehalte < 5%"
+    - "Beschermingsniveau 3:Stikstofgehalte 5 =< 10%"
+    - "Beschermingsniveau 3:Stikstofgehalte > 10%"
+    - "Alle beschermingsniveaus:Gasflessen"
+  BeschermingsniveauhoofdgroepTabelB3:
+    $anchor: "BeschermingsniveauhoofdgroepTabelB3"
+    description: "Beschermingsniveauhoofdgroep volgens Tabel B3, bijlage VII uit BKL."
+    type: "string"
+    enum:
+    - "beschermingsniveau 1"
+    - "beschermingsniveau 2a"
+    - "beschermingsniveau 3"
+  BevoegdGezag:
+    $anchor: "BevoegdGezag"
+    type: "string"
+    enum:
+    - "rijk"
+    - "provincie"
+    - "gemeente"
+    - "gegevenInTransitie"
+  BuisleidingCategorieStof:
+    $anchor: "BuisleidingCategorieStof"
+    description: "Aanduiding van de categorie van stoffen door de buisleiding"
+    type: "string"
+    enum:
+    - "aardgas"
+    - "ontvlambareGassenNietAardgas"
+    - "ontvlambareVloeistoffen"
+    - "gevaarlijkeStoffenAcuteToxiciteit"
+    - "kooldioxide"
+    - "zuurstof"
+    - "stikstof"
+    - "gegevenInTransitie"
+  CategorieAandachtsgebied:
+    $anchor: "CategorieAandachtsgebied"
+    description: "Categorie van het aandachtgebied."
+    type: "string"
+    enum:
+    - "vastgesteld"
+    - "berekend"
+    - "gegevenInTransitie"
+  CategorieAantalBevoorradingen:
+    $anchor: "CategorieAantalBevoorradingen"
+    description: "Indeling van aantal bevoorradingen in categorien."
+    type: "string"
+    enum:
+    - "groter dan vijf"
+    - "kleiner of gelijk vijf"
+  CategorieGiftigeStof:
+    $anchor: "CategorieGiftigeStof"
+    description: "Aanduiding van de categorie giftige stof"
+    type: "string"
+    enum:
+    - "GT5"
+    - "LT4"
+    - "LT3"
+    - "overig"
+    - "gegevenInTransitie"
+  CategorieKwetsbaarheidGebouw:
+    $anchor: "CategorieKwetsbaarheidGebouw"
+    description: "Keuzemogelijkheden voor de de kwetsbaarheidscategorie van gebouwen."
+    type: "string"
+    enum:
+    - "beperktKwetsbaar"
+    - "kwetsbaar"
+    - "zeerKwetsbaar"
+    - "gegevenInTransitie"
+  CategorieKwetsbaarheidLocatie:
+    $anchor: "CategorieKwetsbaarheidLocatie"
+    description: "Keuzemogelijkheden voor de de kwetsbaarheidscategorie van locaties"
+    type: "string"
+    enum:
+    - "beperktKwetsbaar"
+    - "kwetsbaar"
+    - "gegevenInTransitie"
+  CategorieStikstofgehalte:
+    $anchor: "CategorieStikstofgehalte"
+    description: "Hoeveelheids-klasse stikstofgehalte"
+    type: "string"
+    enum:
+    - "kleiner5"
+    - "5tot10"
+    - "hoger10"
+    - "gegevenInTransitie"
+  CategorieVuurwerk:
+    $anchor: "CategorieVuurwerk"
+    description: "Aanduiding van de categorie van het vuurwerk"
+    type: "string"
+    enum:
+    - "T1"
+    - "T2"
+    - "F1"
+    - "F2"
+    - "F3"
+    - "gegevenInTransitie"
+  Gebruiksdoeleinden:
+    $anchor: "Gebruiksdoeleinden"
+    description: "De geldige waarden van het domein Gebruiksdoel uit de BAG"
+    type: "string"
+    enum:
+    - "woonfunctie"
+    - "bijeenkomstfunctie"
+    - "celfunctie"
+    - "gezondheidszorgfunctie"
+    - "industriefunctie"
+    - "kantoorfunctie"
+    - "logiesfunctie"
+    - "gegevenInTransitie"
+    - "onderwijsfunctie"
+    - "sportfunctie"
+    - "winkelfunctie"
+    - "overige gebruiksfunctie"
+  HoeveelheidsKlasseAmmoniak:
+    $anchor: "HoeveelheidsKlasseAmmoniak"
+    description: "Hoeveelheids-klasse ammoniak in kg"
+    type: "string"
+    enum:
+    - "1500tot3500"
+    - "3500tot6000"
+    - "6000tot8000"
+    - "8000tot10000"
+    - "meer10000"
+    - "gegevenInTransitie"
+  NauwkeurigheidBovenkantbuis:
+    $anchor: "NauwkeurigheidBovenkantbuis"
+    description: "Aanduiding van de Nauwkeurigheid Bovenkantbuis van de buisleiding"
+    type: "string"
+    enum:
+    - "tot 30 cm"
+    - "tot 50 cm"
+    - "tot 100 cm"
+    - "onbekend"
+    - "gegevenInTransitie"
+  OilGasChemicalsProductTypeValue:
+    $anchor: "OilGasChemicalsProductTypeValue"
+    description: "Classificatie van olie-, gas- en chemische producten. Deze lijst\
+      \ is overgenomen van inspire (en IMKL): https://inspire.ec.europa.eu/codelist/OilGasChemicalsProductTypeValue"
+    type: "string"
+    enum:
+    - "accetone"
+    - "air"
+    - "argon"
+    - "butadiene"
+    - "butadiene1,3"
+    - "butane"
+    - "c3"
+    - "carbonMonoxide"
+    - "chlorine"
+    - "compressedAir"
+    - "crude"
+    - "dichloroethane"
+    - "diesel"
+    - "empty"
+    - "ethylene"
+    - "gasFabricationOfCocs"
+    - "gasHFx"
+    - "gasoil"
+    - "hydrogen"
+    - "isobutane"
+    - "JET-A1"
+    - "kerosene"
+    - "liquefiedNaturalGas"
+    - "liquidAmmonia"
+    - "liquidHydrocarbon"
+    - "methane"
+    - "multiProduct"
+    - "MVC"
+    - "naturalGas"
+    - "naturalGasAndTetrahydrothiophene"
+    - "nitrogen"
+    - "nitrogenGas"
+    - "oxygen"
+    - "phenol"
+    - "propane"
+    - "propyleen"
+    - "propylene"
+    - "raffinate"
+    - "refineryProducts"
+    - "residualGas"
+    - "saltWater"
+    - "saumur"
+    - "tetrachloroethane"
+    - "unknown"
+    - "overig"
+    - "gegevenInTransitie"
+  OpslagADRklasse3:
+    $anchor: "OpslagADRklasse3"
+    description: "Opslag ADR 3 klassen keuzes"
+    type: "string"
+    enum:
+    - "ADR3InKunststof"
+    - "ADR3NietInKunststof"
+    - "GeenADR3"
+    - "gegevenInTransitie"
+  OpstellingsUitvoeringAardgas:
+    $anchor: "OpstellingsUitvoeringAardgas"
+    description: "Opstellingsuitvoering van de aardgas installatie"
+    type: "string"
+    enum:
+    - "ondergronds"
+    - "binnenBehuizing"
+    - "buitenBehuizing"
+    - "gegevenInTransitie"
+  OpstellingsUitvoeringAmmoniak:
+    $anchor: "OpstellingsUitvoeringAmmoniak"
+    description: "Opstellingsuitvoering in de machinekamer van de ammoniak koelinstallatie"
+    type: "string"
+    enum:
+    - "1"
+    - "2"
+    - "3"
+    - "gegevenInTransitie"
+  PipeMaterialTypeValue:
+    $anchor: "PipeMaterialTypeValue"
+    description: "De materiaalsoort van de buisleiding. Deze lijst is overgenomen\
+      \ van IMKL: http://definities.geostandaarden.nl/imkl2015/id/waardelijst/PipeMaterialTypeIMKLValue"
+    type: "string"
+    enum:
+    - "ABS"
+    - "asbestos"
+    - "blackIron"
+    - "blackSteel"
+    - "castIron"
+    - "clay"
+    - "compositeConcrete"
+    - "concrete"
+    - "CPVC"
+    - "FRP"
+    - "galvanizedSteel"
+    - "masonry"
+    - "PB"
+    - "PE"
+    - "PEX"
+    - "PP"
+    - "prestressedReinforcedConcrete"
+    - "PVC"
+    - "reinforcedConcrete"
+    - "RPMP"
+    - "steel"
+    - "terracota"
+    - "wood"
+    - "other"
+    - "gegevenInTransitie"
+  RepresentatieLijn:
+    $anchor: "RepresentatieLijn"
+    description: "Soort lijn dat maatgevend is voor de berekening van de EVContour"
+    type: "string"
+    enum:
+    - "referentielijnSpoor"
+    - "referentielijnWater"
+    - "referentielijnWeg"
+    - "kantstreep"
+    - "oeverlijn"
+    - "buitensteSpoor"
+    - "kantVerharding"
+    - "basisnet"
+    - "gegevenInTransitie"
+  StatusBuisleiding:
+    $anchor: "StatusBuisleiding"
+    description: "Status van de buisleiding in termen van realisatie en gebruik."
+    type: "string"
+    enum:
+    - "functioneel"
+    - "geprojecteerd"
+    - "buitenGebruik"
+  TypeBrand:
+    $anchor: "TypeBrand"
+    description: "Het soort brand van het brand aandachtgebied."
+    type: "string"
+    enum:
+    - "fakkelbrand"
+    - "plasbrand"
+    - "overig"
+    - "gegevenInTransitie"
+  TypeExplosieAandachtsgebied:
+    $anchor: "TypeExplosieAandachtsgebied"
+    description: "Categorie civiel of militair explosieaandachtsgebied"
+    type: "string"
+    enum:
+    - "A"
+    - "B"
+    - "C"
+    - "gegevenInTransitie"
+  TypeOpslagReferentie:
+    $anchor: "TypeOpslagReferentie"
+    description: "Type opslagreferentie"
+    type: "string"
+    enum:
+    - "opslagplaats"
+    - "bufferopslag"
+    - "opslagtank"
+    - "gaszak"
+    - "tussenopslag"
+    - "bunkerstation"
+    - "gegevenInTransitie"
+    - "overig"
+  TypeOverigeContour:
+    $anchor: "TypeOverigeContour"
+    description: "Type overige contouren."
+    type: "string"
+    enum:
+    - "vastgesteld ontplofbaar"
+    - "vastgesteld vuurwerk"
+  TypePlaatsgebondenRisico:
+    $anchor: "TypePlaatsgebondenRisico"
+    description: "Types PR contouren."
+    type: "string"
+    enum:
+    - "PR10-5"
+    - "PR10-6"
+    - "PR10-7"
+    - "PR10-8"
+    - "vastgesteld BK"
+    - "vastgesteld K"
+    - "vastgesteld ZK"
+    - "gegevenInTransitie"
+  VoidReasonValue:
+    $anchor: "VoidReasonValue"
+    description: "reden waarom een ’void-waarde’ is ingevuld"
+    type: "string"
+    enum:
+    - "gegevenInTransitie"
+    - "nietVanToepassing"
+    - "waardeOnbekend"
