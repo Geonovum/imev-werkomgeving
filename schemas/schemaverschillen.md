@@ -4,6 +4,7 @@ Schemaverschillen Geodan en Geonovum
 Onderstaande tabel geeft de verschillen tussen het schema van Geonovum en die van Geodan. 
 
 |Aspect|Geonovum|Geodan|
+|------|--------|------|
 |Header|Begint met comment, schema en reqs element|geen header|
 |NEN3610ID|In het door Imvertor geproduceerde json-schema is het NEN3610ID een object.|NEN3610ID is een string met een regex validatie.|
 |missende IMEV elementen||•	De abstracte objecttypen
@@ -13,8 +14,7 @@ Onderstaande tabel geeft de verschillen tussen het schema van Geonovum en die va
 •	LocatieEVActiviteiten (als array, maar in IMEV is het een abstract supertype)
 •	featureType 
 •	AllowedFeatureTypes: (enumeratie)
-•	Per BKLActiviteit is er een lijst met toegestane referenties. 
-|
+•	Per BKLActiviteit is er een lijst met toegestane referenties.|
 |Attributen supertype|Er is een verwijzing naar de te overerven attributen van het supertype via “allOff”|De attributen van de supertypes worden steeds herhaald, maar de supertypes zelf ontbreken en worden alleen als lijst getoond met mogelijke subtypen.|
 |Link naar supertype|Ja|Nee|
 |Link naar subtype|Nee|Soms, met “oneOf”|
