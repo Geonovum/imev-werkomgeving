@@ -1,0 +1,176 @@
+---
+components:
+  schemas:
+    NEN3610ID:
+      type: string
+      description: 'Unieke identificatie van het object binnen het domein van NEN 3610.'
+      pattern: ^NL[\.]IMEV[\.][a-zA-Z0-9-_]+[\.][a-zA-Z0-9-_]+$
+      example: 'NL.IMEV.KD_FYS3.543678_1'
+      minLength: 12
+
+    # ======================================
+    # GeoJson geometry
+    # ======================================
+    Geometrie:
+      type: object
+      oneOf:
+        - $ref: '#/components/schemas/Point'
+        - $ref: '#/components/schemas/LineString'
+        - $ref: '#/components/schemas/Polygon'
+        - $ref: '#/components/schemas/MultiPoint'
+        - $ref: '#/components/schemas/MultiLineString'
+        - $ref: '#/components/schemas/MultiPolygon'
+      discriminator:
+        propertyName: type
+
+    GeoCommon:
+      type: object
+      description: GeoJSon geometry
+      required:
+        - type
+        - coordinates
+      externalDocs:
+        url: http://geojson.org/geojson-spec.html#geometry-objects
+
+    Point3D:
+      type: array
+      description: Point in 3D space
+      externalDocs:
+        url: http://geojson.org/geojson-spec.html#id2
+      minItems: 2
+      maxItems: 3
+      items:
+        type: number
+      example:
+        coordinates: [ 155000.0, 446000.0 ]
+
+    Point:
+      allOf:
+        - $ref: '#/components/schemas/GeoCommon'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - 'Point'
+            coordinates:
+              $ref: '#/components/schemas/Point3D'
+      example:
+        type: 'Point'
+        coordinates: [ 155000.0, 446000.0 ]
+
+    LineString:
+      allOf:
+        - $ref: '#/components/schemas/GeoCommon'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - 'LineString'
+            coordinates:
+              type: array
+              items:
+                $ref: '#/components/schemas/Point3D'
+      example:
+        type: 'LineString'
+        coordinates: [[ 155000.0, 446000.0 ], [ 155000.0, 447000.0 ]]
+
+    Polygon:
+      allOf:
+        - $ref: '#/components/schemas/GeoCommon'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - 'Polygon'
+            coordinates:
+              type: array
+              items:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Point3D'
+      example:
+        type: 'Polygon'
+        coordinates: [[[ 155000.0, 446000.0 ], [ 155000.0, 447000.0 ], [ 156000.0, 447000.0 ], [ 156000.0, 446000.0 ],[ 155000.0, 446000.0 ]]]
+
+    MultiPoint:
+      allOf:
+        - $ref: '#/components/schemas/GeoCommon'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - 'MultiPoint'
+            coordinates:
+              type: array
+              items:
+                $ref: '#/components/schemas/Point3D'
+      example:
+        type: 'MultiPoint'
+        coordinates: [[ 155000.0, 446000.0 ], [ 155000.0, 447000.0 ]]
+
+    MultiLineString:
+      allOf:
+        - $ref: '#/components/schemas/GeoCommon'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - 'MultiLineString'
+            coordinates:
+              type: array
+              items:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Point3D'
+      example:
+        type: MultiLineString
+        coordinates: [[[ 155000.0, 446000.0 ], [ 155000.0, 447000.0 ]], [[ 156000.0, 446000.0 ], [ 156000.0, 447000.0 ]]]
+
+
+    MultiPolygon:
+      allOf:
+        - $ref: '#/components/schemas/GeoCommon'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - 'MultiPolygon'
+            coordinates:
+              type: array
+              items:
+                type: array
+                items:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Point3D'
+      example:
+        type: 'MultiPolygon'
+        coordinates: [
+          [[[ 155000.0, 446000.0 ], [ 155000.0, 447000.0 ], [ 156000.0, 447000.0 ], [ 156000.0, 446000.0 ], [ 155000.0, 446000.0 ]]],
+          [[[ 155100.0, 446100.0 ], [ 155100.0, 446900.0 ], [ 155900.0, 446900.0 ], [ 155900.0, 446100.0 ], [ 155100.0, 446100.0 ]]],
+          [[[ 155200.0, 446200.0 ], [ 155100.0, 446800.0 ], [ 155800.0, 446800.0 ], [ 155800.0, 446200.0 ], [ 155200.0, 446200.0 ]]]
+        ]
+
+    GeometryCollection:
+      type: object
+      description: GeoJSon geometry collection
+      required:
+        - type
+        - geometries
+      externalDocs:
+        url: http://geojson.org/geojson-spec.html#geometrycollection
+      properties:
+        type:
+          type: string
+          enum:
+            - 'GeometryCollection'
+        geometries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Geometrie'
