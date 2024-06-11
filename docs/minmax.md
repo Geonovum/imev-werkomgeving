@@ -1,5 +1,5 @@
-|klasse|attribuut|type|lengte|meeteenheid|voorstel min|voorstel max|min gemeten|max gemeten|missing value %|
-|------|---------|-----------|-----------|------------|------------|-----------|-----------|---------------|
+|klasse|attribuut|type|lengte|meeteenheid|voorstel min|voorstel max|min gemeten|max gemeten|missing value %|  
+|------|---------|-----------|-----------|------------|------------|-----------|-----------|---------------|  
 |TankenCNG|aantalAutobussen|Integer|3,0|aantal|0|999|8|101|99,92|
 |TankenCNG|aantalPersonenauto|Integer|3,0|aantal|0|999|10|300|99,91|
 |Machinekamer|aantalKoelinstallaties|Integer|3,0|aantal|0|999|leeg|leeg|100,00|
