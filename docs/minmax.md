@@ -1,0 +1,45 @@
+|klasse|attribuut|type|lengte|meeteenheid|voorstel min|voorstel max|min gemeten|max gemeten|missing value %|
+|------|---------|-----------|-----------|------------|------------|-----------|-----------|---------------|
+|TankenCNG|aantalAutobussen|Integer|3,0|aantal|0|999|8|101|99,92||
+||TankenCNG|aantalPersonenauto|Integer|3,0|aantal|0|999|10|300|99,91|
+|Machinekamer|aantalKoelinstallaties|Integer|3,0|aantal|0|999|leeg|leeg|100,00|
+|AfstandOfGeometrieAandachtsgebied of Prcontour|afstand|Real|4,2|m|0|9999,99|0|1500|0,36|
+|BuisleidingReferentie|bovenkantbuis|Real|4,0|cm|-9999|9999|-1443|2485|75,26|
+|BuisleidingReferentie|maximaleWerkdruk|Real|5,0|kPa|0|99999|0|99999|24,12|
+|BuisleidingReferentie|wanddikte|Real|4,2|mm|0|9999,99|0|9999,99||
+|BuisleidingReferentie|diameter|Real|4,2|mm|0|9999,99|0|9999,99||
+|Leiding|diameter|Real|4,2|mm|0|9999,99|0|9999|17,70|
+|OpslagSevesoHoeveelheidBuitenSevesoInrichting|dampspanning|Real|7,2|mbar|0|9999999,99|leeg|leeg|100,00|
+|OpslagtankPropaanPropeen_VasteAfstandVergunningplicht|doorzetPerJaar|Real|7,2|m3|0|9999999,99|12|2000000|15,06|
+|TankenLPG|doorzetPerJaar|Real|7,2|m3|0|10000,00|249|2500|6,65|
+|OpslagVuurwerkF1F2F3T1T2 of F4|hoeveelheidVuurwerk|Real|7,2|kg|0|1000000,00|50|166000|54,35|
+|OpslagSevesoHoeveelheidBuitenSevesoInrichting|kookTemperatuur|Real|7,2|Kelvin|0|9999999,99|leeg|leeg|100,00|
+|OpslagSevesoHoeveelheidBuitenSevesoInrichting|kritischeTemperatuur|Real|7,2|Kelvin|0|9999999,99|leeg|leeg|100,00|
+|OpslagSevesoHoeveelheidBuitenSevesoInrichting|mediaanLetaleConcentratie|Real|7,2|ppm|0|9999999,99|leeg|leeg|100,00|
+|OpslagOntplofbaarADR1.1Civiel|nettoExplosieveMassa|Real|7,2|kg|0|10000,00|2|1500||
+|OpslagOntplofbaarADR1.3Civiel|nettoExplosieveMassa|Real|7,2|kg|0|10000,00|37|700||
+|BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht|ontwerpCapaciteit|Real|7,2|Nm3/u|0|1000000,00|4000|87000|9,48|
+|AmmoniakKoelinstallatie_TeBerekenenAfstand|werktemperatuur|Real|7,2|Celsius|-273|100,00|-26|-5|37,50|
+|AmmoniakKoelinstallatie_VasteAfstandVergunningplicht|werktemperatuur|Real|7,2|Celsius|-273|100,00|-47|-4|22,62|
+|BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht|werkdruk|Real|5,0|kPa|0|99999|800|10000||
+|Windturbine_TeBerekenenAfstandGeenVergunningplicht|aantalWindturbines|Integer|3,0|aantal|0|999|1|2|0,00|
+|Windturbine_TeBerekenenAfstandVergunningplicht|aantalWindturbines|Integer|3,0|aantal|0|999|1|93|0,00|
+|Windturbine|ashoogte|Real|7,2|m|0|1000,00|3,9|166|15,49|
+|Windturbine|breedteGondel|Real|7,2|m|0|100,00|1,21|1,21|99,97|
+|Windturbine|hoogteGondel|Real|7,2|m|0|100,00|1,18|1,18|99,97|
+|Windturbine|lengteGondel|Real|7,2|m|0|100,00|2,32|2,32|99,97|
+|Windturbine|massaGondel|Real|7,2|kg|0|10000,00|200|2000|99,95|
+|Windturbine|maxWerpafstandNominaal|Real|7,2|m|0|1000,00|16|454|27,33|
+|Windturbine|maxWerpafstandOvertoeren|Real|7,2|m|0|1000,00|102|716|27,82|
+|Windturbine|nominaalToerental|Real|7,2|Hz|0|1000,00|4,8|175|99,92|
+|Bewaarplaats|oppervlakteDeuropening|Real|1,0|m2|0|100|1|8|98,63|
+|Windturbine|rotordiameter|Real|7,2|cm|0|12000,00|3,7|12000|15,51|
+|Windturbine|vermogen|Real|7,2|KW|0|100000,00|5|12000|20,38|
+|Windturbine|zwaartepunt|Real|7,2|m|0|1000,00|2,77|2,77|99,97|
+|OpslagReferentie|inhoud|Real|5,0|m3|0|99999|0|36000|61,45|
+|OpslagReferentie|oppervlakte|Real|4,0|m2|0|9999|2|2501|99,15|
+|BevoorradingCategorieOfExactAantal|exactAantal|Integer|4,0|aantal|0|9999|0|5000|0,11|
+|ReactietijdNoodstopBooleanOfExact|exactAantalSeconden|Integer|4,0|aantal|0|9999|0|9999|99,99|
+|VoordrukBooleanOfExact|exacteHoeveelheid_kpa|Real|5,0|kPa|0|99999|0|99999|99,99|
+|KwetsbaarGebouw|populatie|Real|6,0|aantal|0|999999|0|999999|100,00|
+|KwetsbareLocatie|populatie|Real|6,0|aantal|0|999999|0|999999|100,00|
