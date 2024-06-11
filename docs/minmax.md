@@ -1,5 +1,5 @@
 |klasse|attribuut|type|lengte|meeteenheid|voorstel min|voorstel max|min gemeten|max gemeten|missing value %|  
-|------|---------|-----------|-----------|------------|------------|-----------|-----------|---------------|  
+|------|---------|----|------|-----------|------------|------------|-----------|-----------|---------------|  
 |TankenCNG|aantalAutobussen|Integer|3,0|aantal|0|999|8|101|99,92|
 |TankenCNG|aantalPersonenauto|Integer|3,0|aantal|0|999|10|300|99,91|
 |Machinekamer|aantalKoelinstallaties|Integer|3,0|aantal|0|999|leeg|leeg|100,00|
@@ -12,7 +12,6 @@
 |OpslagSevesoHoeveelheidBuitenSevesoInrichting|dampspanning|Real|7,2|mbar|0|9999999,99|leeg|leeg|100,00|
 |OpslagtankPropaanPropeen_VasteAfstandVergunningplicht|doorzetPerJaar|Real|7,2|m3|0|9999999,99|12|2000000|15,06|
 |TankenLPG|doorzetPerJaar|Real|7,2|m3|0|10000,00|249|2500|6,65| 
-
 |OpslagVuurwerkF1F2F3T1T2 of F4|hoeveelheidVuurwerk|Real|7,2|kg|0|1000000,00|50|166000|54,35|
 |OpslagSevesoHoeveelheidBuitenSevesoInrichting|kookTemperatuur|Real|7,2|Kelvin|0|9999999,99|leeg|leeg|100,00|
 |OpslagSevesoHoeveelheidBuitenSevesoInrichting|kritischeTemperatuur|Real|7,2|Kelvin|0|9999999,99|leeg|leeg|100,00|
