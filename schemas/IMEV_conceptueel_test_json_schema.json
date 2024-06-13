@@ -1,5 +1,5 @@
 {
-  "$comment": "IMEV-conceptueel-test-json-schema - version 1.3 / 20221221 by Imvertor 3.0.0 variant geojson",
+  "$comment": "IMEV-conceptueel-test-json-schema - version 2.0 / 20231031 by Imvertor 3.0.0 variant geojson",
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$reqs": [
     "/req/geojson",
