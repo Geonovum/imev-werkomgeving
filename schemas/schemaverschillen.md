@@ -22,7 +22,7 @@ Onderstaande tabel geeft de verschillen tussen het schema van Geonovum en die va
 
 In het EA model zijn relaties als "object ***a*** heeft een object ***b***" gedefinieerd als relatierol. Dit is in het json-schema van Geonovum terug te vinden als een property met een description. De relatie wordt gelegd via LinkObjecten die in het schema zitten, maar waar die naar verwijzen maakt niet uit.
 Zo komt bijvoorbeeld de “heeft” relatie van ReferentieEVContour naar een EVActiviteit terug in het schema met de beschrijving: “Verwijzing naar de activiteit met externe veiligheidsrisco's.”  
-N op 1 relaties In het schema van Geodan zijn niet op deze manier terug te vinden. Relaties volgen dan uit de geneste structuur van de json-bestanden.   
-1 op n relaties zijn het schema van Geodan soms terug te vinden als attributen. De meeste referentieobjecten hebben bijvoorbeeld een property “evContouren” waarin verwezen wordt naar een EVContourenArray of een Voidable;
+N op 1 relaties: In het schema van Geodan zijn deze niet op deze manier terug te vinden. Relaties volgen dan uit de geneste structuur van de json-bestanden.   
+1 op n relaties zijn in het schema van Geodan soms terug te vinden als attributen. De meeste referentieobjecten hebben bijvoorbeeld een property “evContouren” waarin verwezen wordt naar een EVContourenArray of een Voidable;
 
 
