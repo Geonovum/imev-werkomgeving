@@ -13,7 +13,7 @@ Onderstaande tabel geeft de verschillen tussen het schema van Geonovum en die va
 |Link naar supertype|Ja|Nee|
 |Link naar subtype|Nee|Soms, met “oneOf”|
 |Relaties opgenomen properties 1:n|Via naam relatierol|Via een array, maar niet altijd, zo mist bv de relatie PRcontour naar ReferentieEVContour.|
-|Relaties opgenomen properties n:1|Via naam relatierol|Nee, dat volgt uit de geneste structuur van het json-bestand. Zie volgende paragraaf.|
+|Relaties opgenomen properties n:1|Via naam relatierol|Nee, dat volgt uit de geneste structuur van het json-bestand.|
 |Geometrie|Verwijzing naar https://geojson.org/, bv: https://geojson.org/schema/LineString.json |GeoJson geometry zelf gespecificeerd in common-schema|
 |Keuze bv PuntOfVlak| Apart objecttype|Direct in bijbehorende objecttype met “oneOf”|
 |Volgorde|Objecttypes, BKLActiviteiten, Enumeraties|Gegeneraliseerde objecttypen, BKLActiviteiten, EVContouren, Referenties, Overige objecten, Enumeraties, GeoJson geometrieobjecten|
