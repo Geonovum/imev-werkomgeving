@@ -17,6 +17,7 @@ Onderstaande tabel geeft de verschillen tussen het schema van Geonovum en die va
 |Geometrie|Verwijzing naar https://geojson.org/, bv: https://geojson.org/schema/LineString.json |GeoJson geometry zelf gespecificeerd in common-schema|
 |Keuze bv PuntOfVlak| Apart objecttype|Direct in bijbehorende objecttype met “oneOf”|
 |Volgorde|Objecttypes, BKLActiviteiten, Enumeraties|Gegeneraliseerde objecttypen, BKLActiviteiten, EVContouren, Referenties, Overige objecten, Enumeraties, GeoJson geometrieobjecten|
+|Mogelijke referentieobjecten per MBA|Geen beperking|Per MBA is er een lijst met mogelijke referentieobjecten|
 
 ***Toelichting op verschil in relaties***
 
