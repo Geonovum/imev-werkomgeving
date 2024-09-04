@@ -8,7 +8,7 @@ Onderstaande tabel geeft de verschillen tussen het schema van Geonovum en die va
 |Header|Begint met comment, schema en reqs element|geen header|
 |NEN3610ID|NEN3610ID is een object conform IMEV.|NEN3610ID is een string met een regex validatie.|
 |Missende IMEV elementen||De abstracte objecttypen, Attribuut: tijdstipRegistratie, Attribuut: eindRegistratie|
-|Extra elementen t.o.v. IMEV||IMEV-LocatieEVActiviteiten (als array, maar in IMEV is het een abstract supertype), featureType, AllowedFeatureTypes: (enumeratie), Per BKLActiviteit is er een lijst met toegestane referenties.|
+|Extra elementen t.o.v. IMEV||IMEV-LocatieEVActiviteiten (als array, maar in IMEV is het een abstract supertype), featureType, Per BKLActiviteit is er een lijst met toegestane referenties.|
 |Attributen supertype|Er is een verwijzing naar de te overerven attributen van het supertype via “allOf”|De attributen van de supertypes worden steeds herhaald, maar de supertypes zelf ontbreken en worden alleen als lijst getoond met mogelijke subtypen.|
 |Link naar supertype|Ja|Nee|
 |Link naar subtype|Nee|Soms, met “oneOf”|
