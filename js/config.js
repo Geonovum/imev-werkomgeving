@@ -38,7 +38,7 @@ var respecConfig =
     {
     name:       "Pieter Bresters",
 	company:    "Geonovum",
-    companyurl: "https://www.geonovum.nl",
+    companyURL: "https://www.geonovum.nl",
     }
   ],
   //-- de namen van de Author(s) ------------------------------------------------------
@@ -65,11 +65,6 @@ var respecConfig =
     company:    "Geonovum",
     companyURL: "https://www.geonovum.nl"
    },
-   {
-    name:       "Paul Janssen",
-    company:    "Geonovum",
-    companyURL: "https://www.geonovum.nl"
-  },
    {
     name:       "Joeri van Es",
     company:    "Geonovum",
