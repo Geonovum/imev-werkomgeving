@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML><section id="cat" class="normative">
    <h2>Gegevensdefinitie</h2>
-   <!--MIMLM-IMEV-conceptueel-3.0-0-20241021-20241029-091756 imvertor Nightly-build.19-->
+   <!--MIMLM-IMEV-conceptueel-3.0-0-20241021-20241030-074239 imvertor Nightly-build.19-->
    <section id="global_package_IMEVbasis">
       <h3>Domein   IMEV-basis</h3>
       <section id="EAID_90555E69_004F_4af9_B918_EED2BB1789DB">
          <h4>   Basismodel: kern - overzicht</h4>
          <div class="imageinfo overview">
             <figure><img src="data/Images/EAID_90555E69_004F_4af9_B918_EED2BB1789DB.png" usemap="#imagemap-EAID_90555E69_004F_4af9_B918_EED2BB1789DB" alt="Diagram: De kern van IMEV bestaat uit 5 objecttypen: LocatieEVActiviteit: Locatie waar de activiteit met externe veiligheidsrisico’s wordt verricht. EVActiviteit: Activiteit met externe veiligheidsrisico’s. ReferentieEVContour: Referentie voor het bepalen van de ligging van een EVContour. EVContour: Contour van externe veiligheidsrisico’s vanaf het punt of vlak van de ReferentieEVContour. GebouwOfLocatie: Een gebouw of locatie die kan worden beïnvloed door de aanwezigheid van een EVcontour. Deze 5 objecttypen hebben een relatie tot elkaar die de basis vormt voor alle onderdelen van het IMEV informatiemodel. Het model is als volgt te lezen: Op een LocatieEVActiviteit worden één of meer EVActiviteiten uitgevoerd. Elk type EVActiviteit heeft één of meer ReferentieEVContouren. Op basis van deze ReferentieEVContouren kunnen de EVcontouren van het plaatsgebonden risico of het aandachtsgebied worden bepaald. De EVContour kan gebruikt worden om (toegelaten) kwetsbare locaties en gebouwen te bepalen die binnen de EVContour vallen. De relaties tussen de objecttypen zijn over het algemeen meervoudig. Bijvoorbeeld op 1 LocatieEVActiviteit kunnen 1 of meerdere (1..*) EVActiviteiten worden uitgevoerd. 1 EVActiviteit heeft vervolgens 1 of meerdere ReferentieEVContouren enz. De rationale achter dit model is de volgende: De structuur van het model wordt bepaald door de in het Besluit kwaliteit leefomgeving (Bkl) opgenomen activiteiten met externe veiligheidsrisico’s. Zie bijvoorbeeld in het Bkl, bijlage VII. Dit is een uitgebreide lijst en voorbeelden daarvan zijn: tanken van LPG, opslaan van gevaarlijke stoffen, vervoer gevaarlijke stoffen, windturbines. Deze activiteiten vallen in het model onder het objecttype EVActiviteit. Elke type activiteit heeft specifieke eigenschappen en is als specialisatie van EVActiviteit opgenomen. In de uitwerking van het model is elke specialisatie van EVActiviteit als een apart diagram opgenomen. Een EVActiviteit wordt uitgevoerd op een locatie. Of andersom, op een locatie wordt een EVActiviteit uitgevoerd. Bijvoorbeeld een tankstation bevindt zich op een locatie, of een bedrijf voor opslag van gas bevindt zich op een locatie, of een locatie heeft een transportleiding voor aardgas. Deze objecten en hun eigenschappen vallen onder het objecttype LocatieActiviteit. Het is de locatie waar een activiteit met een gerelateerd extern risico wordt verricht of uitgevoerd. In het model is er de relatie tussen LocatieActiviteit en EVActiviteit. Dus een locatie is gerelateerd aan een type EVActiviteit. Via het kenmerk 'voertUit' wordt deze relatie benoemd. Een locatieEVActiviteit voert een EVActiviteit uit. OPMERKING: Het kan voorkomen dat er binnen een locatie meerdere EVActiviteiten worden uitgevoerd. Er zijn dan vanuit 1 locatie meerdere verwijzingen naar verschillende EVActiviteiten. Het kan ook zijn dat er binnen 1 locatie binnen 1 EVActiviteit meerdere specifieke voorkomens van die EVActiviteit nodig zijn. Bijvoorbeeld als er verschillende typen blusinstallaties zijn gespecificeerd. Ook in dat geval is er een koppeling met meerdere voorkomens van EVActiviteit. Het Bkl benoemt de EVActiviteiten waarbij een extern risico van toepassing is. Bij elk van die activiteiten zijn er in het Bkl specifieke referentiegegevens benoemd die van toepassing zijn om een contour voor een extern veiligheidsrisico te bepalen. Deze referentiegegevens, ingevuld voor een specifieke LocatieEVActiviteit zijn opgenomen in het objecttype ReferentieEVContour. Deze referentiegegevens omvatten onder andere de benoeming en locatie van de bij de activiteit behorende onderdelen die bepalend zijn voor de exacte locatie waarvandaan de externe veiligheidscontour kan worden bepaald. Voorbeelden van deze bepalende onderdelen zijn installatie, aftappunt, vulpunt, leiding, opstelplaats. Van deze onderdelen wordt de locatie opgenomen. Via het kenmerk ‘heeft’ wordt een ReferentieEVContour gekoppeld aan een EVactiviteit. Een EVactiviteit ‘heeft’ daarmee een ReferentieEVContour. De contour van het gebied waaraan een extern veiligheidsrisico is gerelateerd is wordt gerepresenteerd door het objecttype EVContour. De contour wordt berekend of vastgesteld op basis van de informatie van een object ReferentieEVContour en de gegevens van de bijbehorende EVactiviteit. De EVContouren zijn onderverdeeld in een aantal typen. Voorbeelden daarvan zijn aandachtsgebied en risicocontour (ofwel plaatsgebonden risico). Via het kenmerk ‘resulteertIn’ wordt een ReferentieEVContour gekoppeld aan een EVContour. Een ReferentieEVContour resulteert in een EVContour. Op basis van de locatie van EVContouren kunnen specifieke gebouwen of locaties geïdentificeerd worden met een bepaalde kwetsbaarheid die zich binnen de EVContour bevinden. Denk aan scholen, ziekenhuizen of algemeen locaties met veel mensen. Het objecttype GebouwOfLocatie representeert deze groep objecten. De relatie tussen een EVContour en de gebouwen of locaties met een kwetsbaarheidsindicatie wordt gelegd op basis van geometrie van de EVContour en de gebouwen of locaties. Het bovenstaande verhaal en informatiemodel kan in een zin op de volgende manier worden gelezen: Een LocatieEVActiviteit voert een EVActiviteit uit; een EVActiviteit heeft een ReferentieEVContour die resulteert in een EVContour; de EVContour beinvloedt gebouwen of locaties met een kwetsbaarheidsindicatie."><figcaption>Basismodel: kern</figcaption>
-            </figure><map name="imagemap-EAID_90555E69_004F_4af9_B918_EED2BB1789DB"><area shape="rect" alt="ReferentieEVContour" coords="890,98,1097,227" href="#global_class_IMEVbasis_ReferentieEVContour"><area shape="rect" alt="LocatieEVActiviteit" coords="48,98,256,227" href="#global_class_IMEVbasis_LocatieEVActiviteit"><area shape="rect" alt="GebouwOfLocatie" coords="1733,98,1968,227" href="#global_class_IMEVbasis_GebouwOfLocatie"><area shape="rect" alt="EVActiviteit" coords="465,98,672,194" href="#global_class_IMEVbasis_EVActiviteit"><area shape="rect" alt="EVContour" coords="1313,98,1510,227" href="#global_class_IMEVbasis_EVContour"></map><p>
+            </figure><map name="imagemap-EAID_90555E69_004F_4af9_B918_EED2BB1789DB"><area shape="rect" alt="ReferentieEVContour" coords="890,101,1097,230" href="#global_class_IMEVbasis_ReferentieEVContour"><area shape="rect" alt="LocatieEVActiviteit" coords="48,101,256,230" href="#global_class_IMEVbasis_LocatieEVActiviteit"><area shape="rect" alt="GebouwOfLocatie" coords="1733,101,1968,230" href="#global_class_IMEVbasis_GebouwOfLocatie"><area shape="rect" alt="EVActiviteit" coords="465,101,672,197" href="#global_class_IMEVbasis_EVActiviteit"><area shape="rect" alt="EVContour" coords="1313,101,1510,230" href="#global_class_IMEVbasis_EVContour"></map><p>
                
                <p>
                   <b>De kern van IMEV bestaat uit 5 objecttypen:</b>
@@ -137,7 +137,7 @@
          <h4>   Basismodel: kern plus top - overzicht</h4>
          <div class="imageinfo overview">
             <figure><img src="data/Images/EAID_7F7C357E_4167_4885_A36F_6D5CFA42B52F.png" usemap="#imagemap-EAID_7F7C357E_4167_4885_A36F_6D5CFA42B52F" alt="Diagram: Het topmodel van IMEV bestaat uit de superklasse ExterneVeiligheidsobject samen met de objectypen die de kern van het model vormen. Bij het objectttype ExterneVeiligheidsobject zijn de basiseigenschappen opgenomen die voor alle onderliggende objecttypen gelden. De objecten hebben een attribuut identificatie conform NEN 3610, er is een verplichte opname van de bronhoudercode, de identificatiecode voor de verantwoordelijke instantie op het gebied van vergunningverlening en handhaving en er is optioneel een mogelijkheid om een link naar een document op te nemen. Daarnaast zijn er NEN 3610-attributen voor het opnemen van temporele kenmerken. De materiele historie modelleert de momenten van veranderingen van eigenschappen in de werkelijkheid: beginGeldigheid. De formele historie de momenten van verandering van waarden in de administratie: tijdstipRegistratie. Het onderscheid hierin wordt gemaakt omdat een verandering in de werkelijkheid in de regel niet gelijktijdig leidt tot een aanpassing in een registratie. Van belang is dat met de registratie hier het REV wordt bedoeld. Het is dus het REV dat de tijdstippen voor tijdstipRegistratie en (optioneel) eindRegistratie gaat invullen. De enumeratie VoidReasonValue bevat de waarden die ingevuld kunnen worden bij de eigenschappen waar in het model «voidable» is opgenomen. In dit diagram is dat bij de relatie 'resulteertIn' tussen ReferentieEVContour en EVContour. Voidable betekent dat de waarde leeg gelaten kan worden en dat er als reden een waarde uit de enumeratie VoidReasonValue ingevuld moet worden. Adressen met BAGid. In het IMEV model zijn op verschillende plaatsen adressen opgenomen. Deze worden in de uitwisseling niet uitgeschreven maar zijn opgenomen door te verwijzen naar het BAGid van het BAG-object Nummeraanduiding."><figcaption>Basismodel: kern plus top</figcaption>
-            </figure><map name="imagemap-EAID_7F7C357E_4167_4885_A36F_6D5CFA42B52F"><area shape="rect" alt="" coords="1149,74,1272,156" href="#global_class_Waardelijsten_TooiWaardelijst"><area shape="rect" alt="" coords="1335,74,1494,213" href="#global_class_Waardelijsten_VoidReasonValue"><area shape="rect" alt="Documentatie" coords="969,74,1127,195" href="#global_class_IMEVbasis_Documentatie"><area shape="rect" alt="NEN3610ID" coords="969,213,1159,353" href="#global_class_IMEVbasis_NEN3610ID"><area shape="rect" alt="ExterneVeiligheidsObject" coords="577,68,933,485" href="#global_class_IMEVbasis_ExterneVeiligheidsObject"><area shape="rect" alt="ReferentieEVContour" coords="890,584,1118,727" href="#global_class_IMEVbasis_ReferentieEVContour"><area shape="rect" alt="LocatieEVActiviteit" coords="48,584,256,679" href="#global_class_IMEVbasis_LocatieEVActiviteit"><area shape="rect" alt="GebouwOfLocatie" coords="1742,597,1950,693" href="#global_class_IMEVbasis_GebouwOfLocatie"><area shape="rect" alt="EVActiviteit" coords="465,584,672,679" href="#global_class_IMEVbasis_EVActiviteit"><area shape="rect" alt="EVContour" coords="1311,584,1518,679" href="#global_class_IMEVbasis_EVContour"></map><p>
+            </figure><map name="imagemap-EAID_7F7C357E_4167_4885_A36F_6D5CFA42B52F"><area shape="rect" alt="" coords="1149,68,1272,150" href="#global_class_Waardelijsten_TooiWaardelijst"><area shape="rect" alt="" coords="1335,68,1494,208" href="#global_class_Waardelijsten_VoidReasonValue"><area shape="rect" alt="Documentatie" coords="969,68,1127,190" href="#global_class_IMEVbasis_Documentatie"><area shape="rect" alt="NEN3610ID" coords="969,208,1159,347" href="#global_class_IMEVbasis_NEN3610ID"><area shape="rect" alt="ExterneVeiligheidsObject" coords="577,68,933,485" href="#global_class_IMEVbasis_ExterneVeiligheidsObject"><area shape="rect" alt="ReferentieEVContour" coords="890,578,1118,722" href="#global_class_IMEVbasis_ReferentieEVContour"><area shape="rect" alt="LocatieEVActiviteit" coords="48,578,256,674" href="#global_class_IMEVbasis_LocatieEVActiviteit"><area shape="rect" alt="GebouwOfLocatie" coords="1742,592,1950,687" href="#global_class_IMEVbasis_GebouwOfLocatie"><area shape="rect" alt="EVActiviteit" coords="465,578,672,674" href="#global_class_IMEVbasis_EVActiviteit"><area shape="rect" alt="EVContour" coords="1311,578,1518,674" href="#global_class_IMEVbasis_EVContour"></map><p>
                
                <p>Het topmodel van IMEV bestaat uit de superklasse Externe­Veiligheidsobject samen met
                   de objectypen die de kern van het model vormen.</p>
@@ -1060,7 +1060,7 @@
          <h4>   VII-D.2 Buisleiding met gevaarlijke stoffen - detail</h4>
          <div class="imageinfo ">
             <figure><img src="data/Images/EAID_EC137C3F_35F0_4d3c_ABF3_68771C556A70.png" usemap="#imagemap-EAID_EC137C3F_35F0_4d3c_ABF3_68771C556A70" alt="Diagram: Voor de beschrijving van de EVActiviteit is er een objecttype Buisleiding. Voor de ReferentieEVContour zijn van belang de locatie van: BuisleidingReferentie Voor de EVContour zijn de volgende typen gedefinieerd: BrandAandachtsgebied ExplosieAandachtsgebied GifwolkAandachtsgebied OPMERKING: De codelijsten OilGasChemicalsProductTypeValue en PipeMaterialTypeValue komen uit INSPIRE en worden ook in IMKL gebruikt."><figcaption>VII-D.2 Buisleiding met gevaarlijke stoffen</figcaption>
-            </figure><map name="imagemap-EAID_EC137C3F_35F0_4d3c_ABF3_68771C556A70"><area shape="rect" alt="" coords="332,71,519,335" href="#global_class_Waardelijsten_PipeMaterialTypeValue"><area shape="rect" alt="" coords="1356,1160,1516,1300" href="#global_class_Waardelijsten_StatusBuisleiding"><area shape="rect" alt="" coords="616,235,759,392" href="#global_class_Waardelijsten_BevoegdGezag"><area shape="rect" alt="" coords="618,71,760,210" href="#global_class_Waardelijsten_VoidReasonValue"><area shape="rect" alt="AfstandOfGeometrieAandachtsgebied" coords="2809,238,3059,359" href="#global_class_IMEVbasis_AfstandOfGeometrieAandachtsgebied"><area shape="rect" alt="AfstandOfGeometriePRContour" coords="2806,68,3018,191" href="#global_class_IMEVbasis_AfstandOfGeometriePRContour"><area shape="rect" alt="PuntLijnVlakMulti" coords="2598,206,2789,399" href="#global_class_IMEVbasis_PuntLijnVlakMulti"><area shape="rect" alt="LijnOfMultiLijn" coords="2383,71,2557,193" href="#global_class_IMEVbasis_LijnOfMultiLijn"><area shape="rect" alt="StofOfStofcategorie" coords="2385,247,2575,369" href="#global_class_IMEVbasis_StofOfStofcategorie"><area shape="rect" alt="VlakOfMultiVlak" coords="2598,68,2789,183" href="#global_class_IMEVbasis_VlakOfMultiVlak"><area shape="rect" alt="" coords="41,71,273,1010" href="#global_class_Waardelijsten_OilGasChemicalsProductTypeValue"><area shape="rect" alt="StofCategorie" coords="2086,247,2352,369" href="#global_class_IMEVbasis_StofCategorie"><area shape="rect" alt="Stof" coords="2086,71,2352,228" href="#global_class_IMEVbasis_Stof"><area shape="rect" alt="Documentatie" coords="1860,71,2028,193" href="#global_class_IMEVbasis_Documentatie"><area shape="rect" alt="NEN3610ID" coords="1860,213,2061,353" href="#global_class_IMEVbasis_NEN3610ID"><area shape="rect" alt="Buisleiding" coords="845,1160,1267,1263" href="#global_class_BKLActiviteiten_Buisleiding"><area shape="rect" alt="GifwolkAandachtsgebied" coords="1663,1178,1830,1233" href="#global_class_IMEVbasis_GifwolkAandachtsgebied"><area shape="rect" alt="ExplosieAandachtsgebied" coords="2120,1178,2292,1282" href="#global_class_IMEVbasis_ExplosieAandachtsgebied"><area shape="rect" alt="ReferentieEVContour" coords="1365,645,1648,797" href="#global_class_IMEVbasis_ReferentieEVContour"><area shape="rect" alt="BrandAandachtsgebied" coords="1890,1178,2098,1282" href="#global_class_IMEVbasis_BrandAandachtsgebied"><area shape="rect" alt="PRContour" coords="2228,879,2580,1118" href="#global_class_IMEVbasis_PRContour"><area shape="rect" alt="BuisleidingReferentie" coords="1292,845,1745,1126" href="#global_class_IMEVbasis_BuisleidingReferentie"><area shape="rect" alt="BuisleidingStelsel" coords="332,843,690,1200" href="#global_class_IMEVbasis_BuisleidingStelsel"><area shape="rect" alt="Aandachtsgebied" coords="1777,877,2166,1093" href="#global_class_IMEVbasis_Aandachtsgebied"><area shape="rect" alt="LocatieEVActiviteit" coords="332,648,615,764" href="#global_class_IMEVbasis_LocatieEVActiviteit"><area shape="rect" alt="GebouwOfLocatie" coords="2349,645,2632,761" href="#global_class_IMEVbasis_GebouwOfLocatie"><area shape="rect" alt="" coords="1300,71,1480,299" href="#global_class_Waardelijsten_TypePlaatsgebondenRisico"><area shape="rect" alt="EVContour" coords="1874,645,2157,761" href="#global_class_IMEVbasis_EVContour"><area shape="rect" alt="EVActiviteit" coords="914,645,1197,761" href="#global_class_IMEVbasis_EVActiviteit"><area shape="rect" alt="ExterneVeiligheidsObject" coords="1516,71,1844,399" href="#global_class_IMEVbasis_ExterneVeiligheidsObject"><area shape="rect" alt="" coords="797,71,1032,299" href="#global_class_Waardelijsten_BuisleidingCategorieStof"><area shape="rect" alt="BKLActiviteit" coords="879,843,1231,1077" href="#global_class_BKLActiviteiten_BKLActiviteit"><area shape="rect" alt="" coords="1067,71,1259,228" href="#global_class_Waardelijsten_TypeBrand"><area shape="rect" alt="" coords="1067,245,1259,384" href="#global_class_Waardelijsten_CategorieAandachtsgebied"></map><p>
+            </figure><map name="imagemap-EAID_EC137C3F_35F0_4d3c_ABF3_68771C556A70"><area shape="rect" alt="" coords="332,71,519,335" href="#global_class_Waardelijsten_PipeMaterialTypeValue"><area shape="rect" alt="" coords="797,320,957,459" href="#global_class_Waardelijsten_StatusBuisleiding"><area shape="rect" alt="" coords="616,235,759,392" href="#global_class_Waardelijsten_BevoegdGezag"><area shape="rect" alt="" coords="618,71,760,210" href="#global_class_Waardelijsten_VoidReasonValue"><area shape="rect" alt="AfstandOfGeometrieAandachtsgebied" coords="2809,238,3059,359" href="#global_class_IMEVbasis_AfstandOfGeometrieAandachtsgebied"><area shape="rect" alt="AfstandOfGeometriePRContour" coords="2806,68,3018,191" href="#global_class_IMEVbasis_AfstandOfGeometriePRContour"><area shape="rect" alt="PuntLijnVlakMulti" coords="2598,206,2789,399" href="#global_class_IMEVbasis_PuntLijnVlakMulti"><area shape="rect" alt="LijnOfMultiLijn" coords="2383,71,2557,193" href="#global_class_IMEVbasis_LijnOfMultiLijn"><area shape="rect" alt="StofOfStofcategorie" coords="2385,247,2575,369" href="#global_class_IMEVbasis_StofOfStofcategorie"><area shape="rect" alt="VlakOfMultiVlak" coords="2598,68,2789,183" href="#global_class_IMEVbasis_VlakOfMultiVlak"><area shape="rect" alt="" coords="41,71,273,1010" href="#global_class_Waardelijsten_OilGasChemicalsProductTypeValue"><area shape="rect" alt="StofCategorie" coords="2086,247,2352,369" href="#global_class_IMEVbasis_StofCategorie"><area shape="rect" alt="Stof" coords="2086,71,2352,228" href="#global_class_IMEVbasis_Stof"><area shape="rect" alt="Documentatie" coords="1860,71,2028,193" href="#global_class_IMEVbasis_Documentatie"><area shape="rect" alt="NEN3610ID" coords="1860,213,2061,353" href="#global_class_IMEVbasis_NEN3610ID"><area shape="rect" alt="Buisleiding" coords="845,1160,1267,1263" href="#global_class_BKLActiviteiten_Buisleiding"><area shape="rect" alt="GifwolkAandachtsgebied" coords="1663,1178,1830,1233" href="#global_class_IMEVbasis_GifwolkAandachtsgebied"><area shape="rect" alt="ExplosieAandachtsgebied" coords="2120,1178,2292,1282" href="#global_class_IMEVbasis_ExplosieAandachtsgebied"><area shape="rect" alt="ReferentieEVContour" coords="1365,645,1648,797" href="#global_class_IMEVbasis_ReferentieEVContour"><area shape="rect" alt="BrandAandachtsgebied" coords="1890,1178,2098,1282" href="#global_class_IMEVbasis_BrandAandachtsgebied"><area shape="rect" alt="PRContour" coords="2228,879,2580,1118" href="#global_class_IMEVbasis_PRContour"><area shape="rect" alt="BuisleidingReferentie" coords="1292,845,1745,1126" href="#global_class_IMEVbasis_BuisleidingReferentie"><area shape="rect" alt="BuisleidingStelsel" coords="332,843,690,1200" href="#global_class_IMEVbasis_BuisleidingStelsel"><area shape="rect" alt="Aandachtsgebied" coords="1777,877,2166,1093" href="#global_class_IMEVbasis_Aandachtsgebied"><area shape="rect" alt="LocatieEVActiviteit" coords="332,648,615,764" href="#global_class_IMEVbasis_LocatieEVActiviteit"><area shape="rect" alt="GebouwOfLocatie" coords="2349,645,2632,761" href="#global_class_IMEVbasis_GebouwOfLocatie"><area shape="rect" alt="" coords="1300,71,1480,299" href="#global_class_Waardelijsten_TypePlaatsgebondenRisico"><area shape="rect" alt="EVContour" coords="1874,645,2157,761" href="#global_class_IMEVbasis_EVContour"><area shape="rect" alt="EVActiviteit" coords="914,645,1197,761" href="#global_class_IMEVbasis_EVActiviteit"><area shape="rect" alt="ExterneVeiligheidsObject" coords="1516,71,1844,399" href="#global_class_IMEVbasis_ExterneVeiligheidsObject"><area shape="rect" alt="" coords="797,71,1032,299" href="#global_class_Waardelijsten_BuisleidingCategorieStof"><area shape="rect" alt="BKLActiviteit" coords="879,843,1231,1077" href="#global_class_BKLActiviteiten_BKLActiviteit"><area shape="rect" alt="" coords="1067,71,1259,228" href="#global_class_Waardelijsten_TypeBrand"><area shape="rect" alt="" coords="1067,245,1259,384" href="#global_class_Waardelijsten_CategorieAandachtsgebied"></map><p>
                
                <p>Voor de beschrijving van de EVActiviteit is er een objecttype <b>Buisleiding</b>.</p>
                
@@ -2119,7 +2119,7 @@
          <h4>   IMEV - Aandachtgebieden - detail</h4>
          <div class="imageinfo ">
             <figure><img src="data/Images/EAID_9A686DBB_8DCB_42e9_95F6_2197F36496FA.png" usemap="#imagemap-EAID_9A686DBB_8DCB_42e9_95F6_2197F36496FA" alt="Diagram: IMEV - Aandachtgebieden - detail"><figcaption>IMEV - Aandachtgebieden</figcaption>
-            </figure><map name="imagemap-EAID_9A686DBB_8DCB_42e9_95F6_2197F36496FA"><area shape="rect" alt="" coords="48,79,407,454" href="#global_class_Waardelijsten_StofCategorieNaam"><area shape="rect" alt="" coords="428,335,623,487" href="#global_class_Waardelijsten_TypeExplosieAandachtsgebied"><area shape="rect" alt="AfstandOfGeometrieAandachtsgebied" coords="1860,377,2110,499" href="#global_class_IMEVbasis_AfstandOfGeometrieAandachtsgebied"><area shape="rect" alt="" coords="428,79,612,308" href="#global_class_Waardelijsten_TypePlaatsgebondenRisico"><area shape="rect" alt="AfstandOfGeometriePRContour" coords="1898,212,2110,335" href="#global_class_IMEVbasis_AfstandOfGeometriePRContour"><area shape="rect" alt="StofOfStofcategorie" coords="1691,66,1881,187" href="#global_class_IMEVbasis_StofOfStofcategorie"><area shape="rect" alt="PuntOfVlak" coords="1699,210,1834,331" href="#global_class_IMEVbasis_PuntOfVlak"><area shape="rect" alt="VlakOfMultiVlak" coords="1897,68,2088,183" href="#global_class_IMEVbasis_VlakOfMultiVlak"><area shape="rect" alt="StofCategorie" coords="1409,256,1676,377" href="#global_class_IMEVbasis_StofCategorie"><area shape="rect" alt="Stof" coords="1412,62,1662,219" href="#global_class_IMEVbasis_Stof"><area shape="rect" alt="Documentatie" coords="1186,62,1345,183" href="#global_class_IMEVbasis_Documentatie"><area shape="rect" alt="NEN3610ID" coords="1186,213,1376,353" href="#global_class_IMEVbasis_NEN3610ID"><area shape="rect" alt="CivielExplosieAandachtsgebied" coords="189,1097,552,1201" href="#global_class_IMEVbasis_CivielExplosieAandachtsgebied"><area shape="rect" alt="MilitairExplosieAandachtsgebied" coords="562,1155,947,1259" href="#global_class_IMEVbasis_MilitairExplosieAandachtsgebied"><area shape="rect" alt="ExplosieAandachtsgebiedVuurwerk" coords="972,1158,1177,1253" href="#global_class_IMEVbasis_ExplosieAandachtsgebiedVuurwerk"><area shape="rect" alt="ExplosieAandachtsgebied" coords="1039,964,1189,1067" href="#global_class_IMEVbasis_ExplosieAandachtsgebied"><area shape="rect" alt="GifwolkAandachtsgebied" coords="305,939,451,1035" href="#global_class_IMEVbasis_GifwolkAandachtsgebied"><area shape="rect" alt="BrandAandachtsgebied" coords="87,835,279,939" href="#global_class_IMEVbasis_BrandAandachtsgebied"><area shape="rect" alt="PRContour" coords="1189,730,1520,905" href="#global_class_IMEVbasis_PRContour"><area shape="rect" alt="EVContour" coords="881,541,1163,638" href="#global_class_IMEVbasis_EVContour"><area shape="rect" alt="ExterneVeiligheidsObject" coords="851,62,1179,390" href="#global_class_IMEVbasis_ExterneVeiligheidsObject"><area shape="rect" alt="Aandachtsgebied" coords="478,718,871,892" href="#global_class_IMEVbasis_Aandachtsgebied"><area shape="rect" alt="" coords="642,79,834,236" href="#global_class_Waardelijsten_TypeBrand"><area shape="rect" alt="" coords="642,265,834,410" href="#global_class_Waardelijsten_CategorieAandachtsgebied"></map><p>
+            </figure><map name="imagemap-EAID_9A686DBB_8DCB_42e9_95F6_2197F36496FA"><area shape="rect" alt="" coords="48,79,407,454" href="#global_class_Waardelijsten_StofCategorieNaam"><area shape="rect" alt="" coords="426,335,622,487" href="#global_class_Waardelijsten_TypeExplosieAandachtsgebied"><area shape="rect" alt="AfstandOfGeometrieAandachtsgebied" coords="1859,377,2109,499" href="#global_class_IMEVbasis_AfstandOfGeometrieAandachtsgebied"><area shape="rect" alt="" coords="426,79,611,308" href="#global_class_Waardelijsten_TypePlaatsgebondenRisico"><area shape="rect" alt="AfstandOfGeometriePRContour" coords="1897,212,2109,335" href="#global_class_IMEVbasis_AfstandOfGeometriePRContour"><area shape="rect" alt="StofOfStofcategorie" coords="1689,66,1879,187" href="#global_class_IMEVbasis_StofOfStofcategorie"><area shape="rect" alt="PuntOfVlak" coords="1697,210,1833,331" href="#global_class_IMEVbasis_PuntOfVlak"><area shape="rect" alt="VlakOfMultiVlak" coords="1896,68,2087,183" href="#global_class_IMEVbasis_VlakOfMultiVlak"><area shape="rect" alt="StofCategorie" coords="1408,256,1674,377" href="#global_class_IMEVbasis_StofCategorie"><area shape="rect" alt="Stof" coords="1410,62,1661,219" href="#global_class_IMEVbasis_Stof"><area shape="rect" alt="Documentatie" coords="1185,62,1343,183" href="#global_class_IMEVbasis_Documentatie"><area shape="rect" alt="NEN3610ID" coords="1185,213,1375,353" href="#global_class_IMEVbasis_NEN3610ID"><area shape="rect" alt="CivielExplosieAandachtsgebied" coords="187,1097,551,1201" href="#global_class_IMEVbasis_CivielExplosieAandachtsgebied"><area shape="rect" alt="MilitairExplosieAandachtsgebied" coords="560,1155,946,1259" href="#global_class_IMEVbasis_MilitairExplosieAandachtsgebied"><area shape="rect" alt="ExplosieAandachtsgebiedVuurwerk" coords="970,1158,1175,1253" href="#global_class_IMEVbasis_ExplosieAandachtsgebiedVuurwerk"><area shape="rect" alt="ExplosieAandachtsgebied" coords="1037,964,1188,1067" href="#global_class_IMEVbasis_ExplosieAandachtsgebied"><area shape="rect" alt="GifwolkAandachtsgebied" coords="303,939,450,1035" href="#global_class_IMEVbasis_GifwolkAandachtsgebied"><area shape="rect" alt="BrandAandachtsgebied" coords="86,835,277,939" href="#global_class_IMEVbasis_BrandAandachtsgebied"><area shape="rect" alt="PRContour" coords="1188,730,1518,905" href="#global_class_IMEVbasis_PRContour"><area shape="rect" alt="EVContour" coords="880,541,1162,638" href="#global_class_IMEVbasis_EVContour"><area shape="rect" alt="ExterneVeiligheidsObject" coords="849,62,1177,390" href="#global_class_IMEVbasis_ExterneVeiligheidsObject"><area shape="rect" alt="Aandachtsgebied" coords="477,718,869,892" href="#global_class_IMEVbasis_Aandachtsgebied"><area shape="rect" alt="" coords="641,79,832,236" href="#global_class_Waardelijsten_TypeBrand"><area shape="rect" alt="" coords="641,265,832,410" href="#global_class_Waardelijsten_CategorieAandachtsgebied"></map><p>
                
                <p></p>
                </p>
@@ -2204,6 +2204,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Aandachtsgebied</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>aandachtsgebied</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -2347,6 +2354,13 @@
                      <td>Aftappunt­Opslagtank</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>aftappunt van de opslagtank</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -2456,6 +2470,13 @@
                      <td>Ander­Insluitsysteem­Referentie</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>ander insluitsysteem referentie</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -2560,6 +2581,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Brand­Aandachtsgebied</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>brandaandachtsgebied</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -2668,6 +2696,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Bewaarplaats</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>bewaarplaats vuurwerk of pyrotechnische artikelen voor theatergebruik</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -2794,6 +2829,13 @@
                      <td>Bewerkingsruimte</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>bewerkingsruimte van vuurwerk categorie F4</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -2901,6 +2943,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Buffer­Bewaarplaats</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>buffer bewaarplaats</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -3011,6 +3060,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Buisleiding­Referentie</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>buisleiding referentie</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -3164,7 +3220,8 @@
                         </td>
                      <td>
                         
-                        <p>De ligging van de bovenkant van de buisleiding ten opzichte van het maaiveld in centimeters.</p>
+                        <p>De ligging van de bovenkant van de buisleiding ten opzichte van het maaiveld in centimeters.
+                           Als de waarde negatief is, dan ligt de bovenkant van de buisleiding boven de grond.</p>
                         </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
@@ -3237,6 +3294,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Buisleiding­Stelsel</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>buisleidingstelsel</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -3433,7 +3497,7 @@
                   </tr>
                   <tr>
                      <th>
-                        <a class="link" href="#detail_d122547e4981">
+                        <a class="link" href="#detail_d123280e5060">
                            Id­Nummeraanduiding­BAGEn­Of­Locatieomschrijving
                            </a>
                         </th>
@@ -3455,6 +3519,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Civiel­Explosie­Aandachtsgebied</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>civiel explosieaandachtsgebied</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -3560,7 +3631,7 @@
                      <th>Alias</th>
                      <td>
                         
-                        <alias>Activiteit­BKL</alias>
+                        <alias>externe veiligheidsactiviteit</alias>
                         </td>
                   </tr>
                   <tr>
@@ -3665,6 +3736,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>EVContour</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>externe veiligheidsactiviteit contour</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -3788,6 +3866,13 @@
                      <td>Explosie­Aandachtsgebied</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>explosie aandachtsgebied</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -3893,6 +3978,13 @@
                      <td>Explosie­Aandachtsgebied­Vuurwerk</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>explosie aandachtsgebied vuurwerk</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -3961,6 +4053,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Externe­Veiligheids­Object</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>externe veiligheidsobject</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -4052,7 +4151,11 @@
                      <td>
                         <a class="link" href="#detail_attribute_IMEVbasis_ExterneVeiligheidsObject_bronhoudercodeOverheid">bronhoudercode­Overheid</a>
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Bronhoudercode voor overheden conform de <a href="https://standaarden.overheid.nl/tooi/waardelijsten/" shape="rect">TOOI-waardelijst</a>
+                           </p>
+                        </td>
                      <td>
                         <a class="link" href="#detail_class_Waardelijsten_TooiWaardelijst">Tooi­Waardelijst</a>
                         </td>
@@ -4062,7 +4165,11 @@
                      <td>
                         <a class="link" href="#detail_attribute_IMEVbasis_ExterneVeiligheidsObject_bronhoudercodeGeenOverheid">bronhoudercode­Geen­Overheid</a>
                         </td>
-                     <td></td>
+                     <td>
+                        
+                        <p>Bronhoudercode voor als er geen sprake is van een overheid. In dat geval zou deze
+                           gelijk moeten zijn aan het attribuut bronhoudercode.</p>
+                        </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Character­String</a>
                         </td>
@@ -4167,7 +4274,7 @@
                   </tr>
                   <tr>
                      <th>
-                        <a class="link" href="#detail_d122547e7908">
+                        <a class="link" href="#detail_d123280e8086">
                            bronhoudercode­Overheid­En­Ofbronhoudercode­Geen­Overheid
                            </a>
                         </th>
@@ -4175,7 +4282,7 @@
                   </tr>
                   <tr>
                      <th>
-                        <a class="link" href="#detail_d122547e7921">
+                        <a class="link" href="#detail_d123280e8099">
                            eind­Geldigheid is groter dan begin­Geldigheid
                            </a>
                         </th>
@@ -4183,7 +4290,7 @@
                   </tr>
                   <tr>
                      <th>
-                        <a class="link" href="#detail_d122547e7934">
+                        <a class="link" href="#detail_d123280e8112">
                            eind­Registratie is groter dan tijdstipregistratie
                            </a>
                         </th>
@@ -4204,6 +4311,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Gebouw­Of­Locatie</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>gebouw of locatie</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -4284,6 +4398,13 @@
                      <td>Gifwolk­Aandachtsgebied</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>gifwolkaandachtsgebied</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -4360,6 +4481,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Installatie</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>installatie</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -4475,6 +4603,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Kwetsbaar­Gebouw</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>kwetsbaar gebouw</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -4597,7 +4732,7 @@
                   </tr>
                   <tr>
                      <td>
-                        <a class="link" href="#detail_attribute_IMEVbasis_KwetsbaarGebouw_gebruiksdoelenVerblijfsobjectBAG">/gebruiksdoelen­Verblijfsobject­BAG</a>
+                        <a class="link" href="#detail_attribute_IMEVbasis_KwetsbaarGebouw_gebruiksdoelenVerblijfsobjectBAG">gebruiksdoelen­Verblijfsobject­BAG</a>
                         </td>
                      <td>
                         
@@ -4610,7 +4745,7 @@
                   </tr>
                   <tr>
                      <td>
-                        <a class="link" href="#detail_attribute_IMEVbasis_KwetsbaarGebouw_oppervlakteVerblijfsobjectBAG">/oppervlakte­Verblijfsobject­BAG</a>
+                        <a class="link" href="#detail_attribute_IMEVbasis_KwetsbaarGebouw_oppervlakteVerblijfsobjectBAG">oppervlakte­Verblijfsobject­BAG</a>
                         </td>
                      <td>
                         
@@ -4702,7 +4837,7 @@
                   </tr>
                   <tr>
                      <th>
-                        <a class="link" href="#detail_d122547e9764">
+                        <a class="link" href="#detail_d123280e9974">
                            id­Pand­BAGEn­Ofid­Adresseerbaar­Objece­BAG
                            </a>
                         </th>
@@ -4723,6 +4858,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Kwetsbare­Locatie</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>kwetsbare locatie</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -4874,6 +5016,13 @@
                      <td>Leiding</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>leiding</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -4947,7 +5096,7 @@
                         </td>
                      <td>
                         
-                        <p>De binnendiameter van de leiding in mm.</p>
+                        <p>De binnendiameter van de leiding in millimeter.</p>
                         </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
@@ -5007,6 +5156,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Locatie­Activiteit</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>locatieactiviteit</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -5281,7 +5437,7 @@
                   </tr>
                   <tr>
                      <th>
-                        <a class="link" href="#detail_d122547e12653">
+                        <a class="link" href="#detail_d123280e12906">
                            Bij­Seveso­Kv­KIngevuld
                            </a>
                         </th>
@@ -5289,7 +5445,7 @@
                   </tr>
                   <tr>
                      <th>
-                        <a class="link" href="#detail_d122547e12666">
+                        <a class="link" href="#detail_d123280e12919">
                            id­Nummeraanduiding­BAGEn­Of­Locatieomschrijving
                            </a>
                         </th>
@@ -5311,6 +5467,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Locatie­Basisnet</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>locatie van het basisnet</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -5448,6 +5611,13 @@
                      <td>Locatie­EVActiviteit</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>locatie van de externe veiligheidsactiviteit</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -5550,6 +5720,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Machinekamer</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>machinekamer</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -5700,6 +5877,13 @@
                      <td>Militair­Explosie­Aandachtsgebied</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>militair explosie aandachtsgebied</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -5804,6 +5988,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Opslag­Referentie</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>opslagreferentie</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -5967,6 +6158,13 @@
                      <td>Opstelplaats­Voertuig</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>opstelplaats voor voertuigen</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -6070,6 +6268,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>PRContour</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>plaatsgebonden risico contour</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -6221,6 +6426,13 @@
                      <td>Referentie­EVContour</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>referentie externe veiligheidscontour</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -6329,7 +6541,7 @@
                         </td>
                      <td>
                         
-                        <p>Verwijzing naar de countour van externe veiligheidsrisico's.</p>
+                        <p>Verwijzing naar de contour van externe veiligheidsrisico's.</p>
                         </td>
                   </tr>
                   <tr>
@@ -6370,6 +6582,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Samengestelde­Referentie</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>samengestelde referentie</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -6499,7 +6718,7 @@
                   </tr>
                   <tr>
                      <th>
-                        <a class="link" href="#detail_d122547e16842">
+                        <a class="link" href="#detail_d123280e17156">
                            Geen­Vaste­Afstand
                            </a>
                         </th>
@@ -6521,6 +6740,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Seveso­Referentie</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>seveso referentie</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -6631,6 +6857,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Spoor­Vervoer</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>spoorvervoer</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -6764,6 +6997,13 @@
                      <td>Tankzuil</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>tankzuil</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -6874,6 +7114,13 @@
                      <td>Vulpunt</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>vulpunt</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -6981,6 +7228,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Water­Vervoer</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>watervervoer</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -7125,6 +7379,13 @@
                      <td>Weg­As</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>wegas</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -7229,6 +7490,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Wegen</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>wegen</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -7351,6 +7619,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Weg­Vervoer</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>wegvervoer</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -7483,6 +7758,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Windturbine</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>windturbine</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -7688,7 +7970,7 @@
                         </td>
                      <td>
                         
-                        <p>Nominaal toerental in Herz (Hz).</p>
+                        <p>Nominaal toerental in Hertz (Hz).</p>
                         </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
@@ -7774,6 +8056,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Overige­Contour</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>overige contour</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -7933,6 +8222,13 @@
                      <td>Reactietijd­Noodstop­Boolean­Of­Exact</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>reactietijd van de noodstop in boolean of exact</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -8006,6 +8302,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Lijn­Of­Multi­Lijn</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>lijn of multilijn</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -8082,6 +8385,13 @@
                      <td>Afstand­Of­Geometrie­Overige­Contour</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>afstand of geometrie van de overige contour</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -8146,6 +8456,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Bevoorrading­Categorie­Of­Exact­Aantal</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>bevoorradingscategorie of het exacte aantal</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -8222,6 +8539,13 @@
                      <td>Afstand­Of­Geometrie­PRContour</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>afstand of geometrie van de plaatsgebonden contour</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -8295,6 +8619,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Punt­Of­Lijn</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>punt of lijn</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -8384,6 +8715,13 @@
                      <td>Punt­Of­Multi­Punt</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>punt of multipunt</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -8450,6 +8788,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Afstand­Of­Geometrie­Aandachtsgebied</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>afstand of geometrie van een aandachtsgebied</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -8526,6 +8871,13 @@
                      <td>Punt­Of­Vlak</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>punt of vlak</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -8598,6 +8950,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Vlak­Of­Multi­Vlak</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>vlak of multivlak</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -8674,6 +9033,13 @@
                      <td>Voordruk­Boolean­Of­Exact</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>voordruk in Boolean of exact getal</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -8712,7 +9078,7 @@
                         </td>
                      <td>
                         
-                        <p>Voordruk in k­Pa</p>
+                        <p>Voordruk in kilo­Pascal</p>
                         </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
@@ -8747,6 +9113,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Punt­Lijn­Vlak­Multi</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>punt, lijn, vlak, of multi-variant</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -8875,6 +9248,13 @@
                      <td>Stof­Of­Stofcategorie</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>stof of stofcategorie</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -8944,6 +9324,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Documentatie</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>documentatie</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -9025,6 +9412,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>Stof</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>stof</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -9135,6 +9529,13 @@
                      <td>Stof­Categorie</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>stofcategorie</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         IMEV
@@ -9214,6 +9615,13 @@
                   <tr>
                      <th>Naam</th>
                      <td>NEN3610ID</td>
+                  </tr>
+                  <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>NEN3610ID</alias>
+                        </td>
                   </tr>
                   <tr>
                      <th>Herkomst</th>
@@ -9313,6 +9721,13 @@
                      <td>Identificatie­BAG</td>
                   </tr>
                   <tr>
+                     <th>Alias</th>
+                     <td>
+                        
+                        <alias>identificatienummer volgens de BAG</alias>
+                        </td>
+                  </tr>
+                  <tr>
                      <th>Herkomst</th>
                      <td>
                         BAG
@@ -9388,6 +9803,13 @@
                            <td>afstand­Of­Geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>aandachtsgebied afstand of geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -9445,6 +9867,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>categorie­Aandachtsgebied</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>categorie van aandachtsgebied</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -9505,6 +9934,13 @@
                            <td>maatgevende­Stof</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>maatgevende stof</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -9562,6 +9998,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>aard­Risico</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>aard van het risico</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -9633,6 +10076,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -9699,6 +10149,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -9770,6 +10227,13 @@
                            <td>type­Brand</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>type brand</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -9838,6 +10302,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Definitie</th>
                            <td>
                               
@@ -9889,6 +10360,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>oppervlakte­Deuropening</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>oppervlakte van de deuropening</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Definitie</th>
@@ -9943,6 +10421,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -10011,6 +10496,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -10082,6 +10574,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -10144,6 +10643,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>status</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>status</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -10217,6 +10723,13 @@
                            <td>buisleiding­Identificatie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>buisleiding identificatie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -10273,6 +10786,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>buisleiding­Categorie­Stof</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>stofcategorie in de buisleiding</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -10356,6 +10876,13 @@
                            <td>buisleiding­Materiaal</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>materiaalsoort van de buisleiding</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -10412,6 +10939,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>buisleiding­Product</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>product dat in de buisleiding wordt vervoerd</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -10479,6 +11013,13 @@
                            <td>wanddikte</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>wanddikte van de buis</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -10539,6 +11080,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>diameter</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>diameter van de buis</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -10603,6 +11151,13 @@
                            <td>bovenkantbuis</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>bovenkant van de buis</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -10613,7 +11168,8 @@
                            <td>
                               
                               
-                              <p>De ligging van de bovenkant van de buisleiding ten opzichte van het maaiveld in centimeters.</p>
+                              <p>De ligging van de bovenkant van de buisleiding ten opzichte van het maaiveld in centimeters.
+                                 Als de waarde negatief is, dan ligt de bovenkant van de buisleiding boven de grond.</p>
                               
                               </td>
                         </tr>
@@ -10671,6 +11227,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>maximale­Werkdruk</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>maximale werkdruk van de buis</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -10739,6 +11302,13 @@
                            <td>eigenaar</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>eigenaar</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -10795,6 +11365,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>id­Nummeraanduiding­BAG</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>identificatienummer van het BAG-object</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -10862,6 +11439,13 @@
                            <td>locatieomschrijving</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>locatieomschrijving</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -10927,6 +11511,13 @@
                            <td>naam­Exploitant</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>naam van de exploitant</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -10983,6 +11574,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>id­Nummeraanduiding­BAGExploitant</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>identificatienummer van de BAG-exploitant</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -11047,6 +11645,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>kvk­Nummer­Exploitant</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>kvk identificatienummer van de exploitant</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -11117,6 +11722,13 @@
                            <td>vestigingsnummer­Exploitant</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>kvk vestigingsnummer van de exploitant</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -11173,7 +11785,7 @@
                   </table>
                   </div>
                
-               <div class="deepheader" id="detail_d122547e4981">
+               <div class="deepheader" id="detail_d123280e5060">
                   <h7>Constraint details  <a href="#global_class_IMEVbasis_BuisleidingStelsel">Buisleiding­Stelsel</a> Id­Nummeraanduiding­BAGEn­Of­Locatieomschrijving</h7>
                   
                   <table style="width: 100%;">
@@ -11208,6 +11820,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>type­Civ­Exp­Aandachtsgebied</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>type civiel explosie aandachtsgebied</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -11273,6 +11892,13 @@
                            <td>locatie­EVActiviteit</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>locatie van de externe veiligheidsactiviteit</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -11317,6 +11943,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>heeft</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>heeft</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -11368,6 +12001,13 @@
                            <td>hoort­Bij</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>hoort bij</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -11411,6 +12051,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>beinvloedt</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>beinvloedt gebouw of locatie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -11462,6 +12109,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>bleve</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>boiling liquid expanding vapor explosion</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -11528,6 +12182,13 @@
                            <td>identificatie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>identificatie van het externe veiligheidsobject</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               NEN 3610
@@ -11584,6 +12245,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>bronobject­ID</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>identificatienummer van het externe veiligheidsobjec</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -11652,6 +12320,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>bronhoudercode</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>bronhoudercode</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -11724,6 +12399,23 @@
                            <td>bronhoudercode­Overheid</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>bronhoudercode overheid</alias>
+                              </td>
+                        </tr>
+                        <tr>
+                           <th>Definitie</th>
+                           <td>
+                              
+                              
+                              <p>Bronhoudercode voor overheden conform de <a href="https://standaarden.overheid.nl/tooi/waardelijsten/" shape="rect">TOOI-waardelijst</a>
+                                 </p>
+                              
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Formaat</th>
                            <td>
                               <a class="link" href="#detail_class_Waardelijsten_TooiWaardelijst">Tooi­Waardelijst</a>
@@ -11759,6 +12451,23 @@
                         <tr>
                            <th>Naam</th>
                            <td>bronhoudercode­Geen­Overheid</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>bronhoudercode van een niet-overheidsinstantie</alias>
+                              </td>
+                        </tr>
+                        <tr>
+                           <th>Definitie</th>
+                           <td>
+                              
+                              
+                              <p>Bronhoudercode voor als er geen sprake is van een overheid. In dat geval zou deze
+                                 gelijk moeten zijn aan het attribuut bronhoudercode.</p>
+                              
+                              </td>
                         </tr>
                         <tr>
                            <th>Formaat</th>
@@ -11807,6 +12516,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>bronhouder</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>bronhouder</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -11877,6 +12593,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>document­Info</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>informatie in documentvorm</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -12216,7 +12939,7 @@
                   </table>
                   </div>
                
-               <div class="deepheader" id="detail_d122547e7908">
+               <div class="deepheader" id="detail_d123280e8086">
                   <h7>Constraint details  <a href="#global_class_IMEVbasis_ExterneVeiligheidsObject">Externe­Veiligheids­Object</a> bronhoudercode­Overheid­En­Ofbronhoudercode­Geen­Overheid</h7>
                   
                   <table style="width: 100%;">
@@ -12236,7 +12959,7 @@
                   </table>
                   </div>
                
-               <div class="deepheader" id="detail_d122547e7921">
+               <div class="deepheader" id="detail_d123280e8099">
                   <h7>Constraint details  <a href="#global_class_IMEVbasis_ExterneVeiligheidsObject">Externe­Veiligheids­Object</a> eind­Geldigheid is groter dan begin­Geldigheid</h7>
                   
                   <table style="width: 100%;">
@@ -12251,7 +12974,7 @@
                   </table>
                   </div>
                
-               <div class="deepheader" id="detail_d122547e7934">
+               <div class="deepheader" id="detail_d123280e8112">
                   <h7>Constraint details  <a href="#global_class_IMEVbasis_ExterneVeiligheidsObject">Externe­Veiligheids­Object</a> eind­Registratie is groter dan tijdstipregistratie</h7>
                   
                   <table style="width: 100%;">
@@ -12282,6 +13005,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -12344,6 +13074,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>categorie­Kwetsbaarheid</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>categorie kwetsbaarheid van een gebouw</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -12409,6 +13146,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>gebruiksdoeleinden­Detail</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>detailuitwerking van de gebruiksdoeleinden</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -12562,6 +13306,13 @@
                            <td>id­Pand­BAG</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>identificatienummer van het BAG-pand</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -12618,6 +13369,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>id­Adresseerbaarobject­BAG</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>identificatienummer van het adresseerbaar BAG-object</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -12683,7 +13441,7 @@
                   </div>
                
                <div class="deepheader" id="detail_attribute_IMEVbasis_KwetsbaarGebouw_gebruiksdoelenVerblijfsobjectBAG">
-                  <h7>Attribuutsoort details  <a href="#global_class_IMEVbasis_KwetsbaarGebouw">Kwetsbaar­Gebouw</a> /gebruiksdoelen­Verblijfsobject­BAG</h7>
+                  <h7>Attribuutsoort details  <a href="#global_class_IMEVbasis_KwetsbaarGebouw">Kwetsbaar­Gebouw</a> gebruiksdoelen­Verblijfsobject­BAG</h7>
                   
                   <table style="width: 100%;">
                      <colgroup style="width: 30%;"></colgroup>
@@ -12691,7 +13449,14 @@
                      <tbody>
                         <tr>
                            <th>Naam</th>
-                           <td>/gebruiksdoelen­Verblijfsobject­BAG</td>
+                           <td>gebruiksdoelen­Verblijfsobject­BAG</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>gebruiksdoelen van het BAG-verblijfsobject</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -12756,7 +13521,7 @@
                   </div>
                
                <div class="deepheader" id="detail_attribute_IMEVbasis_KwetsbaarGebouw_oppervlakteVerblijfsobjectBAG">
-                  <h7>Attribuutsoort details  <a href="#global_class_IMEVbasis_KwetsbaarGebouw">Kwetsbaar­Gebouw</a> /oppervlakte­Verblijfsobject­BAG</h7>
+                  <h7>Attribuutsoort details  <a href="#global_class_IMEVbasis_KwetsbaarGebouw">Kwetsbaar­Gebouw</a> oppervlakte­Verblijfsobject­BAG</h7>
                   
                   <table style="width: 100%;">
                      <colgroup style="width: 30%;"></colgroup>
@@ -12764,7 +13529,14 @@
                      <tbody>
                         <tr>
                            <th>Naam</th>
-                           <td>/oppervlakte­Verblijfsobject­BAG</td>
+                           <td>oppervlakte­Verblijfsobject­BAG</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>oppervlakte van het BAG-verblijfsobject</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -12841,6 +13613,13 @@
                            <td>populatie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>populatie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -12909,6 +13688,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>kadastrale­Aanduiding</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>kadastrale aanduiding</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -12988,7 +13774,7 @@
                   </table>
                   </div>
                
-               <div class="deepheader" id="detail_d122547e9764">
+               <div class="deepheader" id="detail_d123280e9974">
                   <h7>Constraint details  <a href="#global_class_IMEVbasis_KwetsbaarGebouw">Kwetsbaar­Gebouw</a> id­Pand­BAGEn­Ofid­Adresseerbaar­Objece­BAG</h7>
                   
                   <table style="width: 100%;">
@@ -13022,6 +13808,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>categorie­Kwetsbaarheid</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>categorie kwetsbaarheid</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -13092,7 +13885,7 @@
                            <th>Alias</th>
                            <td>
                               
-                              <alias>geometrie woonplaats</alias>
+                              <alias>geometrie</alias>
                               </td>
                         </tr>
                         <tr>
@@ -13167,6 +13960,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>populatie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>populatie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -13244,6 +14044,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>kadastrale­Aanduiding</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>kadastrale aanduiding</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -13339,6 +14146,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -13403,6 +14217,13 @@
                            <td>bovengronds</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>bovengronds</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -13461,6 +14282,13 @@
                            <td>diameter</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>diameter</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -13471,7 +14299,7 @@
                            <td>
                               
                               
-                              <p>De binnendiameter van de leiding in mm.</p>
+                              <p>De binnendiameter van de leiding in millimeter.</p>
                               
                               </td>
                         </tr>
@@ -13535,6 +14363,13 @@
                            <td>bedrijfsnaam</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>bedrijfsnaam</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -13591,6 +14426,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -13656,6 +14498,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>id­Nummeraanduiding­BAG</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>identificatienummer van de BAG-object</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -13730,6 +14579,13 @@
                            <td>locatieomschrijving</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>locatieomschrijving</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -13795,6 +14651,13 @@
                            <td>naam­Exploitant</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>naam van de exploitant</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -13851,6 +14714,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>omschrijving</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>omschrijving</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -13918,6 +14788,13 @@
                            <td>eigenaar</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>eigenaar</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -13974,6 +14851,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>id­Nummeraanduiding­BAGExploitant</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>identificatienummer van het adres van de BAG-exploitant</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -14038,6 +14922,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>kvk­Nummer­Exploitant</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>kvk identificatienummer van de exploitant</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -14108,6 +14999,13 @@
                            <td>kvk­Nummer­Aanvrager</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>kvk identificatienummer van de aanvrager</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -14174,6 +15072,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>vestigingsnummer­Exploitant</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>kvk vestigingsnummer van de exploitant</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -14244,6 +15149,13 @@
                            <td>vestigingsnummer­Aanvrager</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>kvk vestigingsnummer van de aanvrager</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -14300,7 +15212,7 @@
                   </table>
                   </div>
                
-               <div class="deepheader" id="detail_d122547e12653">
+               <div class="deepheader" id="detail_d123280e12906">
                   <h7>Constraint details  <a href="#global_class_IMEVbasis_LocatieActiviteit">Locatie­Activiteit</a> Bij­Seveso­Kv­KIngevuld</h7>
                   
                   <table style="width: 100%;">
@@ -14315,7 +15227,7 @@
                   </table>
                   </div>
                
-               <div class="deepheader" id="detail_d122547e12666">
+               <div class="deepheader" id="detail_d123280e12919">
                   <h7>Constraint details  <a href="#global_class_IMEVbasis_LocatieActiviteit">Locatie­Activiteit</a> id­Nummeraanduiding­BAGEn­Of­Locatieomschrijving</h7>
                   
                   <table style="width: 100%;">
@@ -14350,6 +15262,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -14416,6 +15335,13 @@
                            <td>type</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>type</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -14478,6 +15404,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>route</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>route</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -14591,6 +15524,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -14655,6 +15595,13 @@
                            <td>aantal­Koelinstallaties</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>aantal koelinstallaties</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -14715,6 +15662,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>opstellings­Uitvoering</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>opstellingsuitvoering type</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -14782,6 +15736,13 @@
                            <td>pompbeveiliging</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>pompbeveiliging</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -14842,6 +15803,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>type­Militair­Exp­Aandachtsgebied</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>type militair explosie aandachtsgebied</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -14913,6 +15881,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -14975,6 +15950,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>type­Opslag­Referentie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>type opslagreferentie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -15042,6 +16024,13 @@
                            <td>bovengronds</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>bovengronds</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -15098,6 +16087,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>inhoud</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>inhoud</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -15160,6 +16156,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>oppervlakte</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>oppervlakte</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -15226,6 +16229,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -15303,6 +16313,13 @@
                            <td>afstand­Of­Geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>afstand of geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -15360,6 +16377,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>type­Plaatsgebonden­Risico</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>type plaatsgebonden risico</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -15438,6 +16462,13 @@
                            <td>maatgevende­Stof</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>maatgevende stof</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -15495,6 +16526,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>aard­Risico</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>aard van het risico</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -15557,6 +16595,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>omschrijving</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>omschrijving</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -15667,7 +16712,7 @@
                            <td>
                               
                               
-                              <p>Verwijzing naar de countour van externe veiligheidsrisico's.</p>
+                              <p>Verwijzing naar de contour van externe veiligheidsrisico's.</p>
                               
                               </td>
                         </tr>
@@ -15703,6 +16748,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -15758,7 +16810,7 @@
                   </table>
                   </div>
                
-               <div class="deepheader" id="detail_d122547e16842">
+               <div class="deepheader" id="detail_d123280e17156">
                   <h7>Constraint details  <a href="#global_class_IMEVbasis_SamengesteldeReferentie">Samengestelde­Referentie</a> Geen­Vaste­Afstand</h7>
                   
                   <table style="width: 100%;">
@@ -15792,6 +16844,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -15863,6 +16922,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -15925,6 +16991,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>trajectcode</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>trajectcode</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -16001,6 +17074,13 @@
                            <td>referentiesoort</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>referentiesoort</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -16061,6 +17141,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -16131,6 +17218,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -16199,6 +17293,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -16261,6 +17362,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>watervakcode</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>watervakcode</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -16337,6 +17445,13 @@
                            <td>referentiesoort</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>referentiesoort</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -16399,6 +17514,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -16459,6 +17581,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -16525,6 +17654,13 @@
                            <td>route</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>route</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -16585,6 +17721,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -16649,6 +17792,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>wegvakcode</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>wegvakcode</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -16725,6 +17875,13 @@
                            <td>referentiesoort</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>referentiesoort</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -16785,6 +17942,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>geometrie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -16850,6 +18014,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>ashoogte</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>ashoogte</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -16921,6 +18092,13 @@
                            <td>rotordiameter</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>rotordiameter</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -16987,6 +18165,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>vermogen</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>vermogen</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -17057,6 +18242,13 @@
                            <td>type</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>type</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -17121,6 +18313,13 @@
                            <td>materiaal­Mast</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>materiaal van de mast</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -17177,6 +18376,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>lengte­Gondel</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>lengte van de gondel</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -17254,6 +18460,13 @@
                            <td>breedte­Gondel</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>breedte van de gondel</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -17329,6 +18542,13 @@
                            <td>hoogte­Gondel</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>hoogte van de gondel</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -17397,6 +18617,13 @@
                            <td>massa­Gondel</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>massa van de gondel</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -17422,6 +18649,10 @@
                            <td>
                               <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
                               </td>
+                        </tr>
+                        <tr>
+                           <th>Lengte</th>
+                           <td>5</td>
                         </tr>
                         <tr>
                            <th>Kardinaliteit</th>
@@ -17461,6 +18692,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>pand­Identificatie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>pandidentificatie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -17519,6 +18757,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>zwaartepunt</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>zwaartepunt</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -17583,6 +18828,13 @@
                            <td>nominaal­Toerental</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>nominaal toerental</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -17593,7 +18845,7 @@
                            <td>
                               
                               
-                              <p>Nominaal toerental in Herz (Hz).</p>
+                              <p>Nominaal toerental in Hertz (Hz).</p>
                               
                               </td>
                         </tr>
@@ -17643,6 +18895,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>max­Werpafstand­Nominaal</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>maximale werpafstand nominaal</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -17705,6 +18964,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>max­Werpafstand­Overtoeren</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>maximale werpafstand overtoeren</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -17773,6 +19039,13 @@
                            <td>aard­Risico</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>aard van het risico</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -17838,6 +19111,13 @@
                            <td>type­Overige­Contour</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>type van de overige contour</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Definitie</th>
                            <td>
                               
@@ -17891,6 +19171,13 @@
                            <td>afstand­Of­Geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>afstand of geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Definitie</th>
                            <td>
                               
@@ -17936,6 +19223,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>maatgevende­Stof</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>maatgevende stof</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Definitie</th>
@@ -17993,6 +19287,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>exact­Aantal­Seconden</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>exact aantal seconden</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -18068,6 +19369,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>vijfofminder</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>vijf of minder</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -18209,6 +19517,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Definitie</th>
                            <td>
                               
@@ -18262,6 +19577,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>afstand</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>afstand</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Definitie</th>
@@ -18324,6 +19646,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>categorie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>categorie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -18395,6 +19724,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>exact­Aantal</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>getal</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -18476,6 +19812,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -18541,6 +19884,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>afstand</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>afstand</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -18757,6 +20107,13 @@
                            <td>geometrie</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>geometrie</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -18822,6 +20179,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>afstand</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>afstand</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Definitie</th>
@@ -19013,6 +20377,13 @@
                            <td>exacte­Hoeveelheid_kpa</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>exacte hoeveelheid in kpa</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -19023,7 +20394,7 @@
                            <td>
                               
                               
-                              <p>Voordruk in k­Pa</p>
+                              <p>Voordruk in kilo­Pascal</p>
                               
                               </td>
                         </tr>
@@ -19086,6 +20457,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>minder­Dan­Of­Gelijk­Aan_420k­Pa</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>minder dan of gelijk aan 420kpa</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -19347,6 +20725,13 @@
                            <td>stof</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>stof</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -19394,6 +20779,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>stof­Categorie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>stofcategorie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -19453,6 +20845,13 @@
                            <td>naam</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>naam</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -19497,6 +20896,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>link</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>link</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -19559,6 +20965,13 @@
                            <td>naam</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>naam</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -19597,6 +21010,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>chemische­Naam</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>chemische naam van de stof</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -19643,6 +21063,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>CASnummer</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>CASnummer van de stof</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -19702,6 +21129,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>UNnummer</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>united nations nummer</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -19765,6 +21199,13 @@
                            <td>categorie­Naam</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>stofcategorie benaming</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               IMEV
@@ -19809,6 +21250,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>chemische­Naam</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>chemische naam</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -19861,6 +21309,13 @@
                            <td>namespace</td>
                         </tr>
                         <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>namespace</alias>
+                              </td>
+                        </tr>
+                        <tr>
                            <th>Herkomst</th>
                            <td>
                               NEN 3610
@@ -19899,6 +21354,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>lokaal­ID</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>lokaal­ID</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -19945,6 +21407,13 @@
                         <tr>
                            <th>Naam</th>
                            <td>versie</td>
+                        </tr>
+                        <tr>
+                           <th>Alias</th>
+                           <td>
+                              
+                              <alias>versie</alias>
+                              </td>
                         </tr>
                         <tr>
                            <th>Herkomst</th>
@@ -21317,7 +22786,7 @@
                         </td>
                      <td>
                         
-                        <p>Ontwerpcapaciteit van de installatie in Nm3/u.</p>
+                        <p>Ontwerpcapaciteit van de installatie in Normale kubieke meter per uur (Nm3/u).</p>
                         </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
@@ -21330,7 +22799,7 @@
                         </td>
                      <td>
                         
-                        <p>Werkdruk aan inlaatzijde van de installatie in k­Pa.</p>
+                        <p>Werkdruk aan inlaatzijde van de installatie in kilopascal (k­Pa).</p>
                         </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
@@ -22312,7 +23781,7 @@
                         </td>
                      <td>
                         
-                        <p>Netto explosieve massa (NEM) in kg.</p>
+                        <p>Netto explosieve massa (NEM) in kilogram (kg).</p>
                         </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
@@ -23859,7 +25328,7 @@
                         </td>
                      <td>
                         
-                        <p>Netto explosieve massa (NEM) in kg.</p>
+                        <p>Netto explosieve massa (NEM) in kilogram (kg).</p>
                         </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
@@ -25379,7 +26848,7 @@
                         </td>
                      <td>
                         
-                        <p>Kooktemperatuur of begin van het kooktraject van een mengsel in K.</p>
+                        <p>Kooktemperatuur of begin van het kooktraject van een mengsel in Kelvin.</p>
                         </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
@@ -25392,8 +26861,8 @@
                         </td>
                      <td>
                         
-                        <p>LC50 ofwel mediaan letale concentratie in ppm, concentratie van een stof waarbij 50%
-                           van de testorganismen overlijdt na 1 uur.</p>
+                        <p>LC50 ofwel mediaan letale concentratie in ppm (parts per million), concentratie van
+                           een stof waarbij 50% van de testorganismen overlijdt na 1 uur.</p>
                         </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
@@ -25406,7 +26875,7 @@
                         </td>
                      <td>
                         
-                        <p>Dampspanning bij 20 °C in mbar.</p>
+                        <p>Dampspanning bij 20 °C in millibar.</p>
                         </td>
                      <td>
                         <a class="external-link" href="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/#primitive-datatypes">Real</a>
@@ -26054,7 +27523,7 @@
                            <td>
                               
                               
-                              <p>Ontwerpcapaciteit van de installatie in Nm3/u.</p>
+                              <p>Ontwerpcapaciteit van de installatie in Normale kubieke meter per uur (Nm3/u).</p>
                               
                               </td>
                         </tr>
@@ -26116,7 +27585,7 @@
                            <td>
                               
                               
-                              <p>Werkdruk aan inlaatzijde van de installatie in k­Pa.</p>
+                              <p>Werkdruk aan inlaatzijde van de installatie in kilopascal (k­Pa).</p>
                               
                               </td>
                         </tr>
@@ -26695,7 +28164,7 @@
                            <td>
                               
                               
-                              <p>Netto explosieve massa (NEM) in kg.</p>
+                              <p>Netto explosieve massa (NEM) in kilogram (kg).</p>
                               
                               </td>
                         </tr>
@@ -27113,7 +28582,7 @@
                            <td>
                               
                               
-                              <p>Netto explosieve massa (NEM) in kg.</p>
+                              <p>Netto explosieve massa (NEM) in kilogram (kg).</p>
                               
                               </td>
                         </tr>
@@ -28005,7 +29474,7 @@
                            <td>
                               
                               
-                              <p>Kooktemperatuur of begin van het kooktraject van een mengsel in K.</p>
+                              <p>Kooktemperatuur of begin van het kooktraject van een mengsel in Kelvin.</p>
                               
                               </td>
                         </tr>
@@ -28073,8 +29542,8 @@
                            <td>
                               
                               
-                              <p>LC50 ofwel mediaan letale concentratie in ppm, concentratie van een stof waarbij 50%
-                                 van de testorganismen overlijdt na 1 uur.</p>
+                              <p>LC50 ofwel mediaan letale concentratie in ppm (parts per million), concentratie van
+                                 een stof waarbij 50% van de testorganismen overlijdt na 1 uur.</p>
                               
                               </td>
                         </tr>
@@ -28136,7 +29605,7 @@
                            <td>
                               
                               
-                              <p>Dampspanning bij 20 °C in mbar.</p>
+                              <p>Dampspanning bij 20 °C in millibar.</p>
                               
                               </td>
                         </tr>
@@ -28702,7 +30171,8 @@
                   <th><a class="link" href="#detail_class_Waardelijsten_TooiWaardelijst">Tooi­Waardelijst</a></th>
                   <td>
                      
-                     <p>Een lijst die voorkomt op https://standaarden.overheid.nl/tooi/waardelijsten/</p>
+                     <p>Een lijst die voorkomt op <a href="https://standaarden.overheid.nl/tooi/waardelijsten/" shape="rect">https://standaarden.overheid.nl/tooi/waardelijsten/</a>
+                        </p>
                      </td>
                </tr>
             </tbody>
@@ -28872,7 +30342,8 @@
                   <th><a class="link" href="#detail_class_Waardelijsten_StofCategorieNaam">Stof­Categorie­Naam</a></th>
                   <td>
                      
-                     <p>Enumeratie voor stofcategorieën</p>
+                     <p>Classificatie van groepen van gevaarlijke stoffen zoals gedefinieerd in de ‘Overeenkomst
+                        voor het internationale vervoer van gevaarlijke goederen over de weg’ (ADR)</p>
                      </td>
                </tr>
                <tr>
@@ -28924,7 +30395,7 @@
 </section>
 <section id="lis" class="normative">
    <h2>Inhoud van waardelijsten</h2>
-   <!--MIMLM-IMEV-conceptueel-3.0-0-20241021-20241029-091756 imvertor Nightly-build.19-->
+   <!--MIMLM-IMEV-conceptueel-3.0-0-20241021-20241030-074239 imvertor Nightly-build.19-->
    <section>
       <h3>Codelijst inhoud   </h3>
       <section id="detail_class_Waardelijsten_TooiWaardelijst">
@@ -28936,7 +30407,8 @@
                <tr>
                   <td>
                      
-                     <p>Een lijst die voorkomt op https://standaarden.overheid.nl/tooi/waardelijsten/</p>
+                     <p>Een lijst die voorkomt op <a href="https://standaarden.overheid.nl/tooi/waardelijsten/" shape="rect">https://standaarden.overheid.nl/tooi/waardelijsten/</a>
+                        </p>
                      </td>
                </tr>
             </tbody>
@@ -30759,7 +32231,8 @@
                <tr>
                   <td>
                      
-                     <p>Enumeratie voor stofcategorieën</p>
+                     <p>Classificatie van groepen van gevaarlijke stoffen zoals gedefinieerd in de ‘Overeenkomst
+                        voor het internationale vervoer van gevaarlijke goederen over de weg’ (ADR)</p>
                      </td>
                </tr>
             </tbody>
@@ -30774,77 +32247,109 @@
                   <th>Omschrijving</th>
                </tr>
                <tr>
-                  <th>KLasse 1: Explosieve stoffen en voorwerpen</th>
+                  <th>Klasse 1: Explosieve stoffen en voorwerpen</th>
                   <td>
                      
-                     <p>Type A zoals is bedoeld in artikelen 5.29 en 5.33 van het BKL.</p>
+                     <p>Klasse 1: Explosieve stoffen en voorwerpen</p>
                      </td>
                </tr>
                <tr>
-                  <th>KLasse 2.1: Brandbaar gas</th>
+                  <th>Klasse 2.1: Brandbaar gas</th>
                   <td>
                      
-                     <p>Type B zoals is bedoeld in artikelen 5.29 en 5.33 van het BKL.</p>
+                     <p>Klasse 2.1: Brandbaar gas</p>
                      </td>
                </tr>
                <tr>
-                  <th>KLasse 2.2: Niet brandbaar, niet giftig gas</th>
+                  <th>Klasse 2.2: Niet brandbaar, niet giftig gas</th>
                   <td>
                      
-                     <p>Type C zoals is bedoeld in artikelen 5.29 en 5.33 van het BKL.</p>
+                     <p>Klasse 2.2: Niet brandbaar, niet giftig gas</p>
                      </td>
                </tr>
                <tr>
-                  <th>KLasse 2.3: Giftig gas</th>
+                  <th>Klasse 2.3: Giftig gas</th>
                   <td>
                      
-                     <p>De waarde is nu niet bekend. Mag alleen voor de overgang van RRGS naar REV worden
-                        gebruikt.</p>
+                     <p>Klasse 2.3: Giftig gas</p>
                      </td>
                </tr>
                <tr>
-                  <th>KLasse 3: Brandbare vloeistoffen</th>
-                  <td></td>
+                  <th>Klasse 3: Brandbare vloeistoffen</th>
+                  <td>
+                     
+                     <p>Klasse 3: Brandbare vloeistoffen</p>
+                     </td>
                </tr>
                <tr>
-                  <th>KLasse 4.1: Brandbare vaste stoffen</th>
-                  <td></td>
+                  <th>Klasse 4.1: Brandbare vaste stoffen</th>
+                  <td>
+                     
+                     <p>Klasse 4.1: Brandbare vaste stoffen</p>
+                     </td>
                </tr>
                <tr>
                   <th>Klasse 4.2: Voor zelfontbranding vatbare stoffen</th>
-                  <td></td>
+                  <td>
+                     
+                     <p>Klasse 4.2: Voor zelfontbranding vatbare stoffen</p>
+                     </td>
                </tr>
                <tr>
-                  <th>KLasse 4.3: Stoffen die brandbaar gas ontwikkelen bij water</th>
-                  <td></td>
+                  <th>Klasse 4.3: Stoffen die brandbaar gas ontwikkelen bij water</th>
+                  <td>
+                     
+                     <p>Klasse 4.3: Stoffen die brandbaar gas ontwikkelen bij water</p>
+                     </td>
                </tr>
                <tr>
                   <th>Klasse 5.1: Oxiderende stoffen</th>
-                  <td></td>
+                  <td>
+                     
+                     <p>Klasse 5.1: Oxiderende stoffen</p>
+                     </td>
                </tr>
                <tr>
                   <th>Klasse 5.2: Organische Peroxiden</th>
-                  <td></td>
+                  <td>
+                     
+                     <p>Klasse 5.2: Organische Peroxiden</p>
+                     </td>
                </tr>
                <tr>
                   <th>Klasse 6.1: Giftige stoffen</th>
-                  <td></td>
+                  <td>
+                     
+                     <p>Klasse 6.1: Giftige stoffen</p>
+                     </td>
                </tr>
                <tr>
                   <th>Klasse 6.2: Infectueuze stoffen</th>
-                  <td></td>
+                  <td>
+                     
+                     <p>Klasse 6.2: Infectueuze stoffen</p>
+                     </td>
                </tr>
                <tr>
                   <th>Klasse 7: Radioactieve stoffen</th>
-                  <td></td>
+                  <td>
+                     
+                     <p>Klasse 7: Radioactieve stoffen</p>
+                     </td>
                </tr>
                <tr>
                   <th>Klasse 8: Bijtende stoffen</th>
-                  <td></td>
+                  <td>
+                     
+                     <p>Klasse 8: Bijtende stoffen</p>
+                     </td>
                </tr>
                <tr>
                   <th>Klasse 9: Diverse gevaarlijke stoffen en voorwerpen</th>
-                  <td></td>
+                  <td>
+                     
+                     <p>Klasse 9: Diverse gevaarlijke stoffen en voorwerpen</p>
+                     </td>
                </tr>
             </tbody>
          </table>
