@@ -36,14 +36,20 @@ var respecConfig =
   //-- vul in: per Editor: name:, company:, companyURL: -------------------------------
   editors: [
     {
-      name: "Paul Janssen",
-      url: "https://www.geonovum.nl",
+    name:       "Pieter Bresters",
+	company:    "Geonovum",
+    companyurl: "https://www.geonovum.nl",
     }
   ],
   //-- de namen van de Author(s) ------------------------------------------------------
   //-- vul in: per Author: name:, company:, companyURL: -------------------------------
    authors:
   [
+   {
+    name:       "Paul Janssen",
+    company:    "Geonovum",
+    companyURL: "https://www.geonovum.nl"
+  },
    {
     name:       "Pieter Bresters",
     company:    "Geonovum",
@@ -54,19 +60,24 @@ var respecConfig =
     company:    "Geonovum",
     companyURL: "https://www.geonovum.nl"
    },   
-     {
-     name:       "Joeri van Es",
+   {
+    name:       "Monique van Scherpenzeel",
     company:    "Geonovum",
-      companyURL: "https://www.geonovum.nl"
+    companyURL: "https://www.geonovum.nl"
    },
-       {
-     name:       "Paul Janssen",
-     company:    "Geonovum",
+   {
+    name:       "Paul Janssen",
+    company:    "Geonovum",
     companyURL: "https://www.geonovum.nl"
   },
-         {
-     name:       "Frank Zwiers",
-     company:    "Antea Group",
+   {
+    name:       "Joeri van Es",
+    company:    "Geonovum",
+    companyURL: "https://www.geonovum.nl"
+   },
+   {
+    name:       "Frank Zwiers",
+    company:    "Antea Group",
     companyURL: "https://anteagroup.nl"
   },
 
