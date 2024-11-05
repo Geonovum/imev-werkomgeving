@@ -1,0 +1,340 @@
+---
+components:
+  schemas:
+    # Custom rev-api components
+    ActivityName:
+      type: object
+      properties:
+        feature:
+          type: string
+        name:
+          type: string
+        shortname:
+          type: string
+        bits:
+          type: integer
+        order:
+          type: integer
+        fixed_distance:
+          type: boolean
+
+    LocatieEVActiviteitSubtypes:
+      oneOf:
+        - $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/LocatieActiviteit'
+        - $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/BuisleidingStelsel'
+        - $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/LocatieBasisnet'  
+
+    GebouwOfLocatieSubtypes:
+      oneOf:
+        - $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/KwetsbaarGebouw'
+        - $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/KwetsbareLocatie'        
+  
+    
+    FeatureTypes:
+      type: array
+      description: An array of featureTypes, embedded with a HAL envelope
+      items:
+        $ref: '#/components/schemas/FeatureType'
+
+    FeatureType:
+      additionalProperties: false
+      type: object
+      properties:
+        link:
+          type: string
+          description: url to LocatieEVActiviteit
+        identificatie:
+          $ref: 'common-schema.yaml#/components/schemas/NEN3610ID'
+        featureType:
+          type: string
+        geometrie:
+          $ref: 'common-schema.yaml#/components/schemas/Geometrie'
+        beginGeldigheid:
+          type: string
+          format: dateTime
+        eindGeldigheid:
+          type: string
+          format: dateTime
+        corrected:
+          type: boolean
+
+    FeatureTypesSearch:
+      additionalProperties: false
+      type: object
+      properties:
+        geometrie:
+          $ref: 'common-schema.yaml#/components/schemas/Geometrie'
+        featureTypes:
+          type: array
+          description: featureTypes
+          items:
+            $ref: '#/components/schemas/AllowedFeatureTypes'
+        tijdstipRegistratie:
+          description: in format YYYY-MM-DDThh:mm:ss
+          type: string
+          format: dateTime
+        tijdstipGeldigheid:
+          description: in format YYYY-MM-DDThh:mm:ss
+          type: string
+          format: dateTime
+        includeCorrected:
+          type: boolean
+        bronhoudercode:
+          type: string
+
+    AllowedFeatureTypes:
+      type: string
+      enum:
+        - 'AftappuntOpslagtank'
+        - 'Bewaarplaats'
+        - 'Bewerkingsruimte'
+        - 'BrandAandachtsgebied'
+        - 'BufferBewaarplaats'
+        - 'BuisleidingReferentie'
+        - 'CivielExplosieAandachtsgebied'
+        - 'ExplosieAandachtsgebied'
+        - 'ExplosieAandachtsgebiedVuurwerk'
+        - 'GifwolkAandachtsgebied'
+        - 'Installatie'
+        - 'KwetsbaarGebouw'
+        - 'KwetsbareLocatie'
+        - 'Leiding'
+        - 'LocatieActiviteit'
+        - 'LocatieBasisnet'
+        - 'Machinekamer'
+        - 'MilitairExplosieAandachtsgebied'
+        - 'OpslagReferentie'
+        - 'OpstelplaatsVoertuig'
+        - 'PRContour'
+        - 'SamengesteldeReferentie'
+        - 'SevesoReferentie'
+        - 'SpoorVervoer'
+        - 'Tankzuil'
+        - 'Vulpunt'
+        - 'WaterVervoer'
+        - 'WegVervoer'
+        - 'Windturbine'
+
+    KglAllowedFeatureTypes:
+      type: string
+      enum:
+        - 'KwetsbaarGebouw'
+        - 'KwetsbareLocatie'
+
+    ValidationResponse:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Omschrijving van de fout response
+          example: 'Bad Request'
+        status:
+          type: string
+          description: HTTP response code
+          example: '400'
+        timestamp:
+          type: string
+          format: dateTime
+          description: Datum en tijd waarop de fout is opgetreden
+        message:
+          type: string
+          description: Korte beschrijving van de fout indien geen rapport beschikbaar is
+        reports:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationReport'
+
+    ValidationReport:
+      type: object
+      properties:
+        message:
+          description: Beschrijving van het report
+          type: string
+        errors:
+          description: Lijst van gevonden fouten
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+        context:
+          $ref: '#/components/schemas/ValidationContext'
+          description: Beschrijving van de context van de fout
+
+    ValidationError:
+      type: object
+      properties:
+        key:
+          description: Unieke message key voor dit fout-type
+          type: string
+        location:
+          description: JSON-path expressie van de locatie van de fout
+          type: string
+        error:
+          description: Error melding behorende bij de key
+          type: string
+        identification:
+          description: De identificatie van het foutieve object
+          type: string
+
+    ValidationContext:
+      type: object
+      properties:
+        path:
+          description: Url waarop de fout optrad
+          type: string
+        method:
+          description: HTTP methode waarmee de fout optrad
+          type: string
+        parameter:
+          description: Query parameter waarbij de fout optrad
+          type: string
+
+    Link:
+      type: object
+      properties:
+        registrationId:
+          type: integer
+        identificatie:
+          $ref: 'common-schema.yaml#/components/schemas/NEN3610ID'
+        link:
+          type: string
+
+    HistoryLink:
+      allOf:
+        - $ref: '#/components/schemas/Link'
+        - type: object
+          properties:
+            beginRegistratie:
+              type: string
+              format: dateTime
+            eindRegistratie:
+              type: string
+              format: dateTime
+            corrected:
+              type: boolean
+
+    LinksContainer:
+      properties:
+        _embedded:
+          type: object
+          properties:
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/Link'
+        _links:
+          $ref: '#/components/schemas/_Links'
+        page:
+          $ref: '#/components/schemas/Page'
+
+    HistoryLinksContainer:
+      properties:
+        _embedded:
+          type: object
+          properties:
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/HistoryLink'
+
+    _Links:
+      properties:
+        self:
+          type: string
+        next:
+          type: string
+        previous:
+          type: string
+        last:
+          type: string
+        first:
+          type: string
+
+    Page:
+      properties:
+        number:
+          type: integer
+        size:
+          type: integer
+        totalElements:
+          type: integer
+        totalPages:
+          type: integer
+
+    FeatureTypesContainer:
+      properties:
+        _embedded:
+          type: object
+          properties:
+            results:
+              $ref: '#/components/schemas/FeatureTypes'
+
+    OverdrachtResponse:
+      properties:
+        titel:
+          type: string
+        totaal:
+          type: integer
+        actueel:
+          type: integer
+        historie:
+          type: integer
+
+    GebouwenOfLocatiesBulk:
+      type: array
+      items:
+        $ref: '#/components/schemas/GebouwOfLocatieBulk'
+
+    GebouwOfLocatieBulk:
+      oneOf:
+        - $ref: '#/components/schemas/KwetsbareLocatieBulk'
+        - $ref: '#/components/schemas/KwetsbaarGebouwBulk'
+
+    KwetsbareLocatieBulk:
+      type: object
+      required:
+        - kgl
+      properties:
+        kgl:
+          $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/KwetsbareLocatie'
+
+    KwetsbaarGebouwBulk:
+      type: object
+      required:
+        - kgl
+        - bagData
+      properties:
+        kgl:
+          $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/KwetsbaarGebouw'
+        bagData:
+          $ref: '#/components/schemas/BagDataGebouw'
+
+    BagDataGebouw:
+      type: object
+      required:
+        - gebruiksdoeleinden
+        - geometrie
+      properties:
+        adres:
+          type: string
+        gebruiksdoeleinden:
+          type: array
+          minItems: 1
+          items:
+            type: string
+            enum:
+              - "woonfunctie"
+              - "bijeenkomstfunctie"
+              - "celfunctie"
+              - "gezondheidszorgfunctie"
+              - "industriefunctie"
+              - "kantoorfunctie"
+              - "logiesfunctie"
+              - "gegevenInTransitie"
+              - "onderwijsfunctie"
+              - "sportfunctie"
+              - "winkelfunctie"
+              - "overige gebruiksfunctie"
+        geometrie:
+          oneOf:
+            - $ref: 'common-schema.yaml#/components/schemas/Polygon'
+            - $ref: 'common-schema.yaml#/components/schemas/MultiPolygon'
