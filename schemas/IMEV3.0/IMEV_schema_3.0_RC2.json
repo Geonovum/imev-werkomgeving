@@ -364,7 +364,7 @@
                 "uniqueItems" : true
               }
             },
-            "required" : [ "locatieEVActiviteit", "heeft" ]
+            "required" : [ "heeft" ]
           }
         },
         "required" : [ "properties" ]
@@ -388,8 +388,7 @@
                 "minItems" : 1,
                 "uniqueItems" : true
               }
-            },
-            "required" : [ "hoortBij" ]
+            }
           }
         },
         "required" : [ "properties" ]
@@ -1038,7 +1037,7 @@
                 "uniqueItems" : true
               }
             },
-            "required" : [ "heeft", "resulteertIn" ]
+            "required" : ["resulteertIn" ]
           }
         },
         "required" : [ "properties" ]
