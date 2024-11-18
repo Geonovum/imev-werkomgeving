@@ -5,13 +5,13 @@
         "type": "LocatieActiviteit",
         "identificatie": {
             "namespace": "NL.IMEV.",
-            "lokaalID": "REVBRN.5419d7821c3c",
+            "lokaalID": "RUDLN.5419d7821c3c",
             "versie": ""
         },
         "bronobjectID": "umfqccmzkxomlrtodpbn",
-        "bronhoudercode": "REVBRN",
+        "bronhoudercode": "RUDLN",
         "bronhoudercodeOverheid": "",
-        "bronhoudercodeGeenOverheid": "REVBRN",
+        "bronhoudercodeGeenOverheid": "RUDLN",
         "bronhouder": "Spatiesloze-TEXT",
         "documentInfo": {
             "link": "http://www.geonovum.nl",
@@ -83,14 +83,14 @@
                     "type": "SevesoInrichting",
                     "identificatie": {
                         "namespace": "NL.IMEV.",
-                        "lokaalID": "REVBRN.5419d7821c3d",
+                        "lokaalID": "RUDLN.5419d7821c3d",
                         "versie": ""
                     },
                     "bronobjectID": "5419d7821c3d",
-                    "bronhoudercode": "REVBRN",
-                    "bronhoudercodeOverheid": "",
-                    "bronhoudercodeGeenOverheid": "REVBRN",
-                    "bronhouder": "Spatiesloze-TEXT",
+                    "bronhoudercode": "RUDLN",
+                    "bronhoudercodeOverheid": "RUDLN",
+                    "bronhoudercodeGeenOverheid": "",
+                    "bronhouder": "RUD Limburg-Noord",
                     "documentInfo": {
                         "link": "http://www.geonovum.nl",
                         "naam": "Test1001"
@@ -116,14 +116,14 @@
                                 "omschrijving": "string",
                                 "identificatie": {
                                     "namespace": "NL.IMEV.",
-                                    "lokaalID": "REVBRN.5419d7821c3e",
+                                    "lokaalID": "RUDLN.5419d7821c3e",
                                     "versie": ""
                                 },
                                 "bronobjectID": "5419d7821c3e",
-                                "bronhoudercode": "REVBRN",
-                                "bronhoudercodeOverheid": "",
-                                "bronhoudercodeGeenOverheid": "REVBRN",
-                                "bronhouder": "Spatiesloze-TEXT",
+                                "bronhoudercode": "RUDLN",
+                                "bronhoudercodeOverheid": "RUDLN",
+                                "bronhoudercodeGeenOverheid": "",
+                                "bronhouder": "RUD Limburg-Noord",
                                 "documentInfo": {
                                     "link": "http://www.geonovum.nl",
                                     "naam": "Test1001"
@@ -144,14 +144,14 @@
                                             "type": "BrandAandachtsgebied",
                                             "identificatie": {
                                                 "namespace": "NL.IMEV.",
-                                                "lokaalID": "REVBRN.5419d7821c3f",
+                                                "lokaalID": "RUDLN.5419d7821c3f",
                                                 "versie": ""
                                             },
                                             "bronobjectID": "5419d7821c3f",
-                                            "bronhoudercode": "REVBRN",
-                                            "bronhoudercodeOverheid": "",
-                                            "bronhoudercodeGeenOverheid": "REVBRN",
-                                            "bronhouder": "Spatiesloze-TEXT",
+                                            "bronhoudercode": "RUDLN",
+                                            "bronhoudercodeOverheid": "RUDLN",
+                                            "bronhoudercodeGeenOverheid": "",
+                                            "bronhouder": "RUD Limburg-Noord",
                                             "documentInfo": {
                                                 "link": "http://www.geonovum.nl",
                                                 "naam": "Test1001"
