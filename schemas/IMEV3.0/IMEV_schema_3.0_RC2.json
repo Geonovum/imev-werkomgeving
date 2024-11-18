@@ -1,7 +1,7 @@
 {
   "$comment" : "IMEV-conceptueel - version 3.0 / 20241021 by Imvertor Nightly-build.19 variant geojson",
   "$schema" : "https://json-schema.org/draft/2020-12/schema",
-  "$reqs" : [ "/req/geojson", "/req/by-reference-link-object", "/req/codelists-literal", "none" ],
+  "$reqs" : [ "/req/geojson", "/req/by-reference-link-object", "/req/codelists-literal", "/req/entitytype" ],
   "$defs" : {
     "Aandachtsgebied" : {
       "$anchor" : "Aandachtsgebied",
@@ -353,7 +353,7 @@
             "type" : "object",
             "properties" : {
               "locatieEVActiviteit" : {
-                "$ref" : "#/$defs/LocatieEVActiviteit"
+                "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"
               },
               "heeft" : {
                 "type" : "array",
@@ -364,7 +364,7 @@
                 "uniqueItems" : true
               }
             },
-            "required" : [ "heeft" ]
+            "required" : [ "locatieEVActiviteit", "heeft" ]
           }
         },
         "required" : [ "properties" ]
@@ -383,12 +383,15 @@
               "hoortBij" : {
                 "type" : "array",
                 "items" : {
-                  "$ref" : "#/$defs/ReferentieEVContour"
+                  "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"
                 },
                 "minItems" : 1,
                 "uniqueItems" : true
               }
-            }
+            },
+            "required": [
+                "hoortBij"
+            ]
           }
         },
         "required" : [ "properties" ]
@@ -432,6 +435,9 @@
           "properties" : {
             "type" : "object",
             "properties" : {
+              "entityType": {
+                "type": "string"
+              },
               "identificatie" : {
                 "$ref" : "#/$defs/NEN3610ID"
               },
@@ -452,7 +458,7 @@
               },
               "bronhouder" : {
                 "type" : "string",
-                "pattern" : "[A-Z,a-z,-]{1,100}"
+                "pattern" : "[A-Z,a-z, ,-]{1,100}"
               },
               "documentInfo" : {
                 "$ref" : "#/$defs/Documentatie"
@@ -478,7 +484,7 @@
                 "pattern" : "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
               }
             },
-            "required" : [ "identificatie", "bronhoudercode", "beginGeldigheid", "tijdstipRegistratie" ]
+            "required" : [ "entityType", "identificatie", "bronhoudercode", "beginGeldigheid", "tijdstipRegistratie" ]
           }
         },
         "required" : [ "properties" ]
@@ -1026,7 +1032,7 @@
                 "type" : "string"
               },
               "heeft" : {
-                "$ref" : "#/$defs/EVActiviteit"
+                "$ref": "https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"
               },
               "resulteertIn" : {
                 "type" : "array",
@@ -1037,7 +1043,7 @@
                 "uniqueItems" : true
               }
             },
-            "required" : ["resulteertIn" ]
+            "required" : ["resulteertIn" , "heeft"]
           }
         },
         "required" : [ "properties" ]
