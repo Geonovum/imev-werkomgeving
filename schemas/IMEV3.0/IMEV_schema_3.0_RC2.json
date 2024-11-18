@@ -1,6 +1,6 @@
 {
   "$comment" : "IMEV-conceptueel - version 3.0 / 20241021 by Imvertor Nightly-build.19 variant geojson",
-  "$schema" : "https://json-schema.org/draft/2019-09/schema",
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
   "$reqs" : [ "/req/geojson", "/req/by-reference-link-object", "/req/codelists-literal", "none" ],
   "$defs" : {
     "Aandachtsgebied" : {
