@@ -1,6 +1,5 @@
 {
-  "$comment" : "IMEV-conceptueel - version 3.0 / 20241021 by Imvertor Nightly-build.19 variant geojson",
-  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "$comment" : "Release Candidate 2 van schema op basis van IMEV-versie 3.0 / 20241021 by Imvertor Nightly-build.19 variant geojson. Verbetering t.o.v. RC1: relaties in het model van rechts naar links zijn nu by reference en hiervoor zijn id's toegevoegd; patroon attribuut bronhouder aangepast; entityType toegevoegd bij ExterneVeiligheidsObject",
   "$reqs" : [ "/req/geojson", "/req/by-reference-link-object", "/req/codelists-literal", "/req/entitytype" ],
   "$defs" : {
     "Aandachtsgebied" : {
