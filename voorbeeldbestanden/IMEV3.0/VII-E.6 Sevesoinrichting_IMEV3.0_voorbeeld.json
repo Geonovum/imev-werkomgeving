@@ -1,5 +1,5 @@
 {
-    "$comment": "Voorbeeldbestand Sevesoinrichting IMEV - versie 3.0 / 2024-11-13",
+    "$comment": "Voorbeeldbestand Sevesoinrichting, datum: 2024-11-19, versie IMEV: 3.0",
     "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::28992" } },
     "id": "RUDLN.5419d7821c3c",
     "type": "Feature",
