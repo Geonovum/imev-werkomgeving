@@ -1,4 +1,6 @@
 {
+    "type": "FeatureCollection",
+    "features": [{
     "$comment": "Voorbeeldbestand Sevesoinrichting, datum: 2024-11-19, versie IMEV: 3.0, schema IMEV_schema_3.0RC2",
     "crs": {
         "type": "name",
@@ -295,3 +297,5 @@
         ]
     }
 }
+]
+} 
