@@ -4,300 +4,233 @@
         "type": "name",
         "properties": {"name": "urn:ogc:def:crs:EPSG::28992"}
     },
-    "id": "NL.IMEV.RWS.BasisnetElement_CRD_001",
-    "type": "Feature",
-    "properties": {
-        "entityType": "LocatieBasisnet",
-        "identificatie": {
-            "namespace": "NL.IMEV",
-            "lokaalID": "RWS.BasisnetElement_CRD_001",
-            "versie": ""
-        },
-        "bronobjectID": "CRD_01",
-        "bronhoudercode": "RWS",
-        "bronhoudercodeOverheid": "oorg10004",
-        "bronhouder": "Rijkswaterstaat",
-        "documentInfo": {
-            "link": "http://www.geonovum.nl",
-            "naam": "Test1001"
-        },
-        "beginGeldigheid": "2018-11-27T00:00:00Z",
-        "tijdstipRegistratie": "2018-11-27T00:00:01Z",
-        "geometrie": {
-            "type": "LineString",
-            "coordinates": [
-                [
-                    205133.25408585975,
-                    568837.1197635677
-                ],
-                [
-                    205422.8038807102,
-                    568038.5605787684
-                ],
-                [
-                    205366.09489730408,
-                    567697.2591718785
-                ],
-                [
-                    205593.1625311592,
-                    567118.367239426
-                ],
-                [
-                    205942.96064157435,
-                    566340.2317346593
-                ],
-                [
-                    206316.8010212907,
-                    565201.3118086014
-                ],
-                [
-                    206460.48609720246,
-                    564922.0920782414
-                ],
-                [
-                    207416.9538992562,
-                    563849.3331188399
-                ],
-                [
-                    208191.97748484963,
-                    562854.7678905571
-                ],
-                [
-                    208476.61161357362,
-                    562577.0214692124
-                ],
-                [
-                    209006.64902275486,
-                    561940.8248645253
-                ],
-                [
-                    209596.94577907264,
-                    561325.3485559169
-                ],
-                [
-                    209843.7924015435,
-                    560846.4568389312
-                ],
-                [
-                    210292.79992311003,
-                    560289.5420963268
-                ],
-                [
-                    210941.73955307016,
-                    559855.3636282985
-                ],
-                [
-                    211533.00550511628,
-                    559199.7015122873
-                ],
-                [
-                    211529.29267685118,
-                    557793.9841903824
-                ],
-                [
-                    211656.1836134891,
-                    557273.2563898081
-                ],
-                [
-                    211940.87103076518,
-                    557035.5562471504
-                ],
-                [
-                    212445.39671741286,
-                    556941.0783577034
-                ],
-                [
-                    213069.5436920324,
-                    556948.5227049484
-                ],
-                [
-                    213495.2638323434,
-                    556712.5888090738
-                ],
-                [
-                    213821.3229804272,
-                    556395.1090130933
-                ],
-                [
-                    214268.0034499787,
-                    556099.1950240062
-                ],
-                [
-                    214754.27247542818,
-                    555864.0681205051
-                ],
-                [
-                    215141.88821688606,
-                    555467.002422981
-                ],
-                [
-                    215712.60432600032,
-                    554931.5528482476
-                ],
-                [
-                    216120.7704845584,
-                    554514.644598537
-                ],
-                [
-                    216675.39706312702,
-                    553677.4807964675
-                ],
-                [
-                    217068.2345227422,
-                    552898.4716687686
-                ],
-                [
-                    217465.34049751543,
-                    551797.6816377667
-                ],
-                [
-                    217759.22197003406,
-                    550896.4690883319
-                ],
-                [
-                    218291.75168707193,
-                    550259.7247429772
-                ],
-                [
-                    219242.2776014781,
-                    550050.9390782465
-                ],
-                [
-                    220093.96024356963,
-                    549700.1745052018
-                ]
-            ]
-        },
-        "$comment": "Kies voor type uit 'WaterVervoer', 'WegVervoer' of 'SpoorVervoer'",
-        "type": "WaterVervoer",
-        "route": "CRD",
-        "voertUit": [
-            {
-                "id": "NL.IMEV.RWS.BasisnetElement_CRD_002",
-                "type": "Feature",
-                "properties": {
-                    "entityType": "BasisNet",
-                    "identificatie": {
-                        "namespace": "NL.IMEV",
-                        "lokaalID": "RWS.BasisnetElement_CRD_002",
-                        "versie": ""
-                    },
-                    "bronobjectID": "CRD_002",
-                    "bronhoudercode": "RWS",
-                    "bronhoudercodeOverheid": "oorg10004",
-                    "bronhouder": "Rijkswaterstaat",
-                    "documentInfo": {
-                        "link": "http://www.geonovum.nl",
-                        "naam": "Test1001"
-                    },
-                    "beginGeldigheid": "2018-11-27T00:00:00Z",
-                    "tijdstipRegistratie": "2018-11-27T00:00:01Z",
-                    "basisVergunningNummer": "string",
-                    "datumVergunningOfMelding": "2019-08-21",
-                    "datumLaatsteWijziging": "2019-08-21",
-                    "vergunningsPlicht": true,
-                    "bevoegdGezag": "rijk",
-                    "balActiviteit": ["niet in Bal geregeld"],
-                    "idActiviteitTR": "Niet beschikbaar",
-                    "heeft": [
-                        {
-                            "id": "NL.IMEV.RWS.BasisnetElement_CRD_003",
-                            "type": "Feature",
-                            "properties": {
-                                "entityType": "WaterVervoer",
-                                "identificatie": {
-                                    "namespace": "NL.IMEV",
-                                    "lokaalID": "RWS.BasisnetElement_CRD_003",
-                                    "versie": ""
-                                },
-                                "bronobjectID": "CRD_003",
-                                "bronhoudercode": "RWS",
-                                "bronhoudercodeOverheid": "oorg10004",
-                                "bronhouder": "Rijkswaterstaat",
-                                "documentInfo": {
-                                    "link": "http://www.geonovum.nl",
-                                    "naam": "Test1001"
-                                },
-                                "beginGeldigheid": "2018-11-27T00:00:00Z",
-                                "tijdstipRegistratie": "2018-11-27T00:00:01Z",
-                                "omschrijving": "string",
-                                "geometrie": {
-                                    "type": "LineString",
-                                    "coordinates": [
-                                        [
-                                            155000.25,
-                                            446000.25
-                                        ],
-                                        [
-                                            155000.25,
-                                            447000.25
-                                        ]
-                                    ]
-                                },
-                                "watervakcode": "a watervakcode character string",
-                                "referentiesoort": "kantstreep",
-                                "resulteertIn": [
-                                    {
-                                        "id": "NL.IMEV.RWS.BasisnetElement_CRD_004",
-                                        "type": "Feature",
-                                        "properties": {
-                                            "entityType": "BrandAandachtsgebied",
-                                            "identificatie": {
-                                                "namespace": "NL.IMEV",
-                                                "lokaalID": "RWS.BasisnetElement_CRD_004",
-                                                "versie": ""
-                                            },
-                                            "bronobjectID": "CRD_004",
-                                            "bronhoudercode": "RWS",
-                                            "bronhoudercodeOverheid": "oorg10004",
-                                            "bronhouder": "Rijkswaterstaat",
-                                            "documentInfo": {
-                                                "link": "http://www.geonovum.nl",
-                                                "naam": "Test1001"
-                                            },
-                                            "beginGeldigheid": "2018-11-27T00:00:00Z",
-                                            "tijdstipRegistratie": "2018-11-27T00:00:01Z",
-                                            "afstandOfGeometrie": {"afstand": 57},
-                                            "categorieAandachtsgebied": "berekend",
-                                            "aardRisico": "string",
-                                            "maatgevendeStof": {
-                                                "stof": {
-                                                    "naam": "name",
-                                                    "chemischeNaam": "chemical name",
-                                                    "CASnummer": "327-92-3",
-                                                    "UNnummer": "1711"
-                                                }
-                                            },
-                                            "typeBrand": "fakkelbrand",
-                                            "hoortBij": [
-                                                {"href": "#id/NL.IMEV.RWS.BasisnetElement_CRD_003"}
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": "NL.IMEV.RWS.BasisnetElement_CRD_001",
+            "type": "Feature",
+            "properties": {
+                "entityType": "LocatieBasisnet",
+                "identificatie": {
+                    "namespace": "NL.IMEV",
+                    "lokaalID": "RWS.BasisnetElement_CRD_001",
+                    "versie": ""
+                },
+                "bronobjectID": "CRD_01",
+                "bronhoudercode": "RWS",
+                "bronhoudercodeOverheid": "oorg10004",
+                "bronhouder": "Rijkswaterstaat",
+                "documentInfo": {
+                    "link": "http://www.geonovum.nl",
+                    "naam": "Test1001"
+                },
+                "beginGeldigheid": "2018-11-27T00:00:00Z",
+                "tijdstipRegistratie": "2018-11-27T00:00:01Z",
+                "geometrie": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            205133.254,
+                            568837.120
+                        ],
+                        [
+                            205422.804,
+                            568038.561
+                        ],
+                        [
+                            205366.095,
+                            567697.259
+                        ],
+                        [
+                            205593.163,
+                            567118.367
+                        ],
+                        [
+                            205942.961,
+                            566340.232
+                        ]
+                    ]
+                },
+                "$comment": "Kies voor type uit 'WaterVervoer', 'WegVervoer' of 'SpoorVervoer'",
+                "type": "WaterVervoer",
+                "route": "CRD",
+                "voertUit": [
+                    {
+                        "id": "NL.IMEV.RWS.BasisnetElement_CRD_002",
+                        "type": "Feature",
+                        "properties": {
+                            "entityType": "BasisNet",
+                            "identificatie": {
+                                "namespace": "NL.IMEV",
+                                "lokaalID": "RWS.BasisnetElement_CRD_002",
+                                "versie": ""
+                            },
+                            "bronobjectID": "CRD_002",
+                            "bronhoudercode": "RWS",
+                            "bronhoudercodeOverheid": "oorg10004",
+                            "bronhouder": "Rijkswaterstaat",
+                            "documentInfo": {
+                                "link": "http://www.geonovum.nl",
+                                "naam": "Test1001"
+                            },
+                            "beginGeldigheid": "2018-11-27T00:00:00Z",
+                            "tijdstipRegistratie": "2018-11-27T00:00:01Z",
+                            "basisVergunningNummer": "string",
+                            "datumVergunningOfMelding": "2019-08-21",
+                            "datumLaatsteWijziging": "2019-08-21",
+                            "vergunningsPlicht": true,
+                            "bevoegdGezag": "rijk",
+                            "balActiviteit": ["niet in Bal geregeld"],
+                            "idActiviteitTR": "Niet beschikbaar",
+                            "heeft": [
+                                {
+                                    "id": "NL.IMEV.RWS.BasisnetElement_CRD_003",
+                                    "type": "Feature",
+                                    "properties": {
+                                        "entityType": "WaterVervoer",
+                                        "identificatie": {
+                                            "namespace": "NL.IMEV",
+                                            "lokaalID": "RWS.BasisnetElement_CRD_003",
+                                            "versie": ""
+                                        },
+                                        "bronobjectID": "CRD_003",
+                                        "bronhoudercode": "RWS",
+                                        "bronhoudercodeOverheid": "oorg10004",
+                                        "bronhouder": "Rijkswaterstaat",
+                                        "documentInfo": {
+                                            "link": "http://www.geonovum.nl",
+                                            "naam": "Test1001"
+                                        },
+                                        "beginGeldigheid": "2018-11-27T00:00:00Z",
+                                        "tijdstipRegistratie": "2018-11-27T00:00:01Z",
+                                        "omschrijving": "string",
+                                        "geometrie": {
+                                            "type": "LineString",
+                                            "coordinates": [
+                                                [
+                                                    205133.254,
+                                                    568837.120
+                                                ],
+                                                [
+                                                    205422.804,
+                                                    568038.561
+                                                ],
+                                                [
+                                                    205366.095,
+                                                    567697.259
+                                                ],
+                                                [
+                                                    205593.163,
+                                                    567118.367
+                                                ],
+                                                [
+                                                    205942.961,
+                                                    566340.232
+                                                ]
                                             ]
                                         },
-                                        "geometry": null
+                                        "watervakcode": "a watervakcode character string",
+                                        "referentiesoort": "kantstreep",
+                                        "resulteertIn": [
+                                            {
+                                                "id": "NL.IMEV.RWS.BasisnetElement_CRD_004",
+                                                "type": "Feature",
+                                                "properties": {
+                                                    "entityType": "BrandAandachtsgebied",
+                                                    "identificatie": {
+                                                        "namespace": "NL.IMEV",
+                                                        "lokaalID": "RWS.BasisnetElement_CRD_004",
+                                                        "versie": ""
+                                                    },
+                                                    "bronobjectID": "CRD_004",
+                                                    "bronhoudercode": "RWS",
+                                                    "bronhoudercodeOverheid": "oorg10004",
+                                                    "bronhouder": "Rijkswaterstaat",
+                                                    "documentInfo": {
+                                                        "link": "http://www.geonovum.nl",
+                                                        "naam": "Test1001"
+                                                    },
+                                                    "beginGeldigheid": "2018-11-27T00:00:00Z",
+                                                    "tijdstipRegistratie": "2018-11-27T00:00:01Z",
+                                                    "afstandOfGeometrie": {"afstand": 57},
+                                                    "categorieAandachtsgebied": "berekend",
+                                                    "aardRisico": "string",
+                                                    "maatgevendeStof": {
+                                                        "stof": {
+                                                            "naam": "name",
+                                                            "chemischeNaam": "chemical name",
+                                                            "CASnummer": "327-92-3",
+                                                            "UNnummer": "1711"
+                                                        }
+                                                    },
+                                                    "typeBrand": "fakkelbrand",
+                                                    "hoortBij": [
+                                                        {"href": "#id/NL.IMEV.RWS.BasisnetElement_CRD_003"}
+                                                    ]
+                                                },
+                                                "geometry": null
+                                            }
+                                        ],
+                                        "heeft": {"href": "#id/NL.IMEV.RWS.BasisnetElement_CRD_002"}
+                                    },
+                                    "geometry": {
+                                        "type": "LineString",
+                                        "coordinates": [
+                                            [
+                                                205133.254,
+                                                568837.120
+                                            ],
+                                            [
+                                                205422.804,
+                                                568038.561
+                                            ],
+                                            [
+                                                205366.095,
+                                                567697.259
+                                            ],
+                                            [
+                                                205593.163,
+                                                567118.367
+                                            ],
+                                            [
+                                                205942.961,
+                                                566340.232
+                                            ]
+                                        ]
                                     }
-                                ],
-                                "heeft": {"href": "#id/NL.IMEV.RWS.BasisnetElement_CRD_002"}
-                            },
-                            "geometry": {
-                                "type": "LineString",
-                                "coordinates": [
-                                    [
-                                        155000.25,
-                                        446000.25
-                                    ],
-                                    [
-                                        155000.25,
-                                        447000.25
-                                    ]
-                                ]
-                            }
-                        }
+                                }
+                            ],
+                            "locatieEVActiviteit": {"href": "#id/NL.IMEV.RWS.BasisnetElement_CRD_001"}
+                        },
+                        "geometry": null
+                    }
+                ]
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        205133.254,
+                        568837.120
                     ],
-                    "locatieEVActiviteit": {"href": "#id/NL.IMEV.RWS.BasisnetElement_CRD_001"}
-                },
-                "geometry": null
+                    [
+                        205422.804,
+                        568038.561
+                    ],
+                    [
+                        205366.095,
+                        567697.259
+                    ],
+                    [
+                        205593.163,
+                        567118.367
+                    ],
+                    [
+                        205942.961,
+                        566340.232
+                    ]
+                ]
             }
-        ]
-    },
-    "geometry": null
+        }
+    ]
 }
