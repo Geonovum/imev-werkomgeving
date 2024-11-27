@@ -3,7 +3,7 @@
     "Release Candidate 2 van schema op basis van IMEV-versie 3.0 / 20241021 by Imvertor Nightly-build.19 variant geojson. Verbetering t.o.v. RC1: ",
     "relaties in het model van rechts naar links zijn nu by reference en hiervoor zijn id's toegevoegd",
     "patroon attribuut bronhouder aangepast",
-    "min en max als number ipv string", 
+    "min en max als number ipv string",
     "min en max aantalAutobussen omgedraaid",
     "entityType toegevoegd bij ExterneVeiligheidsObject",
     "Geojson FeatureCollection onderin opgenomen"
@@ -2475,7 +2475,9 @@
         "oneOf": [
           {"$ref": "#/$defs/LocatieActiviteit"},
           {"$ref": "#/$defs/LocatieBasisnet"},
-          {"$ref": "#/$defs/BuisleidingStelsel"}
+          {"$ref": "#/$defs/BuisleidingStelsel"},
+          {"$ref": "#/$defs/KwetsbareLocatie"},
+          {"$ref": "#/$defs/KwetsbaarGebouw"}
         ]
       }
     }
