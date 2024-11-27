@@ -1,5 +1,9 @@
 {
-    "$comment": "Voorbeeldbestand Basisnet, datum: 2024-11-21, versie IMEV: 3.0, schema IMEV_schema_3.0RC2",
+    "$comment": ["Voorbeeldbestand Basisnet",
+        "datum: 2024-11-27",
+        "versie IMEV: 3.0",
+        "schema IMEV_schema_3.0RC2"
+    ],
     "crs": {
         "type": "name",
         "properties": {"name": "urn:ogc:def:crs:EPSG::28992"}
