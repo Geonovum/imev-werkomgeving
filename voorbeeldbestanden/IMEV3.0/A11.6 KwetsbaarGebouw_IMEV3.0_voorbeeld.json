@@ -1,0 +1,123 @@
+{
+    "$comment": [
+        "Voorbeeldbestand KwetsbaarGebouw",
+        "datum: 2024-11-27",
+        "versie IMEV: 3.0",
+        "schema IMEV_schema_3.0RC2"
+    ],
+    "crs": {
+        "type": "name",
+        "properties": {"name": "urn:ogc:def:crs:EPSG::28992"}
+    },
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": "NL.IMEV.gm1979.0003100000119847",
+            "type": "Feature",
+            "properties": {
+                "entityType": "KwetsbaarGebouw",
+                "identificatie": {
+                    "namespace": "NL.IMEV",
+                    "lokaalID": "gm1979.0003100000119847",
+                    "versie": ""
+                },
+                "bronobjectID": "0003100000119847",
+                "bronhoudercode": "EEMSDE",
+                "bronhoudercodeOverheid": "gm1979",
+                "bronhouder": "Gemeente Eemsdelta",
+                "documentInfo": {
+                    "link": "http://www.geonovum.nl",
+                    "naam": "Test1001"
+                },
+                "beginGeldigheid": "2018-11-27T00:00:00Z",
+                "tijdstipRegistratie": "2018-11-27T00:00:01Z",
+                "categorieKwetsbaarheid": "gegevenInTransitie",
+                "gebruiksdoeleindenDetail": [
+                    "bejaardensportcentrum",
+                    "vergaderruimte"
+                ],
+                "geometrie": {"$ref": "https://service.pdok.nl/lv/bag/wfs/v2_0?service=WFS&version=1.0.0&request=GetFeature&typename=pand&filter=%3CFilter+xmlns=%22http://www.opengis.net/ogc%22%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3Eidentificatie%3C/PropertyName%3E%3CLiteral%3E0003100000119847%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E&OutputFormat=JSON"},
+                "idPandBAG": "0003100000119847",
+                "idAdresseerbaarobjectBAG": "3695486896271895",
+                "gebruiksdoelenVerblijfsobjectBAG": [
+                    "sportfunctie",
+                    "bijeenkomstfunctie"
+                ],
+                "oppervlakteVerblijfsobjectBAG": 300,
+                "populatie": 50,
+                "kadastraleAanduiding": ["AppingedamD2662"]
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            252854.96,
+                            593722.971
+                        ],
+                        [
+                            252837.332,
+                            593730.922
+                        ],
+                        [
+                            252835.029,
+                            593725.88
+                        ],
+                        [
+                            252825.111,
+                            593730.34
+                        ],
+                        [
+                            252825.777,
+                            593731.797
+                        ],
+                        [
+                            252822.925,
+                            593733.081
+                        ],
+                        [
+                            252822.243,
+                            593733.388
+                        ],
+                        [
+                            252821.585,
+                            593731.925
+                        ],
+                        [
+                            252816.343,
+                            593734.306
+                        ],
+                        [
+                            252809.268,
+                            593718.551
+                        ],
+                        [
+                            252809.076,
+                            593718.123
+                        ],
+                        [
+                            252845.744,
+                            593701.62
+                        ],
+                        [
+                            252853.017,
+                            593717.791
+                        ],
+                        [
+                            252852.999,
+                            593717.8
+                        ],
+                        [
+                            252855.211,
+                            593722.858
+                        ],
+                        [
+                            252854.96,
+                            593722.971
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}
