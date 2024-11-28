@@ -1,8 +1,9 @@
 {
-    "$comment": ["Voorbeeldbestand Basisnet",
+    "$comment": [
+        "Voorbeeld van Geojson-bestand Basisnet",
         "datum: 2024-11-27",
         "versie IMEV: 3.0",
-        "schema IMEV_schema_3.0RC2"
+        "schema IMEV_schema_3.0_RC2"
     ],
     "crs": {
         "type": "name",
@@ -11,8 +12,8 @@
     "type": "FeatureCollection",
     "features": [
         {
-            "id": "NL.IMEV.RWS.BasisnetElement_CRD_001",
             "type": "Feature",
+            "id": "NL.IMEV.RWS.BasisnetElement_CRD_001",
             "properties": {
                 "entityType": "LocatieBasisnet",
                 "identificatie": {
@@ -60,8 +61,8 @@
                 "route": "CRD",
                 "voertUit": [
                     {
-                        "id": "NL.IMEV.RWS.BasisnetElement_CRD_002",
                         "type": "Feature",
+                        "id": "NL.IMEV.RWS.BasisnetElement_CRD_002",
                         "properties": {
                             "entityType": "BasisNet",
                             "identificatie": {
@@ -88,8 +89,8 @@
                             "idActiviteitTR": "Niet beschikbaar",
                             "heeft": [
                                 {
-                                    "id": "NL.IMEV.RWS.BasisnetElement_CRD_003",
                                     "type": "Feature",
+                                    "id": "NL.IMEV.RWS.BasisnetElement_CRD_003",
                                     "properties": {
                                         "entityType": "WaterVervoer",
                                         "identificatie": {
@@ -137,8 +138,8 @@
                                         "referentiesoort": "kantstreep",
                                         "resulteertIn": [
                                             {
-                                                "id": "NL.IMEV.RWS.BasisnetElement_CRD_004",
                                                 "type": "Feature",
+                                                "id": "NL.IMEV.RWS.BasisnetElement_CRD_004",
                                                 "properties": {
                                                     "entityType": "BrandAandachtsgebied",
                                                     "identificatie": {

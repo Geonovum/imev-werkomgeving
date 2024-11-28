@@ -1,8 +1,9 @@
 {
-    "$comment": ["Voorbeeldbestand Sevesoinrichting",
+    "$comment": [
+        "Voorbeeld van Geojson-bestand Sevesoinrichting",
         "datum: 2024-11-27",
         "versie IMEV: 3.0",
-        "schema IMEV_schema_3.0RC2"
+        "schema IMEV_schema_3.0_RC2"
     ],
     "crs": {
         "type": "name",
@@ -11,8 +12,8 @@
     "type": "FeatureCollection",
     "features": [
         {
-            "id": "NL.IMEV.RUDLN.5419d7821c3c",
             "type": "Feature",
+            "id": "NL.IMEV.RUDLN.5419d7821c3c",
             "properties": {
                 "entityType": "LocatieActiviteit",
                 "identificatie": {
@@ -89,8 +90,8 @@
                 "vestigingsnummerAanvrager": "234567890123",
                 "voertUit": [
                     {
-                        "id": "NL.IMEV.RUDLN.5419d7821c3d",
                         "type": "Feature",
+                        "id": "NL.IMEV.RUDLN.5419d7821c3d",
                         "properties": {
                             "entityType": "SevesoInrichting",
                             "identificatie": {
@@ -120,8 +121,8 @@
                             "idActiviteitTR": "nl.imow-mnre1034.activiteit.SevesoInrichting",
                             "heeft": [
                                 {
-                                    "id": "NL.IMEV.RUDLN.5419d7821c3e",
                                     "type": "Feature",
+                                    "id": "NL.IMEV.RUDLN.5419d7821c3e",
                                     "properties": {
                                         "entityType": "SevesoReferentie",
                                         "omschrijving": "string",
@@ -149,8 +150,8 @@
                                         },
                                         "resulteertIn": [
                                             {
-                                                "id": "NL.IMEV.RUDLN.5419d7821c3f",
                                                 "type": "Feature",
+                                                "id": "NL.IMEV.RUDLN.5419d7821c3f",
                                                 "properties": {
                                                     "entityType": "BrandAandachtsgebied",
                                                     "identificatie": {

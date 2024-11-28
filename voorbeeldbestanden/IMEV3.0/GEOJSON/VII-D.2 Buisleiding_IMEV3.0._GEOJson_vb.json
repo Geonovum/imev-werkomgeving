@@ -1,8 +1,9 @@
 {
-    "$comment": ["Voorbeeldbestand BuisleidingStelsel",
+    "$comment": [
+        "Voorbeeld van Geojson-bestand BuisleidingStelsel",
         "datum: 2024-11-27",
         "versie IMEV: 3.0",
-        "schema IMEV_schema_3.0RC2"
+        "schema IMEV_schema_3.0_RC2"
     ],
     "crs": {
         "type": "name",
@@ -11,8 +12,8 @@
     "type": "FeatureCollection",
     "features": [
         {
-            "id": "NL.IMEV.GASU.GEO209058292",
             "type": "Feature",
+            "id": "NL.IMEV.GASU.GEO209058292",
             "properties": {
                 "entityType": "BuisleidingStelsel",
                 "identificatie": {
@@ -42,8 +43,8 @@
                 "vestigingsnummerExploitant": "123456789012",
                 "voertUit": [
                     {
-                        "id": "NL.IMEV.GASU.GEO209058293",
                         "type": "Feature",
+                        "id": "NL.IMEV.GASU.GEO209058293",
                         "properties": {
                             "entityType": "Buisleiding",
                             "identificatie": {
@@ -75,8 +76,8 @@
                             "idActiviteitTR": "nl.imow-mnre1034.activiteit.BuisleidingGevaarlijkeStoffen ",
                             "heeft": [
                                 {
-                                    "id": "NL.IMEV.GASU.GEO209058294",
                                     "type": "Feature",
+                                    "id": "NL.IMEV.GASU.GEO209058294",
                                     "properties": {
                                         "entityType": "BuisleidingReferentie",
                                         "omschrijving": "string",
@@ -119,8 +120,8 @@
                                         "maximaleWerkdruk": 17,
                                         "resulteertIn": [
                                             {
-                                                "id": "NL.IMEV.GASU.GEO209058295",
                                                 "type": "Feature",
+                                                "id": "NL.IMEV.GASU.GEO209058295",
                                                 "properties": {
                                                     "entityType": "BrandAandachtsgebied",
                                                     "identificatie": {

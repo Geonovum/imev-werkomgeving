@@ -1,9 +1,9 @@
 {
     "$comment": [
-        "Voorbeeldbestand KwetsbareLocatie",
+        "Voorbeeld van Geojson-bestand KwetsbareLocatie",
         "datum: 2024-11-27",
         "versie IMEV: 3.0",
-        "schema IMEV_schema_3.0RC2"
+        "schema IMEV_schema_3.0_RC2"
     ],
     "crs": {
         "type": "name",
@@ -12,8 +12,9 @@
     "type": "FeatureCollection",
     "features": [
         {
-            "id": "NL.IMEV.gm1979.AppingedamD2662",
             "type": "Feature",
+"id": "NL.IMEV.gm1979.AppingedamD2662",
+
             "properties": {
                 "entityType": "KwetsbareLocatie",
                 "identificatie": {
