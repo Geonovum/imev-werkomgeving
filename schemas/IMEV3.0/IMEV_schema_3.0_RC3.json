@@ -5,9 +5,9 @@
     "patroon attribuut bronhouder aangepast",
     "min en max als number ipv string",
     "min en max aantalAutobussen omgedraaid",
-    "entityType toegevoegd bij ExterneVeiligheidsObject",
+    "entityType en id toegevoegd bij ExterneVeiligheidsObject",
     "verwijzing naar Geojson schema verwijderd",
-    "tijdstipRegistratie niet meer required in ExterneVeiligheidsObject",
+    "tijdstipRegistratie niet meer required in ExterneVeiligheidsObject voor aanlevering",
     "Vervang helemaal onderin ExterneVeiligheidsObject door het onderliggende (niet abstacte) subtype voor validatie op dat subtype"
   ],
   "$schema": "https://json-schema.org/draft/2020-12/schema",
