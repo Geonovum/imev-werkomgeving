@@ -1,0 +1,211 @@
+{
+    "$comment": [
+        "Voorbeeld van aanleverbestand Sevesoinrichting",
+        "datum: 2024-11-28",
+        "versie IMEV: 3.0",
+        "schema IMEV_schema_3.0_RC3"
+    ],
+    "type": "Object",
+    "properties": {
+        "entityType": "LocatieActiviteit",
+        "id": "NL.IMEV.RUDLN.5419d7821c3c",
+        "identificatie": {
+            "namespace": "NL.IMEV",
+            "lokaalID": "RUDLN.5419d7821c3c",
+            "versie": ""
+        },
+        "bronobjectID": "5419d7821c3c",
+        "bronhoudercode": "RUDLN",
+        "bronhoudercodeOverheid": "so0901",
+        "bronhouder": "RUD Limburg-Noord",
+        "documentInfo": {
+            "link": "http://www.geonovum.nl",
+            "naam": "Test1001"
+        },
+        "beginGeldigheid": "2018-11-27T00:00:00Z",
+        "bedrijfsnaam": "string",
+        "geometrie": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        243923.329,
+                        564471.887
+                    ],
+                    [
+                        243920.629,
+                        564472.836
+                    ],
+                    [
+                        243918.011,
+                        564465.386
+                    ],
+                    [
+                        243928.542,
+                        564461.686
+                    ],
+                    [
+                        243930.272,
+                        564466.609
+                    ],
+                    [
+                        243936.096,
+                        564464.563
+                    ],
+                    [
+                        243938.96,
+                        564472.714
+                    ],
+                    [
+                        243925.305,
+                        564477.512
+                    ],
+                    [
+                        243923.329,
+                        564471.887
+                    ]
+                ]
+            ]
+        },
+        "idNummeraanduidingBAG": "3659975513942282",
+        "locatieomschrijving": "onbekend",
+        "omschrijving": "a string",
+        "eigenaar": "BP",
+        "naamExploitant": "Piet",
+        "idNummeraanduidingBAGExploitant": "1414624233741345",
+        "kvkNummerExploitant": [
+            "27068922",
+            "27068923"
+        ],
+        "kvkNummerAanvrager": "27068921",
+        "vestigingsnummerExploitant": "123456789012",
+        "vestigingsnummerAanvrager": "234567890123",
+        "voertUit": [
+            {
+                "type": "Object",
+                "properties": {
+                    "entityType": "SevesoInrichting",
+                    "id": "NL.IMEV.RUDLN.5419d7821c3d",
+                    "identificatie": {
+                        "namespace": "NL.IMEV",
+                        "lokaalID": "RUDLN.5419d7821c3d",
+                        "versie": ""
+                    },
+                    "bronobjectID": "5419d7821c3d",
+                    "bronhoudercode": "RUDLN",
+                    "bronhoudercodeOverheid": "so0901",
+                    "bronhouder": "RUD Limburg-Noord",
+                    "documentInfo": {
+                        "link": "http://www.geonovum.nl",
+                        "naam": "Test1001"
+                    },
+                    "beginGeldigheid": "2018-11-27T00:00:00Z",
+                    "basisVergunningNummer": "string",
+                    "datumVergunningOfMelding": "2019-08-21",
+                    "datumLaatsteWijziging": "2019-08-21",
+                    "vergunningsPlicht": true,
+                    "bevoegdGezag": "provincie",
+                    "balActiviteit": [
+                        "Bal artikel 3.50",
+                        "Bal artikel 3.51 lid 1"
+                    ],
+                    "idActiviteitTR": "nl.imow-mnre1034.activiteit.SevesoInrichting",
+                    "heeft": [
+                        {
+                            "type": "Object",
+                            "properties": {
+                                "entityType": "SevesoReferentie",
+                                "omschrijving": "string",
+                                "id": "NL.IMEV.RUDLN.5419d7821c3e",
+                                "identificatie": {
+                                    "namespace": "NL.IMEV",
+                                    "lokaalID": "RUDLN.5419d7821c3e",
+                                    "versie": ""
+                                },
+                                "bronobjectID": "5419d7821c3e",
+                                "bronhoudercode": "RUDLN",
+                                "bronhoudercodeOverheid": "so0901",
+                                "bronhouder": "RUD Limburg-Noord",
+                                "documentInfo": {
+                                    "link": "http://www.geonovum.nl",
+                                    "naam": "Test1001"
+                                },
+                                "beginGeldigheid": "2018-11-27T00:00:00Z",
+                                "geometrie": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        243928.250,
+                                        564470.250
+                                    ]
+                                },
+                                "resulteertIn": [
+                                    {
+                                        "type": "Feature",
+                                        "properties": {
+                                            "entityType": "BrandAandachtsgebied",
+                                            "id": "NL.IMEV.RUDLN.5419d7821c3f",
+                                            "identificatie": {
+                                                "namespace": "NL.IMEV",
+                                                "lokaalID": "RUDLN.5419d7821c3f",
+                                                "versie": ""
+                                            },
+                                            "bronobjectID": "5419d7821c3f",
+                                            "bronhoudercode": "RUDLN",
+                                            "bronhoudercodeOverheid": "so0901",
+                                            "bronhouder": "RUD Limburg-Noord",
+                                            "documentInfo": {
+                                                "link": "http://www.geonovum.nl",
+                                                "naam": "Test1001"
+                                            },
+                                            "beginGeldigheid": "2018-11-27T00:00:00Z",
+                                            "afstandOfGeometrie": {
+                                                "geometrie": {
+                                                    "type": "Polygon",
+                                                    "coordinates": [
+                                                        [
+                                                            [
+                                                                155000.250,
+                                                                446000.250
+                                                            ],
+                                                            [
+                                                                155000.250,
+                                                                447000.250
+                                                            ],
+                                                            [
+                                                                156000.250,
+                                                                447000.250
+                                                            ],
+                                                            [
+                                                                156000.250,
+                                                                446000.250
+                                                            ],
+                                                            [
+                                                                155000.250,
+                                                                446000.250
+                                                            ]
+                                                        ]
+                                                    ]
+                                                }
+                                            },
+                                            "categorieAandachtsgebied": "berekend",
+                                            "aardRisico": "string",
+                                            "maatgevendeStof": {
+                                                "stof": {
+                                                    "naam": "name",
+                                                    "chemischeNaam": "chemical name",
+                                                    "CASnummer": "327-92-3",
+                                                    "UNnummer": "1711"
+                                                }
+                                            },
+                                            "typeBrand": "fakkelbrand"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
