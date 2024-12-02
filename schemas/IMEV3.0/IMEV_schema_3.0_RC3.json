@@ -5,8 +5,11 @@
     "patroon attribuut bronhouder aangepast",
     "min en max als number ipv string",
     "min en max aantalAutobussen omgedraaid",
-    "entityType en id toegevoegd bij ExterneVeiligheidsObject",
+    "entityType toegevoegd bij ExterneVeiligheidsObject",
     "verwijzing naar Geojson schema verwijderd",
+    "required properties eruit, want dat komt uit het Geojson schema",
+    "EVContour type en properties eruit want zijn onnodig geworden",
+    "8 objecten waren geometry i.p.v. geometrie en zijn omgezet naar geometrie",
     "tijdstipRegistratie niet meer required in ExterneVeiligheidsObject voor aanlevering",
     "Vervang helemaal onderin ExterneVeiligheidsObject door het onderliggende (niet abstacte) subtype voor validatie op dat subtype"
   ],
@@ -39,7 +42,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -95,9 +98,9 @@
         {
           "type": "object",
           "properties": {
-            "geometry": {"$ref": "https://geojson.org/schema/Point.json"}
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
           },
-          "required": ["geometry"]
+          "required": ["geometrie"]
         }
       ]
     },
@@ -116,7 +119,7 @@
               "required": ["geometrie"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -142,7 +145,7 @@
         {
           "type": "object",
           "properties": {
-            "geometry": {"$ref": "https://geojson.org/schema/Point.json"},
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"},
             "properties": {
               "type": "object",
               "properties": {
@@ -155,8 +158,7 @@
             }
           },
           "required": [
-            "geometry",
-            "properties"
+            "geometrie"
           ]
         }
       ]
@@ -168,9 +170,9 @@
         {
           "type": "object",
           "properties": {
-            "geometry": {"$ref": "https://geojson.org/schema/Point.json"}
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
           },
-          "required": ["geometry"]
+          "required": ["geometrie"]
         }
       ]
     },
@@ -188,7 +190,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -199,9 +201,9 @@
         {
           "type": "object",
           "properties": {
-            "geometry": {"$ref": "https://geojson.org/schema/Point.json"}
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
           },
-          "required": ["geometry"]
+          "required": ["geometrie"]
         }
       ]
     },
@@ -249,7 +251,7 @@
               "required": ["geometrie"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -285,7 +287,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -304,7 +306,7 @@
               "required": ["typeCivExpAandachtsgebied"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -340,29 +342,17 @@
                   "uniqueItems": true
                 }
               },
-              "required": [
-                "heeft"
-              ]
+              "required": ["heeft"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
     "EVContour": {
       "$anchor": "EVContour",
       "allOf": [
-        {"$ref": "#/$defs/ExterneVeiligheidsObject"},
-        {
-          "type": "object",
-          "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {}
-            }
-          },
-          "required": ["properties"]
-        }
+        {"$ref": "#/$defs/ExterneVeiligheidsObject"}
       ]
     },
     "ExplosieAandachtsgebied": {
@@ -379,7 +369,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -389,7 +379,7 @@
         {"$ref": "#/$defs/Aandachtsgebied"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -402,7 +392,6 @@
           "type": "object",
           "properties": {
             "EntityType": {"type": "string"},
-            "id": {"type": "string"},
             "identificatie": {"$ref": "#/$defs/NEN3610ID"},
             "bronobjectID": {
               "type": "string",
@@ -450,8 +439,7 @@
             "beginGeldigheid"
           ]
         }
-      },
-      "required": ["properties"]
+      }
     },
     "GebouwOfLocatie": {
       "$anchor": "GebouwOfLocatie",
@@ -459,7 +447,7 @@
         {"$ref": "#/$defs/ExterneVeiligheidsObject"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -469,7 +457,7 @@
         {"$ref": "#/$defs/Aandachtsgebied"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -493,7 +481,7 @@
               "required": ["geometrie"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -504,7 +492,7 @@
         {
           "type": "object",
           "properties": {
-            "geometry": {"$ref": "https://geojson.org/schema/Polygon.json"},
+            "geometrie": {"$ref": "https://geojson.org/schema/Polygon.json"},
             "properties": {
               "type": "object",
               "properties": {
@@ -540,8 +528,7 @@
             }
           },
           "required": [
-            "geometry",
-            "properties"
+            "geometrie"
           ]
         }
       ]
@@ -575,7 +562,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -600,7 +587,7 @@
               "required": ["geometrie"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -665,7 +652,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -690,7 +677,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -714,7 +701,7 @@
               "required": ["voertUit"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -740,7 +727,7 @@
               "required": ["geometrie"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -759,7 +746,7 @@
               "required": ["typeMilitairExpAandachtsgebied"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -806,7 +793,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -825,7 +812,7 @@
               "required": ["geometrie"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -851,7 +838,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -877,7 +864,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -947,12 +934,10 @@
                   "uniqueItems": true
                 }
               },
-              "required": [
-                "resulteertIn"
-              ]
+              "required": ["resulteertIn"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -971,7 +956,7 @@
               "required": ["geometrie"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -990,7 +975,7 @@
               "required": ["geometrie"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1018,7 +1003,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1066,9 +1051,9 @@
         {
           "type": "object",
           "properties": {
-            "geometry": {"$ref": "https://geojson.org/schema/Point.json"}
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
           },
-          "required": ["geometry"]
+          "required": ["geometrie"]
         }
       ]
     },
@@ -1101,9 +1086,9 @@
         {
           "type": "object",
           "properties": {
-            "geometry": {"$ref": "https://geojson.org/schema/Point.json"}
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
           },
-          "required": ["geometry"]
+          "required": ["geometrie"]
         }
       ]
     },
@@ -1131,7 +1116,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1150,7 +1135,7 @@
               "required": ["geometrie"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1178,7 +1163,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1201,7 +1186,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1212,7 +1197,7 @@
         {
           "type": "object",
           "properties": {
-            "geometry": {"$ref": "https://geojson.org/schema/Point.json"},
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"},
             "properties": {
               "type": "object",
               "properties": {
@@ -1279,8 +1264,7 @@
             }
           },
           "required": [
-            "geometry",
-            "properties"
+            "geometrie"
           ]
         }
       ]
@@ -1327,7 +1311,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1350,7 +1334,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1373,7 +1357,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1383,7 +1367,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1431,7 +1415,7 @@
               ]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1441,7 +1425,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1451,7 +1435,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1461,7 +1445,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1489,7 +1473,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1499,7 +1483,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1509,7 +1493,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1519,7 +1503,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1529,7 +1513,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1539,7 +1523,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1549,7 +1533,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1559,7 +1543,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1569,7 +1553,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1579,7 +1563,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1589,7 +1573,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1611,7 +1595,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1633,7 +1617,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1643,7 +1627,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1653,7 +1637,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1663,7 +1647,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1673,7 +1657,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1683,7 +1667,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1721,7 +1705,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1739,7 +1723,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1749,7 +1733,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1768,7 +1752,7 @@
               "required": ["beschermingsniveauConformTabelB3"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1795,7 +1779,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1817,7 +1801,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1827,7 +1811,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1845,7 +1829,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1867,7 +1851,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1877,7 +1861,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1887,7 +1871,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1897,7 +1881,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1924,7 +1908,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1934,7 +1918,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1944,7 +1928,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -1965,7 +1949,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1987,7 +1971,7 @@
               }
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -1997,7 +1981,7 @@
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -2007,7 +1991,7 @@
         {"$ref": "#/$defs/EVActiviteit"},
         {
           "type": "object",
-          "properties": {}
+          "properties": ""
         }
       ]
     },
@@ -2030,7 +2014,7 @@
               "required": ["aantalWindturbines"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
@@ -2053,7 +2037,7 @@
               "required": ["aantalWindturbines"]
             }
           },
-          "required": ["properties"]
+          "required": []
         }
       ]
     },
