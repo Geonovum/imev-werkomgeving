@@ -1,0 +1,155 @@
+{
+    "$comment": [
+        "Voorbeeld van aanleverbestand Basisnet",
+        "datum: 2024-12-03",
+        "versie IMEV: 3.0",
+        "schema IMEV_schema_3.0_RC3",
+        "Kies voor type uit 'WaterVervoer', 'WegVervoer' of 'SpoorVervoer'"
+    ],
+    "entityType": "LocatieBasisnet",
+    "identificatie": {
+        "namespace": "NL.IMEV",
+        "lokaalID": "RWS.BasisnetElement_CRD_001",
+        "versie": ""
+    },
+    "bronobjectID": "CRD_01",
+    "bronhoudercode": "RWS",
+    "bronhoudercodeOverheid": "oorg10004",
+    "bronhouder": "Rijkswaterstaat",
+    "documentInfo": {
+        "link": "http://www.geonovum.nl",
+        "naam": "Test1001"
+    },
+    "beginGeldigheid": "2018-11-27T00:00:00Z",
+    "geometrie": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                205133.254,
+                568837.120
+            ],
+            [
+                205422.804,
+                568038.561
+            ],
+            [
+                205366.095,
+                567697.259
+            ],
+            [
+                205593.163,
+                567118.367
+            ],
+            [
+                205942.961,
+                566340.232
+            ]
+        ]
+    },
+    "type": "WaterVervoer",
+    "route": "CRD",
+    "voertUit": [
+        {
+            "entityType": "BasisNet",
+            "identificatie": {
+                "namespace": "NL.IMEV",
+                "lokaalID": "RWS.BasisnetElement_CRD_002",
+                "versie": ""
+            },
+            "bronobjectID": "CRD_002",
+            "bronhoudercode": "RWS",
+            "bronhoudercodeOverheid": "oorg10004",
+            "bronhouder": "Rijkswaterstaat",
+            "documentInfo": {
+                "link": "http://www.geonovum.nl",
+                "naam": "Test1001"
+            },
+            "beginGeldigheid": "2018-11-27T00:00:00Z",
+            "basisVergunningNummer": "string",
+            "datumVergunningOfMelding": "2019-08-21",
+            "datumLaatsteWijziging": "2019-08-21",
+            "vergunningsPlicht": true,
+            "bevoegdGezag": "rijk",
+            "balActiviteit": ["niet in Bal geregeld"],
+            "idActiviteitTR": "Niet beschikbaar",
+            "heeft": [
+                {
+                    "entityType": "WaterVervoer",
+                    "identificatie": {
+                        "namespace": "NL.IMEV",
+                        "lokaalID": "RWS.BasisnetElement_CRD_003",
+                        "versie": ""
+                    },
+                    "bronobjectID": "CRD_003",
+                    "bronhoudercode": "RWS",
+                    "bronhoudercodeOverheid": "oorg10004",
+                    "bronhouder": "Rijkswaterstaat",
+                    "documentInfo": {
+                        "link": "http://www.geonovum.nl",
+                        "naam": "Test1001"
+                    },
+                    "beginGeldigheid": "2018-11-27T00:00:00Z",
+                    "omschrijving": "string",
+                    "geometrie": {
+                        "type": "LineString",
+                        "coordinates": [
+                            [
+                                205133.254,
+                                568837.120
+                            ],
+                            [
+                                205422.804,
+                                568038.561
+                            ],
+                            [
+                                205366.095,
+                                567697.259
+                            ],
+                            [
+                                205593.163,
+                                567118.367
+                            ],
+                            [
+                                205942.961,
+                                566340.232
+                            ]
+                        ]
+                    },
+                    "watervakcode": "a watervakcode character string",
+                    "referentiesoort": "kantstreep",
+                    "resulteertIn": [
+                        {
+                            "entityType": "BrandAandachtsgebied",
+                            "identificatie": {
+                                "namespace": "NL.IMEV",
+                                "lokaalID": "RWS.BasisnetElement_CRD_004",
+                                "versie": ""
+                            },
+                            "bronobjectID": "CRD_004",
+                            "bronhoudercode": "RWS",
+                            "bronhoudercodeOverheid": "oorg10004",
+                            "bronhouder": "Rijkswaterstaat",
+                            "documentInfo": {
+                                "link": "http://www.geonovum.nl",
+                                "naam": "Test1001"
+                            },
+                            "beginGeldigheid": "2018-11-27T00:00:00Z",
+                            "afstandOfGeometrie": {"afstand": 57},
+                            "categorieAandachtsgebied": "berekend",
+                            "aardRisico": "string",
+                            "maatgevendeStof": {
+                                "stof": {
+                                    "naam": "name",
+                                    "chemischeNaam": "chemical name",
+                                    "CASnummer": "327-92-3",
+                                    "UNnummer": "1711"
+                                }
+                            },
+                            "typeBrand": "fakkelbrand"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

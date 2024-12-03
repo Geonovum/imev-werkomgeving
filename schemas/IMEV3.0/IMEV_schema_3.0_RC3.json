@@ -157,9 +157,7 @@
               }
             }
           },
-          "required": [
-            "geometrie"
-          ]
+          "required": ["geometrie"]
         }
       ]
     },
@@ -376,17 +374,12 @@
     "ExplosieAandachtsgebiedVuurwerk": {
       "$anchor": "ExplosieAandachtsgebiedVuurwerk",
       "allOf": [
-        {"$ref": "#/$defs/Aandachtsgebied"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/Aandachtsgebied"}
       ]
     },
     "ExterneVeiligheidsObject": {
       "$anchor": "ExterneVeiligheidsObject",
       "type": "object",
-      "additionalProperties": true,
       "properties": {
         "properties": {
           "type": "object",
@@ -444,21 +437,13 @@
     "GebouwOfLocatie": {
       "$anchor": "GebouwOfLocatie",
       "allOf": [
-        {"$ref": "#/$defs/ExterneVeiligheidsObject"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/ExterneVeiligheidsObject"}
       ]
     },
     "GifwolkAandachtsgebied": {
       "$anchor": "GifwolkAandachtsgebied",
       "allOf": [
-        {"$ref": "#/$defs/Aandachtsgebied"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/Aandachtsgebied"}
       ]
     },
     "IdentificatieBAG": {
@@ -527,9 +512,7 @@
               "required": ["categorieKwetsbaarheid"]
             }
           },
-          "required": [
-            "geometrie"
-          ]
+          "required": ["geometrie"]
         }
       ]
     },
@@ -651,8 +634,7 @@
                 "kvkNummerAanvrager"
               ]
             }
-          },
-          "required": []
+          }
         }
       ]
     },
@@ -1263,9 +1245,7 @@
               "required": ["pandIdentificatie"]
             }
           },
-          "required": [
-            "geometrie"
-          ]
+          "required": ["geometrie"]
         }
       ]
     },
@@ -1364,11 +1344,7 @@
     "AnderInsluitsysteem": {
       "$anchor": "AnderInsluitsysteem",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "BKLActiviteit": {
@@ -1422,31 +1398,19 @@
     "BadGiftig": {
       "$anchor": "BadGiftig",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "Basisnet": {
       "$anchor": "Basisnet",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht": {
       "$anchor": "BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht": {
@@ -1480,101 +1444,61 @@
     "Buisleiding": {
       "$anchor": "Buisleiding",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "Emplacement": {
       "$anchor": "Emplacement",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "KernenergieInrichting": {
       "$anchor": "KernenergieInrichting",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "Mestvergisting": {
       "$anchor": "Mestvergisting",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "MijnbouwwerkExploiteren": {
       "$anchor": "MijnbouwwerkExploiteren",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "MijnbouwwerkVerplaatsbaar": {
       "$anchor": "MijnbouwwerkVerplaatsbaar",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagBrandbareVloeistofGeenDieselBovengronds": {
       "$anchor": "OpslagBrandbareVloeistofGeenDieselBovengronds",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagBrandbareVloeistofGeenDieselOndergronds": {
       "$anchor": "OpslagBrandbareVloeistofGeenDieselOndergronds",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagBrandstofBunkerstation": {
       "$anchor": "OpslagBrandstofBunkerstation",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagMeststof": {
       "$anchor": "OpslagMeststof",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagOntplofbaarADR1.1Civiel": {
@@ -1624,51 +1548,31 @@
     "OpslagOntplofbaarADR1.4Civiel": {
       "$anchor": "OpslagOntplofbaarADR1.4Civiel",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagOntplofbaarComplexen": {
       "$anchor": "OpslagOntplofbaarComplexen",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagOntplofbaarMilitair_TeBerekenenAfstand": {
       "$anchor": "OpslagOntplofbaarMilitair_TeBerekenenAfstand",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagOntplofbaarMilitair_VasteAfstand": {
       "$anchor": "OpslagOntplofbaarMilitair_VasteAfstand",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagOxiderendVerstikkendGas": {
       "$anchor": "OpslagOxiderendVerstikkendGas",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagSevesoHoeveelheidBuitenSevesoInrichting": {
@@ -1730,11 +1634,7 @@
     "OpslagVerpakt_VasteAfstandGeenVergunningplicht": {
       "$anchor": "OpslagVerpakt_VasteAfstandGeenVergunningplicht",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagVerpakt_VasteAfstandVergunningplicht": {
@@ -1808,11 +1708,7 @@
     "OpslagtankGas_TeBerekenenAfstandVergunningplicht": {
       "$anchor": "OpslagtankGas_TeBerekenenAfstandVergunningplicht",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht": {
@@ -1858,31 +1754,19 @@
     "OpslagtankVloeistof": {
       "$anchor": "OpslagtankVloeistof",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "OpstellenVoertuigen": {
       "$anchor": "OpstellenVoertuigen",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "SevesoInrichting": {
       "$anchor": "SevesoInrichting",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "TankenCNG": {
@@ -1915,21 +1799,13 @@
     "TankenGrootschaligVaartuig": {
       "$anchor": "TankenGrootschaligVaartuig",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "TankenKleinschaligVaartuig": {
       "$anchor": "TankenKleinschaligVaartuig",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "TankenLNGVoertuigWerktuig": {
@@ -1978,21 +1854,13 @@
     "TankenWaterstofVoertuigWerktuig": {
       "$anchor": "TankenWaterstofVoertuigWerktuig",
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/BKLActiviteit"}
       ]
     },
     "WegenNietBasisnet": {
       "$anchor": "WegenNietBasisnet",
       "allOf": [
-        {"$ref": "#/$defs/EVActiviteit"},
-        {
-          "type": "object",
-          "properties": ""
-        }
+        {"$ref": "#/$defs/EVActiviteit"}
       ]
     },
     "Windturbine_TeBerekenenAfstandGeenVergunningplicht": {

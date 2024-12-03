@@ -1,0 +1,163 @@
+{
+    "$comment": [
+        "Voorbeeld van aanleverbestand BuisleidingStelsel",
+        "datum: 2024-12-03",
+        "versie IMEV: 3.0",
+        "schema IMEV_schema_3.0_RC3"
+    ],
+    "entityType": "BuisleidingStelsel",
+    "identificatie": {
+        "namespace": "NL.IMEV",
+        "lokaalID": "GASU.GEO209058292",
+        "versie": ""
+    },
+    "bronobjectID": "GEO209058292",
+    "bronhoudercode": "GASU",
+    "bronhoudercodeGeenOverheid": "GASU",
+    "bronhouder": "Gasunie",
+    "documentInfo": {
+        "link": "http://www.gasuni.nl",
+        "naam": "Gasunie"
+    },
+    "beginGeldigheid": "2023-12-21T00:00:00Z",
+    "eigenaar": "Gasunie",
+    "idNummeraanduidingBAG": "1234567890123456",
+    "locatieomschrijving": "onbekend",
+    "naamExploitant": "Gasunie",
+    "idNummeraanduidingBAGExploitant": "1234567890123456",
+    "kvkNummerExploitant": [
+        "12345678",
+        "12345679"
+    ],
+    "vestigingsnummerExploitant": "123456789012",
+    "voertUit": [
+        {
+            "entityType": "Buisleiding",
+            "identificatie": {
+                "namespace": "NL.IMEV",
+                "lokaalID": "GASU.GEO209058293",
+                "versie": ""
+            },
+            "bronobjectID": "GEO209058293",
+            "bronhoudercode": "GASU",
+            "bronhoudercodeGeenOverheid": "GASU",
+            "bronhouder": "Gasunie",
+            "documentInfo": {
+                "link": "http://www.gasuni.nl",
+                "naam": "Gasunie"
+            },
+            "beginGeldigheid": "2023-12-21T00:00:00Z",
+            "basisVergunningNummer": "string",
+            "datumVergunningOfMelding": "2019-08-21",
+            "datumLaatsteWijziging": "2019-08-21",
+            "vergunningsPlicht": true,
+            "bevoegdGezag": "rijk",
+            "balActiviteit": [
+                "Bal artikel 3.101 lid 1a",
+                "Bal artikel 3.101 lid 1b",
+                "Bal artikel 3.101 lid 1c",
+                "Bal artikel 3.101 lid 1d"
+            ],
+            "idActiviteitTR": "nl.imow-mnre1034.activiteit.BuisleidingGevaarlijkeStoffen ",
+            "heeft": [
+                {
+                    "entityType": "BuisleidingReferentie",
+                    "omschrijving": "string",
+                    "identificatie": {
+                        "namespace": "NL.IMEV",
+                        "lokaalID": "GASU.GEO209058294",
+                        "versie": ""
+                    },
+                    "bronobjectID": "GEO209058294",
+                    "bronhoudercode": "GASU",
+                    "bronhoudercodeGeenOverheid": "GASU",
+                    "bronhouder": "Gasunie",
+                    "documentInfo": {
+                        "link": "http://www.gasuni.nl",
+                        "naam": "Gasunie"
+                    },
+                    "beginGeldigheid": "2023-12-21T00:00:00Z",
+                    "geometrie": {
+                        "type": "LineString",
+                        "coordinates": [
+                            [
+                                155000.25,
+                                446000.25
+                            ],
+                            [
+                                155000.25,
+                                447000.25
+                            ]
+                        ]
+                    },
+                    "status": "operationeel",
+                    "buisleidingIdentificatie": "GEO209058294",
+                    "buisleidingCategorieStof": ["aardgas"],
+                    "buisleidingMateriaal": "Kunststof, composiet",
+                    "buisleidingProduct": "compressedAir",
+                    "wanddikte": 743,
+                    "diameter": 55,
+                    "bovenkantbuis": 3,
+                    "maximaleWerkdruk": 17,
+                    "resulteertIn": [
+                        {
+                            "entityType": "BrandAandachtsgebied",
+                            "identificatie": {
+                                "namespace": "NL.IMEV",
+                                "lokaalID": "GASU.GEO209058295",
+                                "versie": ""
+                            },
+                            "bronobjectID": "GEO209058295",
+                            "bronhoudercode": "GASU",
+                            "bronhoudercodeGeenOverheid": "GASU",
+                            "bronhouder": "Gasunie",
+                            "documentInfo": {
+                                "link": "http://www.gasuni.nl",
+                                "naam": "Gasunie"
+                            },
+                            "beginGeldigheid": "2023-12-21T00:00:00Z",
+                            "afstandOfGeometrie": {
+                                "type": "Polygon",
+                                "coordinates": [
+                                    [
+                                        [
+                                            154000.25,
+                                            445000.25
+                                        ],
+                                        [
+                                            154000.25,
+                                            448000.25
+                                        ],
+                                        [
+                                            156000.25,
+                                            448000.25
+                                        ],
+                                        [
+                                            156000.25,
+                                            445000.25
+                                        ],
+                                        [
+                                            154000.25,
+                                            445000.25
+                                        ]
+                                    ]
+                                ]
+                            },
+                            "categorieAandachtsgebied": "berekend",
+                            "aardRisico": "string",
+                            "maatgevendeStof": {
+                                "stof": {
+                                    "naam": "name",
+                                    "chemischeNaam": "chemical name",
+                                    "CASnummer": "327-92-3",
+                                    "UNnummer": "1711"
+                                }
+                            },
+                            "typeBrand": "fakkelbrand"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
