@@ -477,7 +477,7 @@
         {
           "type": "object",
           "properties": {
-            "geometrie": {"$ref": "https://geojson.org/schema/Polygon.json"},
+
             "properties": {
               "type": "object",
               "properties": {
@@ -511,8 +511,7 @@
               },
               "required": ["categorieKwetsbaarheid"]
             }
-          },
-          "required": ["geometrie"]
+          }
         }
       ]
     },
