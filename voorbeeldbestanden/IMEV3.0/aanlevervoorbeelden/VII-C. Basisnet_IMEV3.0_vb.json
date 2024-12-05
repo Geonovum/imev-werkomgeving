@@ -1,5 +1,5 @@
 {
-    "$comment": [
+    "comment": [
         "Voorbeeld van aanleverbestand Basisnet",
         "datum: 2024-12-03",
         "versie IMEV: 3.0",
@@ -50,7 +50,7 @@
     "route": "CRD",
     "voertUit": [
         {
-            "entityType": "BasisNet",
+            "entityType": "Basisnet",
             "identificatie": {
                 "namespace": "NL.IMEV",
                 "lokaalID": "RWS.BasisnetElement_CRD_002",
@@ -115,7 +115,7 @@
                             ]
                         ]
                     },
-                    "watervakcode": "a watervakcode character string",
+                    "watervakcode": "AAAA",
                     "referentiesoort": "kantstreep",
                     "resulteertIn": [
                         {

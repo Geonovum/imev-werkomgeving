@@ -1,5 +1,5 @@
 {
-    "$comment": [
+    "comment": [
         "Voorbeeld van aanleverbestand BuisleidingStelsel",
         "datum: 2024-12-03",
         "versie IMEV: 3.0",
@@ -58,7 +58,7 @@
                 "Bal artikel 3.101 lid 1c",
                 "Bal artikel 3.101 lid 1d"
             ],
-            "idActiviteitTR": "nl.imow-mnre1034.activiteit.BuisleidingGevaarlijkeStoffen ",
+            "idActiviteitTR": "nl.imow-mnre1034.activiteit.BuisleidingGevaarlijkeStoffen",
             "heeft": [
                 {
                     "entityType": "BuisleidingReferentie",

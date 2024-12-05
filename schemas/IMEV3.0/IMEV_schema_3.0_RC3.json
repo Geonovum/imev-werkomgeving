@@ -28,21 +28,15 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "afstandOfGeometrie": {"$ref": "#/$defs/AfstandOfGeometrieAandachtsgebied"},
-                "categorieAandachtsgebied": {"$ref": "#/$defs/CategorieAandachtsgebied"},
-                "maatgevendeStof": {"$ref": "#/$defs/StofOfStofcategorie"},
-                "aardRisico": {"type": "string"}
-              },
-              "required": [
-                "afstandOfGeometrie",
-                "maatgevendeStof"
-              ]
-            }
+            "afstandOfGeometrie": {"$ref": "#/$defs/AfstandOfGeometrieAandachtsgebied"},
+            "categorieAandachtsgebied": {"$ref": "#/$defs/CategorieAandachtsgebied"},
+            "maatgevendeStof": {"$ref": "#/$defs/StofOfStofcategorie"},
+            "aardRisico": {"type": "string"}
           },
-          "required": []
+          "required": [
+            "afstandOfGeometrie",
+            "maatgevendeStof"
+          ]
         }
       ]
     },
@@ -57,7 +51,6 @@
           "maximum": 9999.99
         }
       },
-      "additionalProperties": false,
       "minProperties": 1,
       "maxProperties": 1
     },
@@ -72,7 +65,6 @@
           "maximum": 9999.99
         }
       },
-      "additionalProperties": false,
       "minProperties": 1,
       "maxProperties": 1
     },
@@ -87,7 +79,6 @@
           "maximum": 9999.99
         }
       },
-      "additionalProperties": false,
       "minProperties": 1,
       "maxProperties": 1
     },
@@ -111,15 +102,9 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
-              },
-              "required": ["geometrie"]
-            }
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
           },
-          "required": []
+          "required": ["geometrie"]
         }
       ]
     },
@@ -134,7 +119,6 @@
           "maximum": 999
         }
       },
-      "additionalProperties": false,
       "minProperties": 1,
       "maxProperties": 1
     },
@@ -176,19 +160,15 @@
     },
     "BrandAandachtsgebied": {
       "$anchor": "BrandAandachtsgebied",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/Aandachtsgebied"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "typeBrand": {"$ref": "#/$defs/TypeBrand"}
-              }
-            }
-          },
-          "required": []
+            "entityType": {"const": "BrandAandachtsgebied"},
+            "typeBrand": {"$ref": "#/$defs/TypeBrand"}
+          }
         }
       ]
     },
@@ -207,85 +187,78 @@
     },
     "BuisleidingReferentie": {
       "$anchor": "BuisleidingReferentie",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
-                "status": {"$ref": "#/$defs/StatusBuisleiding"},
-                "buisleidingIdentificatie": {"type": "string"},
-                "buisleidingCategorieStof": {
-                  "type": "array",
-                  "items": {"$ref": "#/$defs/BuisleidingCategorieStof"},
-                  "uniqueItems": true
-                },
-                "buisleidingMateriaal": {"$ref": "#/$defs/PipeMaterialTypeValue"},
-                "buisleidingProduct": {"$ref": "#/$defs/OilGasChemicalsProductTypeValue"},
-                "wanddikte": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 9999.99
-                },
-                "diameter": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 9999
-                },
-                "bovenkantbuis": {
-                  "type": "number",
-                  "minimum": -9999,
-                  "maximum": 9999
-                },
-                "maximaleWerkdruk": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 99999
-                }
-              },
-              "required": ["geometrie"]
+            "entityType": {"const": "BuisleidingReferentie"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "status": {"$ref": "#/$defs/StatusBuisleiding"},
+            "buisleidingIdentificatie": {"type": "string"},
+            "buisleidingCategorieStof": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/BuisleidingCategorieStof"},
+              "uniqueItems": true
+            },
+            "buisleidingMateriaal": {"$ref": "#/$defs/PipeMaterialTypeValue"},
+            "buisleidingProduct": {"$ref": "#/$defs/OilGasChemicalsProductTypeValue"},
+            "wanddikte": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999.99
+            },
+            "diameter": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
+            },
+            "bovenkantbuis": {
+              "type": "number",
+              "minimum": -9999,
+              "maximum": 9999
+            },
+            "maximaleWerkdruk": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
             }
           },
-          "required": []
+          "required": ["entityType","geometrie"]
         }
       ]
     },
     "BuisleidingStelsel": {
       "$anchor": "BuisleidingStelsel",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/LocatieEVActiviteit"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "eigenaar": {"type": "string"},
-                "idNummeraanduidingBAG": {"$ref": "#/$defs/IdentificatieBAG"},
-                "locatieomschrijving": {"type": "string"},
-                "naamExploitant": {"type": "string"},
-                "idNummeraanduidingBAGExploitant": {"$ref": "#/$defs/IdentificatieBAG"},
-                "kvkNummerExploitant": {
-                  "type": "array",
-                  "items": {"type": "string"},
-                  "minItems": 1,
-                  "pattern": "[0-9]{8}"
-                },
-                "vestigingsnummerExploitant": {
-                  "type": "string",
-                  "pattern": "[0-9]{12}"
-                }
-              },
-              "required": [
-                "eigenaar",
-                "kvkNummerExploitant"
-              ]
+            "comment": {"type": "array"},
+            "entityType": {"const": "BuisleidingStelsel"},
+            "eigenaar": {"type": "string"},
+            "idNummeraanduidingBAG": {"$ref": "#/$defs/IdentificatieBAG"},
+            "locatieomschrijving": {"type": "string"},
+            "naamExploitant": {"type": "string"},
+            "idNummeraanduidingBAGExploitant": {"$ref": "#/$defs/IdentificatieBAG"},
+            "kvkNummerExploitant": {
+              "type": "array",
+              "items": {"type": "string"},
+              "minItems": 1,
+              "pattern": "[0-9]{8}"
+            },
+            "vestigingsnummerExploitant": {
+              "type": "string",
+              "pattern": "[0-9]{12}"
             }
           },
-          "required": []
+          "required": [
+            "eigenaar",
+            "kvkNummerExploitant"
+          ]
         }
       ]
     },
@@ -296,15 +269,9 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "typeCivExpAandachtsgebied": {"$ref": "#/$defs/TypeExplosieAandachtsgebied"}
-              },
-              "required": ["typeCivExpAandachtsgebied"]
-            }
+            "typeCivExpAandachtsgebied": {"$ref": "#/$defs/TypeExplosieAandachtsgebied"}
           },
-          "required": []
+          "required": ["typeCivExpAandachtsgebied"]
         }
       ]
     },
@@ -330,20 +297,22 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "heeft": {
-                  "type": "array",
-                  "items": {"$ref": "#/$defs/ReferentieEVContour"},
-                  "minItems": 1,
-                  "uniqueItems": true
-                }
+            "heeft": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {"$ref": "#/$defs/SevesoReferentie"},
+                  {"$ref": "#/$defs/BuisleidingReferentie"},
+                  {"$ref": "#/$defs/SpoorVervoer"},
+                  {"$ref": "#/$defs/WegVervoer"},
+                  {"$ref": "#/$defs/WaterVervoer"}
+                ]
               },
-              "required": ["heeft"]
+              "minItems": 1,
+              "uniqueItems": true
             }
           },
-          "required": []
+          "required": ["heeft"]
         }
       ]
     },
@@ -355,19 +324,15 @@
     },
     "ExplosieAandachtsgebied": {
       "$anchor": "ExplosieAandachtsgebied",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/Aandachtsgebied"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "bleve": {"type": "boolean"}
-              }
-            }
-          },
-          "required": []
+            "entityType": {"const": "ExplosieAandachtsgebied"},
+            "bleve": {"type": "boolean"}
+          }
         }
       ]
     },
@@ -381,58 +346,53 @@
       "$anchor": "ExterneVeiligheidsObject",
       "type": "object",
       "properties": {
-        "properties": {
-          "type": "object",
-          "properties": {
-            "EntityType": {"type": "string"},
-            "identificatie": {"$ref": "#/$defs/NEN3610ID"},
-            "bronobjectID": {
-              "type": "string",
-              "pattern": ".{1,50}"
-            },
-            "bronhoudercode": {
-              "type": "string",
-              "pattern": "[A-Z]{3,6}"
-            },
-            "bronhoudercodeOverheid": {"$ref": "#/$defs/TooiWaardelijst"},
-            "bronhoudercodeGeenOverheid": {
-              "type": "string",
-              "pattern": "[A-Z]{3,6}"
-            },
-            "bronhouder": {
-              "type": "string",
-              "pattern": "[A-Z,a-z, ,-]{1,100}"
-            },
-            "documentInfo": {"$ref": "#/$defs/Documentatie"},
-            "beginGeldigheid": {
-              "type": "string",
-              "format": "date-time",
-              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
-            },
-            "eindGeldigheid": {
-              "type": "string",
-              "format": "date-time",
-              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
-            },
-            "tijdstipRegistratie": {
-              "type": "string",
-              "format": "date-time",
-              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
-            },
-            "eindRegistratie": {
-              "type": "string",
-              "format": "date-time",
-              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
-            }
-          },
-          "required": [
-            "entityType",
-            "identificatie",
-            "bronhoudercode",
-            "beginGeldigheid"
-          ]
+        "entityType": {"type": "string"},
+        "identificatie": {"$ref": "#/$defs/NEN3610ID"},
+        "bronobjectID": {
+          "type": "string",
+          "pattern": ".{1,50}"
+        },
+        "bronhoudercode": {
+          "type": "string",
+          "pattern": "[A-Z]{3,6}"
+        },
+        "bronhoudercodeOverheid": {"$ref": "#/$defs/TooiWaardelijst"},
+        "bronhoudercodeGeenOverheid": {
+          "type": "string",
+          "pattern": "[A-Z]{3,6}"
+        },
+        "bronhouder": {
+          "type": "string",
+          "pattern": "[A-Z,a-z, ,-]{1,100}"
+        },
+        "documentInfo": {"$ref": "#/$defs/Documentatie"},
+        "beginGeldigheid": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
+        },
+        "eindGeldigheid": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
+        },
+        "tijdstipRegistratie": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
+        },
+        "eindRegistratie": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
         }
-      }
+      },
+      "required": [
+        "entityType",
+        "identificatie",
+        "bronhoudercode",
+        "beginGeldigheid"
+      ]
     },
     "GebouwOfLocatie": {
       "$anchor": "GebouwOfLocatie",
@@ -442,8 +402,16 @@
     },
     "GifwolkAandachtsgebied": {
       "$anchor": "GifwolkAandachtsgebied",
+      "unevaluatedProperties": false,
       "allOf": [
-        {"$ref": "#/$defs/Aandachtsgebied"}
+        {"$ref": "#/$defs/Aandachtsgebied"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "GifwolkAandachtsgebied"}
+          }
+        }
+        
       ]
     },
     "IdentificatieBAG": {
@@ -458,93 +426,81 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
-              },
-              "required": ["geometrie"]
-            }
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
           },
-          "required": []
+          "required": ["geometrie"]
         }
       ]
     },
     "KwetsbaarGebouw": {
       "$anchor": "KwetsbaarGebouw",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/GebouwOfLocatie"},
         {
           "type": "object",
           "properties": {
-
-            "properties": {
-              "type": "object",
-              "properties": {
-                "categorieKwetsbaarheid": {"$ref": "#/$defs/CategorieKwetsbaarheidGebouw"},
-                "gebruiksdoeleindenDetail": {
-                  "type": "array",
-                  "items": {"type": "string"}
-                },
-                "idPandBAG": {"$ref": "#/$defs/IdentificatieBAG"},
-                "idAdresseerbaarobjectBAG": {"$ref": "#/$defs/IdentificatieBAG"},
-                "gebruiksdoelenVerblijfsobjectBAG": {
-                  "type": "array",
-                  "items": {"$ref": "#/$defs/Gebruiksdoeleinden"},
-                  "uniqueItems": true,
-                  "readOnly": true
-                },
-                "oppervlakteVerblijfsobjectBAG": {
-                  "type": "number",
-                  "readOnly": true
-                },
-                "populatie": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 99999
-                },
-                "kadastraleAanduiding": {
-                  "type": "array",
-                  "items": {"type": "string"},
-                  "pattern": "[A-Z]{3}\\d{2}[A-I,K-Z]{1,2}\\d{5}[G][0]{4}"
-                }
-              },
-              "required": ["categorieKwetsbaarheid"]
+            "comment": {"type": "array"},
+            "entityType": {"const": "KwetsbaarGebouw"},
+            "categorieKwetsbaarheid": {"$ref": "#/$defs/CategorieKwetsbaarheidGebouw"},
+            "gebruiksdoeleindenDetail": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "idPandBAG": {"$ref": "#/$defs/IdentificatieBAG"},
+            "idAdresseerbaarobjectBAG": {"$ref": "#/$defs/IdentificatieBAG"},
+            "gebruiksdoelenVerblijfsobjectBAG": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/Gebruiksdoeleinden"},
+              "uniqueItems": true,
+              "readOnly": true
+            },
+            "oppervlakteVerblijfsobjectBAG": {
+              "type": "number",
+              "readOnly": true
+            },
+            "populatie": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            },
+            "kadastraleAanduiding": {
+              "type": "array",
+              "items": {"type": "string"},
+              "pattern": "[A-Z]{3}\\d{2}[A-I,K-Z]{1,2}\\d{5}[G][0]{4}"
             }
-          }
+          },
+          "required": ["categorieKwetsbaarheid"]
         }
       ]
     },
     "KwetsbareLocatie": {
       "$anchor": "KwetsbareLocatie",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/GebouwOfLocatie"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "categorieKwetsbaarheid": {"$ref": "#/$defs/CategorieKwetsbaarheidLocatie"},
-                "geometrie": {"$ref": "#/$defs/VlakOfMultiVlak"},
-                "populatie": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 999999
-                },
-                "kadastraleAanduiding": {
-                  "type": "array",
-                  "items": {"type": "string"},
-                  "pattern": "[A-Z]{3}\\d{2}[A-I,K-Z]{1,2}\\d{5}[G][0]{4}"
-                }
-              },
-              "required": [
-                "categorieKwetsbaarheid",
-                "geometrie"
-              ]
+            "comment": {"type": "array"},
+            "entityType": {"const": "KwetsbareLocatie"},
+            "categorieKwetsbaarheid": {"$ref": "#/$defs/CategorieKwetsbaarheidLocatie"},
+            "geometrie": {"$ref": "#/$defs/VlakOfMultiVlak"},
+            "populatie": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999999
+            },
+            "kadastraleAanduiding": {
+              "type": "array",
+              "items": {"type": "string"},
+              "pattern": "[A-Z]{3}\\d{2}[A-I,K-Z]{1,2}\\d{5}[G][0]{4}"
             }
           },
-          "required": []
+          "required": [
+            "categorieKwetsbaarheid",
+            "geometrie"
+          ]
         }
       ]
     },
@@ -555,21 +511,15 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/PuntOfLijn"},
-                "bovengronds": {"type": "boolean"},
-                "diameter": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 9999
-                }
-              },
-              "required": ["geometrie"]
+            "geometrie": {"$ref": "#/$defs/PuntOfLijn"},
+            "bovengronds": {"type": "boolean"},
+            "diameter": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
             }
           },
-          "required": []
+          "required": ["geometrie"]
         }
       ]
     },
@@ -582,83 +532,78 @@
     },
     "LocatieActiviteit": {
       "$anchor": "LocatieActiviteit",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/LocatieEVActiviteit"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "bedrijfsnaam": {"type": "string"},
-                "geometrie": {"$ref": "#/$defs/VlakOfMultiVlak"},
-                "idNummeraanduidingBAG": {"$ref": "#/$defs/IdentificatieBAG"},
-                "locatieomschrijving": {"type": "string"},
-                "naamExploitant": {
-                  "type": "string",
-                  "nullable": true
-                },
-                "omschrijving": {"type": "string"},
-                "eigenaar": {"type": "string"},
-                "idNummeraanduidingBAGExploitant": {"$ref": "#/$defs/IdentificatieBAG"},
-                "kvkNummerExploitant": {
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "nullable": true
-                  },
-                  "minItems": 1,
-                  "pattern": "[0-9]{8}"
-                },
-                "kvkNummerAanvrager": {
-                  "type": "string",
-                  "nullable": true,
-                  "pattern": "[0-9]{8}"
-                },
-                "vestigingsnummerExploitant": {
-                  "type": "string",
-                  "pattern": "[0-9]{12}"
-                },
-                "vestigingsnummerAanvrager": {
-                  "type": "string",
-                  "pattern": "[0-9]{12}"
-                }
+            "comment": {"type": "array"},
+            "entityType": {"const": "LocatieActiviteit"},
+            "bedrijfsnaam": {"type": "string"},
+            "geometrie": {"$ref": "#/$defs/VlakOfMultiVlak"},
+            "idNummeraanduidingBAG": {"$ref": "#/$defs/IdentificatieBAG"},
+            "locatieomschrijving": {"type": "string"},
+            "naamExploitant": {
+              "type": "string",
+              "nullable": true
+            },
+            "omschrijving": {"type": "string"},
+            "eigenaar": {"type": "string"},
+            "idNummeraanduidingBAGExploitant": {"$ref": "#/$defs/IdentificatieBAG"},
+            "kvkNummerExploitant": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "nullable": true,
+                "pattern": "[0-9]{8}"
               },
-              "required": [
-                "bedrijfsnaam",
-                "geometrie",
-                "naamExploitant",
-                "idNummeraanduidingBAGExploitant",
-                "kvkNummerExploitant",
-                "kvkNummerAanvrager"
-              ]
+              "minItems": 1
+            },
+            "kvkNummerAanvrager": {
+              "type": "string",
+              "nullable": true,
+              "pattern": "[0-9]{8}"
+            },
+            "vestigingsnummerExploitant": {
+              "type": "string",
+              "pattern": "[0-9]{12}"
+            },
+            "vestigingsnummerAanvrager": {
+              "type": "string",
+              "pattern": "[0-9]{12}"
             }
-          }
+          },
+          "required": [
+            "bedrijfsnaam",
+            "geometrie",
+            "naamExploitant",
+            "idNummeraanduidingBAGExploitant",
+            "kvkNummerExploitant",
+            "kvkNummerAanvrager"
+          ]
         }
       ]
     },
     "LocatieBasisnet": {
       "$anchor": "LocatieBasisnet",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/LocatieEVActiviteit"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
-                "type": {"type": "string"},
-                "route": {"type": "string"}
-              },
-              "required": [
-                "geometrie",
-                "type",
-                "route"
-              ]
-            }
+            "comment": {"type": "array"},
+            "entityType": {"const": "LocatieBasisnet"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "type": {"type": "string"},
+            "route": {"type": "string"}
           },
-          "required": []
+          "required": [
+            "geometrie",
+            "type",
+            "route"
+          ]
         }
       ]
     },
@@ -669,20 +614,20 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "voertUit": {
-                  "type": "array",
-                  "items": {"$ref": "#/$defs/EVActiviteit"},
-                  "minItems": 1,
-                  "uniqueItems": true
-                }
+            "voertUit": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {"$ref": "#/$defs/SevesoInrichting"},
+                  {"$ref": "#/$defs/Buisleiding"},
+                  {"$ref": "#/$defs/Basisnet"}
+                ]
               },
-              "required": ["voertUit"]
+              "minItems": 1,
+              "uniqueItems": true
             }
           },
-          "required": []
+          "required": ["voertUit"]
         }
       ]
     },
@@ -693,22 +638,16 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/PuntOfVlak"},
-                "aantalKoelinstallaties": {
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 99
-                },
-                "opstellingsUitvoering": {"$ref": "#/$defs/OpstellingsUitvoeringAmmoniak"},
-                "pompbeveiliging": {"type": "boolean"}
-              },
-              "required": ["geometrie"]
-            }
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"},
+            "aantalKoelinstallaties": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99
+            },
+            "opstellingsUitvoering": {"$ref": "#/$defs/OpstellingsUitvoeringAmmoniak"},
+            "pompbeveiliging": {"type": "boolean"}
           },
-          "required": []
+          "required": ["geometrie"]
         }
       ]
     },
@@ -719,15 +658,9 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "typeMilitairExpAandachtsgebied": {"$ref": "#/$defs/TypeExplosieAandachtsgebied"}
-              },
-              "required": ["typeMilitairExpAandachtsgebied"]
-            }
+            "typeMilitairExpAandachtsgebied": {"$ref": "#/$defs/TypeExplosieAandachtsgebied"}
           },
-          "required": []
+          "required": ["typeMilitairExpAandachtsgebied"]
         }
       ]
     },
@@ -751,30 +684,24 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/PuntOfVlak"},
-                "typeOpslagReferentie": {"$ref": "#/$defs/TypeOpslagReferentie"},
-                "bovengronds": {"type": "boolean"},
-                "inhoud": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 99999
-                },
-                "oppervlakte": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 9999
-                }
-              },
-              "required": [
-                "geometrie",
-                "typeOpslagReferentie"
-              ]
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"},
+            "typeOpslagReferentie": {"$ref": "#/$defs/TypeOpslagReferentie"},
+            "bovengronds": {"type": "boolean"},
+            "inhoud": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            },
+            "oppervlakte": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
             }
           },
-          "required": []
+          "required": [
+            "geometrie",
+            "typeOpslagReferentie"
+          ]
         }
       ]
     },
@@ -785,15 +712,9 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
-              },
-              "required": ["geometrie"]
-            }
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
           },
-          "required": []
+          "required": ["geometrie"]
         }
       ]
     },
@@ -804,48 +725,39 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "aardRisico": {"type": "string"},
-                "typeOverigeContour": {"$ref": "#/$defs/TypeOverigeContour"},
-                "afstandOfGeometrie": {"$ref": "#/$defs/AfstandOfGeometrieOverigeContour"},
-                "maatgevendeStof": {"$ref": "#/$defs/StofOfStofcategorie"}
-              },
-              "required": [
-                "typeOverigeContour",
-                "afstandOfGeometrie",
-                "maatgevendeStof"
-              ]
-            }
+            "aardRisico": {"type": "string"},
+            "typeOverigeContour": {"$ref": "#/$defs/TypeOverigeContour"},
+            "afstandOfGeometrie": {"$ref": "#/$defs/AfstandOfGeometrieOverigeContour"},
+            "maatgevendeStof": {"$ref": "#/$defs/StofOfStofcategorie"}
           },
-          "required": []
+          "required": [
+            "typeOverigeContour",
+            "afstandOfGeometrie",
+            "maatgevendeStof"
+          ]
         }
       ]
     },
     "PRContour": {
       "$anchor": "PRContour",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/EVContour"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "afstandOfGeometrie": {"$ref": "#/$defs/AfstandOfGeometriePRContour"},
-                "typePlaatsgebondenRisico": {"$ref": "#/$defs/TypePlaatsgebondenRisico"},
-                "maatgevendeStof": {"$ref": "#/$defs/StofOfStofcategorie"},
-                "aardRisico": {"type": "string"}
-              },
-              "required": [
-                "afstandOfGeometrie",
-                "typePlaatsgebondenRisico",
-                "maatgevendeStof"
-              ]
-            }
+            "entityType": {"const": "PRContour"},
+            "afstandOfGeometrie": {"$ref": "#/$defs/AfstandOfGeometriePRContour"},
+            "typePlaatsgebondenRisico": {"$ref": "#/$defs/TypePlaatsgebondenRisico"},
+            "maatgevendeStof": {"$ref": "#/$defs/StofOfStofcategorie"},
+            "aardRisico": {"type": "string"}
           },
-          "required": []
+          "required": [
+            "entityType",
+            "afstandOfGeometrie",
+            "typePlaatsgebondenRisico",
+            "maatgevendeStof"
+          ]
         }
       ]
     },
@@ -893,7 +805,6 @@
         },
         "vijfofminder": {"type": "boolean"}
       },
-      "additionalProperties": false,
       "minProperties": 1,
       "maxProperties": 1
     },
@@ -904,21 +815,22 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "omschrijving": {"type": "string"},
-                "resulteertIn": {
-                  "type": "array",
-                  "items": {"$ref": "#/$defs/EVContour"},
-                  "minItems": 1,
-                  "uniqueItems": true
-                }
+            "omschrijving": {"type": "string"},
+            "resulteertIn": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {"$ref": "#/$defs/BrandAandachtsgebied"},
+                  {"$ref": "#/$defs/ExplosieAandachtsgebied"},
+                  {"$ref": "#/$defs/GifwolkAandachtsgebied"},
+                  {"$ref": "#/$defs/PRContour"}
+                ]
               },
-              "required": ["resulteertIn"]
+              "minItems": 1,
+              "uniqueItems": true
             }
           },
-          "required": []
+          "required": ["resulteertIn"]
         }
       ]
     },
@@ -929,62 +841,48 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
-              },
-              "required": ["geometrie"]
-            }
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
           },
-          "required": []
+          "required": ["geometrie"]
         }
       ]
     },
     "SevesoReferentie": {
       "$anchor": "SevesoReferentie",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
-              },
-              "required": ["geometrie"]
-            }
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
           },
-          "required": []
+          "required": ["geometrie"]
         }
       ]
     },
     "SpoorVervoer": {
       "$anchor": "SpoorVervoer",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
-                "trajectcode": {
-                  "type": "string",
-                  "pattern": "[0-9]{2,3}"
-                },
-                "referentiesoort": {"$ref": "#/$defs/RepresentatieLijn"}
-              },
-              "required": [
-                "geometrie",
-                "trajectcode",
-                "referentiesoort"
-              ]
-            }
+            "entityType": {"const": "SpoorVervoer"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "trajectcode": {
+              "type": "string",
+              "pattern": "[0-9]{2,3}"
+            },
+            "referentiesoort": {"$ref": "#/$defs/RepresentatieLijn"}
           },
-          "required": []
+          "required": [
+            "entityType",
+            "geometrie",
+            "trajectcode",
+            "referentiesoort"
+          ]
         }
       ]
     },
@@ -1021,7 +919,6 @@
         "stof": {"$ref": "#/$defs/Stof"},
         "stofCategorie": {"$ref": "#/$defs/StofCategorie"}
       },
-      "additionalProperties": false,
       "minProperties": 1,
       "maxProperties": 1
     },
@@ -1056,7 +953,6 @@
         },
         "minderDanOfGelijkAan_420kPa": {"type": "boolean"}
       },
-      "additionalProperties": false,
       "minProperties": 1,
       "maxProperties": 1
     },
@@ -1075,29 +971,26 @@
     },
     "WaterVervoer": {
       "$anchor": "WaterVervoer",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
-                "watervakcode": {
-                  "type": "string",
-                  "pattern": "[A-Z]{1,4}"
-                },
-                "referentiesoort": {"$ref": "#/$defs/RepresentatieLijn"}
-              },
-              "required": [
-                "geometrie",
-                "watervakcode",
-                "referentiesoort"
-              ]
-            }
+            "entityType": {"const": "WaterVervoer"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "watervakcode": {
+              "type": "string",
+              "pattern": "[A-Z]{1,4}"
+            },
+            "referentiesoort": {"$ref": "#/$defs/RepresentatieLijn"}
           },
-          "required": []
+          "required": [
+            "entityType",
+            "geometrie",
+            "watervakcode",
+            "referentiesoort"
+          ]
         }
       ]
     },
@@ -1108,43 +1001,34 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"}
-              },
-              "required": ["geometrie"]
-            }
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"}
           },
-          "required": []
+          "required": ["geometrie"]
         }
       ]
     },
     "WegVervoer": {
       "$anchor": "WegVervoer",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
-                "wegvakcode": {
-                  "type": "string",
-                  "pattern": "[A-Z]{1}.{1,7}"
-                },
-                "referentiesoort": {"$ref": "#/$defs/RepresentatieLijn"}
-              },
-              "required": [
-                "geometrie",
-                "wegvakcode",
-                "referentiesoort"
-              ]
-            }
+            "entityType": {"const": "WegVervoer"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "wegvakcode": {
+              "type": "string",
+              "pattern": "[A-Z]{1}.{1,7}"
+            },
+            "referentiesoort": {"$ref": "#/$defs/RepresentatieLijn"}
           },
-          "required": []
+          "required": [
+            "entityType",
+            "geometrie",
+            "wegvakcode",
+            "referentiesoort"
+          ]
         }
       ]
     },
@@ -1155,19 +1039,13 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
-                "route": {"type": "string"}
-              },
-              "required": [
-                "geometrie",
-                "route"
-              ]
-            }
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "route": {"type": "string"}
           },
-          "required": []
+          "required": [
+            "geometrie",
+            "route"
+          ]
         }
       ]
     },
@@ -1255,42 +1133,36 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "basisVergunningNummer": {
-                  "type": "string",
-                  "nullable": true
-                },
-                "datumVergunningOfMelding": {
-                  "type": "string",
-                  "nullable": true,
-                  "format": "date",
-                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-                },
-                "datumLaatsteWijziging": {
-                  "type": "string",
-                  "nullable": true,
-                  "format": "date",
-                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-                },
-                "omschrijving": {"type": "string"},
-                "bevoegdGezag": {"$ref": "#/$defs/BevoegdGezag"},
-                "vergunningsPlicht": {"type": "boolean"},
-                "balActiviteit": {
-                  "type": "array",
-                  "items": {"type": "string"}
-                }
-              },
-              "required": [
-                "basisVergunningNummer",
-                "datumVergunningOfMelding",
-                "datumLaatsteWijziging",
-                "vergunningsPlicht"
-              ]
+            "basisVergunningNummer": {
+              "type": "string",
+              "nullable": true
+            },
+            "datumVergunningOfMelding": {
+              "type": "string",
+              "nullable": true,
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "datumLaatsteWijziging": {
+              "type": "string",
+              "nullable": true,
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "omschrijving": {"type": "string"},
+            "bevoegdGezag": {"$ref": "#/$defs/BevoegdGezag"},
+            "vergunningsPlicht": {"type": "boolean"},
+            "balActiviteit": {
+              "type": "array",
+              "items": {"type": "string"}
             }
           },
-          "required": []
+          "required": [
+            "basisVergunningNummer",
+            "datumVergunningOfMelding",
+            "datumLaatsteWijziging",
+            "vergunningsPlicht"
+          ]
         }
       ]
     },
@@ -1301,19 +1173,13 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "werktemperatuur": {
-                  "type": "number",
-                  "minimum": -273.15,
-                  "maximum": 99.99
-                },
-                "hoeveelheidsKlasseAmmoniak": {"$ref": "#/$defs/HoeveelheidsKlasseAmmoniak"}
-              }
-            }
-          },
-          "required": []
+            "werktemperatuur": {
+              "type": "number",
+              "minimum": -273.15,
+              "maximum": 99.99
+            },
+            "hoeveelheidsKlasseAmmoniak": {"$ref": "#/$defs/HoeveelheidsKlasseAmmoniak"}
+          }
         }
       ]
     },
@@ -1324,19 +1190,13 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "werktemperatuur": {
-                  "type": "number",
-                  "minimum": -273.15,
-                  "maximum": 99.99
-                },
-                "hoeveelheidsKlasseAmmoniak": {"$ref": "#/$defs/HoeveelheidsKlasseAmmoniak"}
-              }
-            }
-          },
-          "required": []
+            "werktemperatuur": {
+              "type": "number",
+              "minimum": -273.15,
+              "maximum": 99.99
+            },
+            "hoeveelheidsKlasseAmmoniak": {"$ref": "#/$defs/HoeveelheidsKlasseAmmoniak"}
+          }
         }
       ]
     },
@@ -1353,44 +1213,38 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "basisVergunningNummer": {
-                  "type": "string",
-                  "nullable": true,
-                  "pattern": ".{1,50}"
-                },
-                "datumVergunningOfMelding": {
-                  "type": "string",
-                  "nullable": true,
-                  "format": "date",
-                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-                },
-                "datumLaatsteWijziging": {
-                  "type": "string",
-                  "nullable": true,
-                  "format": "date",
-                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-                },
-                "vergunningsPlicht": {"type": "boolean"},
-                "bevoegdGezag": {"$ref": "#/$defs/BevoegdGezag"},
-                "balActiviteit": {
-                  "type": "array",
-                  "items": {"type": "string"}
-                },
-                "idActiviteitTR": {"type": "string"}
-              },
-              "required": [
-                "basisVergunningNummer",
-                "datumVergunningOfMelding",
-                "datumLaatsteWijziging",
-                "vergunningsPlicht",
-                "idActiviteitTR"
-              ]
-            }
+            "basisVergunningNummer": {
+              "type": "string",
+              "nullable": true,
+              "pattern": ".{1,50}"
+            },
+            "datumVergunningOfMelding": {
+              "type": "string",
+              "nullable": true,
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "datumLaatsteWijziging": {
+              "type": "string",
+              "nullable": true,
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "vergunningsPlicht": {"type": "boolean"},
+            "bevoegdGezag": {"$ref": "#/$defs/BevoegdGezag"},
+            "balActiviteit": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "idActiviteitTR": {"type": "string"}
           },
-          "required": []
+          "required": [
+            "basisVergunningNummer",
+            "datumVergunningOfMelding",
+            "datumLaatsteWijziging",
+            "vergunningsPlicht",
+            "idActiviteitTR"
+          ]
         }
       ]
     },
@@ -1402,8 +1256,16 @@
     },
     "Basisnet": {
       "$anchor": "Basisnet",
+      "unevaluatedProperties": false,
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Basisnet"}
+          },
+          "required": ["entityType"]
+        }
       ]
     },
     "BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht": {
@@ -1419,31 +1281,33 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "ontwerpCapaciteit": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 99999
-                },
-                "werkdruk": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 99999
-                },
-                "opstellingsUitvoering": {"$ref": "#/$defs/OpstellingsUitvoeringAardgas"}
-              }
-            }
-          },
-          "required": []
+            "ontwerpCapaciteit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            },
+            "werkdruk": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            },
+            "opstellingsUitvoering": {"$ref": "#/$defs/OpstellingsUitvoeringAardgas"}
+          }
         }
       ]
     },
     "Buisleiding": {
       "$anchor": "Buisleiding",
+      "unevaluatedProperties": false,
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Buisleiding"}
+          },
+          "required": ["entityType"]
+        }
       ]
     },
     "Emplacement": {
@@ -1507,18 +1371,12 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "nettoExplosieveMassa": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 9999
-                }
-              }
+            "nettoExplosieveMassa": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
             }
-          },
-          "required": []
+          }
         }
       ]
     },
@@ -1529,18 +1387,12 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "nettoExplosieveMassa": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 9999
-                }
-              }
+            "nettoExplosieveMassa": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
             }
-          },
-          "required": []
+          }
         }
       ]
     },
@@ -1581,34 +1433,28 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "kritischeTemperatuur": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 99999.99
-                },
-                "kookTemperatuur": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 99999.99
-                },
-                "mediaanLetaleConcentratie": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 999999
-                },
-                "dampspanning": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 9999999
-                },
-                "categorieGiftigeStof": {"$ref": "#/$defs/CategorieGiftigeStof"}
-              }
-            }
-          },
-          "required": []
+            "kritischeTemperatuur": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999.99
+            },
+            "kookTemperatuur": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999.99
+            },
+            "mediaanLetaleConcentratie": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999999
+            },
+            "dampspanning": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999999
+            },
+            "categorieGiftigeStof": {"$ref": "#/$defs/CategorieGiftigeStof"}
+          }
         }
       ]
     },
@@ -1619,14 +1465,8 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "beschermingsniveau": {"$ref": "#/$defs/BeschermingsniveauhoofdgroepTabelB3"}
-              }
-            }
-          },
-          "required": []
+            "beschermingsniveau": {"$ref": "#/$defs/BeschermingsniveauhoofdgroepTabelB3"}
+          }
         }
       ]
     },
@@ -1643,15 +1483,9 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "beschermingsniveauConformTabelB3": {"$ref": "#/$defs/BeschermingsniveauTabelB3"}
-              },
-              "required": ["beschermingsniveauConformTabelB3"]
-            }
+            "beschermingsniveauConformTabelB3": {"$ref": "#/$defs/BeschermingsniveauTabelB3"}
           },
-          "required": []
+          "required": ["beschermingsniveauConformTabelB3"]
         }
       ]
     },
@@ -1662,23 +1496,17 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "hoeveelheidVuurwerk": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 999999
-                },
-                "categorieVuurwerk": {
-                  "type": "array",
-                  "items": {"$ref": "#/$defs/CategorieVuurwerk"},
-                  "uniqueItems": true
-                }
-              }
+            "hoeveelheidVuurwerk": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999999
+            },
+            "categorieVuurwerk": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/CategorieVuurwerk"},
+              "uniqueItems": true
             }
-          },
-          "required": []
+          }
         }
       ]
     },
@@ -1689,18 +1517,12 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "hoeveelheidVuurwerk": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 999999
-                }
-              }
+            "hoeveelheidVuurwerk": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999999
             }
-          },
-          "required": []
+          }
         }
       ]
     },
@@ -1717,14 +1539,8 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "aantalBevoorradingen": {"$ref": "#/$defs/BevoorradingCategorieOfExactAantal"}
-              }
-            }
-          },
-          "required": []
+            "aantalBevoorradingen": {"$ref": "#/$defs/BevoorradingCategorieOfExactAantal"}
+          }
         }
       ]
     },
@@ -1735,18 +1551,12 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "doorzetPerJaar": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 999
-                }
-              }
+            "doorzetPerJaar": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999
             }
-          },
-          "required": []
+          }
         }
       ]
     },
@@ -1764,8 +1574,19 @@
     },
     "SevesoInrichting": {
       "$anchor": "SevesoInrichting",
+      "unevaluatedProperties": false,
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "fietsbel": {"type": "string"},
+            "entityType": {"const": "SevesoInrichting"}
+          },
+          "required": [
+            "entityType"
+          ]
+        }
       ]
     },
     "TankenCNG": {
@@ -1775,23 +1596,17 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "aantalPersonenauto": {
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 999
-                },
-                "aantalAutobussen": {
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 999
-                }
-              }
+            "aantalPersonenauto": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "aantalAutobussen": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
             }
-          },
-          "required": []
+          }
         }
       ]
     },
@@ -1814,17 +1629,11 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "reactietijdNoodstop": {"$ref": "#/$defs/ReactietijdNoodstopBooleanOfExact"},
-                "bovenvulling": {"type": "boolean"},
-                "verladingPomp": {"type": "boolean"},
-                "voordruk": {"$ref": "#/$defs/VoordrukBooleanOfExact"}
-              }
-            }
-          },
-          "required": []
+            "reactietijdNoodstop": {"$ref": "#/$defs/ReactietijdNoodstopBooleanOfExact"},
+            "bovenvulling": {"type": "boolean"},
+            "verladingPomp": {"type": "boolean"},
+            "voordruk": {"$ref": "#/$defs/VoordrukBooleanOfExact"}
+          }
         }
       ]
     },
@@ -1835,18 +1644,12 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "doorzetPerJaar": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 9999
-                }
-              }
+            "doorzetPerJaar": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
             }
-          },
-          "required": []
+          }
         }
       ]
     },
@@ -1869,19 +1672,13 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "aantalWindturbines": {
-                  "type": "integer",
-                  "minimum": 1,
-                  "maximum": 2
-                }
-              },
-              "required": ["aantalWindturbines"]
+            "aantalWindturbines": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2
             }
           },
-          "required": []
+          "required": ["aantalWindturbines"]
         }
       ]
     },
@@ -1892,19 +1689,13 @@
         {
           "type": "object",
           "properties": {
-            "properties": {
-              "type": "object",
-              "properties": {
-                "aantalWindturbines": {
-                  "type": "integer",
-                  "minimum": 3,
-                  "maximum": 999
-                }
-              },
-              "required": ["aantalWindturbines"]
+            "aantalWindturbines": {
+              "type": "integer",
+              "minimum": 3,
+              "maximum": 999
             }
           },
-          "required": []
+          "required": ["aantalWindturbines"]
         }
       ]
     },
@@ -2296,5 +2087,11 @@
       ]
     }
   },
-  "$ref": "#/$defs/LocatieActiviteit"
+  "oneOf": [
+    {"$ref": "#/$defs/BuisleidingStelsel"},
+    {"$ref": "#/$defs/LocatieActiviteit"},
+    {"$ref": "#/$defs/LocatieBasisnet"},
+    {"$ref": "#/$defs/KwetsbaarGebouw"},
+    {"$ref": "#/$defs/KwetsbareLocatie"}
+    ]
 }
