@@ -11,6 +11,12 @@
     "EVContour type en properties eruit want zijn onnodig geworden",
     "8 objecten waren geometry i.p.v. geometrie en zijn omgezet naar geometrie",
     "tijdstipRegistratie niet meer required in ExterneVeiligheidsObject voor aanlevering",
+    "3-dubbele properperties zijn eruit",
+    "pattern kvknummer exploitant is 1 niveau dieper geplaats",
+    "comment is opgenomen bij de 5 aan te leveren objectklassen",
+    "relaties zijn gelegd naar subtypes met oneOf ipv supertypes",
+    "Bij subtypes die een allOf aanroepen is een unevaluatedProperties key = false opgenomen",
+    "entityType is toegevoegd met een constante waarde waar objecten onderdeel zijn van een oneOf",
     "Vervang helemaal onderin ExterneVeiligheidsObject door het onderliggende (niet abstacte) subtype voor validatie op dat subtype"
   ],
   "$schema": "https://json-schema.org/draft/2020-12/schema",
