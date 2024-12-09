@@ -16,8 +16,8 @@
     "comment is opgenomen bij de 5 aan te leveren objectklassen",
     "relaties zijn gelegd naar subtypes met oneOf ipv supertypes",
     "Bij subtypes die een allOf aanroepen is een unevaluatedProperties key = false opgenomen",
-    "entityType is toegevoegd met een constante waarde waar objecten onderdeel zijn van een oneOf",
-    "Vervang helemaal onderin ExterneVeiligheidsObject door het onderliggende (niet abstacte) subtype voor validatie op dat subtype"
+    "entityType is toegevoegd met een constante waarde waar objecten onderdeel zijn van een oneOf"
+    
   ],
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$reqs": [

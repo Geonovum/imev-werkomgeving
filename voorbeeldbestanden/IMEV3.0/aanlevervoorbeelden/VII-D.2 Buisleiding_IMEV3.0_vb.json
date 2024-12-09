@@ -117,7 +117,8 @@
                             },
                             "beginGeldigheid": "2023-12-21T00:00:00Z",
                             "afstandOfGeometrie": {
-                                "type": "Polygon",
+                            "geometrie": {
+                            "type": "Polygon",
                                 "coordinates": [
                                     [
                                         [
@@ -142,6 +143,7 @@
                                         ]
                                     ]
                                 ]
+                            }
                             },
                             "categorieAandachtsgebied": "berekend",
                             "aardRisico": "string",
