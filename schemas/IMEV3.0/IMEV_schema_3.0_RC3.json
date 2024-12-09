@@ -166,7 +166,8 @@
           "properties": {
             "entityType": {"const": "BrandAandachtsgebied"},
             "typeBrand": {"$ref": "#/$defs/TypeBrand"}
-          }
+          },
+          "required": ["entityType"]
         }
       ]
     },
@@ -249,9 +250,12 @@
             "idNummeraanduidingBAGExploitant": {"$ref": "#/$defs/IdentificatieBAG"},
             "kvkNummerExploitant": {
               "type": "array",
-              "items": {"type": "string"},
-              "minItems": 1,
-              "pattern": "[0-9]{8}"
+              "items": {
+                "type": "string",
+                "nullable": true,
+                "pattern": "[0-9]{8}"
+              },
+              "minItems": 1
             },
             "vestigingsnummerExploitant": {
               "type": "string",
@@ -357,8 +361,15 @@
     },
     "ExplosieAandachtsgebiedVuurwerk": {
       "$anchor": "ExplosieAandachtsgebiedVuurwerk",
+      "unevaluatedProperties": false,
       "allOf": [
-        {"$ref": "#/$defs/Aandachtsgebied"}
+        {"$ref": "#/$defs/Aandachtsgebied"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "ExplosieAandachtsgebiedVuurwerk"}
+          }
+        }
       ]
     },
     "ExterneVeiligheidsObject": {
@@ -513,8 +524,10 @@
             },
             "kadastraleAanduiding": {
               "type": "array",
-              "items": {"type": "string"},
-              "pattern": "[A-Z]{3}\\d{2}[A-I,K-Z]{1,2}\\d{5}[G][0]{4}"
+              "items": {
+                "type": "string",
+                "pattern": "[A-Z]{3}\\d{2}[A-I,K-Z]{1,2}\\d{5}[G][0]{4}"
+              }
             }
           },
           "required": [
@@ -640,7 +653,6 @@
               "type": "array",
               "items": {
                 "oneOf": [
-                  {"$ref": "#/$defs/SevesoInrichting"},
                   {"$ref": "#/$defs/Buisleiding"},
                   {"$ref": "#/$defs/Basisnet"},
                   {"$ref": "#/$defs/ActiviteitRestcategorie"},
@@ -684,6 +696,7 @@
                   {"$ref": "#/$defs/TankenLNGVoertuigWerktuig"},
                   {"$ref": "#/$defs/TankenLPG"},
                   {"$ref": "#/$defs/TankenWaterstofVoertuigWerktuig"},
+                  {"$ref": "#/$defs/WegenNietBasisnet"},
                   {"$ref": "#/$defs/Windturbine_TeBerekenenAfstandGeenVergunningplicht"},
                   {"$ref": "#/$defs/Windturbine_TeBerekenenAfstandVergunningplicht"}
                 ]
@@ -921,6 +934,7 @@
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "SamengesteldeReferentie"},
             "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
           },
           "required": ["geometrie"]
@@ -1121,11 +1135,13 @@
     },
     "Wegen": {
       "$anchor": "Wegen",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/LocatieEVActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Wegen"},
             "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
             "route": {"type": "string"}
           },
@@ -1217,11 +1233,13 @@
     },
     "ActiviteitRestcategorie": {
       "$anchor": "ActiviteitRestcategorie",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/EVActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "ActiviteitRestcategorie"},
             "basisVergunningNummer": {
               "type": "string",
               "nullable": true
@@ -1703,6 +1721,7 @@
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "OpslagVerpakt_TeBerekenenAfstandVergunningplicht"},
             "beschermingsniveau": {"$ref": "#/$defs/BeschermingsniveauhoofdgroepTabelB3"}
           }
         }
@@ -1968,8 +1987,16 @@
     },
     "WegenNietBasisnet": {
       "$anchor": "WegenNietBasisnet",
+      "unevaluatedProperties": false,
       "allOf": [
-        {"$ref": "#/$defs/EVActiviteit"}
+        {"$ref": "#/$defs/EVActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "WegenNietBasisnet"}
+          },
+          "required": ["entityType"]
+        }
       ]
     },
     "Windturbine_TeBerekenenAfstandGeenVergunningplicht": {
