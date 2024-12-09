@@ -1,15 +1,19 @@
 In deze map staan de schemas die horen bij IMEV 3.0.
 
 ***IMEV_OAS_3.0_RC1.yaml*** is de Open Api Specificatie (OAS) behorende bij IMEV3.0.
-Deze dient als voorbeeld, maar zal voor de definitieve implementatie van de API nog aangepast moeten worden aan implementatie specifieke elementen.
-***imev30-oas-schema.yaml*** is een extra schema voor aansluiting van de OAS op het IMEV_schema_3.0_RC3.json
+Deze dient als voorbeeld, maar zal voor de definitieve implementatie van de API nog aangepast moeten worden aan implementatie specifieke elementen.  
+
+***imev30-oas-schema.yaml*** is een extra schema voor aansluiting van de OAS op het IMEV_schema_3.0_RC3.json  
+
 ***common-schema.yaml*** is een apart schema voor algemene obejecten als Geometrie en NEN3610id. Deze is eigenlijk overbodig geworden met IMEV3.0
 
 ***IMEV_schema_3.0_RC1.json*** is het eerst gepubliceerde schema op https://register.geostandaarden.nl/jsonschema/imev/3.0.0rc/
-***IMEV_schema_3.0_RC2.json*** is aangepast voor publicatie als Geojson bestanden
+***IMEV_schema_3.0_RC2.json*** is aangepast voor publicatie als Geojson bestanden  
+
 ***IMEV_schema_3.0_RC3.json*** is gemaakt speciaal voor aanleverbestanden en sluit meer aan op de structuur van oude aanleverbetanden, maar dan wel conform IMEV3.0
 
-***Verbeteringen van RC3 t.o.v. RC1 en RC2:***
+***Verbeteringen van RC3 t.o.v. RC1 en RC2:***  
+
 -relaties in het model van rechts naar links zijn uit het schema verwijderd.
 -patroon attribuut bronhouder aangepast
 -min en max als number ipv string
