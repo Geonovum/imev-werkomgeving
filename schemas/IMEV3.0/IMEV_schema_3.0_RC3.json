@@ -1,24 +1,8 @@
 {
-  "$comment": [
-    "Release Candidate 3 van schema op basis van IMEV-versie 3.0 / 20241021 by Imvertor Nightly-build.19. Verbetering t.o.v. RC1 en RC2: ",
-    "relaties in het model van rechts naar links zijn uit het schema verwijderd.",
-    "patroon attribuut bronhouder aangepast",
-    "min en max als number ipv string",
-    "min en max aantalAutobussen omgedraaid",
-    "entityType toegevoegd bij ExterneVeiligheidsObject",
-    "verwijzing naar Geojson schema verwijderd",
-    "required properties eruit, want dat komt uit het Geojson schema",
-    "EVContour type en properties eruit want zijn onnodig geworden",
-    "8 objecten waren geometry i.p.v. geometrie en zijn omgezet naar geometrie",
-    "tijdstipRegistratie niet meer required in ExterneVeiligheidsObject voor aanlevering",
-    "3-dubbele properperties zijn eruit",
-    "pattern kvknummer exploitant is 1 niveau dieper geplaats",
-    "comment is opgenomen bij de 5 aan te leveren objectklassen",
-    "relaties zijn gelegd naar subtypes met oneOf ipv supertypes",
-    "Bij subtypes die een allOf aanroepen is een unevaluatedProperties key = false opgenomen",
-    "entityType is toegevoegd met een constante waarde waar objecten onderdeel zijn van een oneOf"
-    
-  ],
+  "title": "IMEV schema 3.0 RC3",
+  "description": "Release Candidate 3 van schema op basis van IMEV-versie 3.0 / 20241021 by Imvertor Nightly-build.19",
+  "$comment":
+    "Verbeteringen van RC3 t.o.v. RC1 en RC2 zijn te vinden via : https://github.com/Geonovum/imev-werkomgeving/tree/main/schemas/IMEV3.0/readme.md",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$reqs": [
     "/req/geojson",
@@ -90,11 +74,13 @@
     },
     "AftappuntOpslagtank": {
       "$anchor": "AftappuntOpslagtank",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "AftappuntOpslagtank"},
             "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
           },
           "required": ["geometrie"]
@@ -103,11 +89,13 @@
     },
     "AnderInsluitsysteemReferentie": {
       "$anchor": "AnderInsluitsysteemReferentie",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "AnderInsluitsysteemReferentie"},
             "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
           },
           "required": ["geometrie"]
@@ -130,11 +118,13 @@
     },
     "Bewaarplaats": {
       "$anchor": "Bewaarplaats",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Bewaarplaats"},
             "geometrie": {"$ref": "https://geojson.org/schema/Point.json"},
             "properties": {
               "type": "object",
@@ -153,11 +143,13 @@
     },
     "Bewerkingsruimte": {
       "$anchor": "Bewerkingsruimte",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Bewerkingsruimte"},
             "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
           },
           "required": ["geometrie"]
@@ -180,11 +172,13 @@
     },
     "BufferBewaarplaats": {
       "$anchor": "BufferBewaarplaats",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "BufferBewaarplaats"},
             "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
           },
           "required": ["geometrie"]
@@ -231,7 +225,10 @@
               "maximum": 99999
             }
           },
-          "required": ["entityType","geometrie"]
+          "required": [
+            "entityType",
+            "geometrie"
+          ]
         }
       ]
     },
@@ -270,11 +267,13 @@
     },
     "CivielExplosieAandachtsgebied": {
       "$anchor": "CivielExplosieAandachtsgebied",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/Aandachtsgebied"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "CivielExplosieAandachtsgebied"},
             "typeCivExpAandachtsgebied": {"$ref": "#/$defs/TypeExplosieAandachtsgebied"}
           },
           "required": ["typeCivExpAandachtsgebied"]
@@ -309,9 +308,23 @@
                 "oneOf": [
                   {"$ref": "#/$defs/SevesoReferentie"},
                   {"$ref": "#/$defs/BuisleidingReferentie"},
-                  {"$ref": "#/$defs/SpoorVervoer"},
+                  {"$ref": "#/$defs/WaterVervoer"},
                   {"$ref": "#/$defs/WegVervoer"},
-                  {"$ref": "#/$defs/WaterVervoer"}
+                  {"$ref": "#/$defs/SpoorVervoer"},
+                  {"$ref": "#/$defs/OpslagReferentie"},
+                  {"$ref": "#/$defs/Bewaarplaats"},
+                  {"$ref": "#/$defs/BufferBewaarplaats"},
+                  {"$ref": "#/$defs/Machinekamer"},
+                  {"$ref": "#/$defs/Leiding"},
+                  {"$ref": "#/$defs/OpstelplaatsVoertuig"},
+                  {"$ref": "#/$defs/SamengesteldeReferentie"},
+                  {"$ref": "#/$defs/Vulpunt"},
+                  {"$ref": "#/$defs/Tankzuil"},
+                  {"$ref": "#/$defs/Installatie"},
+                  {"$ref": "#/$defs/AftappuntOpslagtank"},
+                  {"$ref": "#/$defs/Bewerkingsruimte"},
+                  {"$ref": "#/$defs/Windturbine"},
+                  {"$ref": "#/$defs/AnderInsluitsysteemReferentie"}
                 ]
               },
               "minItems": 1,
@@ -417,7 +430,6 @@
             "entityType": {"const": "GifwolkAandachtsgebied"}
           }
         }
-        
       ]
     },
     "IdentificatieBAG": {
@@ -427,11 +439,13 @@
     },
     "Installatie": {
       "$anchor": "Installatie",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Installatie"},
             "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
           },
           "required": ["geometrie"]
@@ -512,11 +526,13 @@
     },
     "Leiding": {
       "$anchor": "Leiding",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Leiding"},
             "geometrie": {"$ref": "#/$defs/PuntOfLijn"},
             "bovengronds": {"type": "boolean"},
             "diameter": {
@@ -626,7 +642,50 @@
                 "oneOf": [
                   {"$ref": "#/$defs/SevesoInrichting"},
                   {"$ref": "#/$defs/Buisleiding"},
-                  {"$ref": "#/$defs/Basisnet"}
+                  {"$ref": "#/$defs/Basisnet"},
+                  {"$ref": "#/$defs/ActiviteitRestcategorie"},
+                  {"$ref": "#/$defs/AmmoniakKoelinstallatie_TeBerekenenAfstand"},
+                  {"$ref": "#/$defs/AmmoniakKoelinstallatie_VasteAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/AnderInsluitsysteem"},
+                  {"$ref": "#/$defs/BadGiftig"},
+                  {"$ref": "#/$defs/BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht"},
+                  {"$ref": "#/$defs/Emplacement"},
+                  {"$ref": "#/$defs/KernenergieInrichting"},
+                  {"$ref": "#/$defs/Mestvergisting"},
+                  {"$ref": "#/$defs/MijnbouwwerkExploiteren"},
+                  {"$ref": "#/$defs/MijnbouwwerkVerplaatsbaar"},
+                  {"$ref": "#/$defs/OpslagBrandbareVloeistofGeenDieselBovengronds"},
+                  {"$ref": "#/$defs/OpslagBrandbareVloeistofGeenDieselOndergronds"},
+                  {"$ref": "#/$defs/OpslagBrandstofBunkerstation"},
+                  {"$ref": "#/$defs/OpslagMeststof"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarADR1.1Civiel"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarADR1.3Civiel"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarADR1.4Civiel"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarComplexen"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarMilitair_TeBerekenenAfstand"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarMilitair_VasteAfstand"},
+                  {"$ref": "#/$defs/OpslagOxiderendVerstikkendGas"},
+                  {"$ref": "#/$defs/OpslagSevesoHoeveelheidBuitenSevesoInrichting"},
+                  {"$ref": "#/$defs/OpslagVerpakt_TeBerekenenAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagVerpakt_VasteAfstandGeenVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagVerpakt_VasteAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagVuurwerkF1F2F3T1T2"},
+                  {"$ref": "#/$defs/OpslagVuurwerkF4"},
+                  {"$ref": "#/$defs/OpslagtankGas_TeBerekenenAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagtankPropaanPropeen_VasteAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagtankVloeistof"},
+                  {"$ref": "#/$defs/OpstellenVoertuigen"},
+                  {"$ref": "#/$defs/SevesoInrichting"},
+                  {"$ref": "#/$defs/TankenCNG"},
+                  {"$ref": "#/$defs/TankenGrootschaligVaartuig"},
+                  {"$ref": "#/$defs/TankenKleinschaligVaartuig"},
+                  {"$ref": "#/$defs/TankenLNGVoertuigWerktuig"},
+                  {"$ref": "#/$defs/TankenLPG"},
+                  {"$ref": "#/$defs/TankenWaterstofVoertuigWerktuig"},
+                  {"$ref": "#/$defs/Windturbine_TeBerekenenAfstandGeenVergunningplicht"},
+                  {"$ref": "#/$defs/Windturbine_TeBerekenenAfstandVergunningplicht"}
                 ]
               },
               "minItems": 1,
@@ -639,11 +698,13 @@
     },
     "Machinekamer": {
       "$anchor": "Machinekamer",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Machinekamer"},
             "geometrie": {"$ref": "#/$defs/PuntOfVlak"},
             "aantalKoelinstallaties": {
               "type": "integer",
@@ -659,11 +720,13 @@
     },
     "MilitairExplosieAandachtsgebied": {
       "$anchor": "MilitairExplosieAandachtsgebied",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/Aandachtsgebied"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "MilitairExplosieAandachtsgebied"},
             "typeMilitairExpAandachtsgebied": {"$ref": "#/$defs/TypeExplosieAandachtsgebied"}
           },
           "required": ["typeMilitairExpAandachtsgebied"]
@@ -685,11 +748,13 @@
     },
     "OpslagReferentie": {
       "$anchor": "OpslagReferentie",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "OpslagReferentie"},
             "geometrie": {"$ref": "#/$defs/PuntOfVlak"},
             "typeOpslagReferentie": {"$ref": "#/$defs/TypeOpslagReferentie"},
             "bovengronds": {"type": "boolean"},
@@ -713,11 +778,13 @@
     },
     "OpstelplaatsVoertuig": {
       "$anchor": "OpstelplaatsVoertuig",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "OpstelplaatsVoertuig"},
             "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
           },
           "required": ["geometrie"]
@@ -726,11 +793,13 @@
     },
     "OverigeContour": {
       "$anchor": "OverigeContour",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/EVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "OverigeContour"},
             "aardRisico": {"type": "string"},
             "typeOverigeContour": {"$ref": "#/$defs/TypeOverigeContour"},
             "afstandOfGeometrie": {"$ref": "#/$defs/AfstandOfGeometrieOverigeContour"},
@@ -829,6 +898,10 @@
                   {"$ref": "#/$defs/BrandAandachtsgebied"},
                   {"$ref": "#/$defs/ExplosieAandachtsgebied"},
                   {"$ref": "#/$defs/GifwolkAandachtsgebied"},
+                  {"$ref": "#/$defs/CivielExplosieAandachtsgebied"},
+                  {"$ref": "#/$defs/ExplosieAandachtsgebiedVuurwerk"},
+                  {"$ref": "#/$defs/MilitairExplosieAandachtsgebied"},
+                  {"$ref": "#/$defs/OverigeContour"},
                   {"$ref": "#/$defs/PRContour"}
                 ]
               },
@@ -842,6 +915,7 @@
     },
     "SamengesteldeReferentie": {
       "$anchor": "SamengesteldeReferentie",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
@@ -861,6 +935,7 @@
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "SevesoReferentie"},
             "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
           },
           "required": ["geometrie"]
@@ -930,11 +1005,13 @@
     },
     "Tankzuil": {
       "$anchor": "Tankzuil",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Tankzuil"},
             "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
           },
           "required": ["geometrie"]
@@ -964,11 +1041,13 @@
     },
     "Vulpunt": {
       "$anchor": "Vulpunt",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Vulpunt"},
             "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
           },
           "required": ["geometrie"]
@@ -1002,11 +1081,13 @@
     },
     "WegAs": {
       "$anchor": "WegAs",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "WegAs"},
             "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"}
           },
           "required": ["geometrie"]
@@ -1057,11 +1138,13 @@
     },
     "Windturbine": {
       "$anchor": "Windturbine",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/ReferentieEVContour"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Windturbine"},
             "geometrie": {"$ref": "https://geojson.org/schema/Point.json"},
             "properties": {
               "type": "object",
@@ -1174,11 +1257,13 @@
     },
     "AmmoniakKoelinstallatie_TeBerekenenAfstand": {
       "$anchor": "AmmoniakKoelinstallatie_TeBerekenenAfstand",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "AmmoniakKoelinstallatie_TeBerekenenAfstand"},
             "werktemperatuur": {
               "type": "number",
               "minimum": -273.15,
@@ -1191,11 +1276,13 @@
     },
     "AmmoniakKoelinstallatie_VasteAfstandVergunningplicht": {
       "$anchor": "AmmoniakKoelinstallatie_VasteAfstandVergunningplicht",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "AmmoniakKoelinstallatie_VasteAfstandVergunningplicht"},
             "werktemperatuur": {
               "type": "number",
               "minimum": -273.15,
@@ -1208,8 +1295,16 @@
     },
     "AnderInsluitsysteem": {
       "$anchor": "AnderInsluitsysteem",
+      "unevaluatedProperties": false,
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "AnderInsluitsysteem"}
+          },
+          "required": ["entityType"]
+        }
       ]
     },
     "BKLActiviteit": {
@@ -1256,8 +1351,16 @@
     },
     "BadGiftig": {
       "$anchor": "BadGiftig",
+      "unevaluatedProperties": false,
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "BadGiftig"}
+          },
+          "required": ["entityType"]
+        }
       ]
     },
     "Basisnet": {
@@ -1276,17 +1379,27 @@
     },
     "BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht": {
       "$anchor": "BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht": {
-      "$anchor": "BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht": {
+      "$anchor": "BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht"},
             "ontwerpCapaciteit": {
               "type": "number",
               "minimum": 0,
@@ -1318,65 +1431,139 @@
     },
     "Emplacement": {
       "$anchor": "Emplacement",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "KernenergieInrichting": {
-      "$anchor": "KernenergieInrichting",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "Mestvergisting": {
-      "$anchor": "Mestvergisting",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "MijnbouwwerkExploiteren": {
-      "$anchor": "MijnbouwwerkExploiteren",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "MijnbouwwerkVerplaatsbaar": {
-      "$anchor": "MijnbouwwerkVerplaatsbaar",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagBrandbareVloeistofGeenDieselBovengronds": {
-      "$anchor": "OpslagBrandbareVloeistofGeenDieselBovengronds",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagBrandbareVloeistofGeenDieselOndergronds": {
-      "$anchor": "OpslagBrandbareVloeistofGeenDieselOndergronds",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagBrandstofBunkerstation": {
-      "$anchor": "OpslagBrandstofBunkerstation",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagMeststof": {
-      "$anchor": "OpslagMeststof",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagOntplofbaarADR1.1Civiel": {
-      "$anchor": "OpslagOntplofbaarADR1.1Civiel",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Emplacement"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "KernenergieInrichting": {
+      "$anchor": "KernenergieInrichting",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "KernenergieInrichting"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "Mestvergisting": {
+      "$anchor": "Mestvergisting",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Mestvergisting"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "MijnbouwwerkExploiteren": {
+      "$anchor": "MijnbouwwerkExploiteren",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "MijnbouwwerkExploiteren"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "MijnbouwwerkVerplaatsbaar": {
+      "$anchor": "MijnbouwwerkVerplaatsbaar",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "MijnbouwwerkVerplaatsbaar"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagBrandbareVloeistofGeenDieselBovengronds": {
+      "$anchor": "OpslagBrandbareVloeistofGeenDieselBovengronds",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "SOpslagBrandbareVloeistofGeenDieselBovengronds"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagBrandbareVloeistofGeenDieselOndergronds": {
+      "$anchor": "OpslagBrandbareVloeistofGeenDieselOndergronds",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagBrandbareVloeistofGeenDieselOndergronds"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagBrandstofBunkerstation": {
+      "$anchor": "OpslagBrandstofBunkerstation",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagBrandstofBunkerstation"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagMeststof": {
+      "$anchor": "OpslagMeststof",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagMeststof"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagOntplofbaarADR1.1Civiel": {
+      "$anchor": "OpslagOntplofbaarADR1.1Civiel",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOntplofbaarADR1.1Civiel"},
             "nettoExplosieveMassa": {
               "type": "number",
               "minimum": 0,
@@ -1388,11 +1575,13 @@
     },
     "OpslagOntplofbaarADR1.3Civiel": {
       "$anchor": "OpslagOntplofbaarADR1.3Civiel",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "OpslagOntplofbaarADR1.3Civiel"},
             "nettoExplosieveMassa": {
               "type": "number",
               "minimum": 0,
@@ -1404,41 +1593,83 @@
     },
     "OpslagOntplofbaarADR1.4Civiel": {
       "$anchor": "OpslagOntplofbaarADR1.4Civiel",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagOntplofbaarComplexen": {
-      "$anchor": "OpslagOntplofbaarComplexen",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagOntplofbaarMilitair_TeBerekenenAfstand": {
-      "$anchor": "OpslagOntplofbaarMilitair_TeBerekenenAfstand",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagOntplofbaarMilitair_VasteAfstand": {
-      "$anchor": "OpslagOntplofbaarMilitair_VasteAfstand",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagOxiderendVerstikkendGas": {
-      "$anchor": "OpslagOxiderendVerstikkendGas",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagSevesoHoeveelheidBuitenSevesoInrichting": {
-      "$anchor": "OpslagSevesoHoeveelheidBuitenSevesoInrichting",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "OpslagOntplofbaarADR1.4Civiel"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagOntplofbaarComplexen": {
+      "$anchor": "OpslagOntplofbaarComplexen",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOntplofbaarComplexen"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagOntplofbaarMilitair_TeBerekenenAfstand": {
+      "$anchor": "OpslagOntplofbaarMilitair_TeBerekenenAfstand",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOntplofbaarMilitair_TeBerekenenAfstand"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagOntplofbaarMilitair_VasteAfstand": {
+      "$anchor": "OpslagOntplofbaarMilitair_VasteAfstand",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOntplofbaarMilitair_VasteAfstand"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagOxiderendVerstikkendGas": {
+      "$anchor": "OpslagOxiderendVerstikkendGas",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOxiderendVerstikkendGas"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagSevesoHoeveelheidBuitenSevesoInrichting": {
+      "$anchor": "OpslagSevesoHoeveelheidBuitenSevesoInrichting",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagSevesoHoeveelheidBuitenSevesoInrichting"},
             "kritischeTemperatuur": {
               "type": "number",
               "minimum": 0,
@@ -1466,6 +1697,7 @@
     },
     "OpslagVerpakt_TeBerekenenAfstandVergunningplicht": {
       "$anchor": "OpslagVerpakt_TeBerekenenAfstandVergunningplicht",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
@@ -1478,17 +1710,27 @@
     },
     "OpslagVerpakt_VasteAfstandGeenVergunningplicht": {
       "$anchor": "OpslagVerpakt_VasteAfstandGeenVergunningplicht",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagVerpakt_VasteAfstandVergunningplicht": {
-      "$anchor": "OpslagVerpakt_VasteAfstandVergunningplicht",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "OpslagVerpakt_VasteAfstandGeenVergunningplicht"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagVerpakt_VasteAfstandVergunningplicht": {
+      "$anchor": "OpslagVerpakt_VasteAfstandVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagVerpakt_VasteAfstandVergunningplicht"},
             "beschermingsniveauConformTabelB3": {"$ref": "#/$defs/BeschermingsniveauTabelB3"}
           },
           "required": ["beschermingsniveauConformTabelB3"]
@@ -1497,11 +1739,13 @@
     },
     "OpslagVuurwerkF1F2F3T1T2": {
       "$anchor": "OpslagVuurwerkF1F2F3T1T2",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "OpslagVuurwerkF1F2F3T1T2"},
             "hoeveelheidVuurwerk": {
               "type": "number",
               "minimum": 0,
@@ -1518,11 +1762,13 @@
     },
     "OpslagVuurwerkF4": {
       "$anchor": "OpslagVuurwerkF4",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "OpslagVuurwerkF4"},
             "hoeveelheidVuurwerk": {
               "type": "number",
               "minimum": 0,
@@ -1534,17 +1780,27 @@
     },
     "OpslagtankGas_TeBerekenenAfstandVergunningplicht": {
       "$anchor": "OpslagtankGas_TeBerekenenAfstandVergunningplicht",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht": {
-      "$anchor": "OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "OpslagtankGas_TeBerekenenAfstandVergunningplicht"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht": {
+      "$anchor": "OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht"},
             "aantalBevoorradingen": {"$ref": "#/$defs/BevoorradingCategorieOfExactAantal"}
           }
         }
@@ -1552,11 +1808,13 @@
     },
     "OpslagtankPropaanPropeen_VasteAfstandVergunningplicht": {
       "$anchor": "OpslagtankPropaanPropeen_VasteAfstandVergunningplicht",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "OpslagtankPropaanPropeen_VasteAfstandVergunningplicht"},
             "doorzetPerJaar": {
               "type": "number",
               "minimum": 0,
@@ -1568,14 +1826,30 @@
     },
     "OpslagtankVloeistof": {
       "$anchor": "OpslagtankVloeistof",
+      "unevaluatedProperties": false,
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagtankVloeistof"}
+          },
+          "required": ["entityType"]
+        }
       ]
     },
     "OpstellenVoertuigen": {
       "$anchor": "OpstellenVoertuigen",
+      "unevaluatedProperties": false,
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpstellenVoertuigen"}
+          },
+          "required": ["entityType"]
+        }
       ]
     },
     "SevesoInrichting": {
@@ -1586,22 +1860,21 @@
         {
           "type": "object",
           "properties": {
-            "fietsbel": {"type": "string"},
             "entityType": {"const": "SevesoInrichting"}
           },
-          "required": [
-            "entityType"
-          ]
+          "required": ["entityType"]
         }
       ]
     },
     "TankenCNG": {
       "$anchor": "TankenCNG",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "TankenCNG"},
             "aantalPersonenauto": {
               "type": "integer",
               "minimum": 0,
@@ -1618,23 +1891,41 @@
     },
     "TankenGrootschaligVaartuig": {
       "$anchor": "TankenGrootschaligVaartuig",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "TankenKleinschaligVaartuig": {
-      "$anchor": "TankenKleinschaligVaartuig",
-      "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
-      ]
-    },
-    "TankenLNGVoertuigWerktuig": {
-      "$anchor": "TankenLNGVoertuigWerktuig",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "TankenGrootschaligVaartuig"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "TankenKleinschaligVaartuig": {
+      "$anchor": "TankenKleinschaligVaartuig",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "TankenKleinschaligVaartuig"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "TankenLNGVoertuigWerktuig": {
+      "$anchor": "TankenLNGVoertuigWerktuig",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "TankenLNGVoertuigWerktuig"},
             "reactietijdNoodstop": {"$ref": "#/$defs/ReactietijdNoodstopBooleanOfExact"},
             "bovenvulling": {"type": "boolean"},
             "verladingPomp": {"type": "boolean"},
@@ -1645,11 +1936,13 @@
     },
     "TankenLPG": {
       "$anchor": "TankenLPG",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "TankenLPG"},
             "doorzetPerJaar": {
               "type": "number",
               "minimum": 0,
@@ -1661,8 +1954,16 @@
     },
     "TankenWaterstofVoertuigWerktuig": {
       "$anchor": "TankenWaterstofVoertuigWerktuig",
+      "unevaluatedProperties": false,
       "allOf": [
-        {"$ref": "#/$defs/BKLActiviteit"}
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "TankenWaterstofVoertuigWerktuig"}
+          },
+          "required": ["entityType"]
+        }
       ]
     },
     "WegenNietBasisnet": {
@@ -1673,11 +1974,13 @@
     },
     "Windturbine_TeBerekenenAfstandGeenVergunningplicht": {
       "$anchor": "Windturbine_TeBerekenenAfstandGeenVergunningplicht",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Windturbine_TeBerekenenAfstandGeenVergunningplicht"},
             "aantalWindturbines": {
               "type": "integer",
               "minimum": 1,
@@ -1690,11 +1993,13 @@
     },
     "Windturbine_TeBerekenenAfstandVergunningplicht": {
       "$anchor": "Windturbine_TeBerekenenAfstandVergunningplicht",
+      "unevaluatedProperties": false,
       "allOf": [
         {"$ref": "#/$defs/BKLActiviteit"},
         {
           "type": "object",
           "properties": {
+            "entityType": {"const": "Windturbine_TeBerekenenAfstandVergunningplicht"},
             "aantalWindturbines": {
               "type": "integer",
               "minimum": 3,
@@ -2094,10 +2399,10 @@
     }
   },
   "oneOf": [
+    {"$ref": "#/$defs/LocatieBasisnet"},
     {"$ref": "#/$defs/BuisleidingStelsel"},
     {"$ref": "#/$defs/LocatieActiviteit"},
-    {"$ref": "#/$defs/LocatieBasisnet"},
     {"$ref": "#/$defs/KwetsbaarGebouw"},
     {"$ref": "#/$defs/KwetsbareLocatie"}
-    ]
+  ]
 }

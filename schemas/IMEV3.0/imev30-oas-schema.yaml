@@ -20,14 +20,14 @@ components:
 
     LocatieEVActiviteitSubtypes:
       oneOf:
-        - $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/LocatieActiviteit'
-        - $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/BuisleidingStelsel'
-        - $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/LocatieBasisnet'  
+        - $ref: 'IMEV_schema_3.0_RC3.json#/components/schemas/LocatieActiviteit'
+        - $ref: 'IMEV_schema_3.0_RC3.json#/components/schemas/BuisleidingStelsel'
+        - $ref: 'IMEV_schema_3.0_RC3.json#/components/schemas/LocatieBasisnet'  
 
     GebouwOfLocatieSubtypes:
       oneOf:
-        - $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/KwetsbaarGebouw'
-        - $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/KwetsbareLocatie'        
+        - $ref: 'IMEV_schema_3.0_RC3.json#/components/schemas/KwetsbaarGebouw'
+        - $ref: 'IMEV_schema_3.0_RC3.json#/components/schemas/KwetsbareLocatie'        
   
     
     FeatureTypes:
@@ -295,7 +295,7 @@ components:
         - kgl
       properties:
         kgl:
-          $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/KwetsbareLocatie'
+          $ref: 'IMEV_schema_3.0_RC3.json#/components/schemas/KwetsbareLocatie'
 
     KwetsbaarGebouwBulk:
       type: object
@@ -304,7 +304,7 @@ components:
         - bagData
       properties:
         kgl:
-          $ref: 'IMEV_schema_3.0_RC1.json#/components/schemas/KwetsbaarGebouw'
+          $ref: 'IMEV_schema_3.0_RC3.json#/components/schemas/KwetsbaarGebouw'
         bagData:
           $ref: '#/components/schemas/BagDataGebouw'
 
