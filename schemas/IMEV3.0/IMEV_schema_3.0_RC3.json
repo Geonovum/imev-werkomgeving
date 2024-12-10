@@ -497,8 +497,10 @@
             },
             "kadastraleAanduiding": {
               "type": "array",
-              "items": {"type": "string"},
-              "pattern": "[A-Z]{3}\\d{2}[A-I,K-Z]{1,2}\\d{5}[G][0]{4}"
+              "items": {
+                "type": "string",
+                "pattern": "[A-Z]{3}\\d{2}[A-I,K-Z]{1,2}\\d{5}[G][0]{4}"
+              }
             }
           },
           "required": ["categorieKwetsbaarheid"]

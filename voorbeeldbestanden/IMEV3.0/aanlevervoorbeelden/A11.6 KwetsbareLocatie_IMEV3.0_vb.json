@@ -8,10 +8,10 @@
     "entityType": "KwetsbareLocatie",
     "identificatie": {
         "namespace": "NL.IMEV",
-        "lokaalID": "gm1979.AppingedamD2662",
+        "lokaalID": "gm1979.UTH02D2662",
         "versie": ""
     },
-    "bronobjectID": "AppingedamD2662",
+    "bronobjectID": "UTH02D2662",
     "bronhoudercode": "EEMSDE",
     "bronhoudercodeOverheid": "gm1979",
     "bronhouder": "Gemeente Eemsdelta",
@@ -94,5 +94,5 @@
         ]
     },
     "populatie": 50,
-    "kadastraleAanduiding": ["AppingedamD2662"]
+    "kadastraleAanduiding": ["UTH02D02662G0000"]
 }
