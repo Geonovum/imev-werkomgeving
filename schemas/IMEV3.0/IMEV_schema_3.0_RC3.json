@@ -1183,7 +1183,7 @@
                   "maximum": 99999
                 },
                 "type": {"type": "string"},
-                "materiaalMast": {"$ref": "#/$defs/MateriaalWindtubineMast"},
+                "materiaalMast": {"$ref": "#/$defs/MateriaalWindturbineMast"},
                 "lengteGondel": {
                   "type": "number",
                   "minimum": 0,
@@ -2204,8 +2204,8 @@
         "gegevenInTransitie"
       ]
     },
-    "MateriaalWindtubineMast": {
-      "$anchor": "MateriaalWindtubineMast",
+    "MateriaalWindturbineMast": {
+      "$anchor": "MateriaalWindturbineMast",
       "type": "string",
       "enum": [
         "staal",
