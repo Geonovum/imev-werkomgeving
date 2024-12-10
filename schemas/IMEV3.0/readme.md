@@ -14,7 +14,7 @@ Deze dient als voorbeeld, maar zal voor de definitieve implementatie van de API 
 
 ***Verbeteringen van RC3 t.o.v. RC1 en RC2:***  
 
-- relaties in het model van rechts naar links zijn uit het schema verwijderd.
+- relaties in het model van rechts naar links zijn uit het schema verwijderd
 - patroon attribuut bronhouder aangepast
 - min en max als number ipv string
 - min en max aantalAutobussen omgedraaid 
@@ -28,4 +28,6 @@ Deze dient als voorbeeld, maar zal voor de definitieve implementatie van de API 
 - comment is opgenomen bij de 5 aan te leveren objectklassen 
 - Bij subtypes die een allOf aanroepen is een unevaluatedProperties key = false opgenomen 
 - entityType is toegevoegd met een constante waarde waar objecten onderdeel zijn van een oneOf 
-- relaties zijn gelegd naar alle subtypes met oneOf ipv alleen naar supertypes
+- relaties zijn gelegd naar alle subtypes via oneOf ipv alleen naar supertypes
+
+***Valideren*** met het schema IMEV_schema_3.0_RC3.json gaat niet in alle validatiesoftware goed. Met Visual Studio zijn wel alle [voorbeeldbestanden](https://github.com/Geonovum/imev-werkomgeving/tree/main/voorbeeldbestanden/IMEV3.0/aanlevervoorbeelden) gevalideerd zonder fouten.
