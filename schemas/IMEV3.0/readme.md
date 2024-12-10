@@ -14,18 +14,18 @@ Deze dient als voorbeeld, maar zal voor de definitieve implementatie van de API 
 
 ***Verbeteringen van RC3 t.o.v. RC1 en RC2:***  
 
--relaties in het model van rechts naar links zijn uit het schema verwijderd.
--patroon attribuut bronhouder aangepast
--min en max als number ipv string
--min en max aantalAutobussen omgedraaid 
--entityType toegevoegd bij ExterneVeiligheidsObject 
--verwijzing naar Geojson schema verwijderd 
--EVContour type en properties eruit want die zijn onnodig geworden 
--8 objecten waren geometry i.p.v. geometrie en zijn omgezet naar geometrie 
--tijdstipRegistratie niet meer required in ExterneVeiligheidsObject voor aanlevering 
--3-dubbele properperties en lege required properties eruit, want dat komt uit het Geojson schema 
--pattern kvknummer exploitant en kadastrale aanduiding 1 niveau dieper geplaatst 
--comment is opgenomen bij de 5 aan te leveren objectklassen 
--Bij subtypes die een allOf aanroepen is een unevaluatedProperties key = false opgenomen 
--entityType is toegevoegd met een constante waarde waar objecten onderdeel zijn van een oneOf 
--relaties zijn gelegd naar alle subtypes met oneOf ipv alleen naar supertypes
+- relaties in het model van rechts naar links zijn uit het schema verwijderd.
+- patroon attribuut bronhouder aangepast
+- min en max als number ipv string
+- min en max aantalAutobussen omgedraaid 
+- entityType toegevoegd bij ExterneVeiligheidsObject 
+- verwijzing naar Geojson schema verwijderd 
+- EVContour type en properties eruit want die zijn onnodig geworden 
+- 8 objecten waren geometry i.p.v. geometrie en zijn omgezet naar geometrie 
+- tijdstipRegistratie niet meer required in ExterneVeiligheidsObject voor aanlevering 
+- 3-dubbele properperties en lege required properties eruit, want dat komt uit het Geojson schema 
+- pattern kvknummer exploitant en kadastrale aanduiding 1 niveau dieper geplaatst 
+- comment is opgenomen bij de 5 aan te leveren objectklassen 
+- Bij subtypes die een allOf aanroepen is een unevaluatedProperties key = false opgenomen 
+- entityType is toegevoegd met een constante waarde waar objecten onderdeel zijn van een oneOf 
+- relaties zijn gelegd naar alle subtypes met oneOf ipv alleen naar supertypes
