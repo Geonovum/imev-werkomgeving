@@ -29,5 +29,6 @@ Deze dient als voorbeeld, maar zal voor de definitieve implementatie van de API 
 - Bij subtypes die een allOf aanroepen is een unevaluatedProperties key = false opgenomen 
 - entityType is toegevoegd met een constante waarde waar objecten onderdeel zijn van een oneOf 
 - relaties zijn gelegd naar alle subtypes via oneOf ipv alleen naar supertypes
+- Enumeratie MateriaalWindtubineMast verbeterd naar MateriaalWindtu***r***bineMast
 
 ***Valideren*** met het schema IMEV_schema_3.0_RC3.json gaat niet in alle validatiesoftware goed. Met Visual Studio zijn wel alle [voorbeeldbestanden](https://github.com/Geonovum/imev-werkomgeving/tree/main/voorbeeldbestanden/IMEV3.0/aanlevervoorbeelden) gevalideerd zonder fouten.
