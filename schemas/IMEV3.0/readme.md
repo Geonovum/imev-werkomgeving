@@ -1,4 +1,4 @@
-In deze map staan de schemas die horen bij IMEV 3.0.
+In deze map staan de schemas en een voorstel voor de Open Api Specificatie (OAS) die horen bij IMEV 3.0.
 
 ***IMEV_OAS_3.0_RC3.yaml*** is de Open Api Specificatie (OAS) behorende bij IMEV3.0.
 Deze dient als voorbeeld, maar zal voor de definitieve implementatie van de API nog aangepast moeten worden aan implementatie specifieke elementen.
