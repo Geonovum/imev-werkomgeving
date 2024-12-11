@@ -11,7 +11,7 @@ Deze verwijst op meerdere plaatsten naar imev30-oas-schema_RC3.yaml
 ***IMEV_schema_3.0_RC1.json*** is het eerst gepubliceerde schema op https://register.geostandaarden.nl/jsonschema/imev/3.0.0rc/
 ***IMEV_schema_3.0_RC2.json*** is aangepast voor publicatie als Geojson bestanden  
 
-***IMEV_schema_3.0_RC3.json*** is gemaakt speciaal voor aanleverbestanden en sluit meer aan op de structuur van oude aanleverbetanden, maar dan wel conform IMEV3.0
+***IMEV_schema_3.0_RC3.json*** is gemaakt speciaal voor aanleverbestanden en sluit meer aan op de structuur van oude aanleverbetanden, maar dan wel conform IMEV3.0 Deze is sinds 10 dec ook gepubloceerd op gepubliceerde schema op https://register.geostandaarden.nl/jsonschema/imev/3.0.0rc/.
 
 ***Verbeteringen van RC3 t.o.v. RC1 en RC2:***  
 
