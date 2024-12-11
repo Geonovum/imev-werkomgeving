@@ -4,7 +4,8 @@
         "datum: 2024-12-03",
         "versie IMEV: 3.0",
         "schema IMEV_schema_3.0_RC3",
-        "geometrie te vinden via: https://service.pdok.nl/lv/bag/wfs/v2_0?service=WFS&version=1.0.0&request=GetFeature&typename=pand&filter=%3CFilter+xmlns=%22http://www.opengis.net/ogc%22%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3Eidentificatie%3C/PropertyName%3E%3CLiteral%3E0003100000119847%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E&OutputFormat=JSON"
+        "geometrie, gebruiksdoelenVerblijfsobjectBAG en oppervlakteVerblijfsobjectBAG zijn te vinden via",
+        ": https://service.pdok.nl/lv/bag/wfs/v2_0?service=WFS&version=1.0.0&request=GetFeature&typename=pand&filter=%3CFilter+xmlns=%22http://www.opengis.net/ogc%22%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3Eidentificatie%3C/PropertyName%3E%3CLiteral%3E0003100000119847%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E&OutputFormat=JSON"
     ],
     "entityType": "KwetsbaarGebouw",
     "identificatie": {
@@ -28,11 +29,6 @@
     ],
     "idPandBAG": "0003100000119847",
     "idAdresseerbaarobjectBAG": "3695486896271895",
-    "gebruiksdoelenVerblijfsobjectBAG": [
-        "sportfunctie",
-        "bijeenkomstfunctie"
-    ],
-    "oppervlakteVerblijfsobjectBAG": 300,
     "populatie": 50,
     "kadastraleAanduiding": ["UTH01D02662G0000"]
 }
