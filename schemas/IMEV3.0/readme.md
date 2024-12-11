@@ -6,7 +6,7 @@ Deze verwijst op meerdere plaatsten naar imev30-oas-schema_RC3.yaml
 
 ***imev30-oas-schema_RC3.yaml*** is een extra schema voor aansluiting van de OAS op het IMEV_schema_3.0_RC3.json  
 
-***common-schema.yaml*** is een apart schema voor algemene obejecten als Geometrie en NEN3610id. Deze is eigenlijk overbodig geworden met IMEV3.0
+***common-schema.yaml*** is een apart schema voor algemene obejecten als Geometrie en NEN3610id. Deze is eigenlijk overbodig geworden met IMEV3.0 en ongewijzigd t.o.v. versie 2.0 van IMEV.
 
 ***IMEV_schema_3.0_RC1.json*** is het eerst gepubliceerde schema op https://register.geostandaarden.nl/jsonschema/imev/3.0.0rc/
 ***IMEV_schema_3.0_RC2.json*** is aangepast voor publicatie als Geojson bestanden  
