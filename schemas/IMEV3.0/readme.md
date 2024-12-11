@@ -1,9 +1,10 @@
 In deze map staan de schemas die horen bij IMEV 3.0.
 
-***IMEV_OAS_3.0_RC1.yaml*** is de Open Api Specificatie (OAS) behorende bij IMEV3.0.
-Deze dient als voorbeeld, maar zal voor de definitieve implementatie van de API nog aangepast moeten worden aan implementatie specifieke elementen.  
+***IMEV_OAS_3.0_RC3.yaml*** is de Open Api Specificatie (OAS) behorende bij IMEV3.0.
+Deze dient als voorbeeld, maar zal voor de definitieve implementatie van de API nog aangepast moeten worden aan implementatie specifieke elementen.
+Deze verwijst op meerdere plaatsten naar imev30-oas-schema_RC3.yaml  
 
-***imev30-oas-schema.yaml*** is een extra schema voor aansluiting van de OAS op het IMEV_schema_3.0_RC3.json  
+***imev30-oas-schema_RC3.yaml*** is een extra schema voor aansluiting van de OAS op het IMEV_schema_3.0_RC3.json  
 
 ***common-schema.yaml*** is een apart schema voor algemene obejecten als Geometrie en NEN3610id. Deze is eigenlijk overbodig geworden met IMEV3.0
 
