@@ -2,7 +2,7 @@
    <body>
       <section id="cat" class="normative">
          <h2>Gegevensdefinitie</h2>
-         <!--MIMLM-IMEV-conceptueel-3.0-0-20241021-20250206-173338 imvertor Nightly-build.0-->
+         <!--MIMLM-IMEV-conceptueel-3.0-0-20241021-20250207-101554 imvertor Nightly-build.0-->
          <section id="global_package_IMEVbasis">
             <h3>Domein   IMEV-basis</h3>
             <section id="EAID_90555E69_004F_4af9_B918_EED2BB1789DB">
@@ -4093,7 +4093,7 @@
                               
                               <ul>
                                  
-                                 <li>bronhoudercode­Overheid of bronhoudercode­Geen­Overheid moet gevuld zijn.</li>
+                                 <li>bronhoudercode­Overheid of bronhoudercode­Geen­Overheid moet gevuld zijn en niet beide.</li>
                                  
                                  <li>eind­Registratie is groter dan tijdstipregistratie</li>
                                  
@@ -12988,7 +12988,7 @@
                               </tr>
                               <tr>
                                  <th>OCL</th>
-                                 <td> inv: (bronhoudercode­Overheid.not­Empty() or bronhoudercode­Geen­Overheid.not­Empty())</td>
+                                 <td> inv: (bronhoudercode­Overheid.not­Empty() xor bronhoudercode­Geen­Overheid.not­Empty())</td>
                               </tr>
                            </tbody>
                         </table>
@@ -31818,7 +31818,7 @@
       </section>
       <section id="lis" class="normative">
          <h2>Inhoud van waardelijsten</h2>
-         <!--MIMLM-IMEV-conceptueel-3.0-0-20241021-20250206-173338 imvertor Nightly-build.0-->
+         <!--MIMLM-IMEV-conceptueel-3.0-0-20241021-20250207-101554 imvertor Nightly-build.0-->
          <section>
             <h3>Codelijst inhoud   </h3>
             <section id="detail_class_Waardelijsten_TooiWaardelijst">
