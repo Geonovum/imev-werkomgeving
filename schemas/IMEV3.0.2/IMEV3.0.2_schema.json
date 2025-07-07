@@ -393,7 +393,7 @@
         },
         "bronhouder": {
           "type": "string",
-          "pattern": "[^.]{1,100}"
+          "pattern": "^(?!.{0,100}[.]).{1,100}$"
         },
         "documentInfo": {"$ref": "#/$defs/Documentatie"},
         "beginGeldigheid": {
