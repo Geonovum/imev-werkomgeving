@@ -1,0 +1,2487 @@
+{
+  "title": "IMEV 3.0.2 JSON-schema 1.0",
+  "description": "JSON-schema op basis van IMEV versie 3.0.2 manual edit on IMEV 3.0.1 JSON-schema 1.0",
+  "$comment": "Dit schema is bijgewerkt vanuit MEV 3.0.1 JSON-schema 1.0 naar IMEV 3.0.2 (zie changelog Bijlage A van het IMEV3.0.2)",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$reqs": [
+    "/req/geojson",
+    "/req/by-reference-link-object",
+    "/req/codelists-literal",
+    "/req/entitytype"
+  ],
+  "$defs": {
+    "Aandachtsgebied": {
+      "$anchor": "Aandachtsgebied",
+      "allOf": [
+        {"$ref": "#/$defs/EVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "afstandOfGeometrie": {"$ref": "#/$defs/AfstandOfGeometrieAandachtsgebied"},
+            "categorieAandachtsgebied": {"$ref": "#/$defs/CategorieAandachtsgebied"},
+            "aardRisico": {"type": "string"},
+            "maatgevendeStof": {
+              "oneOf": [
+                {"$ref": "#/$defs/StofOfStofcategorie"},
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            }
+          },
+          "required": [
+            "afstandOfGeometrie",
+            "maatgevendeStof"
+          ]
+        }
+      ]
+    },
+    "AfstandOfGeometrieAandachtsgebied": {
+      "$anchor": "AfstandOfGeometrieAandachtsgebied",
+      "type": "object",
+      "properties": {
+        "geometrie": {"$ref": "#/$defs/VlakOfMultiVlak"},
+        "afstand": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 9999.99
+        }
+      },
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "AfstandOfGeometrieOverigeContour": {
+      "$anchor": "AfstandOfGeometrieOverigeContour",
+      "type": "object",
+      "properties": {
+        "geometrie": {"$ref": "#/$defs/PuntLijnVlakMulti"},
+        "afstand": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 9999.99
+        }
+      },
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "AfstandOfGeometriePRContour": {
+      "$anchor": "AfstandOfGeometriePRContour",
+      "type": "object",
+      "properties": {
+        "geometrie": {"$ref": "#/$defs/PuntLijnVlakMulti"},
+        "afstand": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 9999.99
+        }
+      },
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "AftappuntOpslagtank": {
+      "$anchor": "AftappuntOpslagtank",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "AftappuntOpslagtank"},
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "AnderInsluitsysteemReferentie": {
+      "$anchor": "AnderInsluitsysteemReferentie",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "AnderInsluitsysteemReferentie"},
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "BevoorradingCategorieOfExactAantal": {
+      "$anchor": "BevoorradingCategorieOfExactAantal",
+      "type": "object",
+      "properties": {
+        "categorie": {"$ref": "#/$defs/CategorieAantalBevoorradingen"},
+        "exactAantal": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999
+        }
+      },
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "Bewaarplaats": {
+      "$anchor": "Bewaarplaats",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Bewaarplaats"},
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"},
+            "oppervlakteDeuropening": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99
+            }
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "Bewerkingsruimte": {
+      "$anchor": "Bewerkingsruimte",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Bewerkingsruimte"},
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "BrandAandachtsgebied": {
+      "$anchor": "BrandAandachtsgebied",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/Aandachtsgebied"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "BrandAandachtsgebied"},
+            "typeBrand": {"$ref": "#/$defs/TypeBrand"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "BufferBewaarplaats": {
+      "$anchor": "BufferBewaarplaats",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "BufferBewaarplaats"},
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "BuisleidingReferentie": {
+      "$anchor": "BuisleidingReferentie",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "BuisleidingReferentie"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "status": {"$ref": "#/$defs/StatusBuisleiding"},
+            "buisleidingIdentificatie": {"type": "string"},
+            "buisleidingCategorieStof": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/BuisleidingCategorieStof"},
+              "uniqueItems": true
+            },
+            "buisleidingMateriaal": {"$ref": "#/$defs/PipeMaterialTypeValue"},
+            "buisleidingProduct": {"$ref": "#/$defs/OilGasChemicalsProductTypeValue"},
+            "wanddikte": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999.99
+            },
+            "diameter": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
+            },
+            "bovenkantbuis": {
+              "type": "number",
+              "minimum": -9999,
+              "maximum": 9999
+            },
+            "maximaleWerkdruk": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            }
+          },
+          "required": [
+            "entityType",
+            "geometrie"
+          ]
+        }
+      ]
+    },
+    "BuisleidingStelsel": {
+      "$anchor": "BuisleidingStelsel",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/LocatieEVActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "comment": {"type": "array"},
+            "entityType": {"const": "BuisleidingStelsel"},
+            "eigenaar": {"type": "string"},
+            "idNummeraanduidingBAG": {"$ref": "#/$defs/IdentificatieBAG"},
+            "locatieomschrijving": {"type": "string"},
+            "naamExploitant": {"type": "string"},
+            "idNummeraanduidingBAGExploitant": {"$ref": "#/$defs/IdentificatieBAG"},
+            "kvkNummerExploitant": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "nullable": true,
+                "pattern": "[0-9]{8}"
+              },
+              "minItems": 1
+            },
+            "vestigingsnummerExploitant": {
+              "type": "string",
+              "pattern": "[0-9]{12}"
+            }
+          },
+          "required": [
+            "eigenaar",
+            "kvkNummerExploitant"
+          ]
+        }
+      ]
+    },
+    "CivielExplosieAandachtsgebied": {
+      "$anchor": "CivielExplosieAandachtsgebied",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/Aandachtsgebied"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "CivielExplosieAandachtsgebied"},
+            "typeCivExpAandachtsgebied": {"$ref": "#/$defs/TypeExplosieAandachtsgebied"}
+          },
+          "required": ["typeCivExpAandachtsgebied"]
+        }
+      ]
+    },
+    "Documentatie": {
+      "$anchor": "Documentatie",
+      "type": "object",
+      "properties": {
+        "naam": {"type": "string"},
+        "link": {
+          "type": "string",
+          "pattern": ".{1,2048}"
+        }
+      },
+      "required": [
+        "naam",
+        "link"
+      ]
+    },
+    "EVActiviteit": {
+      "$anchor": "EVActiviteit",
+      "allOf": [
+        {"$ref": "#/$defs/ExterneVeiligheidsObject"},
+        {
+          "type": "object",
+          "properties": {
+            "heeft": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {"$ref": "#/$defs/SevesoReferentie"},
+                  {"$ref": "#/$defs/BuisleidingReferentie"},
+                  {"$ref": "#/$defs/WaterVervoer"},
+                  {"$ref": "#/$defs/WegVervoer"},
+                  {"$ref": "#/$defs/SpoorVervoer"},
+                  {"$ref": "#/$defs/OpslagReferentie"},
+                  {"$ref": "#/$defs/Bewaarplaats"},
+                  {"$ref": "#/$defs/BufferBewaarplaats"},
+                  {"$ref": "#/$defs/Machinekamer"},
+                  {"$ref": "#/$defs/Leiding"},
+                  {"$ref": "#/$defs/OpstelplaatsVoertuig"},
+                  {"$ref": "#/$defs/SamengesteldeReferentie"},
+                  {"$ref": "#/$defs/Vulpunt"},
+                  {"$ref": "#/$defs/Tankzuil"},
+                  {"$ref": "#/$defs/Installatie"},
+                  {"$ref": "#/$defs/AftappuntOpslagtank"},
+                  {"$ref": "#/$defs/Bewerkingsruimte"},
+                  {"$ref": "#/$defs/Windturbine"},
+                  {"$ref": "#/$defs/AnderInsluitsysteemReferentie"}
+                ]
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": ["heeft"]
+        }
+      ]
+    },
+    "EVContour": {
+      "$anchor": "EVContour",
+      "allOf": [
+        {"$ref": "#/$defs/ExterneVeiligheidsObject"}
+      ]
+    },
+    "ExplosieAandachtsgebied": {
+      "$anchor": "ExplosieAandachtsgebied",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/Aandachtsgebied"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "ExplosieAandachtsgebied"},
+            "bleve": {"type": "boolean"}
+          }
+        }
+      ]
+    },
+    "ExplosieAandachtsgebiedVuurwerk": {
+      "$anchor": "ExplosieAandachtsgebiedVuurwerk",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/Aandachtsgebied"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "ExplosieAandachtsgebiedVuurwerk"}
+          }
+        }
+      ]
+    },
+    "ExterneVeiligheidsObject": {
+      "$anchor": "ExterneVeiligheidsObject",
+      "type": "object",
+      "properties": {
+        "entityType": {"type": "string"},
+        "id": {"type": "string"},
+        "identificatie": {"$ref": "#/$defs/NEN3610ID"},
+        "bronobjectID": {
+          "type": "string",
+          "pattern": ".{1,50}"
+        },
+        "bronhoudercode": {
+          "type": "string",
+          "pattern": "[A-Z,0-9]{3,6}"
+        },
+        "bronhoudercodeOverheid": {"$ref": "#/$defs/TooiWaardelijst"},
+        "bronhoudercodeGeenOverheid": {
+          "type": "string",
+          "pattern": "[A-Z,0-9]{3,6}"
+        },
+        "bronhouder": {
+          "type": "string",
+          "pattern": "[^.]{1,100}"
+        },
+        "documentInfo": {"$ref": "#/$defs/Documentatie"},
+        "beginGeldigheid": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
+        },
+        "eindGeldigheid": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
+        },
+        "tijdstipRegistratie": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
+        },
+        "eindRegistratie": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d)?(Z|((\\+|-)\\d{2}:\\d{2}))?$"
+        }
+      },
+      "required": [
+        "entityType",
+        "identificatie",
+        "bronhoudercode",
+        "beginGeldigheid"
+      ]
+    },
+    "GebouwOfLocatie": {
+      "$anchor": "GebouwOfLocatie",
+      "allOf": [
+        {"$ref": "#/$defs/ExterneVeiligheidsObject"}
+      ]
+    },
+    "GifwolkAandachtsgebied": {
+      "$anchor": "GifwolkAandachtsgebied",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/Aandachtsgebied"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "GifwolkAandachtsgebied"}
+          }
+        }
+      ]
+    },
+    "IdentificatieBAG": {
+      "$anchor": "IdentificatieBAG",
+      "type": "string",
+      "pattern": "[0-9]{16}"
+    },
+    "Installatie": {
+      "$anchor": "Installatie",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Installatie"},
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "KwetsbaarGebouw": {
+      "$anchor": "KwetsbaarGebouw",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/GebouwOfLocatie"},
+        {
+          "type": "object",
+          "properties": {
+            "comment": {"type": "array"},
+            "entityType": {"const": "KwetsbaarGebouw"},
+            "categorieKwetsbaarheid": {"$ref": "#/$defs/CategorieKwetsbaarheidGebouw"},
+            "gebruiksdoeleindenDetail": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "idPandBAG": {"$ref": "#/$defs/IdentificatieBAG"},
+            "idAdresseerbaarobjectBAG": {"$ref": "#/$defs/IdentificatieBAG"},
+            "gebruiksdoelenVerblijfsobjectBAG": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/Gebruiksdoeleinden"},
+              "uniqueItems": true,
+              "readOnly": true
+            },
+            "oppervlakteVerblijfsobjectBAG": {
+              "type": "number",
+              "readOnly": true
+            },
+            "populatie": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            },
+            "kadastraleAanduiding": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "[A-Z]{3}\\d{2}[A-I,K-Z]{1,2}\\d{5}[G][0]{4}"
+              }
+            }
+          },
+          "required": ["categorieKwetsbaarheid"]
+        }
+      ]
+    },
+    "KwetsbareLocatie": {
+      "$anchor": "KwetsbareLocatie",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/GebouwOfLocatie"},
+        {
+          "type": "object",
+          "properties": {
+            "comment": {"type": "array"},
+            "entityType": {"const": "KwetsbareLocatie"},
+            "categorieKwetsbaarheid": {"$ref": "#/$defs/CategorieKwetsbaarheidLocatie"},
+            "geometrie": {"$ref": "#/$defs/VlakOfMultiVlak"},
+            "populatie": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999999
+            },
+            "kadastraleAanduiding": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "[A-Z]{3}\\d{2}[A-I,K-Z]{1,2}\\d{5}[G][0]{4}"
+              }
+            }
+          },
+          "required": [
+            "categorieKwetsbaarheid",
+            "geometrie"
+          ]
+        }
+      ]
+    },
+    "Leiding": {
+      "$anchor": "Leiding",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Leiding"},
+            "geometrie": {"$ref": "#/$defs/PuntOfLijn"},
+            "bovengronds": {"type": "boolean"},
+            "diameter": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
+            }
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "LijnOfMultiLijn": {
+      "$anchor": "LijnOfMultiLijn",
+      "oneOf": [
+        {"$ref": "https://geojson.org/schema/LineString.json"},
+        {"$ref": "https://geojson.org/schema/MultiLineString.json"}
+      ]
+    },
+    "LocatieActiviteit": {
+      "$anchor": "LocatieActiviteit",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/LocatieEVActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "comment": {"type": "array"},
+            "entityType": {"const": "LocatieActiviteit"},
+            "bedrijfsnaam": {"type": "string"},
+            "geometrie": {"$ref": "#/$defs/VlakOfMultiVlak"},
+            "idNummeraanduidingBAG": {"$ref": "#/$defs/IdentificatieBAG"},
+            "locatieomschrijving": {"type": "string"},
+            "naamExploitant": {
+              "oneOf": [
+                {"type": "string"},
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            },
+            "omschrijving": {"type": "string"},
+            "eigenaar": {"type": "string"},
+            "idNummeraanduidingBAGExploitant": {
+              "oneOf": [
+                {"$ref": "#/$defs/IdentificatieBAG"},
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            },
+            "kvkNummerExploitant": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "[0-9]{8}"
+                  },
+                  "minItems": 1
+                },
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            },
+            "kvkNummerAanvrager": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "[0-9]{8}"
+                },
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            },
+            "vestigingsnummerExploitant": {
+              "type": "string",
+              "pattern": "[0-9]{12}"
+            },
+            "vestigingsnummerAanvrager": {
+              "type": "string",
+              "pattern": "[0-9]{12}"
+            }
+          },
+          "required": [
+            "bedrijfsnaam",
+            "geometrie",
+            "naamExploitant",
+            "idNummeraanduidingBAGExploitant",
+            "kvkNummerExploitant",
+            "kvkNummerAanvrager"
+          ]
+        }
+      ]
+    },
+    "LocatieBasisnet": {
+      "$anchor": "LocatieBasisnet",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/LocatieEVActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "comment": {"type": "array"},
+            "entityType": {"const": "LocatieBasisnet"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "type": {"$ref": "#/$defs/TypeVervoer"},
+            "route": {"type": "string"}
+          },
+          "required": [
+            "geometrie",
+            "type",
+            "route"
+          ]
+        }
+      ]
+    },
+    "LocatieEVActiviteit": {
+      "$anchor": "LocatieEVActiviteit",
+      "allOf": [
+        {"$ref": "#/$defs/ExterneVeiligheidsObject"},
+        {
+          "type": "object",
+          "properties": {
+            "voertUit": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {"$ref": "#/$defs/Buisleiding"},
+                  {"$ref": "#/$defs/Basisnet"},
+                  {"$ref": "#/$defs/ActiviteitRestcategorie"},
+                  {"$ref": "#/$defs/AmmoniakKoelinstallatie_TeBerekenenAfstand"},
+                  {"$ref": "#/$defs/AmmoniakKoelinstallatie_VasteAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/AnderInsluitsysteem"},
+                  {"$ref": "#/$defs/BadGiftig"},
+                  {"$ref": "#/$defs/BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht"},
+                  {"$ref": "#/$defs/Emplacement"},
+                  {"$ref": "#/$defs/KernenergieInrichting"},
+                  {"$ref": "#/$defs/Mestvergisting"},
+                  {"$ref": "#/$defs/MijnbouwwerkExploiteren"},
+                  {"$ref": "#/$defs/MijnbouwwerkVerplaatsbaar"},
+                  {"$ref": "#/$defs/OpslagBrandbareVloeistofGeenDieselBovengronds"},
+                  {"$ref": "#/$defs/OpslagBrandbareVloeistofGeenDieselOndergronds"},
+                  {"$ref": "#/$defs/OpslagBrandstofBunkerstation"},
+                  {"$ref": "#/$defs/OpslagMeststof"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarADR1.1Civiel"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarADR1.3Civiel"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarADR1.4Civiel"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarComplexen"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarMilitair_TeBerekenenAfstand"},
+                  {"$ref": "#/$defs/OpslagOntplofbaarMilitair_VasteAfstand"},
+                  {"$ref": "#/$defs/OpslagOxiderendVerstikkendGas"},
+                  {"$ref": "#/$defs/OpslagSevesoHoeveelheidBuitenSevesoInrichting"},
+                  {"$ref": "#/$defs/OpslagVerpakt_TeBerekenenAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagVerpakt_VasteAfstandGeenVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagVerpakt_VasteAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagVuurwerkF1F2F3T1T2"},
+                  {"$ref": "#/$defs/OpslagVuurwerkF4"},
+                  {"$ref": "#/$defs/OpslagtankGas_TeBerekenenAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagtankPropaanPropeen_VasteAfstandVergunningplicht"},
+                  {"$ref": "#/$defs/OpslagtankVloeistof"},
+                  {"$ref": "#/$defs/OpstellenVoertuigen"},
+                  {"$ref": "#/$defs/SevesoInrichting"},
+                  {"$ref": "#/$defs/TankenCNG"},
+                  {"$ref": "#/$defs/TankenGrootschaligVaartuig"},
+                  {"$ref": "#/$defs/TankenKleinschaligVaartuig"},
+                  {"$ref": "#/$defs/TankenLNGVoertuigWerktuig"},
+                  {"$ref": "#/$defs/TankenLPG"},
+                  {"$ref": "#/$defs/TankenWaterstofVoertuigWerktuig"},
+                  {"$ref": "#/$defs/WegenNietBasisnet"},
+                  {"$ref": "#/$defs/Windturbine_TeBerekenenAfstandGeenVergunningplicht"},
+                  {"$ref": "#/$defs/Windturbine_TeBerekenenAfstandVergunningplicht"}
+                ]
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": ["voertUit"]
+        }
+      ]
+    },
+    "Machinekamer": {
+      "$anchor": "Machinekamer",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Machinekamer"},
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"},
+            "aantalKoelinstallaties": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99
+            },
+            "opstellingsUitvoering": {"$ref": "#/$defs/OpstellingsUitvoeringAmmoniak"},
+            "pompbeveiliging": {"type": "boolean"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "MilitairExplosieAandachtsgebied": {
+      "$anchor": "MilitairExplosieAandachtsgebied",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/Aandachtsgebied"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "MilitairExplosieAandachtsgebied"},
+            "typeMilitairExpAandachtsgebied": {"$ref": "#/$defs/TypeExplosieAandachtsgebied"}
+          },
+          "required": ["typeMilitairExpAandachtsgebied"]
+        }
+      ]
+    },
+    "NEN3610ID": {
+      "$anchor": "NEN3610ID",
+      "type": "object",
+      "properties": {
+        "namespace": {"type": "string"},
+        "lokaalID": {"type": "string"},
+        "versie": {"type": "string"}
+      },
+      "required": [
+        "namespace",
+        "lokaalID"
+      ]
+    },
+    "OpslagReferentie": {
+      "$anchor": "OpslagReferentie",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagReferentie"},
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"},
+            "typeOpslagReferentie": {"$ref": "#/$defs/TypeOpslagReferentie"},
+            "bovengronds": {"type": "boolean"},
+            "inhoud": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            },
+            "oppervlakte": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
+            }
+          },
+          "required": [
+            "geometrie",
+            "typeOpslagReferentie"
+          ]
+        }
+      ]
+    },
+    "OpstelplaatsVoertuig": {
+      "$anchor": "OpstelplaatsVoertuig",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpstelplaatsVoertuig"},
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "OverigeContour": {
+      "$anchor": "OverigeContour",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/EVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OverigeContour"},
+            "aardRisico": {"type": "string"},
+            "typeOverigeContour": {"$ref": "#/$defs/TypeOverigeContour"},
+            "afstandOfGeometrie": {"$ref": "#/$defs/AfstandOfGeometrieOverigeContour"},
+            "maatgevendeStof": {
+              "oneOf": [
+                {"$ref": "#/$defs/StofOfStofcategorie"},
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            }
+          },
+          "required": [
+            "typeOverigeContour",
+            "afstandOfGeometrie",
+            "maatgevendeStof"
+          ]
+        }
+      ]
+    },
+    "PRContour": {
+      "$anchor": "PRContour",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/EVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "PRContour"},
+            "afstandOfGeometrie": {"$ref": "#/$defs/AfstandOfGeometriePRContour"},
+            "typePlaatsgebondenRisico": {"$ref": "#/$defs/TypePlaatsgebondenRisico"},
+            "aardRisico": {"type": "string"},
+            "maatgevendeStof": {
+              "oneOf": [
+                {"$ref": "#/$defs/StofOfStofcategorie"},
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            }
+          },
+          "required": [
+            "entityType",
+            "afstandOfGeometrie",
+            "typePlaatsgebondenRisico",
+            "maatgevendeStof"
+          ]
+        }
+      ]
+    },
+    "PuntLijnVlakMulti": {
+      "$anchor": "PuntLijnVlakMulti",
+      "oneOf": [
+        {"$ref": "https://geojson.org/schema/Point.json"},
+        {"$ref": "https://geojson.org/schema/LineString.json"},
+        {"$ref": "https://geojson.org/schema/Polygon.json"},
+        {"$ref": "https://geojson.org/schema/MultiPoint.json"},
+        {"$ref": "https://geojson.org/schema/MultiLineString.json"},
+        {"$ref": "https://geojson.org/schema/MultiPolygon.json"}
+      ]
+    },
+    "PuntOfLijn": {
+      "$anchor": "PuntOfLijn",
+      "oneOf": [
+        {"$ref": "https://geojson.org/schema/Point.json"},
+        {"$ref": "https://geojson.org/schema/LineString.json"},
+        {"$ref": "https://geojson.org/schema/MultiLineString.json"}
+      ]
+    },
+    "PuntOfMultiPunt": {
+      "$anchor": "PuntOfMultiPunt",
+      "oneOf": [
+        {"$ref": "https://geojson.org/schema/Point.json"},
+        {"$ref": "https://geojson.org/schema/MultiPoint.json"}
+      ]
+    },
+    "PuntOfVlak": {
+      "$anchor": "PuntOfVlak",
+      "oneOf": [
+        {"$ref": "https://geojson.org/schema/Point.json"},
+        {"$ref": "https://geojson.org/schema/Polygon.json"}
+      ]
+    },
+    "ReactietijdNoodstopBooleanOfExact": {
+      "$anchor": "ReactietijdNoodstopBooleanOfExact",
+      "type": "object",
+      "properties": {
+        "exactAantalSeconden": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999
+        },
+        "vijfofminder": {"type": "boolean"}
+      },
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "ReferentieEVContour": {
+      "$anchor": "ReferentieEVContour",
+      "allOf": [
+        {"$ref": "#/$defs/ExterneVeiligheidsObject"},
+        {
+          "type": "object",
+          "properties": {
+            "omschrijving": {"type": "string"},
+            "resulteertIn": {
+              "oneOf":[
+                {"type": "array",
+                 "items": {
+                    "oneOf": [
+                      {"$ref": "#/$defs/BrandAandachtsgebied"},
+                      {"$ref": "#/$defs/ExplosieAandachtsgebied"},
+                      {"$ref": "#/$defs/GifwolkAandachtsgebied"},
+                      {"$ref": "#/$defs/CivielExplosieAandachtsgebied"},
+                      {"$ref": "#/$defs/ExplosieAandachtsgebiedVuurwerk"},
+                      {"$ref": "#/$defs/MilitairExplosieAandachtsgebied"},
+                      {"$ref": "#/$defs/OverigeContour"},
+                      {"$ref": "#/$defs/PRContour"}
+                    ]
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                { "$ref": "#/$defs/VoidReasonValue"}
+              ]
+            }
+          },
+          "required": ["resulteertIn"]
+        }
+      ]
+    },
+    "SamengesteldeReferentie": {
+      "$anchor": "SamengesteldeReferentie",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "SamengesteldeReferentie"},
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "SevesoReferentie": {
+      "$anchor": "SevesoReferentie",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "SevesoReferentie"},
+            "geometrie": {"$ref": "#/$defs/PuntOfVlak"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "SpoorVervoer": {
+      "$anchor": "SpoorVervoer",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "SpoorVervoer"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "trajectcode": {
+              "type": "string",
+              "pattern": "[0-9]{2,3}"
+            },
+            "referentiesoort": {"$ref": "#/$defs/RepresentatieLijn"}
+          },
+          "required": [
+            "entityType",
+            "geometrie",
+            "trajectcode",
+            "referentiesoort"
+          ]
+        }
+      ]
+    },
+    "Stof": {
+      "$anchor": "Stof",
+      "type": "object",
+      "properties": {
+        "naam": {"type": "string"},
+        "chemischeNaam": {"type": "string"},
+        "CASnummer": {
+          "type": "string",
+          "pattern": "[0-9]{2,7}[\\-]{1}[0-9]{2}[\\-]{1}[0-9]{1}"
+        },
+        "UNnummer": {
+          "type": "string",
+          "pattern": "[0-9]{4}"
+        }
+      },
+      "required": ["naam"]
+    },
+    "StofCategorie": {
+      "$anchor": "StofCategorie",
+      "type": "object",
+      "properties": {
+        "categorieNaam": {"$ref": "#/$defs/StofCategorieNaam"},
+        "chemischeNaam": {"type": "string"}
+      },
+      "required": ["categorieNaam"]
+    },
+    "StofOfStofcategorie": {
+      "$anchor": "StofOfStofcategorie",
+      "type": "object",
+      "properties": {
+        "stof": {"$ref": "#/$defs/Stof"},
+        "stofCategorie": {"$ref": "#/$defs/StofCategorie"}
+      },
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "Tankzuil": {
+      "$anchor": "Tankzuil",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Tankzuil"},
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "VlakOfMultiVlak": {
+      "$anchor": "VlakOfMultiVlak",
+      "oneOf": [
+        {"$ref": "https://geojson.org/schema/Polygon.json"},
+        {"$ref": "https://geojson.org/schema/MultiPolygon.json"}
+      ]
+    },
+    "VoordrukBooleanOfExact": {
+      "$anchor": "VoordrukBooleanOfExact",
+      "type": "object",
+      "properties": {
+        "exacteHoeveelheid_kpa": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 999
+        },
+        "minderDanOfGelijkAan_420kPa": {"type": "boolean"}
+      },
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "Vulpunt": {
+      "$anchor": "Vulpunt",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Vulpunt"},
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "WaterVervoer": {
+      "$anchor": "WaterVervoer",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "WaterVervoer"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "watervakcode": {
+              "type": "string",
+              "pattern": "[A-Z]{1,4}"
+            },
+            "referentiesoort": {"$ref": "#/$defs/RepresentatieLijn"}
+          },
+          "required": [
+            "entityType",
+            "geometrie",
+            "watervakcode",
+            "referentiesoort"
+          ]
+        }
+      ]
+    },
+    "WegAs": {
+      "$anchor": "WegAs",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "WegAs"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"}
+          },
+          "required": ["geometrie"]
+        }
+      ]
+    },
+    "WegVervoer": {
+      "$anchor": "WegVervoer",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "WegVervoer"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "wegvakcode": {
+              "type": "string",
+              "pattern": "[A-Z]{1}.{1,7}"
+            },
+            "referentiesoort": {"$ref": "#/$defs/RepresentatieLijn"}
+          },
+          "required": [
+            "entityType",
+            "geometrie",
+            "wegvakcode",
+            "referentiesoort"
+          ]
+        }
+      ]
+    },
+    "Wegen": {
+      "$anchor": "Wegen",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/LocatieEVActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Wegen"},
+            "geometrie": {"$ref": "#/$defs/LijnOfMultiLijn"},
+            "route": {"type": "string"}
+          },
+          "required": [
+            "geometrie",
+            "route"
+          ]
+        }
+      ]
+    },
+    "Windturbine": {
+      "$anchor": "Windturbine",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/ReferentieEVContour"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Windturbine"},
+            "geometrie": {"$ref": "https://geojson.org/schema/Point.json"},
+            "ashoogte": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999.99
+            },
+            "rotordiameter": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            },
+            "vermogen": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            },
+            "type": {"type": "string"},
+            "materiaalMast": {"$ref": "#/$defs/MateriaalWindturbineMast"},
+            "zwaartepunt": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999.99
+            },
+            "nominaalToerental": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "maxWerpafstandNominaal": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "maxWerpafstandOvertoeren": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
+            },
+            "lengteGondel": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99.99
+            },
+            "breedteGondel": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99.99
+            },
+            "hoogteGondel": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99.99
+            },
+            "massaGondel": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            },
+            "pandIdentificatie": {
+              "oneOf": [
+                {"$ref": "#/$defs/IdentificatieBAG"},
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            }
+          },
+          "required": [
+            "geometrie",
+            "pandIdentificatie"
+          ]
+        }
+      ]
+    },
+    "ActiviteitRestcategorie": {
+      "$anchor": "ActiviteitRestcategorie",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/EVActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "ActiviteitRestcategorie"},
+            "basisVergunningNummer": {
+              "oneOf": [
+                {"type": "string"},
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            },
+            "datumVergunningOfMelding": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            },
+            "datumLaatsteWijziging": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            },
+            "omschrijving": {"type": "string"},
+            "bevoegdGezag": {"$ref": "#/$defs/BevoegdGezag"},
+            "vergunningsPlicht": {"type": "boolean"},
+            "balActiviteit": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          },
+          "required": [
+            "basisVergunningNummer",
+            "datumVergunningOfMelding",
+            "datumLaatsteWijziging",
+            "vergunningsPlicht"
+          ]
+        }
+      ]
+    },
+    "AmmoniakKoelinstallatie_TeBerekenenAfstand": {
+      "$anchor": "AmmoniakKoelinstallatie_TeBerekenenAfstand",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "AmmoniakKoelinstallatie_TeBerekenenAfstand"},
+            "werktemperatuur": {
+              "type": "number",
+              "minimum": -273.15,
+              "maximum": 99.99
+            },
+            "hoeveelheidsKlasseAmmoniak": {"$ref": "#/$defs/HoeveelheidsKlasseAmmoniak"}
+          }
+        }
+      ]
+    },
+    "AmmoniakKoelinstallatie_VasteAfstandVergunningplicht": {
+      "$anchor": "AmmoniakKoelinstallatie_VasteAfstandVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "AmmoniakKoelinstallatie_VasteAfstandVergunningplicht"},
+            "werktemperatuur": {
+              "type": "number",
+              "minimum": -273.15,
+              "maximum": 99.99
+            },
+            "hoeveelheidsKlasseAmmoniak": {"$ref": "#/$defs/HoeveelheidsKlasseAmmoniak"}
+          }
+        }
+      ]
+    },
+    "AnderInsluitsysteem": {
+      "$anchor": "AnderInsluitsysteem",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "AnderInsluitsysteem"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "BKLActiviteit": {
+      "$anchor": "BKLActiviteit",
+      "allOf": [
+        {"$ref": "#/$defs/EVActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "basisVergunningNummer": {
+              "oneOf": [
+                {"type": "string"},
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            },
+            "datumVergunningOfMelding": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            },
+            "datumLaatsteWijziging": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                {"$ref": "#/$defs/VoidReasonValue"}
+              ]
+            },
+            "vergunningsPlicht": {"type": "boolean"},
+            "bevoegdGezag": {"$ref": "#/$defs/BevoegdGezag"},
+            "balActiviteit": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "idActiviteitTR": {"type": "string"}
+          },
+          "required": [
+            "basisVergunningNummer",
+            "datumVergunningOfMelding",
+            "datumLaatsteWijziging",
+            "vergunningsPlicht",
+            "idActiviteitTR"
+          ]
+        }
+      ]
+    },
+    "BadGiftig": {
+      "$anchor": "BadGiftig",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "BadGiftig"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "Basisnet": {
+      "$anchor": "Basisnet",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Basisnet"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht": {
+      "$anchor": "BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "BehandelenRegelenMetenAardgas_TeBerekenenAfstandVergunningplicht"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht": {
+      "$anchor": "BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "BehandelenRegelenMetenAardgas_VasteAfstandGeenVergunningplicht"},
+            "ontwerpCapaciteit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            },
+            "werkdruk": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999
+            },
+            "opstellingsUitvoering": {"$ref": "#/$defs/OpstellingsUitvoeringAardgas"}
+          }
+        }
+      ]
+    },
+    "Buisleiding": {
+      "$anchor": "Buisleiding",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Buisleiding"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "Emplacement": {
+      "$anchor": "Emplacement",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Emplacement"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "KernenergieInrichting": {
+      "$anchor": "KernenergieInrichting",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "KernenergieInrichting"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "Mestvergisting": {
+      "$anchor": "Mestvergisting",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Mestvergisting"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "MijnbouwwerkExploiteren": {
+      "$anchor": "MijnbouwwerkExploiteren",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "MijnbouwwerkExploiteren"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "MijnbouwwerkVerplaatsbaar": {
+      "$anchor": "MijnbouwwerkVerplaatsbaar",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "MijnbouwwerkVerplaatsbaar"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagBrandbareVloeistofGeenDieselBovengronds": {
+      "$anchor": "OpslagBrandbareVloeistofGeenDieselBovengronds",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagBrandbareVloeistofGeenDieselBovengronds"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagBrandbareVloeistofGeenDieselOndergronds": {
+      "$anchor": "OpslagBrandbareVloeistofGeenDieselOndergronds",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagBrandbareVloeistofGeenDieselOndergronds"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagBrandstofBunkerstation": {
+      "$anchor": "OpslagBrandstofBunkerstation",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagBrandstofBunkerstation"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagMeststof": {
+      "$anchor": "OpslagMeststof",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagMeststof"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagOntplofbaarADR1.1Civiel": {
+      "$anchor": "OpslagOntplofbaarADR1.1Civiel",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOntplofbaarADR1.1Civiel"},
+            "nettoExplosieveMassa": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
+            }
+          }
+        }
+      ]
+    },
+    "OpslagOntplofbaarADR1.3Civiel": {
+      "$anchor": "OpslagOntplofbaarADR1.3Civiel",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOntplofbaarADR1.3Civiel"},
+            "nettoExplosieveMassa": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
+            }
+          }
+        }
+      ]
+    },
+    "OpslagOntplofbaarADR1.4Civiel": {
+      "$anchor": "OpslagOntplofbaarADR1.4Civiel",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOntplofbaarADR1.4Civiel"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagOntplofbaarComplexen": {
+      "$anchor": "OpslagOntplofbaarComplexen",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOntplofbaarComplexen"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagOntplofbaarMilitair_TeBerekenenAfstand": {
+      "$anchor": "OpslagOntplofbaarMilitair_TeBerekenenAfstand",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOntplofbaarMilitair_TeBerekenenAfstand"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagOntplofbaarMilitair_VasteAfstand": {
+      "$anchor": "OpslagOntplofbaarMilitair_VasteAfstand",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOntplofbaarMilitair_VasteAfstand"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagOxiderendVerstikkendGas": {
+      "$anchor": "OpslagOxiderendVerstikkendGas",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagOxiderendVerstikkendGas"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagSevesoHoeveelheidBuitenSevesoInrichting": {
+      "$anchor": "OpslagSevesoHoeveelheidBuitenSevesoInrichting",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagSevesoHoeveelheidBuitenSevesoInrichting"},
+            "kritischeTemperatuur": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999.99
+            },
+            "kookTemperatuur": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99999.99
+            },
+            "mediaanLetaleConcentratie": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999999
+            },
+            "dampspanning": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999999
+            },
+            "categorieGiftigeStof": {"$ref": "#/$defs/CategorieGiftigeStof"}
+          }
+        }
+      ]
+    },
+    "OpslagVerpakt_TeBerekenenAfstandVergunningplicht": {
+      "$anchor": "OpslagVerpakt_TeBerekenenAfstandVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagVerpakt_TeBerekenenAfstandVergunningplicht"},
+            "beschermingsniveau": {"$ref": "#/$defs/BeschermingsniveauhoofdgroepTabelB3"}
+          }
+        }
+      ]
+    },
+    "OpslagVerpakt_VasteAfstandGeenVergunningplicht": {
+      "$anchor": "OpslagVerpakt_VasteAfstandGeenVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagVerpakt_VasteAfstandGeenVergunningplicht"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagVerpakt_VasteAfstandVergunningplicht": {
+      "$anchor": "OpslagVerpakt_VasteAfstandVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagVerpakt_VasteAfstandVergunningplicht"},
+            "beschermingsniveauConformTabelB3": {"$ref": "#/$defs/BeschermingsniveauTabelB3"}
+          },
+          "required": ["beschermingsniveauConformTabelB3"]
+        }
+      ]
+    },
+    "OpslagVuurwerkF1F2F3T1T2": {
+      "$anchor": "OpslagVuurwerkF1F2F3T1T2",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagVuurwerkF1F2F3T1T2"},
+            "hoeveelheidVuurwerk": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999999
+            },
+            "categorieVuurwerk": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/CategorieVuurwerk"},
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "OpslagVuurwerkF4": {
+      "$anchor": "OpslagVuurwerkF4",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagVuurwerkF4"},
+            "hoeveelheidVuurwerk": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999999
+            }
+          }
+        }
+      ]
+    },
+    "OpslagtankGas_TeBerekenenAfstandVergunningplicht": {
+      "$anchor": "OpslagtankGas_TeBerekenenAfstandVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagtankGas_TeBerekenenAfstandVergunningplicht"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht": {
+      "$anchor": "OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht"},
+            "aantalBevoorradingen": {"$ref": "#/$defs/BevoorradingCategorieOfExactAantal"}
+          }
+        }
+      ]
+    },
+    "OpslagtankPropaanPropeen_VasteAfstandVergunningplicht": {
+      "$anchor": "OpslagtankPropaanPropeen_VasteAfstandVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagtankPropaanPropeen_VasteAfstandVergunningplicht"},
+            "doorzetPerJaar": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 999
+            }
+          }
+        }
+      ]
+    },
+    "OpslagtankVloeistof": {
+      "$anchor": "OpslagtankVloeistof",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpslagtankVloeistof"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "OpstellenVoertuigen": {
+      "$anchor": "OpstellenVoertuigen",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "OpstellenVoertuigen"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "SevesoInrichting": {
+      "$anchor": "SevesoInrichting",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "SevesoInrichting"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "TankenCNG": {
+      "$anchor": "TankenCNG",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "TankenCNG"},
+            "aantalPersonenauto": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "aantalAutobussen": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            }
+          }
+        }
+      ]
+    },
+    "TankenGrootschaligVaartuig": {
+      "$anchor": "TankenGrootschaligVaartuig",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "TankenGrootschaligVaartuig"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "TankenKleinschaligVaartuig": {
+      "$anchor": "TankenKleinschaligVaartuig",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "TankenKleinschaligVaartuig"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "TankenLNGVoertuigWerktuig": {
+      "$anchor": "TankenLNGVoertuigWerktuig",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "TankenLNGVoertuigWerktuig"},
+            "reactietijdNoodstop": {"$ref": "#/$defs/ReactietijdNoodstopBooleanOfExact"},
+            "bovenvulling": {"type": "boolean"},
+            "verladingPomp": {"type": "boolean"},
+            "voordruk": {"$ref": "#/$defs/VoordrukBooleanOfExact"},
+            "idActiviteitTR": {"const": "nl.imow-mnre1034.activiteit.OpslagTransportbedrijf"}
+          }
+        }
+      ]
+    },
+    "TankenLPG": {
+      "$anchor": "TankenLPG",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "TankenLPG"},
+            "doorzetPerJaar": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 9999
+            }
+          }
+        }
+      ]
+    },
+    "TankenWaterstofVoertuigWerktuig": {
+      "$anchor": "TankenWaterstofVoertuigWerktuig",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "TankenWaterstofVoertuigWerktuig"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "WegenNietBasisnet": {
+      "$anchor": "WegenNietBasisnet",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/EVActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "WegenNietBasisnet"}
+          },
+          "required": ["entityType"]
+        }
+      ]
+    },
+    "Windturbine_TeBerekenenAfstandGeenVergunningplicht": {
+      "$anchor": "Windturbine_TeBerekenenAfstandGeenVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Windturbine_TeBerekenenAfstandGeenVergunningplicht"},
+            "aantalWindturbines": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2
+            }
+          },
+          "required": ["aantalWindturbines"]
+        }
+      ]
+    },
+    "Windturbine_TeBerekenenAfstandVergunningplicht": {
+      "$anchor": "Windturbine_TeBerekenenAfstandVergunningplicht",
+      "unevaluatedProperties": false,
+      "allOf": [
+        {"$ref": "#/$defs/BKLActiviteit"},
+        {
+          "type": "object",
+          "properties": {
+            "entityType": {"const": "Windturbine_TeBerekenenAfstandVergunningplicht"},
+            "aantalWindturbines": {
+              "type": "integer",
+              "minimum": 3,
+              "maximum": 999
+            }
+          },
+          "required": ["aantalWindturbines"]
+        }
+      ]
+    },
+    "BeschermingsniveauTabelB3": {
+      "$anchor": "BeschermingsniveauTabelB3",
+      "type": "string",
+      "enum": [
+        "Beschermingsniveau 1:Automatische blusgasinstallatie",
+        "Beschermingsniveau 1:Automatische hi-ex inside-air installatie",
+        "Beschermingsniveau 1:(Semi-)automatische monitorinstallatie",
+        "Beschermingsniveau 1:Bedrijfsbrandweer met handbediende deluge-installatie",
+        "Beschermingsniveau 1:Handbediende deluge-installatie met watervoorziening door bedrijfsbrandweer",
+        "Beschermingsniveau 1:Handbediende deluge-installatie met watervoorziening door lokale brandweer",
+        "Beschermingsniveau 1:Automatische sprinklerinstallatie of sprinkler in rekken",
+        "Beschermingsniveau 1:Automatische deluge installatie",
+        "Beschermingsniveau 1:Automatische hi-ex outside-air installatie, stikstofgehalte < 5%",
+        "Beschermingsniveau 1:Automatische hi-ex outside-air installatie, stikstofgehalte 5 =< 10%",
+        "Beschermingsniveau 1:Automatische hi-ex outside-air installatie, stikstofgehalte > 10%",
+        "Beschermingsniveau 1:Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte < 5%",
+        "Beschermingsniveau 1:Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte 5 =< 10%",
+        "Beschermingsniveau 1:Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte > 10%",
+        "Beschermingsniveau 2a, stikstofgehalte < 5 %:ADR-klasse 3 in kunststof",
+        "Beschermingsniveau 2a, stikstofgehalte < 5 %:ADR-klasse 3 niet in kunststof",
+        "Beschermingsniveau 2a, stikstofgehalte < 5 %:Geen ADR-klasse 3",
+        "Beschermingsniveau 2a, stikstofgehalte 5 =< 10%:ADR-klasse 3 in kunststof",
+        "Beschermingsniveau 2a, stikstofgehalte 5 =< 10%:ADR-klasse 3 niet in kunststof",
+        "Beschermingsniveau 2a, stikstofgehalte 5 =< 10%:Geen ADR-klasse 3",
+        "Beschermingsniveau 2a, stikstofgehalte > 10 %:ADR-klasse 3 in kunststof",
+        "Beschermingsniveau 2a, stikstofgehalte > 10 %:ADR-klasse 3 niet in kunststof",
+        "Beschermingsniveau 2a, stikstofgehalte > 10 %:Geen ADR-klasse 3",
+        "Beschermingsniveau 3:Stikstofgehalte < 5%",
+        "Beschermingsniveau 3:Stikstofgehalte 5 =< 10%",
+        "Beschermingsniveau 3:Stikstofgehalte > 10%",
+        "Alle beschermingsniveaus:Gasflessen"
+      ]
+    },
+    "BeschermingsniveauhoofdgroepTabelB3": {
+      "$anchor": "BeschermingsniveauhoofdgroepTabelB3",
+      "type": "string",
+      "enum": [
+        "beschermingsniveau 1",
+        "beschermingsniveau 2a",
+        "beschermingsniveau 3"
+      ]
+    },
+    "BevoegdGezag": {
+      "$anchor": "BevoegdGezag",
+      "type": "string",
+      "enum": [
+        "rijk",
+        "provincie",
+        "gemeente",
+        "gegevenInTransitie"
+      ]
+    },
+    "BuisleidingCategorieStof": {
+      "$anchor": "BuisleidingCategorieStof",
+      "type": "string",
+      "enum": [
+        "aardgas",
+        "ontvlambareGassenNietAardgas",
+        "ontvlambareVloeistoffen",
+        "acuutToxischeStoffen",
+        "kooldioxide",
+        "zuurstof",
+        "stikstof",
+        "gegevenInTransitie"
+      ]
+    },
+    "CategorieAandachtsgebied": {
+      "$anchor": "CategorieAandachtsgebied",
+      "type": "string",
+      "enum": [
+        "vastgesteld",
+        "berekend",
+        "gegevenInTransitie"
+      ]
+    },
+    "CategorieAantalBevoorradingen": {
+      "$anchor": "CategorieAantalBevoorradingen",
+      "type": "string",
+      "enum": [
+        "groter dan vijf",
+        "kleiner of gelijk vijf"
+      ]
+    },
+    "CategorieGiftigeStof": {
+      "$anchor": "CategorieGiftigeStof",
+      "type": "string",
+      "enum": [
+        "GT5",
+        "LT4",
+        "LT3",
+        "overig",
+        "gegevenInTransitie"
+      ]
+    },
+    "CategorieKwetsbaarheidGebouw": {
+      "$anchor": "CategorieKwetsbaarheidGebouw",
+      "type": "string",
+      "enum": [
+        "beperktKwetsbaar",
+        "kwetsbaar",
+        "zeerKwetsbaar",
+        "gegevenInTransitie"
+      ]
+    },
+    "CategorieKwetsbaarheidLocatie": {
+      "$anchor": "CategorieKwetsbaarheidLocatie",
+      "type": "string",
+      "enum": [
+        "beperktKwetsbaar",
+        "kwetsbaar",
+        "gegevenInTransitie"
+      ]
+    },
+    "CategorieStikstofgehalte": {
+      "$anchor": "CategorieStikstofgehalte",
+      "type": "string",
+      "enum": [
+        "kleiner5",
+        "5tot10",
+        "hoger10",
+        "gegevenInTransitie"
+      ]
+    },
+    "CategorieVuurwerk": {
+      "$anchor": "CategorieVuurwerk",
+      "type": "string",
+      "enum": [
+        "T1",
+        "T2",
+        "F1",
+        "F2",
+        "F3",
+        "gegevenInTransitie"
+      ]
+    },
+    "Gebruiksdoeleinden": {
+      "$anchor": "Gebruiksdoeleinden",
+      "type": "string",
+      "enum": [
+        "woonfunctie",
+        "bijeenkomstfunctie",
+        "celfunctie",
+        "gezondheidszorgfunctie",
+        "industriefunctie",
+        "kantoorfunctie",
+        "logiesfunctie",
+        "gegevenInTransitie",
+        "onderwijsfunctie",
+        "sportfunctie",
+        "winkelfunctie",
+        "overige gebruiksfunctie"
+      ]
+    },
+    "HoeveelheidsKlasseAmmoniak": {
+      "$anchor": "HoeveelheidsKlasseAmmoniak",
+      "type": "string",
+      "enum": [
+        "1500tot3500",
+        "3500tot6000",
+        "6000tot8000",
+        "8000tot10000",
+        "meer10000",
+        "gegevenInTransitie"
+      ]
+    },
+    "MateriaalWindturbineMast": {
+      "$anchor": "MateriaalWindturbineMast",
+      "type": "string",
+      "enum": [
+        "staal",
+        "beton",
+        "hybride (staal/beton)"
+      ]
+    },
+    "OilGasChemicalsProductTypeValue": {
+      "$anchor": "OilGasChemicalsProductTypeValue",
+      "type": "string",
+      "enum": [
+        "accetone",
+        "air",
+        "argon",
+        "butadiene",
+        "butadiene1,3",
+        "butane",
+        "c3",
+        "carbonDioxide",
+        "carbonMonoxide",
+        "chlorine",
+        "compressedAir",
+        "crude",
+        "dichloroethane",
+        "diesel",
+        "empty",
+        "ethylene",
+        "gasFabricationOfCocs",
+        "gasHFx",
+        "gasoil",
+        "hydrogen",
+        "isobutane",
+        "JET-A1",
+        "kerosene",
+        "liquefiedNaturalGas",
+        "liquidAmmonia",
+        "liquidHydrocarbon",
+        "methane",
+        "multiProduct",
+        "MVC",
+        "naturalGas",
+        "naturalGasAndTetrahydrothiophene",
+        "nitrogen",
+        "nitrogenGas",
+        "oxygen",
+        "phenol",
+        "propane",
+        "propylene",
+        "raffinate",
+        "refineryProducts",
+        "residualGas",
+        "saltWater",
+        "saumur",
+        "tetrachloroethane",
+        "unknown",
+        "overig",
+        "gegevenInTransitie"
+      ]
+    },
+    "OpstellingsUitvoeringAardgas": {
+      "$anchor": "OpstellingsUitvoeringAardgas",
+      "type": "string",
+      "enum": [
+        "ondergronds",
+        "binnenBehuizing",
+        "buitenBehuizing",
+        "gegevenInTransitie"
+      ]
+    },
+    "OpstellingsUitvoeringAmmoniak": {
+      "$anchor": "OpstellingsUitvoeringAmmoniak",
+      "type": "string",
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "gegevenInTransitie"
+      ]
+    },
+    "PipeMaterialTypeValue": {
+      "$anchor": "PipeMaterialTypeValue",
+      "type": "string",
+      "enum": [
+        "Koolstofstaal, (CS)",
+        "Koolstofstaal, (CS+SS clad)",
+        "Koolstofstaal, (LTCS)",
+        "Kunststof, composiet",
+        "Kunststof, FRP",
+        "Kunststof, GRE",
+        "Kunststof, HDPE",
+        "Roestvrijstaal, (SS)",
+        "Roestvrijstaal, (DSS)",
+        "gegevenInTransitie"
+      ]
+    },
+    "RepresentatieLijn": {
+      "$anchor": "RepresentatieLijn",
+      "type": "string",
+      "enum": [
+        "referentielijnSpoor",
+        "referentielijnWater",
+        "referentielijnWeg",
+        "kantstreep",
+        "oeverlijn",
+        "buitensteSpoor",
+        "kantVerharding",
+        "basisnet",
+        "gegevenInTransitie"
+      ]
+    },
+    "StatusBuisleiding": {
+      "$anchor": "StatusBuisleiding",
+      "type": "string",
+      "enum": [
+        "geprojecteerd",
+        "operationeel",
+        "tijdelijkBuitenGebruik"
+      ]
+    },
+    "StofCategorieNaam": {
+      "$anchor": "StofCategorieNaam",
+      "type": "string",
+      "enum": [
+        "klasse 1: Explosieve stoffen en voorwerpen",
+        "klasse 2.1: Brandbaar gas",
+        "klasse 2.2: Niet brandbaar, niet giftig gas",
+        "Klasse 2.3: Giftig gas",
+        "Klasse 3: Brandbare vloeistoffen",
+        "Klasse 4.1: Brandbare vaste stoffen",
+        "Klasse 4.2: Voor zelfontbranding vatbare stoffen",
+        "Klasse 4.3: Stoffen die brandbaar gas ontwikkelen bij water",
+        "Klasse 5.1: Oxiderende stoffen",
+        "Klasse 5.2: Organische Peroxiden",
+        "Klasse 6.1: Giftige stoffen",
+        "Klasse 6.2: Infectueuze stoffen",
+        "Klasse 7: Radioactieve stoffen",
+        "Klasse 8: Bijtende stoffen",
+        "Klasse 9: Diverse gevaarlijke stoffen en voorwerpen"
+      ]
+    },
+    "TooiWaardelijst": {
+      "$anchor": "TooiWaardelijst",
+      "description": "; Locatie: https://standaarden.overheid.nl/tooi/waardelijsten/",
+      "codeList": "https://standaarden.overheid.nl/tooi/waardelijsten/"
+    },
+    "TypeBrand": {
+      "$anchor": "TypeBrand",
+      "type": "string",
+      "enum": [
+        "fakkelbrand",
+        "plasbrand",
+        "overig",
+        "gegevenInTransitie"
+      ]
+    },
+    "TypeVervoer": {
+      "$anchor": "TypeVervervoer",
+      "type": "string",
+      "enum": [
+        "WaterVervoer",
+        "WegVervoer",
+        "SpoorVervoer"
+      ]
+    },
+    "TypeExplosieAandachtsgebied": {
+      "$anchor": "TypeExplosieAandachtsgebied",
+      "type": "string",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "gegevenInTransitie"
+      ]
+    },
+    "TypeOpslagReferentie": {
+      "$anchor": "TypeOpslagReferentie",
+      "type": "string",
+      "enum": [
+        "opslagplaats",
+        "bufferopslag",
+        "opslagtank",
+        "gaszak",
+        "tussenopslag",
+        "bunkerstation",
+        "gegevenInTransitie",
+        "overig"
+      ]
+    },
+    "TypeOverigeContour": {
+      "$anchor": "TypeOverigeContour",
+      "type": "string",
+      "enum": [
+        "vastgesteld ontplofbaar",
+        "vastgesteld vuurwerk"
+      ]
+    },
+    "TypePlaatsgebondenRisico": {
+      "$anchor": "TypePlaatsgebondenRisico",
+      "type": "string",
+      "enum": [
+        "PR10-5",
+        "PR10-6",
+        "PR10-7",
+        "PR10-8",
+        "vastgesteld BK",
+        "vastgesteld K",
+        "vastgesteld ZK",
+        "gegevenInTransitie"
+      ]
+    },
+    "VoidReasonValue": {
+      "$anchor": "VoidReasonValue",
+      "type": "string",
+      "enum": [
+        "gegevenInTransitie",
+        "nietVanToepassing",
+        "waardeOnbekend"
+      ]
+    }
+  },
+  "oneOf": [
+    {"$ref": "#/$defs/LocatieBasisnet"},
+    {"$ref": "#/$defs/BuisleidingStelsel"},
+    {"$ref": "#/$defs/LocatieActiviteit"},
+    {"$ref": "#/$defs/KwetsbaarGebouw"},
+    {"$ref": "#/$defs/KwetsbareLocatie"}
+  ]
+}

@@ -1,0 +1,99 @@
+{
+    "comment": [
+        "Voorbeeld van aanleverbestand KwetsbareLocatie",
+        "datum: 2025-05-08",
+        "versie IMEV: 3.0.1",
+        "schema IMEV3.0.1_schema.json"
+    ],
+    "entityType": "KwetsbareLocatie",
+	"id": "NL.IMEV.gm1979.UTH02D2662",
+    "identificatie": {
+        "namespace": "NL.IMEV",
+        "lokaalID": "gm1979.UTH02D2662",
+        "versie": ""
+    },
+    "bronobjectID": "UTH02D2662",
+    "bronhoudercode": "EEMSDE",
+    "bronhoudercodeOverheid": "gm1979",
+    "bronhouder": "Gemeente Eemsdelta",
+    "documentInfo": {
+        "link": "http://www.geonovum.nl",
+        "naam": "Test1001"
+    },
+    "beginGeldigheid": "2018-11-27T00:00:00Z",
+
+    "categorieKwetsbaarheid": "gegevenInTransitie",
+    "geometrie": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    252954.96,
+                    593722.971
+                ],
+                [
+                    252937.332,
+                    593730.922
+                ],
+                [
+                    252935.029,
+                    593725.88
+                ],
+                [
+                    252925.111,
+                    593730.34
+                ],
+                [
+                    252925.777,
+                    593731.797
+                ],
+                [
+                    252922.925,
+                    593733.081
+                ],
+                [
+                    252922.243,
+                    593733.388
+                ],
+                [
+                    252921.585,
+                    593731.925
+                ],
+                [
+                    252916.343,
+                    593734.306
+                ],
+                [
+                    252909.268,
+                    593718.551
+                ],
+                [
+                    252909.076,
+                    593718.123
+                ],
+                [
+                    252945.744,
+                    593701.62
+                ],
+                [
+                    252953.017,
+                    593717.791
+                ],
+                [
+                    252952.999,
+                    593717.8
+                ],
+                [
+                    252955.211,
+                    593722.858
+                ],
+                [
+                    252954.96,
+                    593722.971
+                ]
+            ]
+        ]
+    },
+    "populatie": 50,
+    "kadastraleAanduiding": ["UTH02D02662G0000"]
+}

@@ -1,0 +1,1308 @@
+openapi: 3.0.1
+info:
+  version: IMEV 3.0.1
+  title: REV API - Geonovum - RWS- v5 voorstel
+  description: voorstel voor een Open Api Specificatie (OAS) die past bij IMEV 3.0.1
+  contact:
+    name: Geonovum
+    url: 'https://register.geostandaarden.nl/jsonschema/imev/3.0.1/OAS'
+    email: imev@geonovum.nl
+
+servers:
+  - url: 'https://rev-portaal.nl/api/rev/v5'
+
+paths:
+  '/LocatieEVActiviteiten':
+    get:
+      tags:
+        - Locaties van activiteiten met extern veiligheidsrisico
+      summary: Ophalen van actuele LocatieEVActiviteiten
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: page
+          in: query
+          description: Page index
+          required: false
+          schema:
+            type: integer
+          example: 0
+        - name: size
+          in: query
+          description: Number of results per page
+          required: false
+          schema:
+            type: integer
+          example: 20
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/LinksContainer'
+          headers:
+            available-slots:
+              schema:
+                type: string
+              description: Aantal vrije verwerkingsslots
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '401':
+          description: Niet geautoriseerd
+        '500':
+          description: Interne serverfout
+    post:
+      security:
+        - oauth2Schema: []
+      tags:
+        - Locaties van activiteiten met extern veiligheidsrisico
+      summary: Toevoegen van een LocatieEVActiviteit
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: validateOnly
+          in: query
+          description: Alleen valideren van de request
+          required: false
+          schema:
+            type: boolean
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/LocatieEVActiviteitSubtypes'
+      responses:
+        '201':
+          description: Aangemaakt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/Link'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '401':
+          description: Niet geautoriseerd
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '429':
+          description: Aanvraag kan tijdelijk niet in ontvangst worden genomen
+        '500':
+          description: Interne serverfout
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationReport'
+
+  '/LocatieEVActiviteiten/zoeken':
+    post:
+      tags:
+        - Locaties van activiteiten met extern veiligheidsrisico
+      summary: Zoeken naar LocatieEVActiviteiten op basis van geometrie
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: page
+          in: query
+          description: Page index
+          required: false
+          schema:
+            type: integer
+          example: 0
+        - name: size
+          in: query
+          description: Number of results per page
+          required: false
+          schema:
+            type: integer
+          example: 20
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/FeatureTypesSearch'
+            example:
+              geometrie:
+                type: 'Polygon'
+                coordinates: [
+                  [
+                    [
+                        173903.90509178204,
+                        501818.2926427146
+                    ],
+                    [
+                        174546.51795921923,
+                        501552.0551750271
+                    ],
+                    [
+                        174780.42175584938,
+                        502094.9761040956
+                    ],
+                    [
+                        175022.25445696118,
+                        502006.0786999746
+                    ],
+                    [
+                        174679.61510295272,
+                        501168.75722378725
+                    ],
+                    [
+                        173786.04659098282,
+                        501535.60507322167
+                    ],
+                    [
+                        173903.90509178204,
+                        501818.2926427146
+                    ]
+                  ]
+                ]
+                featureTypes: ['TankenCNG']
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/LinksContainer'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '401':
+          description: Niet geautoriseerd
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+        '500':
+          description: Interne serverfout
+
+  '/LocatieEVActiviteiten/featureTypes/zoeken':
+    post:
+      tags:
+        - Locaties van activiteiten met extern veiligheidsrisico
+      summary: Zoeken naar featureTypes op basis van NEN3610ID
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: _expand
+          in: query
+          description: 'Toon detail informatie van de featureTypes'
+          example: 'true'
+          required: false
+          schema:
+            type: boolean
+        - name: page
+          in: query
+          description: Page index
+          required: false
+          schema:
+            type: integer
+          example: 0
+        - name: size
+          in: query
+          description: Number of results per page
+          required: false
+          schema:
+            type: integer
+          example: 20
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/FeatureTypesSearch'
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/FeatureTypesContainer'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '404':
+          description: Niet gevonden
+        '500':
+          description: Interne serverfout
+
+    get:
+      tags:
+        - Locaties van activiteiten met extern veiligheidsrisico
+      summary: Ophalen van een specifiek featureType
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: identificatie
+          in: query
+          description: 'NEN3610ID identificatie van het featureType.'
+          example: 'NL.IMEV.AB12.ABC12345'
+          required: true
+          schema:
+            type: string
+        - name: tijdstipRegistratie
+          in: query
+          description: 'Toon featureTypes geregistreerd op of voor peildatumtijd'
+          required: false
+          schema:
+            type: string
+            format: dateTime
+        - name: tijdstipGeldigheid
+          in: query
+          description: 'Toon featureTypes geldig op peildatumtijd'
+          required: false
+          schema:
+            type: string
+            format: dateTime
+        - name: includeCorrected
+          in: query
+          description: 'Toon administratieve correcties'
+          example: 'true'
+          required: false
+          schema:
+            type: boolean
+        - name: _expand
+          in: query
+          description: 'Toon detail informatie van de featureTypes'
+          example: 'true'
+          required: false
+          schema:
+            type: boolean
+        - name: page
+          in: query
+          description: Page index
+          required: false
+          schema:
+            type: integer
+          example: 0
+        - name: size
+          in: query
+          description: Number of results per page
+          required: false
+          schema:
+            type: integer
+          example: 20
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/FeatureTypesContainer'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '404':
+          description: Niet gevonden
+        '500':
+          description: Interne serverfout
+
+  '/LocatieEVActiviteiten/{identificatie}':
+    get:
+      tags:
+        - Locaties van activiteiten met extern veiligheidsrisico
+      summary: Ophalen van een LocatieEVActiviteit
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: identificatie
+          in: path
+          description: 'NEN3610ID identificatie van het object.'
+          example: 'NL.IMEV.AB12.ABC12345'
+          required: true
+          schema:
+            type: string
+        - name: registrationId
+          in: query
+          description: 'Match with id of registration'
+          example: '15363'
+          required: false
+          schema:
+            type: integer
+
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/LocatieEVActiviteitSubtypes'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '404':
+          description: Niet gevonden
+        '500':
+          description: Interne serverfout
+    put:
+      security:
+        - oauth2Schema: []
+      tags:
+        - Locaties van activiteiten met extern veiligheidsrisico
+      summary: Wijzigen van een LocatieEVActiviteit
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: identificatie
+          in: path
+          description: 'NEN3610ID identificatie van het object.'
+          example: 'NL.IMEV.AB12.ABC12345'
+          required: true
+          schema:
+            type: string
+        - name: registrationId
+          in: query
+          description: 'Match with id of registration'
+          example: '15363'
+          required: false
+          schema:
+            type: integer
+        - name: validateOnly
+          in: query
+          description: Alleen valideren van de request
+          required: false
+          schema:
+            type: boolean
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/LocatieEVActiviteitSubtypes'
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/Link'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '401':
+          description: Niet geautoriseerd
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '429':
+          description: Aanvraag kan tijdelijk niet in ontvangst worden genomen
+        '500':
+          description: Interne serverfout
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationReport'
+    delete:
+      security:
+        - oauth2Schema: []
+      tags:
+        - Locaties van activiteiten met extern veiligheidsrisico
+      summary: Verwijderen van een LocatieEVActiviteit
+      parameters:
+        - name: identificatie
+          in: path
+          description: 'NEN3610ID identificatie van het object.'
+          example: 'NL.IMEV.AB12.ABC12345'
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Geen inhoud
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '404':
+          description: Niet gevonden
+        '500':
+          description: Interne serverfout
+
+  '/LocatieEVActiviteiten/{identificatie}/historie':
+    get:
+      tags:
+        - Locaties van activiteiten met extern veiligheidsrisico
+      summary: Ophalen van de historie van een LocatieEVActiviteit
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: identificatie
+          in: path
+          description: 'NEN3610ID identificatie van het object.'
+          example: 'NL.IMEV.AB12.ABC12345'
+          required: true
+          schema:
+            type: string
+        - name: includeFeatureTypes
+          in: query
+          description: 'Toon featureTypes in het overzicht'
+          example: 'true'
+          required: false
+          schema:
+            type: boolean
+        - name: includeCorrected
+          in: query
+          description: 'Toon administratieve correcties in het overzicht'
+          example: 'true'
+          required: false
+          schema:
+            type: boolean
+        - name: page
+          in: query
+          description: Page index
+          required: false
+          schema:
+            type: integer
+          example: 0
+        - name: size
+          in: query
+          description: Number of results per page
+          required: false
+          schema:
+            type: integer
+          example: 20
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/HistoryLinksContainer'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '404':
+          description: Niet gevonden
+        '500':
+          description: Interne serverfout
+
+  '/LocatieEVActiviteiten/featureTypes/{identificatie}':
+    get:
+      tags:
+        - Locaties van activiteiten met extern veiligheidsrisico
+      summary: Ophalen van een featureType van een LocatieEVActiviteit
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: identificatie
+          in: path
+          description: 'NEN3610ID identificatie van het object.'
+          example: 'NL.IMEV.AB12.ABC12345'
+          required: true
+          schema:
+            type: string
+        - name: featureTypeId
+          in: query
+          description: 'Match with id of registered FeatureType'
+          example: '15363'
+          required: false
+          schema:
+            type: integer
+
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/FeatureType'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '404':
+          description: Niet gevonden
+        '500':
+          description: Interne serverfout
+
+  '/LocatieEVActiviteiten/featureTypes/{identificatie}/historie':
+    get:
+      tags:
+        - Locaties van activiteiten met extern veiligheidsrisico
+      summary: Ophalen van de historie van een featureType
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: identificatie
+          in: path
+          description: 'NEN3610ID identificatie van het object.'
+          example: 'NL.IMEV.AB12.ABC12345'
+          required: true
+          schema:
+            type: string
+        - name: includeCorrected
+          in: query
+          description: 'Toon administratieve correcties in het overzicht'
+          example: 'true'
+          required: false
+          schema:
+            type: boolean
+        - name: page
+          in: query
+          description: Page index
+          required: false
+          schema:
+            type: integer
+          example: 0
+        - name: size
+          in: query
+          description: Number of results per page
+          required: false
+          schema:
+            type: integer
+          example: 20
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/HistoryLinksContainer'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '404':
+          description: Niet gevonden
+        '500':
+          description: Interne serverfout
+
+  '/GebouwenOfLocaties':
+    get:
+      tags:
+        - Gebouwen of locaties
+      summary: Ophalen van gebouw of locatie
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: page
+          in: query
+          description: Page index
+          required: false
+          schema:
+            type: integer
+          example: 0
+        - name: size
+          in: query
+          description: Number of results per page
+          required: false
+          schema:
+            type: integer
+          example: 20
+        - name: bagdata
+          in: query
+          description: Voeg BAG eigenschappen toe aan objecten als aanwezig
+          required: false
+          schema:
+            type: boolean
+          example: true
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/LinksContainer'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '401':
+          description: Niet geautoriseerd
+        '500':
+          description: Interne serverfout
+    post:
+      security:
+        - oauth2Schema: []
+      tags:
+        - Gebouwen of locaties
+      summary: Toevoegen van een gebouw of locatie
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/GebouwOfLocatieSubtypes'
+      responses:
+        '201':
+          description: Aangemaakt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/Link'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '401':
+          description: Niet geautoriseerd
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '429':
+          description: Aanvraag kan tijdelijk niet in ontvangst worden genomen
+        '500':
+          description: Interne serverfout
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationReport'
+
+  '/GebouwenOfLocaties/zoeken':
+    post:
+      tags:
+        - Gebouwen of locaties
+      summary: Zoeken naar gebouwen of locaties
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: page
+          in: query
+          description: Page index
+          required: false
+          schema:
+            type: integer
+          example: 0
+        - name: size
+          in: query
+          description: Number of results per page
+          required: false
+          schema:
+            type: integer
+          example: 20
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              type: object
+              required:
+                - geometrie
+                - featureType
+              properties:
+                geometrie:
+                  $ref: 'common-schema.yaml#/components/schemas/Geometrie'
+                featureType:
+                  $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/KglAllowedFeatureTypes'
+                tijdstipRegistratie:
+                  description: in format YYYY-MM-DDThh:mm:ss
+                  type: string
+                  format: dateTime
+                tijdstipGeldigheid:
+                  description: in format YYYY-MM-DDThh:mm:ss
+                  type: string
+                  format: dateTime
+                bronhoudercode:
+                  type: string
+      responses:
+        '200':
+          description: Succesvol verwerkt. In de response worden alleen velden teruggegeven die gevuld zijn. Als de queryparameter bagdata=true, zijn BAG eigenschappen (zoals gebruiksdoeleinden) toegevoegd aan de objecten.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/GebouwOfLocatieSubtypes'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '401':
+          description: Niet geautoriseerd
+        '404':
+          description: Niet gevonden
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+        '500':
+          description: Interne serverfout
+
+  '/GebouwenOfLocaties/{identificatie}':
+    get:
+      tags:
+        - Gebouwen of locaties
+      summary: Ophalen van een gebouw of locatie
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: identificatie
+          in: path
+          description: 'NEN3610ID identificatie van het object.'
+          example: 'NL.IMEV.AB12.ABC12345'
+          required: true
+          schema:
+            type: string
+        - name: registrationId
+          in: query
+          description: 'Match with id of registration'
+          example: '15363'
+          required: false
+          schema:
+            type: integer
+        - name: bagdata
+          in: query
+          description: Voeg BAG eigenschappen toe aan object als aanwezig
+          required: false
+          schema:
+            type: boolean
+          example: true
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/GebouwOfLocatieSubtypes'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '404':
+          description: Niet gevonden
+        '500':
+          description: Interne serverfout
+    put:
+      security:
+        - oauth2Schema: []
+      tags:
+        - Gebouwen of locaties
+      summary: Wijzigen van een gebouw of locatie
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: identificatie
+          in: path
+          description: 'NEN3610ID identificatie van het object.'
+          example: 'NL.IMEV.AB12.ABC12345'
+          required: true
+          schema:
+            type: string
+        - name: validateOnly
+          in: query
+          description: Alleen valideren van de request
+          required: false
+          schema:
+            type: boolean
+      requestBody:
+        description: Nieuwe entiteit gebouw of locaties
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/GebouwOfLocatieSubtypes'
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/Link'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '401':
+          description: Niet geautoriseerd
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '429':
+          description: Aanvraag kan tijdelijk niet in ontvangst worden genomen
+        '500':
+          description: Interne serverfout
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationReport'
+
+    delete:
+      security:
+        - oauth2Schema: []
+      tags:
+        - Gebouwen of locaties
+      summary: Verwijderen van een gebouw of locatie
+      parameters:
+        - name: identificatie
+          in: path
+          description: 'NEN3610ID identificatie van het object.'
+          example: 'NL.IMEV.AB12.ABC12345'
+          required: true
+          schema:
+            $ref: 'common-schema.yaml#/components/schemas/NEN3610ID'
+      responses:
+        '204':
+          description: Geen inhoud
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '404':
+          description: Niet gevonden
+        '500':
+          description: Interne serverfout
+
+  '/GebouwenOfLocaties/{identificatie}/historie':
+    get:
+      tags:
+        - Gebouwen of locaties
+      summary: Ophalen van de historie van een Gebouw of Locatie
+      parameters:
+        - name: Content-Crs
+          in: header
+          description: Content-Crs
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: 'EPSG:28992'
+        - name: identificatie
+          in: path
+          description: 'NEN3610ID identificatie van het object.'
+          example: 'NL.IMEV.AB12.ABC12345'
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Page index
+          required: false
+          schema:
+            type: integer
+          example: 0
+        - name: size
+          in: query
+          description: Number of results per page
+          required: false
+          schema:
+            type: integer
+          example: 20
+        - name: bagdata
+          in: query
+          description: Voeg BAG eigenschappen toe aan objecten als aanwezig
+          required: false
+          schema:
+            type: boolean
+          example: true
+      responses:
+        '200':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/GebouwOfLocatieSubtypes'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '404':
+          description: Niet gevonden
+        '500':
+          description: Interne serverfout
+
+  '/LocatieEVActiviteiten/overdragen/van/{wasCode}/aan/{wordtCode}':
+    post:
+      security:
+        - oauth2Schema: []
+      tags:
+        - Beheer
+      summary: Wijzigen van eigenaar van object(en) door ADMIN
+      parameters:
+        - name: wasCode
+          in: path
+          description: 'Bronhouder code van huidige eigenaar'
+          example: 'REVBRN'
+          required: true
+          schema:
+            type: string
+        - name: wordtCode
+          in: path
+          description: 'Bronhouder code van nieuwe eigenaar'
+          example: 'NRBVER'
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: 'common-schema.yaml#/components/schemas/NEN3610ID'
+              minItems: 1
+      responses:
+        '202':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/OverdrachtResponse'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '401':
+          description: Niet geautoriseerd
+        '404':
+          description: Niet gevonden
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+        '500':
+          description: Interne serverfout
+
+  '/LocatieEVActiviteiten/overdragen/aan/{wordtCode}':
+    post:
+      security:
+        - oauth2Schema: []
+      tags:
+        - Beheer
+      summary: Wijzigen van eigenaar van eigen object(en)
+      parameters:
+        - name: wordtCode
+          in: path
+          description: 'Bronhouder code van nieuwe eigenaar'
+          example: 'NRBVER'
+          required: true
+          schema:
+            type: string
+        - name: reden
+          in: query
+          description: 'De reden waarom deze activiteit wordt overgedragen'
+          example: 'Windturbines vallen niet onder het beheer van de dienst'
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: 'common-schema.yaml#/components/schemas/NEN3610ID'
+              minItems: 1
+      responses:
+        '202':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/OverdrachtResponse'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '401':
+          description: Niet geautoriseerd
+        '404':
+          description: Niet gevonden
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+        '500':
+          description: Interne serverfout
+
+  '/GebouwenOfLocaties/overdragen/aan/{wordtCode}':
+    post:
+      security:
+        - oauth2Schema: [ ]
+      tags:
+        - Beheer
+      summary: Wijzigen van eigenaar van kgl object door Bronhouder
+      parameters:
+        - name: wordtCode
+          in: path
+          description: 'Bronhouder code van nieuwe eigenaar'
+          example: 'NRBVER'
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: 'common-schema.yaml#/components/schemas/NEN3610ID'
+              minItems: 1
+      responses:
+        '202':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/OverdrachtResponse'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '401':
+          description: Niet geautoriseerd
+        '404':
+          description: Niet gevonden
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+        '500':
+          description: Interne serverfout
+
+
+  '/GebouwenOfLocaties/overdragen/van/{wasCode}/aan/{wordtCode}':
+    post:
+      security:
+        - oauth2Schema: [ ]
+      tags:
+        - Beheer
+      summary: Wijzigen van eigenaar van kgl object(en) door ADMIN
+      parameters:
+        - name: wasCode
+          in: path
+          description: 'Bronhouder code van huidige eigenaar'
+          example: 'REVBRN'
+          required: true
+          schema:
+            type: string
+        - name: wordtCode
+          in: path
+          description: 'Bronhouder code van nieuwe eigenaar'
+          example: 'NRBVER'
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: 'common-schema.yaml#/components/schemas/NEN3610ID'
+              minItems: 1
+      responses:
+        '202':
+          description: Succesvol verwerkt
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/OverdrachtResponse'
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+          content:
+            application/json:
+              schema:
+                $ref: 'IMEV3.0.1_OAS_schema.yaml#/components/schemas/ValidationResponse'
+        '401':
+          description: Niet geautoriseerd
+        '404':
+          description: Niet gevonden
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+        '500':
+          description: Interne serverfout
+
+  '/Conformiteitstoets/start':
+    post:
+      security:
+        - oauth2Schema: []
+      tags:
+        - Conformiteitstoets
+      summary: Initialisatie ten behoeve van de conformiteitstoets
+      responses:
+        '201':
+          description: Succesvol verwerkt
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '401':
+          description: Niet geautoriseerd
+        '404':
+          description: Niet gevonden
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+        '500':
+          description: Interne serverfout
+
+  '/Conformiteitstoets/resultaat':
+    get:
+      security:
+        - oauth2Schema: []
+      tags:
+        - Conformiteitstoets
+      summary: Valideer de aangeleverde data en genereer rapportage
+      responses:
+        '201':
+          description: Succesvol verwerkt
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '401':
+          description: Niet geautoriseerd
+        '404':
+          description: Niet gevonden
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+        '500':
+          description: Interne serverfout
+
+  '/Conformiteitstoets/overzicht':
+    get:
+      security:
+        - oauth2Schema: []
+      tags:
+        - Conformiteitstoets
+      summary: Overzicht van succesvol uitgevoerde conformiteitstoetsen
+      responses:
+        '201':
+          description: Succesvol verwerkt
+        '400':
+          description: Foute aanvraag, zie foutdetails voor meer
+        '401':
+          description: Niet geautoriseerd
+        '404':
+          description: Niet gevonden
+        '412':
+          description: Niet voldaan aan vooraf gestelde voorwaarde
+        '500':
+          description: Interne serverfout
+
+components:
+  securitySchemes:
+    oauth2Schema:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://rev-portaal.nl/auth/realms/REV/protocol/openid-connect/token
+          scopes: {}
