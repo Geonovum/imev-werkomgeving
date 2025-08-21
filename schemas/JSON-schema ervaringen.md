@@ -14,7 +14,7 @@ Deze hebben allemaal de volgende basis UML-structuur:
 
 <img width="1176" height="428" alt="image" src="https://github.com/user-attachments/assets/d6e20c20-7eff-4ea3-b97b-8b862c1da595" />
 
-***Figuur 1: Voor UML-diagram uit IMEV***
+***Figuur 1: Voorbeeld UML-diagram uit IMEV***
 
 Op basis van het IMEV wordt het Register Externe Veiligheidsrisico's (REV) gevuld.
 Het REV is in opdracht van het ministerie van Infrastructuur en Waterstaat ontwikkeld. 
