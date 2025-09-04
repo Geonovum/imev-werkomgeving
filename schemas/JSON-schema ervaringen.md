@@ -82,5 +82,5 @@ Er zijn in het JSON-schema voor de implementatie ook nog attributen toegevoegd d
 3) Er kunnen verschillende schema`s bestaan voor 1 model: vb. Plain-JSON of GeoJSON 
 6) Voorbeeldbestanden maken is belangrijk voor begrip en de kwaliteit van het model
 7) Implementatie is de beste test
-8) Het door Geonovum gepubliceerde [JSON-schema](https://register.geostandaarden.nl/JSONschema/imev/3.0.2/IMEV3.0.2_schema.JSON) is t.b.v. implementatie en kan daarom afwijken van het informatirmodel.
+8) Het door Geonovum gepubliceerde [JSON-schema](https://register.geostandaarden.nl/JSONschema/imev/3.0.2/IMEV3.0.2_schema.JSON) is t.b.v. implementatie en kan daarom afwijken van het informatiemodel.
 9) Uiteindelijk wijken het [schema](https://rev-portaal.nl/oas/imev30-schema.yaml) en de [OAS](https://rev-portaal.nl/oas/rev-v5-specification.yaml) behorende bij de definitieve implementatie van de REV-API ook nog weer af van [wat door Geonovum is gepubliceerd](https://register.geostandaarden.nl/jsonschema/imev/).
