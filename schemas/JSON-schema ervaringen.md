@@ -48,7 +48,7 @@ Ook bleken er grote verschillen tussen wat Imvertor er van maakte en het JSON-sc
 Er was behoefte aan een standaard en daarom is er samen met Interactive Instruments begin 2023 een best practice geschreven die inmiddels ook door OGC is geaddopteerd en gepubliceerd onder https://docs.ogc.org/bp/24-017r1.html.
 Begin 2024 zijn er op basis van deze bestpractice enkele aanpassingen aan Imvertor gedaan.
 Met deze aangepaste versie is er door Ben Gunnewijk in opdracht van Geonovum een onderzoek gedaan naar de verschillen in het schema van Geonovum en dat van de REV-API.
-Ook heeft hij samen met de VNG geprobeerd een Stuk van het IMEV-berichtenverkeer te modelleren met met Enterprise Architect middels een BSM (Berichten Structuur Model).  
+Ook heeft hij samen met de VNG geprobeerd een stuk van het IMEV-berichtenverkeer te modelleren met met Enterprise Architect middels een BSM (Berichten Structuur Model).  
 
 <img width="500" height="434" alt="image" src="https://github.com/user-attachments/assets/23286807-58d4-41a4-95d4-93c23baa6da2" />  
 
@@ -65,10 +65,10 @@ Tijdens technische sessies met betrokkenen van de oude versie van de REV-API is 
 Voor Geonovum was het van belang dat het JSON-schema voldeed aan de bestpractice UML2JSON en dat het overeenkomt met het IMEV. 
 Dan bleven er nog steeds mogelijkheden over om het JSON-schema aan te passen zodat het meer overeenkomt met JSON-schema van de oude REV-API.
 Een van de aanpassingen was dat het oorspronkelijke Geonovum JSON-schema uitging van GeoJSON en de REV-API ging uit van Plain-JSON. 
-GeoJSON zou voor output vanuit het REV beter zijn, maar voor de input is al lang geleden gekozen voor plain-JSON. Hier gaat het om input en gelukkig heeft Imvertor ook een optie voor plain-JSON, dus het was eenvoudig om daarnaar over te stappen.
+GeoJSON zou voor output vanuit het REV beter zijn, maar voor de input is al lang geleden gekozen voor Plain-JSON. Hier gaat het om input en gelukkig heeft Imvertor ook een optie voor Plain-JSON, dus het was eenvoudig om daarnaar over te stappen.
 Richting Imvertor zijn enkele wijzigingsverzoeken gedaan om de schema's meer op elkaar te kunnen laten lijken. Er bleken ook fouten in het JSON-schema te zitten die opgelost moesten worden in de UML in het Enterprise Architect project.
 Een deel van die fouten kwamen naar boven door het maken van voorbeeldbestanden en door de validatie daarvan op basis van het JSON-schema van Geonovum.
-Voor deze JSON-schcema validatie is verschillende software getest, want de complexe structuur met veel sup- en supertypes bleek voor veel software niet te werken. Met Visual Studio bleek dit uiteindelijk het beste te gaan.
+Voor deze JSON-schema-validatie is verschillende software getest, want de complexe structuur met veel sup- en supertypes bleek voor veel software niet te werken. Met Visual Studio bleek dit uiteindelijk het beste te gaan.
 Het laatst door Geonovum gepubliceerde [JSON-schema](https://register.geostandaarden.nl/JSONschema/imev/3.0.2/IMEV3.0.2_schema.JSON) wijkt nog steeds af van de implementatie van de [nieuwste versie van de REV-API-schema](Ihttps://rev-portaal.nl/oas/imev30-schema.yaml).
 Volledige aanpassing aan het JSON-schema van Geonovum bleek voor de implementatie te kostbaar.
 Vooral op het gebied van de all-off constructie voor het overerven van properties van supertypes bleek het lastig te implementeren.
@@ -79,8 +79,8 @@ Er zijn in het JSON-schema voor de implementatie ook nog attributen toegevoegd d
 
 1) Modelleren van berichtenverkeer heeft alleen zin als dat berichtenverkeer veel verandert
 2) Validatiesoftware voor JSON-schema's verschilt veel van elkaar en ze kunnen niet allemaal overweg met het overerven van properties.
-3) Er kunnen verschillende schema`s bestaan voor 1 model: vb. plain-JSON of GeoJSON 
+3) Er kunnen verschillende schema`s bestaan voor 1 model: vb. Plain-JSON of GeoJSON 
 6) Voorbeeldbestanden maken is belangrijk voor begrip en de kwaliteit van het model
 7) Implementatie is de beste test
-8) Het JSON-schema is t.b.v. implementatie en kan afwijken van het model.
-9) Uiteindelijk kan het schema behorende bij de definitieve implementatie toch afwijken van het JSON-schema dat uit het UML te maken is.
+8) Het JSON-schema is t.b.v. implementatie en kan daarom afwijken van het model.
+9) Uiteindelijk kan het schema behorende bij de definitieve implementatie van de API toch afwijken van het JSON-schema dat uit het UML te maken is en door Geonovum is gepubliceerd.
