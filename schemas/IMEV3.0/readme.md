@@ -37,4 +37,4 @@ Deze is sinds 22 januari gepubliceerd op https://register.geostandaarden.nl/json
 - relaties zijn gelegd naar alle subtypes via oneOf ipv alleen naar supertypes
 - Enumeratie MateriaalWindtubineMast verbeterd naar MateriaalWindtu***r***bineMast
 
-***Valideren*** met het schema gaat niet in alle validatiesoftware goed. Met Visual Studio zijn wel alle [voorbeeldbestanden](https://register.geostandaarden.nl/jsonschema/imev/3.0.0/voorbeeldbestanden/)) gevalideerd met [IMEV3.0.0_schema.json](https://register.geostandaarden.nl/jsonschema/imev/3.0.0/IMEV3.0.0_schema.json) zonder fouten.
+***Valideren*** met het schema gaat niet in alle validatiesoftware goed. Met Visual Studio zijn wel alle [voorbeeldbestanden](https://register.geostandaarden.nl/jsonschema/imev/3.0.0/voorbeeldbestanden/) gevalideerd met [IMEV3.0.0_schema.json](https://register.geostandaarden.nl/jsonschema/imev/3.0.0/IMEV3.0.0_schema.json) zonder fouten.
