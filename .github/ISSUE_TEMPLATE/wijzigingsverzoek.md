@@ -1,6 +1,6 @@
 ---
 name: Wijzigingsverzoek
-about: Wijzigingsverzoek doorgeven
+about: Meld eerst via IMEV@geonovum.nl, dan maakt Geonovum een issue aan.
 title: ''
 labels: enhancement
 assignees: ''
