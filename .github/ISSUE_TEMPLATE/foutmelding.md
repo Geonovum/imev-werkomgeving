@@ -2,7 +2,7 @@
 name: Foutmelding
 about: Meld eerst via IMEV@geonovum.nl, dan maakt Geonovum een issue aan.
 title: ''
-labels: ''
+labels: bug
 assignees: ''
 
 ---
