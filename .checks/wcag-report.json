@@ -4,11 +4,11 @@
     "id": "color-contrast",
     "impact": "serious",
     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
-    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=webdriverjs",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=webdriverjs",
     "nodes": [
       {
         "target": [
-          "code"
+          "td:nth-child(2) > code"
         ],
         "html": "<code>EPSG:28992</code>",
         "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #c83500, background color: #d3d3d3, font size: 10.8pt (14.4px), font weight: normal). Expected contrast ratio of 4.5:1"
@@ -20,7 +20,7 @@
     "id": "link-name",
     "impact": "serious",
     "description": "Ensure links have discernible text",
-    "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/link-name?application=webdriverjs",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-name?application=webdriverjs",
     "nodes": [
       {
         "target": [
@@ -35,6 +35,22 @@
         ],
         "html": "<a id=\"toc-toggle\" href=\"#toc\"><span aria-hidden=\"true\">→</span> <span>Pop Out Sidebar</span></a>",
         "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+      }
+    ]
+  },
+  {
+    "url": "http://localhost:8080/snapshot.html",
+    "id": "scrollable-region-focusable",
+    "impact": "serious",
+    "description": "Ensure elements that have scrollable content are accessible by keyboard in Safari",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/scrollable-region-focusable?application=webdriverjs",
+    "nodes": [
+      {
+        "target": [
+          "pre:nth-child(2) > .hljs.json"
+        ],
+        "html": "<code aria-busy=\"false\" class=\"hljs json\">",
+        "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
       }
     ]
   }
