@@ -11799,7 +11799,11 @@ De reguliere expressie bij het attribuut "bronhouder" is in het formeel patroon 
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/143">https://github.com/Geonovum/imev-werkomgeving/issues/143</a></p><ul>
 <li>IMEV-diagram: VIII-A.5.20: Opslaan, herverpakken of bewerken van vuurwerk van categorie F1,F2 of F3 in een hoeveelheid van ten hoogste 10.000 kg</li>
 <li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
-<li>Aanpassing: Nieuw subtype van BKLActiviteit: OpslagVuurwerkF1F2F3T1T2_GeenVergunningplicht met dezelfde attributen als OpslagVuurwerkF1F2F3T1T2_Vergunningplicht uit VIII-B</li>
+<li>Aanpassing: <ul>
+<li>Nieuw subtype van BKLActiviteit: OpslagVuurwerkF1F2F3T1T2_GeenVergunningplicht met dezelfde attributen als OpslagVuurwerkF1F2F3T1T2_Vergunningplicht uit VIII-B</li>
+<li>Nieuwe definitie voor BufferBewaarplaats</li>
+</ul>
+</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/170">https://github.com/Geonovum/imev-werkomgeving/issues/170</a></p><ul>
 <li>IMEV-diagram: VII-E.10a: LNG: Bunkerstations en andere tankplaatsen voor schepen </li>
 <li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
@@ -11813,9 +11817,13 @@ De reguliere expressie bij het attribuut "bronhouder" is in het formeel patroon 
 <li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
 <li>Aanpassing: Als VII-A.14 met nieuw subtype van BKLActiviteit: OpslagEnergiedragersElektrischeEnergie_BerekendeAfstandVergunningplicht</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/178">https://github.com/Geonovum/imev-werkomgeving/issues/178</a></p><ul>
-<li>IMEV-diagram: VII-B.6: Exploiteren van een energieopslagsysteem, vergunningvrij en berekende afstanden</li>
+<li>IMEV-diagram: VII-D.3: Exploiteren van een energieopslagsysteem, vergunningvrij en berekende afstanden</li>
 <li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
 <li>Aanpassing: VII-A.13 met nieuw subtype van BKLActiviteit: ExploiterenEnergieOpslagSysteem_BerekendeAfstandGeenVergunningplicht</li>
+</ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/182">https://github.com/Geonovum/imev-werkomgeving/issues/182</a></p><ul>
+<li>IMEV-diagram: VII-D.4: Opslaan en opstellen van energiedragers voor elektrische energie, vergunningvrij en berekende afstanden</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
+<li>Aanpassing: Als VII-A.14 met nieuw subtype van BKLActiviteit: OpslagEnergiedragersElektrischeEnergie_BerekendeAfstandGeenVergunningplicht</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/181">https://github.com/Geonovum/imev-werkomgeving/issues/181</a></p><ul>
 <li>IMEV-diagram: alle MBA’s</li>
 <li>IMEV-onderdeel: heel IMEV</li>
@@ -11867,7 +11875,7 @@ In het diagram is een subtype van ReferentieEVContour 'tankzuil' toegevoegd.</li
 Relaties van rechts naar links lopen in de diagrammen zijn nu by-reference opgenomen in het IMEV en dat was via de in-line relatiesoort. Voor het schema betekent dit het volgende:
 De situatie was:<pre><code aria-busy="false" class="hljs json"><span class="hljs-attr">"hoortBij"</span> <span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"type"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"array"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"items"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-attr">"$ref"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"#/$defs/ReferentieEVContour"</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span></code></pre>De situatie is geworden:<pre><code aria-busy="false" class="hljs json">  <span class="hljs-attr">"hoortBij"</span> <span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"items"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-attr">"$ref"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"#/$defs/ReferentieEVContour"</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span></code></pre>De situatie is geworden:<pre><code aria-busy="false" class="hljs json"><span class="hljs-attr">"hoortBij"</span> <span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"type"</span> <span class="hljs-punctuation">:</span> <span class="hljs-string">"array"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"items"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-attr">"$ref"</span><span class="hljs-punctuation">:</span><span class="hljs-string">"https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"</span> <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span></code></pre></li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/118">https://github.com/Geonovum/imev-werkomgeving/issues/118</a>  </p><ul>
@@ -11903,38 +11911,40 @@ De waardes van de enumeratie OpstellingsUitvoeringAardgas waren:<ul>
 <li>ondergronds</li>
 <li>binnenBehuizing</li>
 <li>buitenBehuizing</li>
-<li>gegevenInTransitie</li>
+<li>gegevenInTransitie
+De waardes van de enumeratie OpstellingsUitvoeringAardgas zijn geworden:</li>
+<li>ondergronds</li>
+<li>inBehuisingKlein</li>
+<li>inBehuizingMiddel</li>
+<li>inBehuizingGrootOfBuiten</li>
 </ul>
 </li>
-</ul><p>De waardes van de enumeratie OpstellingsUitvoeringAardgas zijn geworden:
-    - ondergronds
-    - inBehuisingKlein
-    - inBehuizingMiddel
-    - inBehuizingGrootOfBuiten</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/159">https://github.com/Geonovum/imev-werkomgeving/issues/159</a>  </p><ul>
+</ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/159">https://github.com/Geonovum/imev-werkomgeving/issues/159</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s  </li>
 <li>IMEV-onderdeel: waardelijsten zoals hieronder genoemd  </li>
-<li>Aanpassing:
-Bij de volgende enumeraties is de waarde 'gegevenInTransitie' verwijderd:
-  -7.2.3 Enumeratie details BevoegdGezag (niet verplicht)
-  -7.2.5 Enumeratie details BuisleidingCategorieStof (niet verplicht)
-  -7.2.6 Enumeratie details CategorieAandachtsgebied (niet verplicht)
-  -7.2.7 Enumeratie details CategorieGiftigeStof (niet verplicht)
-  -7.2.8 Enumeratie details CategorieKwetsbaarheidGebouw (verplicht !)
-  -7.2.9 Enumeratie details CategorieKwetsbaarheidLocatie (verplicht !)
-  -7.2.10 Enumeratie details CategorieStikstofgehalte (wordt nergens gebruikt)
-  -7.2.11 Enumeratie details CategorieVuurwerk (niet verplicht)
-  -7.2.12 Enumeratie details Gebruiksdoeleinden (niet verplicht)
-  -7.2.13 Enumeratie details HoeveelheidsKlasseAmmoniak (niet verplicht)
-  -7.2.15 Enumeratie details OilGasChemicalsProductTypeValue (niet verplicht)
-  -7.2.16 Enumeratie details OpstellingsUitvoeringAardgas (niet verplicht)
-  -7.2.17 Enumeratie details OpstellingsUitvoeringAmmoniak (niet verplicht)
-  -7.2.18 Enumeratie details PipeMaterialTypeValue (niet verplicht)
-  -7.2.19 Enumeratie details RepresentatieLijn (verplicht !, wordt gebruikt in Basisnet)
-  -7.2.23 Enumeratie details TypeBrand (niet verplicht)
-  -7.2.24 Enumeratie details TypeExplosieAandachtsgebied (verplicht !)
-  -7.2.25 Enumeratie details TypeOpslagReferentie (verplicht !)
-  -7.2.27 Enumeratie details TypePlaatsgebondenRisico (verplicht !)
-  -7.2.28 Enumeratie details VoidReasonValue (verplicht !)</li>
+<li>Aanpassing: Bij de volgende enumeraties is de waarde 'gegevenInTransitie' verwijderd:<ul>
+<li>7.2.3 Enumeratie details BevoegdGezag (niet verplicht)</li>
+<li>7.2.5 Enumeratie details BuisleidingCategorieStof (niet verplicht)</li>
+<li>7.2.6 Enumeratie details CategorieAandachtsgebied (niet verplicht)</li>
+<li>7.2.7 Enumeratie details CategorieGiftigeStof (niet verplicht)</li>
+<li>7.2.8 Enumeratie details CategorieKwetsbaarheidGebouw (verplicht !)</li>
+<li>7.2.9 Enumeratie details CategorieKwetsbaarheidLocatie (verplicht !)</li>
+<li>7.2.10 Enumeratie details CategorieStikstofgehalte (wordt nergens gebruikt)</li>
+<li>7.2.11 Enumeratie details CategorieVuurwerk (niet verplicht)</li>
+<li>7.2.12 Enumeratie details Gebruiksdoeleinden (niet verplicht)</li>
+<li>7.2.13 Enumeratie details HoeveelheidsKlasseAmmoniak (niet verplicht)</li>
+<li>7.2.15 Enumeratie details OilGasChemicalsProductTypeValue (niet verplicht)</li>
+<li>7.2.16 Enumeratie details OpstellingsUitvoeringAardgas (niet verplicht)</li>
+<li>7.2.17 Enumeratie details OpstellingsUitvoeringAmmoniak (niet verplicht)</li>
+<li>7.2.18 Enumeratie details PipeMaterialTypeValue (niet verplicht)</li>
+<li>7.2.19 Enumeratie details RepresentatieLijn (verplicht !, wordt gebruikt in Basisnet)</li>
+<li>7.2.23 Enumeratie details TypeBrand (niet verplicht)</li>
+<li>7.2.24 Enumeratie details TypeExplosieAandachtsgebied (verplicht !)</li>
+<li>7.2.25 Enumeratie details TypeOpslagReferentie (verplicht !)</li>
+<li>7.2.27 Enumeratie details TypePlaatsgebondenRisico (verplicht !)</li>
+<li>7.2.28 Enumeratie details VoidReasonValue (verplicht !)</li>
+</ul>
+</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/162">https://github.com/Geonovum/imev-werkomgeving/issues/162</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): gegevensverzameling gebouwen en locaties (A11.6)  </li>
 <li>IMEV-onderdeel: nieuw attribuut gebruiksdoeleinden bij KwetsbareLocatie </li>
@@ -11957,17 +11967,17 @@ Bij de volgende enumeraties is de waarde 'gegevenInTransitie' verwijderd:
 <span class="hljs-attr">"oneOf"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
     <span class="hljs-punctuation">{</span><span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"string"</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
     <span class="hljs-punctuation">{</span><span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"object"</span><span class="hljs-punctuation">,</span>
-<span class="hljs-attr">"additionalProperties"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
-<span class="hljs-attr">"properties"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-   <span class="hljs-attr">"waarde"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"null"</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-   <span class="hljs-attr">"geenWaardeReden"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-attr">"$ref"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"#/$defs/VoidReasonValue"</span><span class="hljs-punctuation">}</span>
-<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-<span class="hljs-attr">"required"</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span>
-   <span class="hljs-string">"geenWaardeReden"</span>
-<span class="hljs-punctuation">]</span>
+        <span class="hljs-attr">"additionalProperties"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"properties"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">"waarde"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"null"</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">"geenWaardeReden"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-attr">"$ref"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"#/$defs/VoidReasonValue"</span><span class="hljs-punctuation">}</span>
+        <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"required"</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span>
+            <span class="hljs-string">"geenWaardeReden"</span>
+        <span class="hljs-punctuation">]</span>
     <span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">]</span>
-<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span></code></pre><p>De situatie in een voorbeeld JSON-aanleverbestand voor een leeg voidable object was volgens het IMEV 3.0.2 schema: 
+<span class="hljs-punctuation">}</span></code></pre><p>De situatie in een voorbeeld JSON-aanleverbestand voor een leeg voidable object was volgens het IMEV 3.0.2 schema: 
 "basisVergunningNummer": “waardeOnbekend” 
 Volgens het REV-API schema was het: 
 "basisVergunningNummer": {"geenWaardeReden": "waardeOnbekend"}
@@ -11982,19 +11992,18 @@ De volgende broninformatie wordt daarin opgenomen:<ul>
 <li>bronregistratie (uit een gelijknamige enumeratie)</li>
 <li>idInBronregistratie (het ID in de bronregistratie)</li>
 <li>itemlink (de link in de beteffende API van de registratie als die beschikbaar is)</li>
-<li>toelichting (Dit is vooral van belang als de bron geen basisregistratie is)
-De enumeratie Bronregistratie bevat de volgende waarden:  </li>
+<li>toelichting (Dit is vooral van belang als de bron geen basisregistratie is)<br>De enumeratie Bronregistratie bevat de volgende waarden:</li>
 <li>BAG</li>
 <li>BGT</li>
 <li>BRK</li>
 <li>BRO</li>
 <li>BRTnext</li>
 <li>zelfingewonnen</li>
-<li>overig </li>
+<li>overig<br>Als er meerdere basisregistraties mogelijk zijn, wordt de keuze overgelaten aan de bronhouder.
+De nu al bestaande verwijzing naar het ID in een basisregistratie, wordt dan verplaatst naar het veld idInBronregistratie</li>
 </ul>
 </li>
-</ul><p>Als er meerdere basisregistraties mogelijk zijn, wordt de keuze overgelaten aan de bronhouder.
-De nu al bestaande verwijzing naar het ID in een basisregistratie, wordt dan verplaatst naar het veld idInBronregistratie</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/168">https://github.com/Geonovum/imev-werkomgeving/issues/168</a></p><ul>
+</ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/168">https://github.com/Geonovum/imev-werkomgeving/issues/168</a></p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA's  </li>
 <li>IMEV-onderdeel: nieuw attribuut "privacyGevoelig" bij objecttype "LocatieActiviteit"</li>
 <li>Aanpassing:
@@ -12015,8 +12024,7 @@ Het attribuut "grondslagInfo" bevat een gestructureerd datatype "Grondslag".
 Deze bevat de volgende attributen:<ul>
 <li>grondslagType met Enumeratie GrondslagGeheimhouding</li>
 <li>besluitnummer als characterstring</li>
-<li>besluitdocument met daarin gestructureerde datatype "Documentatie"
-Enumeratie GrondslagGeheimhouding bevat de volgende waarden:</li>
+<li>besluitdocument met daarin gestructureerde datatype "Documentatie"<br>Enumeratie GrondslagGeheimhouding bevat de volgende waarden:</li>
 <li>Woo_Art_5.1_1a_Staatsveiligheid</li>
 <li>Woo_Art_5.1_1c_Bedrijfsvertrouwelijk</li>
 <li>Woo_Art_5.1_2h_VoorkomingSabotage</li>
@@ -12067,7 +12075,7 @@ De kenmerken die daana opgesomd worden, zijn nu gescheiden met een ", " en daarn
 <li>Beschermingsniveau 3: Stikstofgehalte &lt; 5%</li>
 <li>Beschermingsniveau 3: Stikstofgehalte 5 =&lt; 10%</li>
 <li>Beschermingsniveau 3: Stikstofgehalte &gt; 10%</li>
-<li>Alle beschermingsniveaus: Gasflessen"</li>
+<li>Alle beschermingsniveaus: Gasflessen</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/169">https://github.com/Geonovum/imev-werkomgeving/issues/169</a><br>Aanpassing:
 In het attribuut geometrie van objecttype Bewaarplaats stond foutievelijk "bufferbewaarplaats". Nu staat er alleen "bewaarplaats".</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/176">https://github.com/Geonovum/imev-werkomgeving/issues/176</a><br>Aanpassing:
 In het constaint van <a href="https://docs.geostandaarden.nl/imev/imev/#global_class_IMEVbasis_KwetsbaarGebouw">KetsbaarGebouw</a> stond "idPandBAGEnOfidAdresseerbaarObjeceBAG" en dat is vervangen door "idPandBAGEnOfidAdresseerbaarObjectBAG".</p></section><section id="redactionele-aanpasingen-1"><h4 id="x14-4-6-redactionele-aanpasingen"><span class="secno">14.4.6 </span>Redactionele aanpasingen</h4><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/158">https://github.com/Geonovum/imev-werkomgeving/issues/158</a><br>Aanpassing:
