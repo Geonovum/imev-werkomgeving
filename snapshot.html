@@ -11741,7 +11741,7 @@ Verschillende omschrijvingen zijn aangepast of toegevoegd bij de volgende enumer
 <li>TypePlaatsgebondenRisico (Toelichting verplaatst van paragraaf 6.2.3.28 naar 7.2.28)</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/152">https://github.com/Geonovum/imev-werkomgeving/issues/152</a><br>Aanpassing:
 Het constraint “idActiviteitTR=nl.imow-mnre1034.activiteit.TankenOpslaanLNG” is vervangen door “idActiviteitTR=nl.imow-mnre1034.activiteit.OpslagTransportbedrijf”.</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/153">https://github.com/Geonovum/imev-werkomgeving/issues/153</a><br>Aanpassing:
-De reguliere expressie bij het attribuut "bronhouder" is in het formeel patroon aangepast van:<br><strong>[A-Z,a-z, ,-]{1,100}</strong> naar <strong>^(?!.{0,100}[.]).{1,100}$</strong>.</p></section></section><section id="wijzigingen-die-in-de-update-van-imev-3-0-2-naar-versie-4-0-zijn-doorgevoerd"><h3 id="x14-4-wijzigingen-die-in-de-update-van-imev-3-0-2-naar-versie-4-0-zijn-doorgevoerd"><span class="secno">14.4 </span>Wijzigingen die in de update van IMEV 3.0.2 naar versie 4.0 zijn doorgevoerd.</h3><p>**Let op: De Github-issues waren de bron voor de verwerking, maar het kan voorkomen dat er op details is afgeweken van wat er in de issues staat. </p><section id="nieuwe-mba-s-n-a-v-wetswijzigingen"><h4 id="x14-4-1-nieuwe-mba-s-n-a-v-wetswijzigingen"><span class="secno">14.4.1 </span>Nieuwe MBA's n.a.v. wetswijzigingen</h4><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/133">https://github.com/Geonovum/imev-werkomgeving/issues/133</a></p><ul>
+De reguliere expressie bij het attribuut "bronhouder" is in het formeel patroon aangepast van:<br><strong>[A-Z,a-z, ,-]{1,100}</strong> naar <strong>^(?!.{0,100}[.]).{1,100}$</strong>.</p></section></section><section id="wijzigingen-die-in-de-update-van-imev-3-0-2-naar-versie-4-0-zijn-doorgevoerd"><h3 id="x14-4-wijzigingen-die-in-de-update-van-imev-3-0-2-naar-versie-4-0-zijn-doorgevoerd"><span class="secno">14.4 </span>Wijzigingen die in de update van IMEV 3.0.2 naar versie 4.0 zijn doorgevoerd.</h3><p><strong>Let op:</strong> De Github-issues waren de bron voor de verwerking, maar het kan voorkomen dat er op details is afgeweken van wat er in de issues staat. </p><section id="nieuwe-mba-s-n-a-v-wetswijzigingen"><h4 id="x14-4-1-nieuwe-mba-s-n-a-v-wetswijzigingen"><span class="secno">14.4.1 </span>Nieuwe MBA's n.a.v. wetswijzigingen</h4><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/133">https://github.com/Geonovum/imev-werkomgeving/issues/133</a></p><ul>
 <li>IMEV-diagram: VII-B.3.2: Opslaan van brandbare gevaarlijke stoffen in verpakking zonder F, Cl, Br, N, S</li>
 <li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
 <li>Aanpassing: Nieuw subtype van BKLActiviteit: OpslagVerpaktZonder_F_Cl_Br_N_S_VasteAfstandGeenVergunningplicht zonder extra attributen</li>
@@ -11945,27 +11945,27 @@ Bij de volgende enumeraties is de waarde 'gegevenInTransitie' verwijderd:
 </ul>
 </li>
 </ul></section><section id="conformiteit-0"><h4 id="x14-4-4-conformiteit"><span class="secno">14.4.4 </span>Conformiteit</h4><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/132">https://github.com/Geonovum/imev-werkomgeving/issues/132</a></p><ul>
-<li>Milieu Belastende Activiteit(en): alle UML-diagrammen </li>
+<li>Milieu Belastende Activiteit(en): Alle MBA’s </li>
 <li>IMEV-onderdeel: alle voidable attributen en relaties </li>
 <li>Aanpassing:  </li>
 </ul><p>De situatie in het IMEV schema 3.0.2 was:  </p><pre><code aria-busy="false" class="hljs json"><span class="hljs-attr">"basisVergunningNummer"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>  
 <span class="hljs-attr">"oneOf"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>  
-<span class="hljs-punctuation">{</span><span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"string"</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>  
-<span class="hljs-punctuation">{</span><span class="hljs-attr">"$ref"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"#/$defs/VoidReasonValue"</span><span class="hljs-punctuation">}</span>  
+    <span class="hljs-punctuation">{</span><span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"string"</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>  
+    <span class="hljs-punctuation">{</span><span class="hljs-attr">"$ref"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"#/$defs/VoidReasonValue"</span><span class="hljs-punctuation">}</span>  
 <span class="hljs-punctuation">]</span>
 <span class="hljs-punctuation">}</span></code></pre><p>De situatie in het schema 4.0.0 is geworden:  </p><pre><code aria-busy="false" class="hljs json"><span class="hljs-attr">"basisVergunningNummer"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
 <span class="hljs-attr">"oneOf"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
-<span class="hljs-punctuation">{</span><span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"string"</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-<span class="hljs-punctuation">{</span><span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"object"</span><span class="hljs-punctuation">,</span>
-            <span class="hljs-attr">"additionalProperties"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
-            <span class="hljs-attr">"properties"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-               <span class="hljs-attr">"waarde"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"null"</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-               <span class="hljs-attr">"geenWaardeReden"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-attr">"$ref"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"#/$defs/VoidReasonValue"</span><span class="hljs-punctuation">}</span>
-            <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
-            <span class="hljs-attr">"required"</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span>
-               <span class="hljs-string">"geenWaardeReden"</span>
-            <span class="hljs-punctuation">]</span>
-<span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">{</span><span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"string"</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span><span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"object"</span><span class="hljs-punctuation">,</span>
+<span class="hljs-attr">"additionalProperties"</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+<span class="hljs-attr">"properties"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+   <span class="hljs-attr">"waarde"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"null"</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+   <span class="hljs-attr">"geenWaardeReden"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-attr">"$ref"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"#/$defs/VoidReasonValue"</span><span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+<span class="hljs-attr">"required"</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span>
+   <span class="hljs-string">"geenWaardeReden"</span>
+<span class="hljs-punctuation">]</span>
+    <span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">]</span>
 <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span></code></pre><p>De situatie in een voorbeeld JSON-aanleverbestand voor een leeg voidable object was volgens het IMEV 3.0.2 schema: 
 "basisVergunningNummer": “waardeOnbekend” 
@@ -11977,18 +11977,23 @@ In de nieuwe situatie wordt het of hetzelfde als in het REV-API schema of zoals 
 <li>IMEV-onderdeel: De volgende Objecttypes: Windturbine, Opslagreferentie, KwetsbareLocatie en KwetsbaarGebouw</li>
 <li>Aanpassing: 
 Bij hierboven genoemde objecttypes is het verplicht gemaakt om bij het opgeven van de geometrie ook meta-informatie op te nemen in het nieuwe veld met de naam: geometrieMetagegevens. 
-Deze bevat een gestructureerd datatype GeometrieMetagegevens waarin de metagegevens van de bron opgenomen kunnen worden.  </li>
-</ul><p>De volgende broninformatie wordt daarin opgenomen:</p><pre><code aria-busy="false" class="hljs">- bronregistratie (uit een gelijknamige enumeratie)
-- idInBronregistratie (het ID in de bronregistratie)
-- itemlink (de link in de beteffende API van de registratie als die beschikbaar is)
-- toelichting (Dit is vooral van belang als de bron geen basisregistratie is)</code></pre><p>De enumeratie Bronregistratie bevat de volgende waarden:
-    - BAG
-    - BGT
-    - BRK
-    - BRO
-    - BRTnext
-    - zelfingewonnen
-    - overig </p><p>Als er meerdere basisregistraties mogelijk zijn, wordt de keuze overgelaten aan de bronhouder.
+Deze bevat een gestructureerd datatype GeometrieMetagegevens waarin de metagegevens van de bron opgenomen kunnen worden.
+De volgende broninformatie wordt daarin opgenomen:<ul>
+<li>bronregistratie (uit een gelijknamige enumeratie)</li>
+<li>idInBronregistratie (het ID in de bronregistratie)</li>
+<li>itemlink (de link in de beteffende API van de registratie als die beschikbaar is)</li>
+<li>toelichting (Dit is vooral van belang als de bron geen basisregistratie is)
+De enumeratie Bronregistratie bevat de volgende waarden:  </li>
+<li>BAG</li>
+<li>BGT</li>
+<li>BRK</li>
+<li>BRO</li>
+<li>BRTnext</li>
+<li>zelfingewonnen</li>
+<li>overig </li>
+</ul>
+</li>
+</ul><p>Als er meerdere basisregistraties mogelijk zijn, wordt de keuze overgelaten aan de bronhouder.
 De nu al bestaande verwijzing naar het ID in een basisregistratie, wordt dan verplaatst naar het veld idInBronregistratie</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/168">https://github.com/Geonovum/imev-werkomgeving/issues/168</a></p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA's  </li>
 <li>IMEV-onderdeel: nieuw attribuut "privacyGevoelig" bij objecttype "LocatieActiviteit"</li>
@@ -11997,9 +12002,11 @@ Het optionele attribuut "privacyGevoelig" is toegevoegd aan het objecttype Locat
 Het attribuut is een boolean.</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/179">https://github.com/Geonovum/imev-werkomgeving/issues/179</a></p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s </li>
-<li>IMEV-onderdeel: 
-  nieuw attribuut "informatieGeheim" bij objecttype "ExterneVeiligheidsObject"
-  nieuw attribuut "grondslagInfo" bij objecttype "BKLActiviteit"</li>
+<li>IMEV-onderdeel:<ul>
+<li>nieuw attribuut "informatieGeheim" bij objecttype "ExterneVeiligheidsObject"</li>
+<li>nieuw attribuut "grondslagInfo" bij objecttype "BKLActiviteit"</li>
+</ul>
+</li>
 <li>Aanpassing:
 Het optionele attribuut "informatieGeheim" is toegevoegd aan het objecttype "ExterneVeiligheidsObject".
 Het attribuut is een boolean.
@@ -12008,54 +12015,60 @@ Het attribuut "grondslagInfo" bevat een gestructureerd datatype "Grondslag".
 Deze bevat de volgende attributen:<ul>
 <li>grondslagType met Enumeratie GrondslagGeheimhouding</li>
 <li>besluitnummer als characterstring</li>
-<li>besluitdocument met daarin gestructureerde datatype "Documentatie"</li>
+<li>besluitdocument met daarin gestructureerde datatype "Documentatie"
+Enumeratie GrondslagGeheimhouding bevat de volgende waarden:</li>
+<li>Woo_Art_5.1_1a_Staatsveiligheid</li>
+<li>Woo_Art_5.1_1c_Bedrijfsvertrouwelijk</li>
+<li>Woo_Art_5.1_2h_VoorkomingSabotage</li>
+<li>Woo_Art_5.1_2i_FunctionerenStaat</li>
+<li>NIS2_Wbni_KritiekeInfrastructuur</li>
+<li>CER_Wwke_FysiekeWeerbaarheid</li>
 </ul>
 </li>
-</ul><p>Enumeratie GrondslagGeheimhouding bevat de volgende waarden:
-    - Woo_Art_5.1_1a_Staatsveiligheid
-    - Woo_Art_5.1_1c_Bedrijfsvertrouwelijk
-    - Woo_Art_5.1_2h_VoorkomingSabotage
-    - Woo_Art_5.1_2i_FunctionerenStaat
-    - NIS2_Wbni_KritiekeInfrastructuur
-    - CER_Wwke_FysiekeWeerbaarheid</p></section><section id="bug-fixes-1"><h4 id="x14-4-5-bug-fixes"><span class="secno">14.4.5 </span>Bug fixes</h4><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/154">https://github.com/Geonovum/imev-werkomgeving/issues/154</a><br>Aanpassing:
-In de volgende 2 enumeraties zijn meerdere wijzigingen in de schrijfwize van de waardes doorgevoerd:<br>    - BeschermingsniveauTabelB3
-    - StofcategorieNaam
-Geadviseerd wordt om deze 2 enumeraties in zijn geheel te vervangen door de nieuwe. </p><p>De eerste 3 waarden in de waardelijst StofcategorieNaam zijn nu met kleine letters: 
-    - klasse 1: Explosieve stoffen en voorwerpen
-    - klasse 2.1: Brandbaar gas
-    - klasse 2.2: Niet brandbaar, niet giftig gas</p><p>De eerste 3 waarden in de waardelijst StofcategorieNaam worden met hoofdletters:
-    - Klasse 1: Explosieve stoffen en voorwerpen
-    - Klasse 2.1: Brandbaar gas
-    - Klasse 2.2: Niet brandbaar, niet giftig gas</p><p>De overige waarden in de waardelijst StofcategorieNaam waren ook al met hoofdletters.</p><p>De waardelijst BeschermingsniveauTabelB3 is aangepast op hoofdlettergebruik, dubbele punten vs. komma’s en spaties.
+</ul></section><section id="bug-fixes-1"><h4 id="x14-4-5-bug-fixes"><span class="secno">14.4.5 </span>Bug fixes</h4><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/154">https://github.com/Geonovum/imev-werkomgeving/issues/154</a><br>Aanpassing:
+In de volgende 2 enumeraties zijn meerdere wijzigingen in de schrijfwijze van de waarden doorgevoerd:</p><ul>
+<li>BeschermingsniveauTabelB3</li>
+<li>StofcategorieNaam
+Geadviseerd wordt om deze 2 enumeraties in zijn geheel te vervangen door de nieuwe.
+De eerste 3 waarden in de waardelijst StofcategorieNaam zijn nu met kleine letters:</li>
+<li>klasse 1: Explosieve stoffen en voorwerpen</li>
+<li>klasse 2.1: Brandbaar gas</li>
+<li>klasse 2.2: Niet brandbaar, niet giftig gas</li>
+</ul><p>De eerste 3 waarden in de waardelijst StofcategorieNaam worden met hoofdletters:</p><ul>
+<li>Klasse 1: Explosieve stoffen en voorwerpen</li>
+<li>Klasse 2.1: Brandbaar gas</li>
+<li>Klasse 2.2: Niet brandbaar, niet giftig gas</li>
+</ul><p>De overige waarden in de waardelijst StofcategorieNaam waren ook al met hoofdletters.</p><p>De waardelijst BeschermingsniveauTabelB3 is aangepast op hoofdlettergebruik, dubbele punten vs. komma’s en spaties.
 Achter alle Beschermingsniveaus volgen een ': ' en daarna een hoofdletter. 
-De kenmerken die daana opgesomd worden, zijn nu gescheiden met een ", " en daarna een kleine letter tenzij het een afkorting betreft.<br>De enumeratie is als volgt geworden:
-    - Beschermingsniveau 1: Automatische blusgasinstallatie 
-    - Beschermingsniveau 1: Automatische hi-ex inside-air installatie
-    - Beschermingsniveau 1: (Semi-)automatische monitorinstallatie 
-    - Beschermingsniveau 1: Bedrijfsbrandweer met handbediende deluge-installatie
-    - Beschermingsniveau 1: Handbediende deluge-installatie met watervoorziening door bedrijfsbrandweer
-    - Beschermingsniveau 1: Handbediende deluge-installatie met watervoorziening door lokale brandweer
-    - Beschermingsniveau 1: Automatische sprinklerinstallatie of sprinkler in rekken
-    - Beschermingsniveau 1: Automatische deluge installatie
-    - Beschermingsniveau 1: Automatische hi-ex outside-air installatie, stikstofgehalte &lt; 5%
-    - Beschermingsniveau 1: Automatische hi-ex outside-air installatie, stikstofgehalte 5 =&lt; 10%
-    - Beschermingsniveau 1: Automatische hi-ex outside-air installatie, stikstofgehalte &gt; 10%
-    - Beschermingsniveau 1: Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte &lt; 5%
-    - Beschermingsniveau 1: Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte 5 =&lt; 10%
-    - Beschermingsniveau 1: Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte &gt; 10%
-    - Beschermingsniveau 2a: Stikstofgehalte &lt; 5 %, ADR-klasse 3 in kunststof
-    - Beschermingsniveau 2a: Stikstofgehalte &lt; 5 %, ADR-klasse 3 niet in kunststof
-    - Beschermingsniveau 2a: Stikstofgehalte &lt; 5 %, geen ADR-klasse 3
-    - Beschermingsniveau 2a: Stikstofgehalte 5 =&lt; 10%, ADR-klasse 3 in kunststof
-    - Beschermingsniveau 2a: Stikstofgehalte 5 =&lt; 10%, ADR-klasse 3 niet in kunststof
-    - Beschermingsniveau 2a: Stikstofgehalte 5 =&lt; 10%, geen ADR-klasse 3
-    - Beschermingsniveau 2a: Stikstofgehalte &gt; 10 %, ADR-klasse 3 in kunststof
-    - Beschermingsniveau 2a: Stikstofgehalte &gt; 10 %, ADR-klasse 3 niet in kunststof
-    - Beschermingsniveau 2a: Stikstofgehalte &gt; 10 %, geen ADR-klasse 3
-    - Beschermingsniveau 3: Stikstofgehalte &lt; 5%
-    - Beschermingsniveau 3: Stikstofgehalte 5 =&lt; 10%
-    - Beschermingsniveau 3: Stikstofgehalte &gt; 10%
-    - Alle beschermingsniveaus: Gasflessen"</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/169">https://github.com/Geonovum/imev-werkomgeving/issues/169</a><br>Aanpassing:
+De kenmerken die daana opgesomd worden, zijn nu gescheiden met een ", " en daarna een kleine letter tenzij het een afkorting betreft.<br>De enumeratie is als volgt geworden:</p><ul>
+<li>Beschermingsniveau 1: Automatische blusgasinstallatie </li>
+<li>Beschermingsniveau 1: Automatische hi-ex inside-air installatie</li>
+<li>Beschermingsniveau 1: (Semi-)automatische monitorinstallatie </li>
+<li>Beschermingsniveau 1: Bedrijfsbrandweer met handbediende deluge-installatie</li>
+<li>Beschermingsniveau 1: Handbediende deluge-installatie met watervoorziening door bedrijfsbrandweer</li>
+<li>Beschermingsniveau 1: Handbediende deluge-installatie met watervoorziening door lokale brandweer</li>
+<li>Beschermingsniveau 1: Automatische sprinklerinstallatie of sprinkler in rekken</li>
+<li>Beschermingsniveau 1: Automatische deluge installatie</li>
+<li>Beschermingsniveau 1: Automatische hi-ex outside-air installatie, stikstofgehalte &lt; 5%</li>
+<li>Beschermingsniveau 1: Automatische hi-ex outside-air installatie, stikstofgehalte 5 =&lt; 10%</li>
+<li>Beschermingsniveau 1: Automatische hi-ex outside-air installatie, stikstofgehalte &gt; 10%</li>
+<li>Beschermingsniveau 1: Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte &lt; 5%</li>
+<li>Beschermingsniveau 1: Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte 5 =&lt; 10%</li>
+<li>Beschermingsniveau 1: Bedrijfsbrandweer met ter plaatse blussen, stikstofgehalte &gt; 10%</li>
+<li>Beschermingsniveau 2a: Stikstofgehalte &lt; 5 %, ADR-klasse 3 in kunststof</li>
+<li>Beschermingsniveau 2a: Stikstofgehalte &lt; 5 %, ADR-klasse 3 niet in kunststof</li>
+<li>Beschermingsniveau 2a: Stikstofgehalte &lt; 5 %, geen ADR-klasse 3</li>
+<li>Beschermingsniveau 2a: Stikstofgehalte 5 =&lt; 10%, ADR-klasse 3 in kunststof</li>
+<li>Beschermingsniveau 2a: Stikstofgehalte 5 =&lt; 10%, ADR-klasse 3 niet in kunststof</li>
+<li>Beschermingsniveau 2a: Stikstofgehalte 5 =&lt; 10%, geen ADR-klasse 3</li>
+<li>Beschermingsniveau 2a: Stikstofgehalte &gt; 10 %, ADR-klasse 3 in kunststof</li>
+<li>Beschermingsniveau 2a: Stikstofgehalte &gt; 10 %, ADR-klasse 3 niet in kunststof</li>
+<li>Beschermingsniveau 2a: Stikstofgehalte &gt; 10 %, geen ADR-klasse 3</li>
+<li>Beschermingsniveau 3: Stikstofgehalte &lt; 5%</li>
+<li>Beschermingsniveau 3: Stikstofgehalte 5 =&lt; 10%</li>
+<li>Beschermingsniveau 3: Stikstofgehalte &gt; 10%</li>
+<li>Alle beschermingsniveaus: Gasflessen"</li>
+</ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/169">https://github.com/Geonovum/imev-werkomgeving/issues/169</a><br>Aanpassing:
 In het attribuut geometrie van objecttype Bewaarplaats stond foutievelijk "bufferbewaarplaats". Nu staat er alleen "bewaarplaats".</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/176">https://github.com/Geonovum/imev-werkomgeving/issues/176</a><br>Aanpassing:
 In het constaint van <a href="https://docs.geostandaarden.nl/imev/imev/#global_class_IMEVbasis_KwetsbaarGebouw">KetsbaarGebouw</a> stond "idPandBAGEnOfidAdresseerbaarObjeceBAG" en dat is vervangen door "idPandBAGEnOfidAdresseerbaarObjectBAG".</p></section><section id="redactionele-aanpasingen-1"><h4 id="x14-4-6-redactionele-aanpasingen"><span class="secno">14.4.6 </span>Redactionele aanpasingen</h4><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/158">https://github.com/Geonovum/imev-werkomgeving/issues/158</a><br>Aanpassing:
 Er heeft een grote tekstuele actualisatie van het IMEV plaatsgevonden op hoofdstukken 1 t/m 5.
