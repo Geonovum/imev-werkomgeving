@@ -11670,34 +11670,34 @@ In <a href="https://geonovum.github.io/imev-werkomgeving/#referentiesystemen">ho
 Dit komt doordat ze al verwerkt waren in IMEV3.0.0_schema.json, of omdat ze helemaal niet merkbaar zijn in het schema.
 Ze zijn dus alleen verwerkt in het informatiemodel IMEV 3.0.1.</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/112">https://github.com/Geonovum/imev-werkomgeving/issues/112</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): <a href="https://docs.geostandaarden.nl/imev/imev/#EAID_AC4B3C34_11DE_48d7_8E6F_2E3EDB7E9F06">Opslaan stoffen ADR-klasse 1.3 (IX-B)</a>  </li>
-<li>IMEV onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#EAID_AC4B3C34_11DE_48d7_8E6F_2E3EDB7E9F06">Diagram</a>  </li>
+<li>IMEV-onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#EAID_AC4B3C34_11DE_48d7_8E6F_2E3EDB7E9F06">Diagram</a>  </li>
 <li>Aanpassing: De PRContour is toegevoegd aan de diagram IX-B van de MBA-activiteit “opslaan stoffen ADR-klasse 1.3”. PRContour is een subtype van EVContour net als het Aandachtgebied, dat al wel in het diagram getoond wordt. 
 Dit is alleen een visuele wijziging, want het IMEV 3.0.0 verbiedt het niet om andere subtypes te gebruiken dan die nu in het diagram getoond worden. Hierdoor is het schema niet veranderd.  </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/116">https://github.com/Geonovum/imev-werkomgeving/issues/116</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s </li>
-<li>IMEV onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#detail_attribute_IMEVbasis_ExterneVeiligheidsObject_bronhouder">attribuut</a> (formele patroon is niet zichtbaar via deze link, maar wel in schema)  </li>
+<li>IMEV-onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#detail_attribute_IMEVbasis_ExterneVeiligheidsObject_bronhouder">attribuut</a> (formele patroon is niet zichtbaar via deze link, maar wel in schema)  </li>
 <li>Aanpassing: Er zat een fout in het formele patroon van het attribuut bronhouder van het ExterneVeiligheidsObject. Er stond: [A-Z][a-z][-]{1,100} en dat is geworden: [A-Z,a-z, ,-]{1,100}. 
 Deze fout was ook al verwerkt in IMEV3.0.0_schema.json.</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/121">https://github.com/Geonovum/imev-werkomgeving/issues/121</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): <a href="https://docs.geostandaarden.nl/imev/imev/#EAID_1A326EAC_DCCC_4b3c_B705_C388A99B7BAC">Tanken CNG (VII-A.2)</a>  </li>
-<li>IMEV onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#detail_attribute_BKLActiviteiten_TankenCNG_aantalAutobussen">attribuut</a>  </li>
+<li>IMEV-onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#detail_attribute_BKLActiviteiten_TankenCNG_aantalAutobussen">attribuut</a>  </li>
 <li>Aanpassing: De minimum en maximum waarden In het attribuut aantalAutobussen van objecttype TankenCNG waren omgedraaid en zijn nu dus in het informatiemodel teruggedraaid.
 Deze fout was al verwerkt in IMEV3.0.0_schema.json.  </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/122">https://github.com/Geonovum/imev-werkomgeving/issues/122</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Windturbine (VII-E.1 en VII-D.1)  </li>
-<li>IMEV onderdeel: Enumeratie  </li>
+<li>IMEV-onderdeel: Enumeratie  </li>
 <li>Aanpassing: Typefout is verbeterd: Enumeratie MateriaalWindtubineMast moet zijn MateriaalWindturbineMast. Dit moest nog aangepast worden in het informatiemodel, maar was al wel verwerkt in IMEV3.0.0_schema.json.</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/127">https://github.com/Geonovum/imev-werkomgeving/issues/127</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s </li>
-<li>IMEV onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#global_class_IMEVbasis_ExterneVeiligheidsObject">Regel t.a.v. attribuut</a>  </li>
+<li>IMEV-onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#global_class_IMEVbasis_ExterneVeiligheidsObject">Regel t.a.v. attribuut</a>  </li>
 <li>Aanpassing: Regel is aangepast.<br>In de regel bij het objecttype ExterneVeiligheidsObject werd gesteld:<br><em>bronhoudercodeOverheid en/of bronhoudercodeGeenOverheid moet gevuld zijn.</em><br>De ‘en/of’ optie biedt de mogelijkheid om allebei de waarden in te vullen. Dit is echter niet de bedoeling want een bronhouder kan niet tegelijkertijd een Overheid en niet een overheid zijn.<br>De regel luidt nu: <em>bronhoudercodeOverheid of bronhoudercodeGeenOverheid moet gevuld zijn.</em>  </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/128">https://github.com/Geonovum/imev-werkomgeving/issues/128</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Opstellen van voertuigen (VII-A.12)</li>
-<li>IMEV onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#global_class_BKLActiviteiten_OpstellenVoertuigen">Regel t.a.v. attribuut</a> </li>
+<li>IMEV-onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#global_class_BKLActiviteiten_OpstellenVoertuigen">Regel t.a.v. attribuut</a> </li>
 <li>Aanpassing: Typefout in de regel is verbeterd.<br>Er stond: <em>idActiviteitTR=imow-mnre1034.activiteit.OpstellenVoertuigGevaarlStoffen</em><br>Er staat nu: <em>idActiviteitTR=nl.imow-mnre1034.activiteit.OpstellenVoertuigGevaarlStoffen</em> </li>
 </ul></section><section id="zowel-verwerkt-in-schema-3-0-1-als-in-het-informatiemodel-imev-3-0-1"><h4 id="x14-2-2-zowel-verwerkt-in-schema-3-0-1-als-in-het-informatiemodel-imev-3-0-1"><span class="secno">14.2.2 </span>Zowel verwerkt in schema 3.0.1 als in het informatiemodel IMEV 3.0.1</h4><p>De  wijzigingsverzoeken/ bugs in deze paragraaf zijn verwerkt in IMEV 3.0.1 en waren nog niet verwerkt in IMEV3.0.0_schema en moesten dus ook nog verwerkt worden in het volgende schema: IMEV3.0.1_schema.json.  </p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/120">https://github.com/Geonovum/imev-werkomgeving/issues/120</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Basisnet (VII-C)  </li>
-<li>IMEV onderdeel: Attribuut type van LocatieBasisnet </li>
+<li>IMEV-onderdeel: Attribuut type van LocatieBasisnet </li>
 <li>Aanpassing: Enumeratie toegevoegd voor het attribuut type van LocatieBasisnet. Deze wijziging is eigenlijk een herstel van het eerder goedgekeurde issue #103. Bij het verwerken van dit wijzigingsverzoek in IMEV 3.0.0 is deze vergeten en daarom wordt hij nu alsnog doorgevoerd.
 In plaats van een vrije characterstring moet het de volgende enumeratie worden: TypeVervoer met als waarden:</li>
 <li>WaterVervoer</li>
@@ -11705,20 +11705,20 @@ In plaats van een vrije characterstring moet het de volgende enumeratie worden: 
 <li>SpoorVervoer </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/123">https://github.com/Geonovum/imev-werkomgeving/issues/123</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s  </li>
-<li>IMEV onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#global_class_IMEVbasis_ExterneVeiligheidsObject">Attributen</a> bronhoudercode en bronhoudercodeGeenOverheid (formele patroon is niet zichtbaar in het IMEV document, maar wel in schema) </li>
+<li>IMEV-onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#global_class_IMEVbasis_ExterneVeiligheidsObject">Attributen</a> bronhoudercode en bronhoudercodeGeenOverheid (formele patroon is niet zichtbaar in het IMEV document, maar wel in schema) </li>
 <li>Aanpassing: Het formele patroon was in bronhoudercode en bronhoudercodeGeenOverheid in het ExterneVeiligheidsObject te streng. Hij was: [A-Z]{3,6}, maar dan konden er geen getallen ingevuld worden en dat mag wel.
 Dus het is geworden: [A-Z,0-9]{3,6}</li>
 </ul></section><section id="alleen-verwerkt-in-schema-3-0-1-maar-niet-in-het-informatiemodel"><h4 id="x14-2-3-alleen-verwerkt-in-schema-3-0-1-maar-niet-in-het-informatiemodel"><span class="secno">14.2.3 </span>Alleen verwerkt in schema 3.0.1 maar niet in het informatiemodel.</h4><p>De  wijzigingsverzoeken/ bugs in deze paragraaf zijn alleen verwerkt in IMEV 3.0.1. Op het informatiemodel hadden ze geen impact.</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/124">https://github.com/Geonovum/imev-werkomgeving/issues/124</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s waar bewaarplaats in voorkomt en Windturbine (VII-E.1 en VII-D.1) </li>
-<li>IMEV onderdeel: Schema </li>
+<li>IMEV-onderdeel: Schema </li>
 <li>Aanpassing: Twee van de drie lagen met properties zijn verwijderd uit het schema bij Bewaarplaats en Windturbine, want dat komt niet overeen met de structuur van de overige objecten in de voorbeeldbestanden en leverde daardoor validatieproblemen op.</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/125">https://github.com/Geonovum/imev-werkomgeving/issues/125</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s waar voidable attributen in voorkomen  </li>
-<li>IMEV onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#detail_class_Waardelijsten_VoidReasonValue">Enumeratie VoidReasonValue</a> en Schema </li>
+<li>IMEV-onderdeel: <a href="https://docs.geostandaarden.nl/imev/imev/#detail_class_Waardelijsten_VoidReasonValue">Enumeratie VoidReasonValue</a> en Schema </li>
 <li>Aanpassing: De keuze voor VoidReasonValue bij voidable attributen was niet opgenomen in IMEV3.0.0_schema.json. Dit is met behulp van de oneOf constructie er ingebracht. Het komt 14X voor. </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/126">https://github.com/Geonovum/imev-werkomgeving/issues/126</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s  </li>
-<li>IMEV onderdeel: Schema </li>
+<li>IMEV-onderdeel: Schema </li>
 <li>Aanpassing: Er is een extra property "id" in het ExterneVeiligheidsObject in het json-schema opgenomen. Het is lastig refereren naar een object wanneer de identificatie daarvan zelf ook een object is. (NEN3610ID). 
 Dit refereren en opzoeken van objecten op basis van identificatie gebeurt op heel veel plaatsen in de codebase van het REV en ook in generieke modules. In de voorbeeldbestanden van versie 1.3 was dit nog 1 los element die de 3 afzonderlijke samenvoegde. Dat het nu 3 losse zijn geworden gaat veel pijn doen in de applicaties die hier gebruik van maken.
 Er is daarom bij het ExterneVeiligheidsObject een extra niet verplicht attribuut “id” toegevoegd voor de identificatie in het schema. Dat veld is bedoeld voor een samenvoeging van de 3 losse elementen uit het NEN3610ID. 
@@ -11743,59 +11743,86 @@ Verschillende omschrijvingen zijn aangepast of toegevoegd bij de volgende enumer
 Het constraint “idActiviteitTR=nl.imow-mnre1034.activiteit.TankenOpslaanLNG” is vervangen door “idActiviteitTR=nl.imow-mnre1034.activiteit.OpslagTransportbedrijf”.</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/153">https://github.com/Geonovum/imev-werkomgeving/issues/153</a><br>Aanpassing:
 De reguliere expressie bij het attribuut "bronhouder" is in het formeel patroon aangepast van:<br><strong>[A-Z,a-z, ,-]{1,100}</strong> naar <strong>^(?!.{0,100}[.]).{1,100}$</strong>.</p></section></section><section id="wijzigingen-die-in-de-update-van-imev-3-0-2-naar-versie-4-0-zijn-doorgevoerd"><h3 id="x14-4-wijzigingen-die-in-de-update-van-imev-3-0-2-naar-versie-4-0-zijn-doorgevoerd"><span class="secno">14.4 </span>Wijzigingen die in de update van IMEV 3.0.2 naar versie 4.0 zijn doorgevoerd.</h3><p>**Let op: De Github-issues waren de bron voor de verwerking, maar het kan voorkomen dat er op details is afgeweken van wat er in de issues staat. </p><section id="nieuwe-mba-s-n-a-v-wetswijzigingen"><h4 id="x14-4-1-nieuwe-mba-s-n-a-v-wetswijzigingen"><span class="secno">14.4.1 </span>Nieuwe MBA's n.a.v. wetswijzigingen</h4><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/133">https://github.com/Geonovum/imev-werkomgeving/issues/133</a></p><ul>
 <li>IMEV-diagram: VII-B.3.2: Opslaan van brandbare gevaarlijke stoffen in verpakking zonder F, Cl, Br, N, S</li>
-<li>IMEV onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
 <li>Aanpassing: Nieuw subtype van BKLActiviteit: OpslagVerpaktZonder_F_Cl_Br_N_S_VasteAfstandGeenVergunningplicht zonder extra attributen</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/134">https://github.com/Geonovum/imev-werkomgeving/issues/134</a></p><ul>
 <li>IMEV-diagram: VII-B.6.1: Mestvergistingsinstallatie - Grootschalige mestverwerking</li>
-<li>IMEV onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
 <li>Aanpassing: Nieuw subtype van BKLActiviteit: GrootschaligMestverwerking_VasteAfstandVergunningplicht zonder extra attributen</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/135">https://github.com/Geonovum/imev-werkomgeving/issues/135</a></p><ul>
 <li>IMEV-diagram: VII-E.8.a: Opstellen van voertuigen, opleggers of aanhangers met gevaarlijke stoffen meer dan 3 of langer dan 24 uur</li>
-<li>IMEV onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
 <li>Aanpassing: Nieuw subtype van BKLActiviteit: OpstellenVoertuigen_TeBerekenenAfstandVergunningplicht zonder extra attributen</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/137">https://github.com/Geonovum/imev-werkomgeving/issues/137</a></p><ul>
-<li>IMEV-diagram: </li>
-<li>IMEV onderdeel:</li>
-<li>Aanpassing:</li>
+<li>IMEV-diagram: VII-A.13: Exploiteren van een energieopslagsysteem, vergunningvrij en vaste afstanden</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
+<li>Aanpassing: <ul>
+<li>Nieuw subtype van BKLActiviteit: ExploiterenEnergieOpslagSysteem_VasteAfstandGeenVergunningplicht met attributen:<ul>
+<li>typeEnergieOpslagSysteem</li>
+<li>energieOpslagCapaciteit</li>
+<li>energiedragerEOS</li>
+</ul>
+</li>
+<li>Nieuw referentieEVContour: EnergieOpslagSysteem</li>
+<li>Als EVContouren:<ul>
+<li>PRContour</li>
+<li>GifwolkAandachtsgebied</li>
+<li>ExplosieAandachtsgebied</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/140">https://github.com/Geonovum/imev-werkomgeving/issues/140</a></p><ul>
 <li>IMEV-diagram: VII-B.6.2: Mestvergistingsinstallatie - Bedrijf voor mestbehandeling</li>
-<li>IMEV onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
 <li>Aanpassing: Nieuw subtype van BKLActiviteit: MestbehandelingsInstallatie_VasteAfstandVergunningplicht zonder extra attributen</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/141">https://github.com/Geonovum/imev-werkomgeving/issues/141</a></p><ul>
-<li>IMEV-diagram: </li>
-<li>IMEV onderdeel:</li>
-<li>Aanpassing:</li>
+<li>IMEV-diagram: VII-A.14: Het opslaan en opstellen van energiedragers voor elektrische energie, vergunningvrij en vaste afstanden</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
+<li>Aanpassing:<ul>
+<li>Nieuw subtype van BKLActiviteit: OpslagEnergiedragersElektrischeEnergie_VasteAfstandGeenVergunningplicht met attributen:<ul>
+<li>energiedragersMaxGewicht</li>
+<li>energiedragerCapaciteit</li>
+<li>aantalBatterijcellen</li>
+<li>energiedragersKwaliteit</li>
+</ul>
+</li>
+<li>Nieuw referentieEVContour: EnergiedragerOpslag</li>
+<li>Als EVContouren:<ul>
+<li>PRContour</li>
+<li>GifwolkAandachtsgebied</li>
+<li>ExplosieAandachtsgebied</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/143">https://github.com/Geonovum/imev-werkomgeving/issues/143</a></p><ul>
 <li>IMEV-diagram: VIII-A.5.20: Opslaan, herverpakken of bewerken van vuurwerk van categorie F1,F2 of F3 in een hoeveelheid van ten hoogste 10.000 kg</li>
-<li>IMEV onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
 <li>Aanpassing: Nieuw subtype van BKLActiviteit: OpslagVuurwerkF1F2F3T1T2_GeenVergunningplicht met dezelfde attributen als OpslagVuurwerkF1F2F3T1T2_Vergunningplicht uit VIII-B</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/170">https://github.com/Geonovum/imev-werkomgeving/issues/170</a></p><ul>
 <li>IMEV-diagram: VII-E.10a: LNG: Bunkerstations en andere tankplaatsen voor schepen </li>
-<li>IMEV onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit</li>
 <li>Aanpassing: Nieuw subtype van BKLActiviteit: TankenLNGVaartuigen_berekendeAfstandVergunningplicht met dezelfde attributen als TankenLNGVoertuigen_TeBerekenenAfstandVergunningplicht uit VII-E.10</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/171">https://github.com/Geonovum/imev-werkomgeving/issues/171</a></p><ul>
-<li>IMEV-diagram: </li>
-<li>IMEV onderdeel:</li>
-<li>Aanpassing:</li>
+<li>IMEV-diagram: VII-E.14: Exploiteren van een energieopslagsysteem, vergunningplicht en berekende afstanden</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
+<li>Aanpassing: Als VII-A.13 met nieuw subtype van BKLActiviteit: ExploiterenEnergieOpslagSysteem_TeBerekenenAfstandVergunningplicht</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/172">https://github.com/Geonovum/imev-werkomgeving/issues/172</a></p><ul>
-<li>IMEV-diagram: </li>
-<li>IMEV onderdeel:</li>
-<li>Aanpassing:</li>
+<li>IMEV-diagram: VII-E.15: Opslaan en opstellen van energiedragers voor elektrische energie, vergunningplicht en berekende afstanden</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
+<li>Aanpassing: Als VII-A.14 met nieuw subtype van BKLActiviteit: OpslagEnergiedragersElektrischeEnergie_BerekendeAfstandVergunningplicht</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/178">https://github.com/Geonovum/imev-werkomgeving/issues/178</a></p><ul>
-<li>IMEV-diagram: </li>
-<li>IMEV onderdeel:</li>
-<li>Aanpassing:</li>
-</ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/180">https://github.com/Geonovum/imev-werkomgeving/issues/180</a></p><ul>
-<li>IMEV-diagram: </li>
-<li>IMEV onderdeel:</li>
-<li>Aanpassing: </li>
+<li>IMEV-diagram: VII-B.6: Exploiteren van een energieopslagsysteem, vergunningvrij en berekende afstanden</li>
+<li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
+<li>Aanpassing: VII-A.13 met nieuw subtype van BKLActiviteit: ExploiterenEnergieOpslagSysteem_BerekendeAfstandGeenVergunningplicht</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/181">https://github.com/Geonovum/imev-werkomgeving/issues/181</a></p><ul>
 <li>IMEV-diagram: alle MBA’s</li>
-<li>IMEV onderdeel: heel IMEV</li>
+<li>IMEV-onderdeel: heel IMEV</li>
 <li>Aanpassing: Meerdere definities van elementen in het UML zijn mogelijke aangepast door de wetswijzigingen en alle wijzigingen voor IMEV 4.0</li>
 </ul></section><section id="gewijzigde-mba-s-n-a-v-wetswijzigingen"><h4 id="x14-4-2-gewijzigde-mba-s-n-a-v-wetswijzigingen"><span class="secno">14.4.2 </span>Gewijzigde MBA's n.a.v. wetswijzigingen</h4><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/144">https://github.com/Geonovum/imev-werkomgeving/issues/144</a></p><ul>
 <li>IMEV-diagram: VII-B.3 --&gt; VII-B.3.1, VII-E.1 en VIII-B</li>
-<li>IMEV onderdeel: VII B.3.1, VII E.1 en objecttype "OpslagVuurwerkF1F2F3T1T2"</li>
+<li>IMEV-onderdeel: VII B.3.1, VII E.1 en objecttype "OpslagVuurwerkF1F2F3T1T2"</li>
 <li>Aanpassing: <ul>
 <li>VII-B.3 is vernummerd naar VII-B.3.1 en hernoemd naar: "Opslaan van brandbare gevaarlijke stoffen in verpakking met F, Cl, Br, N, S"</li>
 <li>VII-E.1 is hernoemd van "windturbine" naar "Windturbine in een windpark met minimaal 3 windturbines"</li>
@@ -11804,7 +11831,7 @@ De reguliere expressie bij het attribuut "bronhouder" is in het formeel patroon 
 </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/149">https://github.com/Geonovum/imev-werkomgeving/issues/149</a></p><ul>
 <li>IMEV-diagram: VII-E.10</li>
-<li>IMEV onderdeel: subtypes van BKLActiviteit</li>
+<li>IMEV-onderdeel: subtypes van BKLActiviteit</li>
 <li>Aanpassing: Voor MBA VII-E.10 zijn de twee onderliggende objecttypen ingevoerd ter vervanging van de oude:<ul>
 <li>TankenLNGVoertuig_TeberekenenAfstandVergunningsplicht</li>
 <li>OpslagTransportBedrijfLNG_TeberekenenAfstandVergunningsplicht
@@ -11813,7 +11840,7 @@ De constraints voor deze twee activiteiten zijn aangepast.</li>
 </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/150">https://github.com/Geonovum/imev-werkomgeving/issues/150</a></p><ul>
 <li>IMEV-diagram: VII-B.5</li>
-<li>IMEV onderdeel: subtypes van BKLActiviteit</li>
+<li>IMEV-onderdeel: subtypes van BKLActiviteit</li>
 <li>Aanpassing: Voor MBA VII-B.5 zijn de twee onderliggende objecttypen ingevoerd ter vervanging van de oude:<ul>
 <li>TankenWaterstofVoertuigen_TeBerekenenAfstandVergunningplicht</li>
 <li>OpslagTransportBedrijfWaterstof_TeBerekenenAfstandVergunningplicht
@@ -11823,15 +11850,19 @@ In het diagram is een subtype van ReferentieEVContour 'tankzuil' toegevoegd.</li
 </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/155">https://github.com/Geonovum/imev-werkomgeving/issues/155</a></p><ul>
 <li>IMEV-diagram: Activiteit - Restcategorie</li>
-<li>IMEV onderdeel: hele diagram </li>
+<li>IMEV-onderdeel: hele diagram </li>
 <li>Aanpassing: Het hele diagram en in het bijzonder objecttype ActiviteitRestcategorie zijn verwijderd.</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/177">https://github.com/Geonovum/imev-werkomgeving/issues/177</a></p><ul>
-<li>IMEV-diagram: VII-E.12 Andere insluitsystemen</li>
-<li>IMEV onderdeel: objecttype AnderInsluitsysteem</li>
+<li>IMEV-diagram: VII-E.12: Andere insluitsystemen</li>
+<li>IMEV-onderdeel: objecttype AnderInsluitsysteem</li>
 <li>Aanpassing: Er is een verplicht attribuut "drempelwaarde toegevoegd" met een nieuwe enumeratie "GevaarlijkeStofDrempelwaarde"</li>
+</ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/180">https://github.com/Geonovum/imev-werkomgeving/issues/180</a></p><ul>
+<li>IMEV-diagram: VII-A7: Opslaan van propaan of propeen in opslagtanks</li>
+<li>IMEV-onderdeel: Constraint in subtype van BKLActiviteit: OpslagtankPropaanPropeen_VasteAfstandGeenVergunningplicht </li>
+<li>Aanpassing: Er is een constraint opgenomen: "Geen OpstelplaatsVoertuig bij 5 of minder bevoorradingen per jaar"</li>
 </ul></section><section id="datakwaliteit-0"><h4 id="x14-4-3-datakwaliteit"><span class="secno">14.4.3 </span>Datakwaliteit</h4><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/117">https://github.com/Geonovum/imev-werkomgeving/issues/117</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s  </li>
-<li>IMEV onderdeel: Schema </li>
+<li>IMEV-onderdeel: Schema </li>
 <li>Aanpassing: 
 Relaties van rechts naar links lopen in de diagrammen zijn nu by-reference opgenomen in het IMEV en dat was via de in-line relatiesoort. Voor het schema betekent dit het volgende:
 De situatie was:<pre><code aria-busy="false" class="hljs json"><span class="hljs-attr">"hoortBij"</span> <span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
@@ -11841,17 +11872,17 @@ De situatie was:<pre><code aria-busy="false" class="hljs json"><span class="hljs
   <span class="hljs-attr">"items"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-attr">"$ref"</span><span class="hljs-punctuation">:</span><span class="hljs-string">"https://register.geostandaarden.nl/jsonschema/uml2json/0.1/schema_definitions.json#/$defs/LinkObject"</span> <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span></code></pre></li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/118">https://github.com/Geonovum/imev-werkomgeving/issues/118</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s  </li>
-<li>IMEV onderdeel: attribuut balActiviteit van het Objecttype BKLActiviteit </li>
+<li>IMEV-onderdeel: attribuut balActiviteit van het Objecttype BKLActiviteit </li>
 <li>Aanpassing:
 Voor het attribuut balActiviteit van het Objecttype BKLActiviteit is per subtype een striktere regel opgenomen die afdwingt dat het juiste artikel opgenomen wordt bij het attribuut "balActiviteit". </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/119">https://github.com/Geonovum/imev-werkomgeving/issues/119</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Buisleiding met gevaarlijke stoffen (VII-D.2)  </li>
-<li>IMEV onderdeel: attribuut buisleidingIdentificatie van BuisleidingReferentie</li>
+<li>IMEV-onderdeel: attribuut buisleidingIdentificatie van BuisleidingReferentie</li>
 <li>Aanpassing:
 Het attribuut buisleidingIdentificatie van het object BuisleidingReferentie is verwijderd.</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/146">https://github.com/Geonovum/imev-werkomgeving/issues/146</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Seveso-inrichting (VII-E.6)  </li>
-<li>IMEV onderdeel: nieuw attribuut met enumeratie voor type Drempelinrichting bij objecttype SevesoInrichting of SevesoReferentie </li>
+<li>IMEV-onderdeel: nieuw attribuut met enumeratie voor type Drempelinrichting bij objecttype SevesoInrichting of SevesoReferentie </li>
 <li>Aanpassing:
 In de toelichting van objectype SevesoInrichting is opgenomen dat de inrichtingen zijn ofwel lagedrempelinrichtingen ofwel hogedrempelinrichtingen zijn.
 Bij het objecttype SevesoInrichting is het attribuut sevesoDrempel opgenomen met waardelijst SevesoDrempelType met de waarden: <ul>
@@ -11861,12 +11892,12 @@ Bij het objecttype SevesoInrichting is het attribuut sevesoDrempel opgenomen met
 </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/148">https://github.com/Geonovum/imev-werkomgeving/issues/148</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s  </li>
-<li>IMEV onderdeel: Schema </li>
+<li>IMEV-onderdeel: Schema </li>
 <li>Aanpassing:
 In de required properties van het "ExterneVeiligheidsObject" is “id” opgenomen.</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/157">https://github.com/Geonovum/imev-werkomgeving/issues/157</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Behandelen, regelen en meten van aardgas (VII-A.1)  </li>
-<li>IMEV onderdeel: enumeratie OpstellingsUitvoeringAardgas</li>
+<li>IMEV-onderdeel: enumeratie OpstellingsUitvoeringAardgas</li>
 <li>Aanpassing:
 De waardes van de enumeratie OpstellingsUitvoeringAardgas waren:<ul>
 <li>ondergronds</li>
@@ -11881,7 +11912,7 @@ De waardes van de enumeratie OpstellingsUitvoeringAardgas waren:<ul>
     - inBehuizingMiddel
     - inBehuizingGrootOfBuiten</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/159">https://github.com/Geonovum/imev-werkomgeving/issues/159</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s  </li>
-<li>IMEV onderdeel: waardelijsten zoals hieronder genoemd  </li>
+<li>IMEV-onderdeel: waardelijsten zoals hieronder genoemd  </li>
 <li>Aanpassing:
 Bij de volgende enumeraties is de waarde 'gegevenInTransitie' verwijderd:
   -7.2.3 Enumeratie details BevoegdGezag (niet verplicht)
@@ -11906,7 +11937,7 @@ Bij de volgende enumeraties is de waarde 'gegevenInTransitie' verwijderd:
   -7.2.28 Enumeratie details VoidReasonValue (verplicht !)</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/162">https://github.com/Geonovum/imev-werkomgeving/issues/162</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): gegevensverzameling gebouwen en locaties (A11.6)  </li>
-<li>IMEV onderdeel: nieuw attribuut gebruiksdoeleinden bij KwetsbareLocatie </li>
+<li>IMEV-onderdeel: nieuw attribuut gebruiksdoeleinden bij KwetsbareLocatie </li>
 <li>Aanpassing:<br>Bij het objecttype KwetsbareLocatie is het optionele attribuut 'gebruiksdoeleindenLocatie' toegevoegd. Tevens is voor dit attribuut een nieuwe waardelijst 'GebruiksdoeleindenLocatie' met de volgende waarden toegevoegd: <ul>
 <li>recreatief nachtverblijf </li>
 <li>sport, spel en recreatief dagverblijf </li>
@@ -11915,7 +11946,7 @@ Bij de volgende enumeraties is de waarde 'gegevenInTransitie' verwijderd:
 </li>
 </ul></section><section id="conformiteit-0"><h4 id="x14-4-4-conformiteit"><span class="secno">14.4.4 </span>Conformiteit</h4><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/132">https://github.com/Geonovum/imev-werkomgeving/issues/132</a></p><ul>
 <li>Milieu Belastende Activiteit(en): alle UML-diagrammen </li>
-<li>IMEV onderdeel: alle voidable attributen en relaties </li>
+<li>IMEV-onderdeel: alle voidable attributen en relaties </li>
 <li>Aanpassing:  </li>
 </ul><p>De situatie in het IMEV schema 3.0.2 was:  </p><pre><code aria-busy="false" class="hljs json"><span class="hljs-attr">"basisVergunningNummer"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>  
 <span class="hljs-attr">"oneOf"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>  
@@ -11943,7 +11974,7 @@ Volgens het REV-API schema was het:
 In de nieuwe situatie wordt het of hetzelfde als in het REV-API schema of zoals hieronder:
 "basisVergunningNummer": {"waarde": null, "geenWaardeReden": "waardeOnbekend"}</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/167">https://github.com/Geonovum/imev-werkomgeving/issues/167</a></p><ul>
 <li>Milieu Belastende Activiteit(en): VII-D.1 Windturbine (zonder vergunning) en VII-E.1 Windturbine (met vergunning) en daar waar Opslagreferentie gebruikt wordt en waar kwetsbare gebrouwen of locaties voorkomen. </li>
-<li>IMEV onderdeel: De volgende Objecttypes: Windturbine, Opslagreferentie, KwetsbareLocatie en KwetsbaarGebouw</li>
+<li>IMEV-onderdeel: De volgende Objecttypes: Windturbine, Opslagreferentie, KwetsbareLocatie en KwetsbaarGebouw</li>
 <li>Aanpassing: 
 Bij hierboven genoemde objecttypes is het verplicht gemaakt om bij het opgeven van de geometrie ook meta-informatie op te nemen in het nieuwe veld met de naam: geometrieMetagegevens. 
 Deze bevat een gestructureerd datatype GeometrieMetagegevens waarin de metagegevens van de bron opgenomen kunnen worden.  </li>
@@ -11960,13 +11991,13 @@ Deze bevat een gestructureerd datatype GeometrieMetagegevens waarin de metagegev
     - overig </p><p>Als er meerdere basisregistraties mogelijk zijn, wordt de keuze overgelaten aan de bronhouder.
 De nu al bestaande verwijzing naar het ID in een basisregistratie, wordt dan verplaatst naar het veld idInBronregistratie</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/168">https://github.com/Geonovum/imev-werkomgeving/issues/168</a></p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA's  </li>
-<li>IMEV onderdeel: nieuw attribuut "privacyGevoelig" bij objecttype "LocatieActiviteit"</li>
+<li>IMEV-onderdeel: nieuw attribuut "privacyGevoelig" bij objecttype "LocatieActiviteit"</li>
 <li>Aanpassing:
 Het optionele attribuut "privacyGevoelig" is toegevoegd aan het objecttype LocatieActiviteit.
 Het attribuut is een boolean.</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/179">https://github.com/Geonovum/imev-werkomgeving/issues/179</a></p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA’s </li>
-<li>IMEV onderdeel: 
+<li>IMEV-onderdeel: 
   nieuw attribuut "informatieGeheim" bij objecttype "ExterneVeiligheidsObject"
   nieuw attribuut "grondslagInfo" bij objecttype "BKLActiviteit"</li>
 <li>Aanpassing:
