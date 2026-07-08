@@ -47,16 +47,9 @@
     "nodes": [
       {
         "target": [
-          "pre:nth-child(2) > .json.hljs"
+          "pre:nth-child(2) > .hljs.json"
         ],
         "html": "<code aria-busy=\"false\" class=\"hljs json\">",
-        "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-      },
-      {
-        "target": [
-          "pre:nth-child(12) > .hljs"
-        ],
-        "html": "<code aria-busy=\"false\" class=\"hljs\">",
         "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
       }
     ]
