@@ -11758,12 +11758,18 @@ De reguliere expressie bij het attribuut "bronhouder" is in het formeel patroon 
 <li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
 <li>Aanpassing: <ul>
 <li>Nieuw subtype van BKLActiviteit: ExploiterenEnergieOpslagSysteem_VasteAfstandGeenVergunningplicht met attributen:<ul>
-<li>typeEnergieOpslagSysteem</li>
-<li>energieOpslagCapaciteit</li>
-<li>energiedragerEOS</li>
+<li>typeEnergieopslagysteem</li>
+<li>typeEnergiedrager</li>
+<li>capaciteitEOS</li>
+<li>gecertificeerd</li>
+<li>aantalBatterijcellen</li>
+<li>maximaleModulegrootte</li>
+<li>maximaleRekgrootte</li>
+<li>categorieGebruiksduur</li>
 </ul>
 </li>
-<li>Nieuw referentieEVContour: EnergieOpslagSysteem</li>
+<li>Meerdere nieuwe enumeraties en één keuzeobject t.b.v bovenstaande attributen</li>
+<li>Nieuw referentieEVContour: EnergieOpslagSysteem met alleen geometrie</li>
 <li>Als EVContouren:<ul>
 <li>PRContour</li>
 <li>GifwolkAandachtsgebied</li>
@@ -11781,13 +11787,14 @@ De reguliere expressie bij het attribuut "bronhouder" is in het formeel patroon 
 <li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
 <li>Aanpassing:<ul>
 <li>Nieuw subtype van BKLActiviteit: OpslagEnergiedragersElektrischeEnergie_VasteAfstandGeenVergunningplicht met attributen:<ul>
-<li>energiedragersMaxGewicht</li>
-<li>energiedragerCapaciteit</li>
+<li>typeEnergiedrager</li>
+<li>levensfaseEnergiedrager</li>
+<li>opslagdichtheidOfVeiligheidsniveau</li>
 <li>aantalBatterijcellen</li>
-<li>energiedragersKwaliteit</li>
 </ul>
 </li>
-<li>Nieuw referentieEVContour: EnergiedragerOpslag</li>
+<li>Meerdere nieuwe enumeraties en één keuzeobject t.b.v bovenstaande attributen</li>
+<li>Nieuw referentieEVContour: EnergiedragerOpslag met alleen geometrie</li>
 <li>Als EVContouren:<ul>
 <li>PRContour</li>
 <li>GifwolkAandachtsgebied</li>
@@ -11811,7 +11818,7 @@ De reguliere expressie bij het attribuut "bronhouder" is in het formeel patroon 
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/171">https://github.com/Geonovum/imev-werkomgeving/issues/171</a></p><ul>
 <li>IMEV-diagram: VII-E.14: Exploiteren van een energieopslagsysteem, vergunningplicht en berekende afstanden</li>
 <li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
-<li>Aanpassing: Als VII-A.13 met nieuw subtype van BKLActiviteit: ExploiterenEnergieOpslagSysteem_TeBerekenenAfstandVergunningplicht</li>
+<li>Aanpassing: Als VII-A.13 met nieuw subtype van BKLActiviteit: ExploiterenEnergieOpslagSysteem_BerekendeAfstandVergunningplicht</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/172">https://github.com/Geonovum/imev-werkomgeving/issues/172</a></p><ul>
 <li>IMEV-diagram: VII-E.15: Opslaan en opstellen van energiedragers voor elektrische energie, vergunningplicht en berekende afstanden</li>
 <li>IMEV-onderdeel: Nieuw diagram met nieuw subtype van BKLActiviteit en nieuw referentieEVContour</li>
@@ -11849,11 +11856,14 @@ De constraints voor deze twee activiteiten zijn aangepast.</li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/150">https://github.com/Geonovum/imev-werkomgeving/issues/150</a></p><ul>
 <li>IMEV-diagram: VII-B.5</li>
 <li>IMEV-onderdeel: subtypes van BKLActiviteit</li>
-<li>Aanpassing: Voor MBA VII-B.5 zijn de twee onderliggende objecttypen ingevoerd ter vervanging van de oude:<ul>
+<li>Aanpassing:<ul>
+<li>Voor MBA VII-B.5 zijn de twee onderliggende objecttypen ingevoerd ter vervanging van de oude:<ul>
 <li>TankenWaterstofVoertuigen_TeBerekenenAfstandVergunningplicht</li>
-<li>OpslagTransportBedrijfWaterstof_TeBerekenenAfstandVergunningplicht
-De constraints voor deze twee activiteiten zijn aangepast.
-In het diagram is een subtype van ReferentieEVContour 'tankzuil' toegevoegd.</li>
+<li>OpslagTransportBedrijfWaterstof_TeBerekenenAfstandVergunningplicht</li>
+</ul>
+</li>
+<li>De constraints voor deze twee activiteiten zijn aangepast.</li>
+<li>In het diagram is een subtype van ReferentieEVContour 'tankzuil' toegevoegd.</li>
 </ul>
 </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/155">https://github.com/Geonovum/imev-werkomgeving/issues/155</a></p><ul>
@@ -11906,16 +11916,21 @@ In de required properties van het "ExterneVeiligheidsObject" is “id” opgenom
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/157">https://github.com/Geonovum/imev-werkomgeving/issues/157</a>  </p><ul>
 <li>Milieu Belastende Activiteit(en): Behandelen, regelen en meten van aardgas (VII-A.1)  </li>
 <li>IMEV-onderdeel: enumeratie OpstellingsUitvoeringAardgas</li>
-<li>Aanpassing:
-De waardes van de enumeratie OpstellingsUitvoeringAardgas waren:<ul>
+<li>Aanpassing:<ul>
+<li>De waardes van de enumeratie OpstellingsUitvoeringAardgas waren:<ul>
 <li>ondergronds</li>
 <li>binnenBehuizing</li>
 <li>buitenBehuizing</li>
-<li>gegevenInTransitie<br>De waardes van de enumeratie OpstellingsUitvoeringAardgas zijn geworden:</li>
+<li>gegevenInTransitie  </li>
+</ul>
+</li>
+<li>De waardes van de enumeratie OpstellingsUitvoeringAardgas zijn geworden:<ul>
 <li>ondergronds</li>
 <li>inBehuisingKlein</li>
 <li>inBehuizingMiddel</li>
 <li>inBehuizingGrootOfBuiten</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/159">https://github.com/Geonovum/imev-werkomgeving/issues/159</a>  </p><ul>
@@ -11977,32 +11992,34 @@ De waardes van de enumeratie OpstellingsUitvoeringAardgas waren:<ul>
     <span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">]</span>
 <span class="hljs-punctuation">}</span></code></pre><p>De situatie in een voorbeeld JSON-aanleverbestand voor een leeg voidable object was volgens het IMEV 3.0.2 schema: 
-"basisVergunningNummer": “waardeOnbekend” 
-Volgens het REV-API schema was het: 
-"basisVergunningNummer": {"geenWaardeReden": "waardeOnbekend"}
-In de nieuwe situatie wordt het of hetzelfde als in het REV-API schema of zoals hieronder:
-"basisVergunningNummer": {"waarde": null, "geenWaardeReden": "waardeOnbekend"}</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/167">https://github.com/Geonovum/imev-werkomgeving/issues/167</a></p><ul>
+    "basisVergunningNummer": “waardeOnbekend”<br>Volgens het REV-API schema was het:
+    "basisVergunningNummer": {"geenWaardeReden": "waardeOnbekend"}<br>In de nieuwe situatie wordt het of hetzelfde als in het REV-API schema of zoals hieronder:
+    "basisVergunningNummer": {"waarde": null, "geenWaardeReden": "waardeOnbekend"}</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/167">https://github.com/Geonovum/imev-werkomgeving/issues/167</a></p><ul>
 <li>Milieu Belastende Activiteit(en): VII-D.1 Windturbine (zonder vergunning) en VII-E.1 Windturbine (met vergunning) en daar waar Opslagreferentie gebruikt wordt en waar kwetsbare gebrouwen of locaties voorkomen. </li>
 <li>IMEV-onderdeel: De volgende Objecttypes: Windturbine, Opslagreferentie, KwetsbareLocatie en KwetsbaarGebouw</li>
-<li>Aanpassing: 
-Bij hierboven genoemde objecttypes is het verplicht gemaakt om bij het opgeven van de geometrie ook meta-informatie op te nemen in het nieuwe veld met de naam: geometrieMetagegevens. 
-Deze bevat een gestructureerd datatype GeometrieMetagegevens waarin de metagegevens van de bron opgenomen kunnen worden.
+<li>Aanpassing:<ul>
+<li>Bij hierboven genoemde objecttypes is het verplicht gemaakt om bij het opgeven van de geometrie ook meta-informatie op te nemen in het nieuwe veld met de naam: geometrieMetagegevens. Deze bevat een gestructureerd datatype GeometrieMetagegevens waarin de metagegevens van de bron opgenomen kunnen worden.
 De volgende broninformatie wordt daarin opgenomen:<ul>
 <li>bronregistratie (uit een gelijknamige enumeratie)</li>
 <li>idInBronregistratie (het ID in de bronregistratie)</li>
 <li>itemlink (de link in de beteffende API van de registratie als die beschikbaar is)</li>
-<li>toelichting (Dit is vooral van belang als de bron geen basisregistratie is)  </li>
+<li>toelichting (Dit is vooral van belang als de bron geen basisregistratie is)</li>
 </ul>
 </li>
-</ul><p>De enumeratie Bronregistratie bevat de volgende waarden:
-    - BAG
-    - BGT
-    - BRK
-    - BRO
-    - BRTnext
-    - zelfingewonnen
-    - overig  </p><p>Als er meerdere basisregistraties mogelijk zijn, wordt de keuze overgelaten aan de bronhouder.
-De nu al bestaande verwijzing naar het ID in een basisregistratie, wordt dan verplaatst naar het veld idInBronregistratie</p><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/168">https://github.com/Geonovum/imev-werkomgeving/issues/168</a></p><ul>
+<li>De nieuwe enumeratie Bronregistratie bevat de volgende waarden:<ul>
+<li>BAG</li>
+<li>BGT</li>
+<li>BRK</li>
+<li>BRO</li>
+<li>BRTnext</li>
+<li>zelfingewonnen</li>
+<li>overig  </li>
+</ul>
+</li>
+<li>De nu al bestaande verwijzing naar het ID in een basisregistratie, wordt dan verplaatst naar het veld idInBronregistratie in GeometrieMetagegevens</li>
+</ul>
+</li>
+</ul><p><strong>Registratie op github</strong>: <a href="https://github.com/Geonovum/imev-werkomgeving/issues/168">https://github.com/Geonovum/imev-werkomgeving/issues/168</a></p><ul>
 <li>Milieu Belastende Activiteit(en): Alle MBA's  </li>
 <li>IMEV-onderdeel: nieuw attribuut "privacyGevoelig" bij objecttype "LocatieActiviteit"</li>
 <li>Aanpassing:
@@ -12023,7 +12040,7 @@ Het attribuut is een boolean.</li>
 <li>besluitdocument met daarin gestructureerde datatype "Documentatie"</li>
 </ul>
 </li>
-<li>Enumeratie GrondslagGeheimhouding bevat de volgende waarden:<ul>
+<li>De nieuwe enumeratie GrondslagGeheimhouding bevat de volgende waarden:<ul>
 <li>Woo_Art_5.1_1a_Staatsveiligheid</li>
 <li>Woo_Art_5.1_1c_Bedrijfsvertrouwelijk</li>
 <li>Woo_Art_5.1_2h_VoorkomingSabotage</li>
