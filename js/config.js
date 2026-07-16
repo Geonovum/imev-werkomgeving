@@ -14,10 +14,11 @@
 var respecConfig =
 {
   //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
-  //specStatus: "GN-WV",              // Werk Versie
+  //specStatus: "WV",              // Werk Versie
   specStatus: "CV",              // Consultatie Versie
-  //specStatus: "GN-VV",              // Vaststellings Versie
-  //specStatus: "GN-DEF",             // Definitieve Versie
+  //specStatus: "VV",              // Vaststellings Versie
+  //specStatus: "DEF",             // Definitieve Versie
+  //specStatus: "LD",             // Living Document
   //-- specType is verplicht! (activeer 1 van de volgende) ----------------------------
   //specType: "NO",                   // Norm
   //specType: "ST",                     // Standaard
