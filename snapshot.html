@@ -535,25 +535,24 @@ Het IMEV is ontwikkeld om een uniforme gegevensuitwisseling mogelijk te maken tu
 <br>
 <br>
 Dit document beschrijft de opbouw van het IMEV en de belangrijkste informatieobjecten. Centraal staan vijf kernobjecttypen:</p><ul><li><b>LocatieEVActiviteit</b> De locatie waar een activiteit met externe veiligheidsrisico’s wordt uitgevoerd.</li>
-<li><b>EVActiviteit</b>
-</li><li><b>ReferentieEVContour</b> De objecten of locaties die bepalend zijn voor het berekenen van risico- of aandachtsgebieden.</li>
+<li><b>EVActiviteit</b> De activiteit zelf, bijvoorbeeld LPG-tanken of opslag van gevaarlijke stoffen.</li>
+<li><b>ReferentieEVContour</b> De objecten of locaties die bepalend zijn voor het berekenen van risico- of aandachtsgebieden.</li>
 <li><b>EVContour</b> Het resulterende risico- of aandachtsgebied.</li>
 <li><b>GebouwOfLocatie</b> Gebouwen of locaties die door een EV-contour kunnen worden beïnvloed.</li>
-</ul><br></section>
+</ul><br><p>De samenhang van deze kernobjecttypen is als volgt:
+Een LocatieEVActiviteit voert een EVActiviteit uit, een EVActiviteit heeft een ReferentieEVContour, een ReferentieEVContour resulteert in een EVContour, een EVContour beïnvloedt gebouwen of locaties met een kwetsbaarheidsindicatie.</p></section>
   <section data-format="markdown" aria-busy="false" id="inleiding"><!--OddPage--><h2 id="x2-inleiding"><span class="secno">2. </span>Inleiding</h2><section id="grondslag"><h3 id="x2-1-grondslag"><span class="secno">2.1 </span>Grondslag</h3><p>Onder de Omgevingswet worden gegevens over milieubelastende activiteiten met veiligheidsrisico’s door bevoegde gezagen verzameld, beheerd en via het Register Externe Veiligheidsrisico's beschikbaar gesteld. In dit register staan bijvoorbeeld alle bedrijven die brandbare, explosieve, giftige en nucleaire stoffen verwerken of opslaan en transportroutes en buisleidingen voor gevaarlijke stoffen. Om deze gegevens allemaal op dezelfde manier beschikbaar te kunnen stellen via het Register Externe Veiligheidsrisico's (REV), is er het Informatiemodel Externe Veiligheid (IMEV). Dit informatiemodel beschrijft de structuur waarin gegevens moeten worden vastgelegd zodat de gegevens zowel door een machine als een mens te verwerken zijn.
 <br>
 <br>
 Welke gegevens bevoegde gezagen ten aanzien van de externe veiligheid moeten verzamelen, staat beschreven in de artikelen 11.2 tot en met 11.7 van het <a href="https://wetten.overheid.nl/BWBR0041313" target="_blank">Besluit kwaliteit leefomgeving</a>. In bijlagen VII tot en met X van het Bkl zijn de kenmerken over opslag, productie, gebruik en vervoer van gevaarlijke stoffen, windturbines en de milieubelastende activiteiten met vastgestelde afstanden opgenomen.
 <br>
 <br>
-Het informatiemodel beschrijft hoe deze locatie gebonden veiligheidsrisico’s door bevoegde gezagen moeten worden vastgelegd en beschikbaar moeten worden gesteld aan het Register Externe Veiligheidsrisico's. Het Informatiemodel Externe Veiligheid is daarmee conform de wet- en regelgeving de basis voor software waarmee de bevoegde gezagen hun gegevens aan het register aanleveren. De grondslag voor het verplicht gebruik van het Informatiemodel Externe Veiligheid door bevoegde gezagen is opgenomen in artikel 12.2 van de <a href="https://wetten.overheid.nl/BWBR0045528" target="_blank">Omgevingsregeling</a> van de Omgevingswet.
-<br>
-<a href="https://www.geonovum.nl/over-geonovum/wie-wij-zijn" target="_blank">Geonovum</a> beheert het <a href="https://www.geonovum.nl/geo-standaarden/informatiemodel-externe-veiligheid" target="_blank">informatiemodel externe veiligheid</a> in opdracht van het Ministerie van Infrastructuur.</p></section><section id="informatiemodel"><h3 id="x2-2-informatiemodel"><span class="secno">2.2 </span>Informatiemodel</h3><p>In het Bkl en in de bijlagen VII tot en met X van het Bkl zijn de kenmerken benoemd over opslag, productie, gebruik en vervoer van gevaarlijke stoffen, windturbines en de milieubelastende activiteiten met vastgestelde afstanden. Het informatiemodel beschrijft hoe deze locatie gebonden veiligheidsrisico's moeten worden vastgelegd en door bevoegde gezagen beschikbaar moeten worden gesteld aan het Register Externe Veiligheidsrisico's.
+Het informatiemodel beschrijft hoe deze locatie gebonden veiligheidsrisico’s door bevoegde gezagen moeten worden vastgelegd en beschikbaar moeten worden gesteld aan het Register Externe Veiligheidsrisico's. Het Informatiemodel Externe Veiligheid is daarmee conform de wet- en regelgeving de basis voor software waarmee de bevoegde gezagen hun gegevens aan het register aanleveren. De grondslag voor het verplicht gebruik van het Informatiemodel Externe Veiligheid door bevoegde gezagen is opgenomen in artikel 12.2 van de <a href="https://wetten.overheid.nl/BWBR0045528" target="_blank">Omgevingsregeling</a> van de Omgevingswet. <a href="https://www.geonovum.nl/over-geonovum/wie-wij-zijn" target="_blank">Geonovum</a> beheert het <a href="https://www.geonovum.nl/geo-standaarden/informatiemodel-externe-veiligheid" target="_blank">informatiemodel externe veiligheid</a> in opdracht van het Ministerie van Infrastructuur.</p></section><section id="informatiemodel"><h3 id="x2-2-informatiemodel"><span class="secno">2.2 </span>Informatiemodel</h3><p>In het Bkl en in de bijlagen VII tot en met X van het Bkl zijn de kenmerken benoemd over opslag, productie, gebruik en vervoer van gevaarlijke stoffen, windturbines en de milieubelastende activiteiten met vastgestelde afstanden. Het informatiemodel beschrijft hoe deze locatie gebonden veiligheidsrisico's moeten worden vastgelegd en door bevoegde gezagen beschikbaar moeten worden gesteld aan het Register Externe Veiligheidsrisico's.
 <br>
 <br>
 Een informatiemodel is een soort bouwtekening voor informatie over een bepaald domein. In het geval van het IMEV komt hier de juridische werkelijkheid van de Omgevingswet samen met de fysieke werkelijkheid. Het IMEV beschrijft de fysieke werkelijkheid in termen die voor uitvoering van de wet geschikt zijn. In het Register Externe Veiligheidsrisico's worden de gegevens conform het IMEV geregistreerd en vormen daardoor een bevraagbaar informatiesysteem. In het IMEV staan in detail de regels en afspraken waar de te verzamelen en uit te wisselen gegevens aan moeten voldoen.<br>
 <br>
-<br> </p><p>Voor deze gegevens is het belangrijk dat de informatiekundige betekenis is beschreven en de wijze van aanleveren is vastgelegd. 
+Voor deze gegevens is het belangrijk dat de informatiekundige betekenis is beschreven en de wijze van aanleveren is vastgelegd. 
 Dat gebeurt in de vorm van het informatiemodel Externe Veiligheid (IMEV). </p><p>In het informatiemodel is vastgelegd:<br> </p><ul>
 <li>welke gegevens opgenomen worden in het REV, </li>
 <li>wat die gegevens precies betekenen, </li>
@@ -615,10 +614,10 @@ betrekking hebben op dit informatiemodel.</p>
 <li>vervoer van gevaarlijke stoffen;</li>
 <li>energieopslagsystemen;</li>
 <li>andere activiteiten met plaatsgebonden risico’s of aandachtsgebieden.</li>
-</ul><br><ul><li>aandachtsgebieden (brand-, explosie- en gifwolkaandachtsgebieden);</li>
+</ul><br><p>Naast deze activiteiten bevat het model ook gegevens over:</p><ul><li>aandachtsgebieden (brand-, explosie- en gifwolkaandachtsgebieden);</li>
 <li>kwetsbare en beperkt kwetsbare gebouwen en locaties (KGL).
 </li>
-</ul><br></section>
+</ul><br><p>Het toepassingsgebied is daarmee breder dan alleen risicobronnen: ook objecten die door risico’s kunnen worden beïnvloed maken onderdeel uit van het model.</p></section>
   <section data-format="markdown" aria-busy="false" id="overzicht"><!--OddPage--><h2 id="x4-overzicht"><span class="secno">4. </span>Overzicht</h2><section id="naam-en-acroniemen-van-het-informatiemodel"><h3 id="x4-1-naam-en-acroniemen-van-het-informatiemodel"><span class="secno">4.1 </span>Naam en Acroniemen van het informatiemodel</h3><p>IMEV - Informatiemodel Externe Veiligheid</p></section><section id="beschrijving"><h3 id="x4-2-beschrijving"><span class="secno">4.2 </span>Beschrijving</h3><section id="definitie"><h4 id="x4-2-1-definitie"><span class="secno">4.2.1 </span>Definitie</h4><p>De gegevens die worden aangeleverd aan het REV zijn gebaseerd op het Informatiemodel Externe Veiligheid (IMEV). 
 Dit informatiemodel beschrijft de relatie en samenhang tussen de verschillende informatie-objecten. 
 Ook geeft het informatiemodel aan welke kenmerken (attributen) verplicht zijn voor een object, welke optioneel zijn en welke kenmerken gevuld moeten worden aan de hand van een waardelijst. 
@@ -951,8 +950,8 @@ De meldingen worden doorgeleid naar de bronhouder.</p></section></section></sect
 <td>Rijkswaterstaat</td>
 </tr>
 </tbody></table></section></section>
-  <section data-format="markdown" aria-busy="false" id="uitgangspunten-imev-model"><!--OddPage--><h2 id="x5-uitgangspunten-imev-model"><span class="secno">5. </span>Uitgangspunten IMEV model</h2><p>Dit hoofdstuk beschrijft de uitgangspunten voor het Informatiemodel Externe Veiligheid (IMEV).</p><section id="algemene-uitgangspunten"><h3 id="x5-1-algemene-uitgangspunten"><span class="secno">5.1 </span>Algemene uitgangspunten</h3><p>Bij het beheer en de doorontwikkeling van het IMEV worden de volgende uitgangspunten gehanteerd:</p><ul>
-<li>IMEV is gemodelleerd als logisch model volgens het Metamodel Informatie Modellering <a href="https://docs.geostandaarden.nl/mim/mim/">(MIM)</a>. Een logisch model is daarin een model dat alle informatie bevat die nodig is voor een toepassing in een digitale omgeving.</li>
+  <section data-format="markdown" aria-busy="false" id="uitgangspunten-imev-model"><!--OddPage--><h2 id="x5-uitgangspunten-imev-model"><span class="secno">5. </span>Uitgangspunten IMEV model</h2><p>Dit hoofdstuk beschrijft de modelleringsprincipes die bij beheer en doorontwikkeling van IMEV worden gevolgd.</p><section id="algemene-uitgangspunten"><h3 id="x5-1-algemene-uitgangspunten"><span class="secno">5.1 </span>Algemene uitgangspunten</h3><p>Bij het beheer en de doorontwikkeling van het IMEV worden de volgende uitgangspunten gehanteerd:</p><ul>
+<li>IMEV is gemodelleerd als logisch model volgens het Metamodel Informatie Modellering <a href="https://docs.geostandaarden.nl/mim/mim/" target="_blank">(MIM)</a>. Een logisch model is daarin een model dat alle informatie bevat die nodig is voor een toepassing in een digitale omgeving.</li>
 <li>Een logisch model bevat alle informatie die nodig is om model gedreven (MDA) specificaties voor toepassing te kunnen genereren.</li>
 <li>Een logisch model is opgesteld onafhankelijk van specifieke toepassingsformaten of applicatieplatforms.</li>
 <li>In een logisch model is de naamgeving van termen in het model hoofdlettergevoelig en zijn spaties niet toegestaan.</li>
