@@ -1,124 +1,132 @@
-//-------------------------------------------------------------------------------------
-//-- File. . . :  config.js
-//-- Bevat . . :  Template voor de  configuratie voor respec
-//--              Gebaseerd op https://github.com/Geonovum/respec/wiki
-//--              Deze file moet worden neergezet in de root-directory van de
-//--              betreffende standaard.
-//-- Door. . . :  Jan van Gelder
-//-------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------
-//-- Log . . . :  20181015 - JvG - Initiele versie
-//-------------------------------------------------------------------------------------
+let respecConfig = {
+  useLogo: true,
+  useLabel: true,
 
-//-------------------------------------------------------------------------------------
-var respecConfig =
-{
-  //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
-  specStatus: "WV",              // Werk Versie
-  //specStatus: "CV",              // Consultatie Versie
-  //specStatus: "VV",              // Vaststellings Versie
-  //specStatus: "DEF",             // Definitieve Versie
-  //specStatus: "LD",             // Living Document
-  //-- specType is verplicht! (activeer 1 van de volgende) ----------------------------
-  //specType: "NO",                   // Norm
-  //specType: "ST",                     // Standaard
-  specType: "IM",                   // Informatie Model
-  //specType: "PR",                   // Praktijk Richtlijn
+  // TODO: title is verplicht! Neem hieronder de titel van het document op
+  title: "Informatiemodel Externe Veiligheid",
+  //-- specStatus is verplicht! (activeer 1 van de volgende)
+  // specStatus: "wv",                 // Werkversie
+  specStatus: "cv",               // Consultatieversie
+  //specStatus: "vv",               // Versie ter vaststelling
+  //specStatus: "def",              // Vastgestelde versie
+  //specStatus: "basis",            // Basis Document
+
+  //-- specType is verplicht bij alle andere dan BASIS
+  //specType: "NO",                 // Norm
+  //specType: "ST",                 // Standaard
+  specType: "IM",                 // Informatie Model
+  //specType: "PR",                 // Praktijkrichtlijn
   //specType: "HR",                   // HandReiking
-  //specType: "WA",                   // Werkafspraak
-  //specType: "US",                   // Uitwisselings standaard
-  //specType: "PS",                   // Presentatie sstandaard
-  //-- format is verplicht! -----------------------------------------------------------
-  //format: "markdown",                 // altijd "markdown"
-  //-- publishDate is verplicht -------------------------------------------------------
-  //-- NB: in de werkversie uitzetten, want dan pakt Respec de pushdate ---------------
-  //publishDate: "2026-08-17",  	      // Format is "YYYY-MM-DD"
-  //-- de namen van de Editor(s) ------------------------------------------------------
-  //-- vul in: per Editor: name:, company:, companyURL: -------------------------------
-  editors: [
-    {
+  //specType: "WA",                 // Werkafspraak
+  //specType: "BD",                 // Beheer Documentatie
+  //specType: "AL",                 // Algemeen document
+  //specType: "BP",                 // Best Practice
+
+  //-- pubDomain is verplicht! (komt in de URL)
+  //-- zie: https://geonovum.github.io/handleiding-tooling/ReSpec/#pubdomain
+  //-- TODO: vul pubDomain in
+  pubDomain: "imev",
+
+  //-- license: voor de geldende gebruiksvoorwaarden. Default is cc-by.
+  license: "cc-by-nd",            // bronvermelding, geen afgeleide werken (default)
+  //license: "cc0",                 // Public Domain Dedication
+  //license: "cc-by",                 // Attribution, met bronvermelding
+
+  //-- TODO shortName is verplicht! (komt in de URL: kies logische afkorting)
+  //-- Regel: shortName mag geen hoofdletters bevatten.
+  shortName: "IMEV",
+  
+  //edDraftURI = De URI van de draft version. Deze wordt automatisch afgeleid van de github URI; maar kan hier overschreven worden. 
+  edDraftURI: ["https://geonovum.github.io/imev-werkomgeving/"],
+ 
+  //-- publishDate is verplicht. Als je werkversie gekozen hebt dan pakt Respec
+  //-- de pushdate maar de publishDate is nog steeds verplicht.
+  publishDate: "2026-08-17",
+  
+  //-- publishVersion is verplicht. Hij mag wel leeg zijn [], maar niet de lege string zijn "".
+  publishVersion: "4.0.0",
+ 
+  //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beide aan/uit! 
+  previousPublishDate: "2025-07-10",
+  previousPublishVersion: "3.0.2",
+  prevVersion: ["https://docs.geostandaarden.nl/imev/def-im-imev-20250710/"],
+  previousMaturity: "def",
+
+  //-- Deze gebruiken we niet binnen Geonovum
+  //prevVersion: "0.0.1",
+
+  //-- TODO: de namen van de Editor(s) / Redacteur(en)
+  //-- vul in: per Editor: name:, company:, companyURL:
+  editors:
+    [
+       {
     name:       "Pieter Bresters",
 	company:    "Geonovum",
-    companyURL: "https://www.geonovum.nl",
+    companyURL: "https://www.geonovum.nl/",
     }
-  ],
-  //-- de namen van de Author(s) ------------------------------------------------------
-  //-- vul in: per Author: name:, company:, companyURL: -------------------------------
-   authors:
-  [
+  ]
+   otherLinks: [
+      {
+        key: "Contact:",
+        data: [
+          {
+            value: "Meer weten over IMEV",
+            href: "https://www.geonovum.nl/geo-standaarden/informatiemodel-externe-veiligheid-imev/",
+          },
+          {
+            value: "imev@geonovum.nl",
+            href: "mailto:imev@geonovum.nl/",
+          },
+          ],
+      },
+    ],
+
+  //-- de namen van de auteur(s) 
+  //-- vul in: per auteur: name:, company:, companyURL: 
+  authors:
+    [
    {
     name:       "Paul Janssen",
     company:    "Geonovum",
-    companyURL: "https://www.geonovum.nl"
+    companyURL: "https://www.geonovum.nl/"
   },
    {
     name:       "Pieter Bresters",
     company:    "Geonovum",
-    companyURL: "https://www.geonovum.nl"
+    companyURL: "https://www.geonovum.nl/"
    },
    {
     name:       "Jan Cas Smit",
     company:    "Geonovum",
-    companyURL: "https://www.geonovum.nl"
+    companyURL: "https://www.geonovum.nl/"
    },   
    {
     name:       "Monique van Scherpenzeel",
     company:    "Geonovum",
-    companyURL: "https://www.geonovum.nl"
-   },
-
+    companyURL: "https://www.geonovum.nl/"
+    }
   ],
-  //-- shortName is verplicht! (komt in de URL: kies logische naam) --------------------
-  shortName: "imev", 	              // Wordt gebruikt in de document URL
-  //-- pubDomain is verplicht! (komt in de URL: Activeer 1 van de volgende) ------------
-  //pubDomain: "mim", 	              // Metamodel Informatie Modellering
-  //pubDomain: "bor", 	            // Beheer Openbare Ruimte
-  //pubDomain: "bro", 	            // Basisregistratie Ondergrond
-  //pubDomain: "imgeo", 	          // IMGeo / BGT
-  //pubDomain: "kl", 	              // Kabels en Leidingen
-  //pubDomain: "liv", 	            // Landelijke Informatievoorziening Vastgoedgebruik
-  //pubDomain: "md", 	              // Metadata
-  //pubDomain: "nen3610", 	        // Basismodel NEN3610
-  //pubDomain: "oov", 	            // Openbare Orde en Veiligheid
-  //pubDomain: "ro", 	              // Ruimtelijke Ordening
-  //pubDomain: "serv", 	            // Services
-  //pubDomain: "visu", 	            // Visualisatie
-  //pubDomain: "wp", 	              // White Paper
-  pubDomain: "imev", 	              // IM Externe Veiligheid
-  //-- Repositorynaam op GitHub -------------------------------------------------------
-  //github: "https://github.com/Geonovum/imev-werkomgeving/",
-  //-- Repositorynaam/issues op GitHub ------------------------------------------------
-  //-- issueBase: "https://github.com/Geonovum/imev-werkomgeving/issues/",
-  //-- issueBase: "mailto:imev@geonovum.nl",
-  issueBase: "https://www.geonovum.nl/geo-standaarden/informatiemodel-externe-veiligheid#Meldingen",
-  //-- edDraftURI: de URI van de werkversie van het document
-  edDraftURI: "https://geonovum.github.io/imev-werkomgeving/",
 
-  //-- license: voor de geldende gebruiksvoorwaarden
-  licence: "cc-by-nd",              //-- bronvermelding, geen afgeleide werken (default)
-  // licence: "cc0",                //-- Public Domain Dedication
-  // licence: "cc-by",              //-- Attribution, met bronvermelding
+  // TODO: Vul de github URL in.
+  // neem hier de URL van de github repository op waar het respec document in staat
+  // dit zorgt voor het 'Doe mee:' onderdeel in het voorblad van de publicatie.
+  https://geonovum.github.io/imev-werkomgeving/",
 
-  //-- localBiblio: lokale bibliografie, voor verwijzigingen
-  //-- NB: kijk eerst naar de beschikbare www.specref.org voor verwijziging
-  //localBiblio:
-  //{
-  //  "MDA":
-  //  {
-  //   title:      "Model Driven Architecture (MDA) Guide",
-  //    href:       "",
-  //    status:     "rev. 2.0, 1-6-2014",
-  //    publisher:  "",
-  //     company:    "Object Management Group",
-  //  },
-  //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beiden aan/uit!
-  previousPublishDate: "2025-07-10",    	  // Format is "YYYY-MM-DD"
-  previousMaturity: "GN-DEF",                 // kies 1 van deze 3 regels
-  //previousMaturity: "CV",                   // kies 1 van deze 3 regels
-  //previousMaturity: "GN-VV",  	          // kies 1 van deze 3 regels
+  // Create PDF and link to file in header (optional):
+  // TODO: Change the filename as preferred.
+  //alternateFormats: [
+  //    {
+  //        label: "pdf",
+  //        uri: "static/template.pdf",
+  //    },
+  //],
 
-  //-- Optionele parameters:
-  //emailComments: "mim@geonovum.nl",         // reactie mailadres, alleen bij CV!
-  //subtitle: "iets",                         // Subtitel van het document
-  maxTocLevel: 4,                             // Aantal niveau's ToC, default is 0
+  //
+  // Lokale lijst voor bibliografie
+  // - Kijk eerst naar de beschikbare www.specref.org .
+  // - Kijk daarna in de organisatieconfig op: https://tools.geostandaarden.nl/specref/
+  // - Voeg dan pas hieronder toe.
+  // - Zie handleiding: https://geonovum.github.io/handleiding-tooling/ReSpec/ReSpec-onderdelen/#bibliografie
+  //
+  
 };
