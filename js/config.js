@@ -70,7 +70,7 @@ var respecConfig =
 
   ],
   //-- shortName is verplicht! (komt in de URL: kies logische naam) --------------------
-  shortName: "IMEV", 	              // Wordt gebruikt in de document URL
+  shortName: "imev", 	              // Wordt gebruikt in de document URL
   //-- pubDomain is verplicht! (komt in de URL: Activeer 1 van de volgende) ------------
   //pubDomain: "mim", 	              // Metamodel Informatie Modellering
   //pubDomain: "bor", 	            // Beheer Openbare Ruimte
@@ -114,7 +114,7 @@ var respecConfig =
   //  },
   //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beiden aan/uit!
   previousPublishDate: "2025-07-10",    	  // Format is "YYYY-MM-DD"
-  previousMaturity: "DEF",                 // kies 1 van deze 3 regels
+  previousMaturity: "def",                 // kies 1 van deze 3 regels
   //previousMaturity: "CV",                   // kies 1 van deze 3 regels
   //previousMaturity: "GN-VV",  	          // kies 1 van deze 3 regels
 
