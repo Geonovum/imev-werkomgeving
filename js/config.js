@@ -1,4 +1,4 @@
-var documentConfig =
+let respecConfig =
 {
   title: "Informatiemodel Externe Veiligheid",
   shortName: "IMEV",
