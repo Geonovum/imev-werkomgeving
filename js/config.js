@@ -4,7 +4,7 @@ var documentConfig =
   shortName: "IMEV",
   pubDomain: "imev",
   specStatus: "cv",
-  specType: "im",
+  specType: "IM",
   license: "cc-by-nd",
   latestVersion: [
     "https://docs.geostandaarden.nl/imev/imev/"
@@ -28,29 +28,29 @@ var documentConfig =
     {
     name:       "Paul Janssen",
     company:    "Geonovum",
-    companyURL: "https://www.geonovum.nl"
+    companyURL: "https://www.geonovum.nl/"
   },
    {
     name:       "Pieter Bresters",
     company:    "Geonovum",
-    companyURL: "https://www.geonovum.nl"
+    companyURL: "https://www.geonovum.nl/"
    },
    {
     name:       "Jan Cas Smit",
     company:    "Geonovum",
-    companyURL: "https://www.geonovum.nl"
+    companyURL: "https://www.geonovum.nl/"
    },   
    {
     name:       "Monique van Scherpenzeel",
     company:    "Geonovum",
-    companyURL: "https://www.geonovum.nl"
+    companyURL: "https://www.geonovum.nl/"
     }
   ],
   editors: [
     {
     name:       "Pieter Bresters",
 	company:    "Geonovum",
-    companyURL: "https://www.geonovum.nl",
+    companyURL: "https://www.geonovum.nl/",
     }
   ]
    otherLinks: [
@@ -59,11 +59,11 @@ var documentConfig =
         data: [
           {
             value: "Meer weten over IMEV",
-            href: "https://www.geonovum.nl/geo-standaarden/informatiemodel-externe-veiligheid-imev",
+            href: "https://www.geonovum.nl/geo-standaarden/informatiemodel-externe-veiligheid-imev/",
           },
           {
             value: "imev@geonovum.nl",
-            href: "mailto:imev@geonovum.nl",
+            href: "mailto:imev@geonovum.nl/",
           },
           ],
       },
