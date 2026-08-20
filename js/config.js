@@ -14,7 +14,7 @@
 var respecConfig =
 {
   //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
-  specStatus: "wv",              // Werk Versie
+  specStatus: "GN-WV",              // Werk Versie
   //specStatus: "cv",              // Consultatie Versie
   //specStatus: "VV",              // Vaststellings Versie
   //specStatus: "DEF",             // Definitieve Versie
