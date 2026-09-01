@@ -5,13 +5,13 @@
 //-- 20181015 - JvG - Initiele versie
 //-- 20260901 - ILaR - generieke actuele respec
 //-------------------------------------------------------------------------------------
-var respecConfig =
+var documentConfig =
 { 
   //-- title is verplicht!
-  title: "Informatiemodel Externe Veiligheid versie 4.0.0",
+  title: "Informatiemodel Externe Veiligheid",
   //-- specStatus is verplicht! (activeer 1 van de volgende)
-  specStatus: "wv",                 // Werkversie
-  //specStatus: "cv",               // Consultatieversie
+  //specStatus: "wv",               // Werkversie
+  specStatus: "cv",                 // Consultatieversie
   //specStatus: "vv",               // Versie ter vaststelling
   //specStatus: "def",              // Vastgestelde versie
   //specStatus: "basis",            // Basis Document
@@ -27,11 +27,13 @@ var respecConfig =
   //specType: "AL",                 // Algemeen document
   //specType: "BP",                 // Best Practice
 
-  //-- format is verplicht! -----------------------------------------------------------
-  //format: "markdown",                 // altijd "markdown"
-  //-- publishDate is verplicht -------------------------------------------------------
-  //-- NB: in de werkversie uitzetten, want dan pakt Respec de pushdate ---------------
-  //publishDate: "2026-08-17",  	      
+  publishDate: "2026-08-17",  	        	  // Format is "YYYY-MM-DD"  
+  publishVersion: "versie 4.0.0",
+  // previous version parts
+  previousPublishDate: "2025-07-10",    	  // Format is "YYYY-MM-DD"
+  previousPublishVersion: "3.0.2",
+  previousMaturity: "def",
+
   // Format is "YYYY-MM-DD"
   //-- de namen van de Editor(s) ------------------------------------------------------
   //-- vul in: per Editor: name:, company:, companyURL: -------------------------------
@@ -44,12 +46,12 @@ var respecConfig =
   ],
   //-- de namen van de Author(s) ------------------------------------------------------
   //-- vul in: per Author: name:, company:, companyURL: -------------------------------
-   authors: [
+  authors: [
    {
     name:       "Paul Janssen",
     company:    "Geonovum",
     companyURL: "https://www.geonovum.nl"
-  },
+   },
    {
     name:       "Pieter Bresters",
     company:    "Geonovum",
@@ -69,26 +71,11 @@ var respecConfig =
   //-- shortName is verplicht! (komt in de URL: kies logische naam/bestaand pad) --------------------
   shortName: "imev", 	              // Wordt gebruikt in de document URL
   //-- pubDomain is verplicht! (komt in de URL: Activeer 1 van de volgende) ------------
-  //pubDomain: "mim", 	              // Metamodel Informatie Modellering
-  //pubDomain: "bor", 	            // Beheer Openbare Ruimte
-  //pubDomain: "bro", 	            // Basisregistratie Ondergrond
-  //pubDomain: "imgeo", 	          // IMGeo / BGT
-  //pubDomain: "kl", 	              // Kabels en Leidingen
-  //pubDomain: "liv", 	            // Landelijke Informatievoorziening Vastgoedgebruik
-  //pubDomain: "md", 	              // Metadata
-  //pubDomain: "nen3610", 	        // Basismodel NEN3610
-  //pubDomain: "oov", 	            // Openbare Orde en Veiligheid
-  //pubDomain: "ro", 	              // Ruimtelijke Ordening
-  //pubDomain: "serv", 	            // Services
-  //pubDomain: "visu", 	            // Visualisatie
-  //pubDomain: "wp", 	              // White Paper
   pubDomain: "imev", 	              // IM Externe Veiligheid
   //-- Repositorynaam op GitHub -------------------------------------------------------
   //github: "https://github.com/Geonovum/imev-werkomgeving/",
   //-- Repositorynaam/issues op GitHub ------------------------------------------------
   issueBase: "https://github.com/Geonovum/imev-werkomgeving/issues",
-  //-- issueBase: "mailto:imev@geonovum.nl",
-  //issueBase: "https://www.geonovum.nl/geo-standaarden/informatiemodel-externe-veiligheid#Meldingen",
   //-- edDraftURI: de URI van de werkversie van het document
   edDraftURI: "https://geonovum.github.io/imev-werkomgeving/",
 
@@ -109,11 +96,6 @@ var respecConfig =
   //    publisher:  "",
   //     company:    "Object Management Group",
   //  },
-  //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beiden aan/uit!
-  previousPublishDate: "2025-07-10",    	  // Format is "YYYY-MM-DD"
-  previousMaturity: "def",                 // kies 1 van deze 3 regels
-  //previousMaturity: "GN-CV",                   // kies 1 van deze 3 regels
-  //previousMaturity: "GN-VV",  	          // kies 1 van deze 3 regels
 
   //-- Optionele parameters:
   //emailComments: "mim@geonovum.nl",         // reactie mailadres, alleen bij CV!
