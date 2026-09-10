@@ -102,7 +102,7 @@ jobs:
             fi
           done
 
-          find "$PUBLICATION_DIR" -type f \
+          find "$PUBLICATION_DIR/data" -type f \
             \( -name '*.respec.html' -o -name '*.respec.catalog.xhtml' \) \
             -delete
 
