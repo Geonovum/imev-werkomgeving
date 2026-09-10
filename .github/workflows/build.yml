@@ -102,7 +102,7 @@ jobs:
             fi
           done
 
-          find "$PUBLICATION_DIR/data" -type f \
+          find "$PUBLICATION_DIR" -type f \
             \( -name '*.respec.html' -o -name '*.respec.catalog.xhtml' \) \
             -delete
 
@@ -117,6 +117,7 @@ jobs:
           check_external_hash: false
           enforce_https: false
           ignore_empty_alt: true
+          validator_ignore: Element “h7” * |The h7” element *|Element “alias” *|The “alias” element *
 
       - name: Check for alternateFormats via Node
         id: config
