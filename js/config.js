@@ -5,7 +5,7 @@
 //-- 20181015 - JvG - Initiele versie
 //-- 20260901 - ILaR - generieke actuele respec
 //-------------------------------------------------------------------------------------
-var documentConfig =
+var respecConfig =
 { 
   //-- title is verplicht!
   title: "Informatiemodel Externe Veiligheid",
