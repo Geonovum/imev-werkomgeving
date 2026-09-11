@@ -113,7 +113,7 @@ jobs:
           directory: publication-validation
           check_html: true
           check_css: false
-          validator_ignore: Duplicate ID “EAID*".|Element “h7” *|The h7” element *|Element “alias” *|The “alias” element *
+          validator_ignore: Duplicate ID “EAID.*".|Element “h7” .*|The h7” element .*|Element “alias” .*|The “alias” element .*
           disable_external: true
           check_external_hash: false
           enforce_https: false
