@@ -9,6 +9,7 @@ var respecConfig =
 { 
   //-- title is verplicht!
   title: "Informatiemodel Externe Veiligheid",
+  subtitle: "Versie 4.0.0",
   //-- specStatus is verplicht! (activeer 1 van de volgende)
   specStatus: "wv",               // Werkversie
   //specStatus: "cv",                 // Consultatieversie
