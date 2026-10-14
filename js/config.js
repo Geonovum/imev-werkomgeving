@@ -11,9 +11,9 @@ var respecConfig =
   title: "Informatiemodel Externe Veiligheid",
   subtitle: "Versie 4.0.0",
   //-- specStatus is verplicht! (activeer 1 van de volgende)
-  specStatus: "wv",               // Werkversie
+  //specStatus: "wv",               // Werkversie
   //specStatus: "cv",                 // Consultatieversie
-  //specStatus: "vv",               // Versie ter vaststelling
+  specStatus: "vv",               // Versie ter vaststelling
   //specStatus: "def",              // Vastgestelde versie
   //specStatus: "basis",            // Basis Document
 
@@ -28,12 +28,12 @@ var respecConfig =
   //specType: "AL",                 // Algemeen document
   //specType: "BP",                 // Best Practice
 
-  publishDate: "2026-08-17",  	        	  // Format is "YYYY-MM-DD"  
+  publishDate: "2026-10-19",  	        	  // Format is "YYYY-MM-DD"  
   publishVersion: "versie 4.0.0",
   // previous version parts
-  previousPublishDate: "2025-07-10",    	  // Format is "YYYY-MM-DD"
-  previousPublishVersion: "3.0.2",
-  previousMaturity: "def",
+  previousPublishDate: "2026-08-17",    	  // Format is "YYYY-MM-DD"
+  previousPublishVersion: "4.0.0",
+  previousMaturity: "cv",
 
   // Format is "YYYY-MM-DD"
   //-- de namen van de Editor(s) ------------------------------------------------------
