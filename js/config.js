@@ -102,37 +102,4 @@ var respecConfig =
   //emailComments: "mim@geonovum.nl",         // reactie mailadres, alleen bij CV!
   //subtitle: "iets",                         // Subtitel van het document
   maxTocLevel: 4,                             // Aantal niveau's ToC, default is 0
-
-  //-- postProcess: de organisatie-stappen (mermaid e.d.) blijven behouden
-  postProcess: [...(organisationConfig.postProcess || []), herstelImevLinks],
 };
-
-//-------------------------------------------------------------------------------------
-//-- herstelImevLinks: corrigeert links in de door Imvertor gegenereerde objectcatalogus
-//-- (data/imev-werkomgeving-cat.respec.html). Die wordt bij elke modelexport opnieuw
-//-- gegenereerd; daarom hier en niet in de catalogus zelf.
-//-------------------------------------------------------------------------------------
-function herstelImevLinks(_config, document) {
-  //-- Klikbare vlakken in diagrammen die naar een niet-bestaande global_class-sectie
-  //-- wijzen (o.a. waardelijsten) laten verwijzen naar de bijbehorende detail_class-sectie
-  document.querySelectorAll('area[href^="#global_class_"]').forEach((area) => {
-    const id = area.getAttribute("href").slice(1);
-    const detailId = id.replace(/^global_class_/, "detail_class_");
-    if (!document.getElementById(id) && document.getElementById(detailId)) {
-      area.setAttribute("href", "#" + detailId);
-    }
-  });
-
-  //-- Outlook-safelinks vervangen door de oorspronkelijke URL
-  document.querySelectorAll('a[href*="safelinks.protection.outlook.com"]').forEach((a) => {
-    const url = new URL(a.href).searchParams.get("url");
-    if (url) {
-      a.setAttribute("href", url);
-    }
-  });
-
-  //-- Primitieve datatypen verwijzen naar MIM 1.2 i.p.v. een oude versie ter vaststelling
-  document.querySelectorAll('a[href^="https://docs.geostandaarden.nl/mim/vv-st-mim-20200225/"]').forEach((a) => {
-    a.setAttribute("href", "https://docs.geostandaarden.nl/mim/def-st-mim-20240613/#primitief-datatype-1");
-  });
-}
